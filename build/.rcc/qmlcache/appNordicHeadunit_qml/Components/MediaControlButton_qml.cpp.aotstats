@@ -1,0 +1,148 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessful": true,
+                        "column": 29,
+                        "durationMicroseconds": 82,
+                        "errorMessage": "",
+                        "functionName": "iconSize",
+                        "line": 18
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 12,
+                        "durationMicroseconds": 55,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 24
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 13,
+                        "durationMicroseconds": 37,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 25
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 13,
+                        "durationMicroseconds": 28,
+                        "errorMessage": "",
+                        "functionName": "radius",
+                        "line": 26
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 12,
+                        "durationMicroseconds": 1212,
+                        "errorMessage": "Cannot load property colors from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 29
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 12,
+                        "durationMicroseconds": 60,
+                        "errorMessage": "",
+                        "functionName": "scale",
+                        "line": 54
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 19,
+                        "durationMicroseconds": 37,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 48
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 19,
+                        "durationMicroseconds": 24,
+                        "errorMessage": "Cannot load property colors from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 49
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 17,
+                        "durationMicroseconds": 23,
+                        "errorMessage": "",
+                        "functionName": "source",
+                        "line": 59
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 15,
+                        "durationMicroseconds": 18,
+                        "errorMessage": "",
+                        "functionName": "size",
+                        "line": 60
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 16,
+                        "durationMicroseconds": 29,
+                        "errorMessage": "Cannot access value for name isPrimary",
+                        "functionName": "color",
+                        "line": 61
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 27,
+                        "durationMicroseconds": 16,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 58
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 22,
+                        "durationMicroseconds": 22,
+                        "errorMessage": "",
+                        "functionName": "cursorShape",
+                        "line": 73
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 20,
+                        "durationMicroseconds": 30,
+                        "errorMessage": "",
+                        "functionName": "onClicked",
+                        "line": 74
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 13,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 71
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 22,
+                        "durationMicroseconds": 16,
+                        "errorMessage": "",
+                        "functionName": "role",
+                        "line": 78
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 22,
+                        "durationMicroseconds": 17,
+                        "errorMessage": "",
+                        "functionName": "name",
+                        "line": 79
+                    }
+                ],
+                "filePath": "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Components/MediaControlButton.qml"
+            }
+        ],
+        "moduleId": "NordicHeadunit(appNordicHeadunit)"
+    }
+]

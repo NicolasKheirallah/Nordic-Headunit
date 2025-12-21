@@ -1,0 +1,177 @@
+{
+    "classes": [
+        {
+            "className": "IVehicleHAL",
+            "enums": [
+                {
+                    "isClass": false,
+                    "isFlag": false,
+                    "name": "ConnectionState",
+                    "values": [
+                        "Disconnected",
+                        "Connecting",
+                        "Connected",
+                        "Error"
+                    ]
+                }
+            ],
+            "lineNumber": 13,
+            "object": true,
+            "qualifiedClassName": "IVehicleHAL",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "speed",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "speedChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "gear",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "gearChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "temp",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "outsideTempChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "level",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "batteryLevelChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "range",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 4,
+                    "name": "rangeChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "temp",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 5,
+                    "name": "driverTempChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "temp",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 6,
+                    "name": "passengerTempChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "speed",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 7,
+                    "name": "fanSpeedChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "on",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 8,
+                    "name": "leftSeatHeatChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "on",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 9,
+                    "name": "rightSeatHeatChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "message",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 10,
+                    "name": "errorOccurred",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "state",
+                            "type": "IVehicleHAL::ConnectionState"
+                        }
+                    ],
+                    "index": 11,
+                    "name": "connectionStateChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "IVehicleHAL.h",
+    "outputRevision": 69
+}

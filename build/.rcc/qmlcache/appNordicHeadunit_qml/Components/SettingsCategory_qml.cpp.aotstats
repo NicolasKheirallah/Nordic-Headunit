@@ -1,0 +1,236 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessful": false,
+                        "column": 12,
+                        "durationMicroseconds": 1171,
+                        "errorMessage": "Cannot load property colors from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 18
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 13,
+                        "durationMicroseconds": 7,
+                        "errorMessage": "Cannot load property shapes from const QMetaObject.",
+                        "functionName": "radius",
+                        "line": 19
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 8,
+                        "errorMessage": "Cannot load property spacing from const QMetaObject.",
+                        "functionName": "leftMargin",
+                        "line": 14
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 25,
+                        "durationMicroseconds": 6,
+                        "errorMessage": "Cannot load property spacing from const QMetaObject.",
+                        "functionName": "rightMargin",
+                        "line": 15
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 23,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property spacing from const QMetaObject.",
+                        "functionName": "topMargin",
+                        "line": 16
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 22,
+                        "durationMicroseconds": 52,
+                        "errorMessage": "",
+                        "functionName": "cursorShape",
+                        "line": 25
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 20,
+                        "durationMicroseconds": 40,
+                        "errorMessage": "Type (component in /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Components/SettingsCategory.qml)::parent with type QQuickItem does not have a property clicked for calling",
+                        "functionName": "onClicked",
+                        "line": 26
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 19,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 23
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 18,
+                        "durationMicroseconds": 6,
+                        "errorMessage": "Cannot load property spacing from const QMetaObject.",
+                        "functionName": "spacing",
+                        "line": 32
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 14,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 30
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 26,
+                        "durationMicroseconds": 5,
+                        "errorMessage": "Cannot load property spacing from const QMetaObject.",
+                        "functionName": "margins",
+                        "line": 31
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 21,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property shapes from const QMetaObject.",
+                        "functionName": "radius",
+                        "line": 37
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 20,
+                        "durationMicroseconds": 5,
+                        "errorMessage": "Cannot load property colors from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 38
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 25,
+                        "durationMicroseconds": 12,
+                        "errorMessage": "Cannot access value for name icon",
+                        "functionName": "source",
+                        "line": 43
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 6,
+                        "errorMessage": "Cannot load property colors from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 44
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 18,
+                        "errorMessage": "",
+                        "functionName": "size",
+                        "line": 45
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 35,
+                        "durationMicroseconds": 11,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 42
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 22,
+                        "durationMicroseconds": 5,
+                        "errorMessage": "Cannot load property spacing from const QMetaObject.",
+                        "functionName": "spacing",
+                        "line": 52
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 31,
+                        "durationMicroseconds": 17,
+                        "errorMessage": "",
+                        "functionName": "alignment",
+                        "line": 51
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 23,
+                        "durationMicroseconds": 6,
+                        "errorMessage": "Cannot access value for name title",
+                        "functionName": "text",
+                        "line": 55
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 16,
+                        "errorMessage": "",
+                        "functionName": "type",
+                        "line": 56
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 6,
+                        "errorMessage": "Cannot load property colors from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 57
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 23,
+                        "durationMicroseconds": 6,
+                        "errorMessage": "Cannot access value for name description",
+                        "functionName": "text",
+                        "line": 60
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 15,
+                        "errorMessage": "",
+                        "functionName": "type",
+                        "line": 61
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 5,
+                        "errorMessage": "Cannot load property colors from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 62
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 19,
+                        "errorMessage": "",
+                        "functionName": "elide",
+                        "line": 63
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 19,
+                        "durationMicroseconds": 16,
+                        "errorMessage": "",
+                        "functionName": "type",
+                        "line": 70
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 20,
+                        "durationMicroseconds": 5,
+                        "errorMessage": "Cannot load property colors from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 71
+                    }
+                ],
+                "filePath": "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Components/SettingsCategory.qml"
+            }
+        ],
+        "moduleId": "NordicHeadunit(appNordicHeadunit)"
+    }
+]

@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="/qt/qml/NordicHeadunit">/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/NordicHeadunit</file>
+
+  </qresource>
+</RCC>

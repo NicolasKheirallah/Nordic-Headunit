@@ -1,0 +1,15 @@
+<RCC>
+  <qresource prefix="/qt/qml/NordicHeadunit/">
+    <file alias="qml/qmldir">/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/NordicHeadunit/qml/qmldir</file>
+    <file alias="qml/Layouts/qmldir">/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/NordicHeadunit/qml/Layouts/qmldir</file>
+    <file alias="qml/Components/qmldir">/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/NordicHeadunit/qml/Components/qmldir</file>
+    <file alias="qml/Pages/qmldir">/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/NordicHeadunit/qml/Pages/qmldir</file>
+    <file alias="qml/Pages/Phone/qmldir">/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/NordicHeadunit/qml/Pages/Phone/qmldir</file>
+    <file alias="qml/Pages/Media/qmldir">/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/NordicHeadunit/qml/Pages/Media/qmldir</file>
+    <file alias="qml/Overlays/qmldir">/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/NordicHeadunit/qml/Overlays/qmldir</file>
+    <file alias="qml/Services/qmldir">/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/NordicHeadunit/qml/Services/qmldir</file>
+    <file alias="qml/Widgets/qmldir">/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/NordicHeadunit/qml/Widgets/qmldir</file>
+    <file alias="qml/Pages/Settings/qmldir">/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/NordicHeadunit/qml/Pages/Settings/qmldir</file>
+  </qresource>
+</RCC>
+

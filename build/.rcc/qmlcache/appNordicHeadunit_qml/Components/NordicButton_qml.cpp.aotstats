@@ -1,0 +1,420 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessful": true,
+                        "column": 27,
+                        "durationMicroseconds": 1770,
+                        "errorMessage": "",
+                        "functionName": "variant",
+                        "line": 22
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 25,
+                        "errorMessage": "",
+                        "functionName": "size",
+                        "line": 26
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 41,
+                        "durationMicroseconds": 132,
+                        "errorMessage": "",
+                        "functionName": "targetHeight",
+                        "line": 35
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 40,
+                        "durationMicroseconds": 97,
+                        "errorMessage": "",
+                        "functionName": "sidePadding",
+                        "line": 45
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 37,
+                        "durationMicroseconds": 1219,
+                        "errorMessage": "Cannot load property typography from const QMetaObject.",
+                        "functionName": "btnFont",
+                        "line": 55
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 42,
+                        "durationMicroseconds": 108,
+                        "errorMessage": "",
+                        "functionName": "iconDimension",
+                        "line": 65
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 38,
+                        "durationMicroseconds": 326,
+                        "errorMessage": "Cannot access value for name enabled",
+                        "functionName": "bgColor",
+                        "line": 79
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 43,
+                        "durationMicroseconds": 90,
+                        "errorMessage": "Cannot access value for name enabled",
+                        "functionName": "contentColor",
+                        "line": 113
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 42,
+                        "durationMicroseconds": 28,
+                        "errorMessage": "Cannot retrieve a non-object type by ID: root",
+                        "functionName": "borderColor",
+                        "line": 138
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 20,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"implicitWidth\".",
+                        "functionName": "implicitWidth",
+                        "line": 149
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 21,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"implicitHeight\".",
+                        "functionName": "implicitHeight",
+                        "line": 150
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 18,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"leftPadding\".",
+                        "functionName": "leftPadding",
+                        "line": 153
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 19,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"rightPadding\".",
+                        "functionName": "rightPadding",
+                        "line": 154
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 27,
+                        "durationMicroseconds": 16,
+                        "errorMessage": "method clicked cannot be resolved.",
+                        "functionName": "onReturnPressed",
+                        "line": 17
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 26,
+                        "durationMicroseconds": 12,
+                        "errorMessage": "method clicked cannot be resolved.",
+                        "functionName": "onEnterPressed",
+                        "line": 18
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 25,
+                        "durationMicroseconds": 6,
+                        "errorMessage": "Cannot access value for name root",
+                        "functionName": "implicitHeight",
+                        "line": 159
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 16,
+                        "durationMicroseconds": 3,
+                        "errorMessage": "Cannot access value for name parent",
+                        "functionName": "width",
+                        "line": 161
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 17,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot access value for name root",
+                        "functionName": "height",
+                        "line": 162
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 16,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot access value for name root",
+                        "functionName": "color",
+                        "line": 164
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 17,
+                        "durationMicroseconds": 210,
+                        "errorMessage": "Cannot access value for name variant",
+                        "functionName": "radius",
+                        "line": 166
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 16,
+                        "durationMicroseconds": 7,
+                        "errorMessage": "Cannot access value for name root",
+                        "functionName": "scale",
+                        "line": 183
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 27,
+                        "durationMicroseconds": 2,
+                        "errorMessage": "Cannot access value for name parent",
+                        "functionName": "centerIn",
+                        "line": 160
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 23,
+                        "durationMicroseconds": 68,
+                        "errorMessage": "Cannot access value for name variant",
+                        "functionName": "width",
+                        "line": 168
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 23,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot access value for name root",
+                        "functionName": "color",
+                        "line": 169
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 21,
+                        "durationMicroseconds": 5,
+                        "errorMessage": "Cannot access value for name parent",
+                        "functionName": "radius",
+                        "line": 178
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 22,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot access value for name root",
+                        "functionName": "visible",
+                        "line": 179
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 27,
+                        "durationMicroseconds": 1,
+                        "errorMessage": "Cannot access value for name parent",
+                        "functionName": "fill",
+                        "line": 173
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 27,
+                        "durationMicroseconds": 56,
+                        "errorMessage": "Cannot access value for name NordicTheme",
+                        "functionName": "color",
+                        "line": 176
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 57,
+                        "durationMicroseconds": 30,
+                        "errorMessage": "Cannot access value for name NordicTheme",
+                        "functionName": "duration",
+                        "line": 184
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 107,
+                        "durationMicroseconds": 21,
+                        "errorMessage": "Cannot access value for name Easing",
+                        "functionName": "type",
+                        "line": 184
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 56,
+                        "durationMicroseconds": 22,
+                        "errorMessage": "Cannot access value for name NordicTheme",
+                        "functionName": "duration",
+                        "line": 185
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 18,
+                        "durationMicroseconds": 71,
+                        "errorMessage": "Cannot access value for name NordicTheme",
+                        "functionName": "spacing",
+                        "line": 192
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 27,
+                        "durationMicroseconds": 2,
+                        "errorMessage": "Cannot access value for name parent",
+                        "functionName": "centerIn",
+                        "line": 191
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 22,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot access value for name root",
+                        "functionName": "visible",
+                        "line": 196
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 20,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot access value for name root",
+                        "functionName": "color",
+                        "line": 198
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 19,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot access value for name root",
+                        "functionName": "font",
+                        "line": 199
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 37,
+                        "durationMicroseconds": 2,
+                        "errorMessage": "Cannot access value for name parent",
+                        "functionName": "verticalCenter",
+                        "line": 200
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 22,
+                        "durationMicroseconds": 13,
+                        "errorMessage": "Cannot access value for name root",
+                        "functionName": "visible",
+                        "line": 205
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 19,
+                        "durationMicroseconds": 363,
+                        "errorMessage": "Cannot access value for name root",
+                        "functionName": "size",
+                        "line": 206
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 21,
+                        "durationMicroseconds": 6,
+                        "errorMessage": "Cannot access value for name root",
+                        "functionName": "source",
+                        "line": 212
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 20,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot access value for name root",
+                        "functionName": "color",
+                        "line": 213
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 37,
+                        "durationMicroseconds": 2,
+                        "errorMessage": "Cannot access value for name parent",
+                        "functionName": "verticalCenter",
+                        "line": 214
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 22,
+                        "durationMicroseconds": 12,
+                        "errorMessage": "Cannot access value for name root",
+                        "functionName": "visible",
+                        "line": 220
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 19,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot access value for name root",
+                        "functionName": "text",
+                        "line": 221
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 19,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot access value for name root",
+                        "functionName": "font",
+                        "line": 222
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 20,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot access value for name root",
+                        "functionName": "color",
+                        "line": 223
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 37,
+                        "durationMicroseconds": 2,
+                        "errorMessage": "Cannot access value for name parent",
+                        "functionName": "verticalCenter",
+                        "line": 224
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 17,
+                        "durationMicroseconds": 8,
+                        "errorMessage": "Cannot retrieve a non-object type by ID: root",
+                        "functionName": "target",
+                        "line": 229
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 18,
+                        "durationMicroseconds": 12,
+                        "errorMessage": "Cannot retrieve a non-object type by ID: root",
+                        "functionName": "running",
+                        "line": 233
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 17,
+                        "durationMicroseconds": 6,
+                        "errorMessage": "Cannot retrieve a non-object type by ID: root",
+                        "functionName": "target",
+                        "line": 236
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 18,
+                        "durationMicroseconds": 9,
+                        "errorMessage": "Cannot retrieve a non-object type by ID: root",
+                        "functionName": "running",
+                        "line": 240
+                    }
+                ],
+                "filePath": "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Components/NordicButton.qml"
+            }
+        ],
+        "moduleId": "NordicHeadunit(appNordicHeadunit)"
+    }
+]

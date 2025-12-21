@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_appNordicHeadunit_FILE /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/appNordicHeadunit)
+set(__QT_DEPLOY_TARGET_appNordicHeadunit_TYPE EXECUTABLE)

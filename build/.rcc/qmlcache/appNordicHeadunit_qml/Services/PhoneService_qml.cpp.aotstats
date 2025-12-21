@@ -1,0 +1,116 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 66,
+                        "errorMessage": "",
+                        "functionName": "callState",
+                        "line": 17
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 27,
+                        "durationMicroseconds": 35,
+                        "errorMessage": "",
+                        "functionName": "onSearchQueryChanged",
+                        "line": 83
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 29,
+                        "durationMicroseconds": 20,
+                        "errorMessage": "",
+                        "functionName": "onRecentsFilterChanged",
+                        "line": 84
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 5,
+                        "durationMicroseconds": 832,
+                        "errorMessage": "Cannot use shadowable base type for further lookups: call to method get, returning QJSValue",
+                        "functionName": "updateFilteredContacts",
+                        "line": 88
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 5,
+                        "durationMicroseconds": 367,
+                        "errorMessage": "Cannot use shadowable base type for further lookups: call to method get, returning QJSValue",
+                        "functionName": "updateFilteredRecents",
+                        "line": 100
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 5,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Functions without type annotations won't be compiled",
+                        "functionName": "dial",
+                        "line": 110
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 5,
+                        "durationMicroseconds": 72,
+                        "errorMessage": "",
+                        "functionName": "endCall",
+                        "line": 135
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 5,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Functions without type annotations won't be compiled",
+                        "functionName": "addRecent",
+                        "line": 146
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 5,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Functions without type annotations won't be compiled",
+                        "functionName": "simulateIncomingCall",
+                        "line": 158
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 5,
+                        "durationMicroseconds": 98,
+                        "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
+                        "functionName": "answerCall",
+                        "line": 166
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 24,
+                        "errorMessage": "",
+                        "functionName": "onCompleted",
+                        "line": 78
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 22,
+                        "durationMicroseconds": 141,
+                        "errorMessage": "",
+                        "functionName": "onTriggered",
+                        "line": 180
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 22,
+                        "durationMicroseconds": 271,
+                        "errorMessage": "",
+                        "functionName": "onTriggered",
+                        "line": 194
+                    }
+                ],
+                "filePath": "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Services/PhoneService.qml"
+            }
+        ],
+        "moduleId": "NordicHeadunit(appNordicHeadunit)"
+    }
+]

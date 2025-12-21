@@ -1,0 +1,5 @@
+/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/appNordicHeadunit_autogen/include/../UVLADIE3JM/moc_MediaService.cpp.json
+/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/appNordicHeadunit_autogen/include/../UVLADIE3JM/moc_NavigationService.cpp.json
+/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/appNordicHeadunit_autogen/include/../UVLADIE3JM/moc_PhoneService.cpp.json
+/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/appNordicHeadunit_autogen/include/../UVLADIE3JM/moc_SystemSettings.cpp.json
+/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/appNordicHeadunit_autogen/include/../UVLADIE3JM/moc_VehicleService.cpp.json

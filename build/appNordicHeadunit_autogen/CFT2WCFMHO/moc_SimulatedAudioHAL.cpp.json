@@ -1,0 +1,18 @@
+{
+    "classes": [
+        {
+            "className": "SimulatedAudioHAL",
+            "lineNumber": 7,
+            "object": true,
+            "qualifiedClassName": "SimulatedAudioHAL",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "IAudioHAL"
+                }
+            ]
+        }
+    ],
+    "inputFile": "SimulatedAudioHAL.h",
+    "outputRevision": 69
+}

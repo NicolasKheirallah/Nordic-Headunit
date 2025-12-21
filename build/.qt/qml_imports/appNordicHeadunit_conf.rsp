@@ -1,0 +1,16 @@
+-rootPath
+/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit
+-cmake-output
+-output-file
+/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/.qt/qml_imports/appNordicHeadunit_conf.cmake
+-importPath
+/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/NordicHeadunit
+-importPath
+/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build
+-importPath
+/opt/homebrew/opt/qt@6/share/qt/qml
+-qrcFiles
+/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/.qt/rcc/qmake_NordicHeadunit.qrc
+/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/.qt/rcc/appNordicHeadunit_raw_qml_0.qrc
+/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/.qt/rcc/appNordicHeadunit_raw_qml_0_extra_qmldirs.qrc
+/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/.qt/rcc/appNordicHeadunit_translations.qrc

@@ -1,0 +1,134 @@
+{
+    "classes": [
+        {
+            "className": "LayoutService",
+            "enums": [
+                {
+                    "isClass": false,
+                    "isFlag": false,
+                    "name": "WidthClass",
+                    "values": [
+                        "CompactWidth",
+                        "RegularWidth",
+                        "ExpandedWidth"
+                    ]
+                },
+                {
+                    "isClass": false,
+                    "isFlag": false,
+                    "name": "HeightClass",
+                    "values": [
+                        "ShortHeight",
+                        "NormalHeight",
+                        "TallHeight"
+                    ]
+                }
+            ],
+            "lineNumber": 9,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "widthClass",
+                    "notify": "layoutChanged",
+                    "read": "widthClass",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "WidthClass",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "heightClass",
+                    "notify": "layoutChanged",
+                    "read": "heightClass",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "HeightClass",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "isLandscape",
+                    "notify": "layoutChanged",
+                    "read": "isLandscape",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "name": "isCompact",
+                    "notify": "layoutChanged",
+                    "read": "isCompact",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 4,
+                    "name": "screenSize",
+                    "notify": "layoutChanged",
+                    "read": "screenSize",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QSize",
+                    "user": false
+                }
+            ],
+            "qualifiedClassName": "LayoutService",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "layoutChanged",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "size",
+                            "type": "QSize"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "updateLayout",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "LayoutService.h",
+    "outputRevision": 69
+}

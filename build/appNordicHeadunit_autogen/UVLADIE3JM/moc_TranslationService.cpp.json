@@ -1,0 +1,69 @@
+{
+    "classes": [
+        {
+            "className": "TranslationService",
+            "lineNumber": 12,
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "languageCode",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "selectLanguage",
+                    "returnType": "void"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "currentLanguage",
+                    "notify": "languageChanged",
+                    "read": "currentLanguage",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                },
+                {
+                    "constant": true,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "availableLanguages",
+                    "read": "availableLanguages",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QStringList",
+                    "user": false
+                }
+            ],
+            "qualifiedClassName": "TranslationService",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "languageChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "TranslationService.h",
+    "outputRevision": 69
+}

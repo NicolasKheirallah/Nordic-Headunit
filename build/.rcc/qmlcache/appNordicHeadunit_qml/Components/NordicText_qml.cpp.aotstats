@@ -1,0 +1,220 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 1957,
+                        "errorMessage": "",
+                        "functionName": "type",
+                        "line": 10
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 27,
+                        "durationMicroseconds": 1149,
+                        "errorMessage": "Cannot load property colors from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 11
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 25,
+                        "durationMicroseconds": 33,
+                        "errorMessage": "",
+                        "functionName": "elide",
+                        "line": 12
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 19,
+                        "errorMessage": "",
+                        "functionName": "wrapMode",
+                        "line": 17
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 39,
+                        "durationMicroseconds": 20,
+                        "errorMessage": "",
+                        "functionName": "horizontalAlignment",
+                        "line": 18
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 37,
+                        "durationMicroseconds": 18,
+                        "errorMessage": "",
+                        "functionName": "verticalAlignment",
+                        "line": 19
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 20,
+                        "durationMicroseconds": 74,
+                        "errorMessage": "",
+                        "functionName": "implicitWidth",
+                        "line": 29
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 21,
+                        "durationMicroseconds": 55,
+                        "errorMessage": "",
+                        "functionName": "implicitHeight",
+                        "line": 30
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 11,
+                        "durationMicroseconds": 13,
+                        "errorMessage": "",
+                        "functionName": "clip",
+                        "line": 31
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 12,
+                        "durationMicroseconds": 18,
+                        "errorMessage": "",
+                        "functionName": "x",
+                        "line": 35
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 12,
+                        "durationMicroseconds": 14,
+                        "errorMessage": "",
+                        "functionName": "y",
+                        "line": 36
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 16,
+                        "durationMicroseconds": 50,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 37
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 15,
+                        "durationMicroseconds": 16,
+                        "errorMessage": "",
+                        "functionName": "text",
+                        "line": 38
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 16,
+                        "durationMicroseconds": 21,
+                        "errorMessage": "",
+                        "functionName": "color",
+                        "line": 39
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 16,
+                        "durationMicroseconds": 64,
+                        "errorMessage": "",
+                        "functionName": "elide",
+                        "line": 40
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 19,
+                        "durationMicroseconds": 50,
+                        "errorMessage": "",
+                        "functionName": "wrapMode",
+                        "line": 41
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 30,
+                        "durationMicroseconds": 18,
+                        "errorMessage": "",
+                        "functionName": "horizontalAlignment",
+                        "line": 42
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 18,
+                        "errorMessage": "",
+                        "functionName": "verticalAlignment",
+                        "line": 43
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 15,
+                        "durationMicroseconds": 131,
+                        "errorMessage": "Cannot load property typography from const QMetaObject.",
+                        "functionName": "font",
+                        "line": 46
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 37,
+                        "durationMicroseconds": 72,
+                        "errorMessage": "",
+                        "functionName": "shouldScroll",
+                        "line": 68
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 22,
+                        "durationMicroseconds": 18,
+                        "errorMessage": "",
+                        "functionName": "running",
+                        "line": 72
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 20,
+                        "durationMicroseconds": 18,
+                        "errorMessage": "",
+                        "functionName": "loops",
+                        "line": 73
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 21,
+                        "durationMicroseconds": 42,
+                        "errorMessage": "",
+                        "functionName": "to",
+                        "line": 80
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 27,
+                        "durationMicroseconds": 99,
+                        "errorMessage": "",
+                        "functionName": "duration",
+                        "line": 81
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 30,
+                        "durationMicroseconds": 18,
+                        "errorMessage": "",
+                        "functionName": "type",
+                        "line": 82
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 37,
+                        "durationMicroseconds": 20,
+                        "errorMessage": "",
+                        "functionName": "value",
+                        "line": 87
+                    }
+                ],
+                "filePath": "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Components/NordicText.qml"
+            }
+        ],
+        "moduleId": "NordicHeadunit(appNordicHeadunit)"
+    }
+]

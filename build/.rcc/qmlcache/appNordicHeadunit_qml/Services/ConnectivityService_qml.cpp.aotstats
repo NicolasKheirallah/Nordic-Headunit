@@ -1,0 +1,52 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessful": true,
+                        "column": 5,
+                        "durationMicroseconds": 93,
+                        "errorMessage": "",
+                        "functionName": "startWifiScan",
+                        "line": 58
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 5,
+                        "durationMicroseconds": 31,
+                        "errorMessage": "",
+                        "functionName": "startBluetoothScan",
+                        "line": 63
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 22,
+                        "durationMicroseconds": 191,
+                        "errorMessage": "",
+                        "functionName": "onTriggered",
+                        "line": 26
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 22,
+                        "durationMicroseconds": 54,
+                        "errorMessage": "Cannot find name scanningWifi",
+                        "functionName": "onTriggered",
+                        "line": 71
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 22,
+                        "durationMicroseconds": 57,
+                        "errorMessage": "Cannot find name scanningBluetooth",
+                        "functionName": "onTriggered",
+                        "line": 83
+                    }
+                ],
+                "filePath": "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Services/ConnectivityService.qml"
+            }
+        ],
+        "moduleId": "NordicHeadunit(appNordicHeadunit)"
+    }
+]

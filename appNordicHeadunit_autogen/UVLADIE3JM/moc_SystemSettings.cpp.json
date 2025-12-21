@@ -1,0 +1,502 @@
+{
+    "classes": [
+        {
+            "className": "SystemSettings",
+            "lineNumber": 7,
+            "methods": [
+                {
+                    "access": "public",
+                    "index": 17,
+                    "name": "factoryReset",
+                    "returnType": "void"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "darkMode",
+                    "notify": "darkModeChanged",
+                    "read": "darkMode",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setDarkMode"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "wifiEnabled",
+                    "notify": "wifiEnabledChanged",
+                    "read": "wifiEnabled",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setWifiEnabled"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "bluetoothEnabled",
+                    "notify": "bluetoothEnabledChanged",
+                    "read": "bluetoothEnabled",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setBluetoothEnabled"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "name": "masterVolume",
+                    "notify": "masterVolumeChanged",
+                    "read": "masterVolume",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setMasterVolume"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 4,
+                    "name": "brightness",
+                    "notify": "brightnessChanged",
+                    "read": "brightness",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setBrightness"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 5,
+                    "name": "walkAwayLock",
+                    "notify": "walkAwayLockChanged",
+                    "read": "walkAwayLock",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setWalkAwayLock"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 6,
+                    "name": "useMetric",
+                    "notify": "useMetricChanged",
+                    "read": "useMetric",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setUseMetric"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 7,
+                    "name": "language",
+                    "notify": "languageChanged",
+                    "read": "language",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setLanguage"
+                },
+                {
+                    "constant": true,
+                    "designable": true,
+                    "final": false,
+                    "index": 8,
+                    "name": "version",
+                    "read": "version",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 9,
+                    "name": "eqBass",
+                    "notify": "eqBassChanged",
+                    "read": "eqBass",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setEqBass"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 10,
+                    "name": "eqMid",
+                    "notify": "eqMidChanged",
+                    "read": "eqMid",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setEqMid"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 11,
+                    "name": "eqTreble",
+                    "notify": "eqTrebleChanged",
+                    "read": "eqTreble",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setEqTreble"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 12,
+                    "name": "faderX",
+                    "notify": "faderXChanged",
+                    "read": "faderX",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "double",
+                    "user": false,
+                    "write": "setFaderX"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 13,
+                    "name": "faderY",
+                    "notify": "faderYChanged",
+                    "read": "faderY",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "double",
+                    "user": false,
+                    "write": "setFaderY"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 14,
+                    "name": "lightsMode",
+                    "notify": "lightsModeChanged",
+                    "read": "lightsMode",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setLightsMode"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 15,
+                    "name": "childLock",
+                    "notify": "childLockChanged",
+                    "read": "childLock",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setChildLock"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 16,
+                    "name": "autoFoldMirrors",
+                    "notify": "autoFoldMirrorsChanged",
+                    "read": "autoFoldMirrors",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setAutoFoldMirrors"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 17,
+                    "name": "rainSensingWipers",
+                    "notify": "rainSensingWipersChanged",
+                    "read": "rainSensingWipers",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setRainSensingWipers"
+                }
+            ],
+            "qualifiedClassName": "SystemSettings",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "darkMode",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "darkModeChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "wifiEnabled",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "wifiEnabledChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "bluetoothEnabled",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "bluetoothEnabledChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "masterVolume",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "masterVolumeChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "brightness",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 4,
+                    "name": "brightnessChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "walkAwayLock",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 5,
+                    "name": "walkAwayLockChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "useMetric",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 6,
+                    "name": "useMetricChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "language",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 7,
+                    "name": "languageChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "eqBass",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 8,
+                    "name": "eqBassChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "eqMid",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 9,
+                    "name": "eqMidChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "eqTreble",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 10,
+                    "name": "eqTrebleChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "faderX",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 11,
+                    "name": "faderXChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "faderY",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 12,
+                    "name": "faderYChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "lightsMode",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 13,
+                    "name": "lightsModeChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "childLock",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 14,
+                    "name": "childLockChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "autoFoldMirrors",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 15,
+                    "name": "autoFoldMirrorsChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "rainSensingWipers",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 16,
+                    "name": "rainSensingWipersChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "SystemSettings.h",
+    "outputRevision": 69
+}

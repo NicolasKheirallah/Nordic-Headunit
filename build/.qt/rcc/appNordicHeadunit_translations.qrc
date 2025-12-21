@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="/i18n">
+    <file alias="nordic_en_US.qm">/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/nordic_en_US.qm</file>
+    <file alias="nordic_sv_SE.qm">/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/nordic_sv_SE.qm</file>
+    <file alias="nordic_de_DE.qm">/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/nordic_de_DE.qm</file>
+  </qresource>
+</RCC>
+

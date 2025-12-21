@@ -1,0 +1,92 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessful": false,
+                        "column": 19,
+                        "durationMicroseconds": 164,
+                        "errorMessage": "Cannot access value for name SystemSettings",
+                        "functionName": "subtitle",
+                        "line": 12
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 18,
+                        "durationMicroseconds": 89,
+                        "errorMessage": "Cannot access value for name SystemSettings",
+                        "functionName": "checked",
+                        "line": 13
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 20,
+                        "durationMicroseconds": 68,
+                        "errorMessage": "Cannot access value for name SystemSettings",
+                        "functionName": "onToggled",
+                        "line": 14
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 16,
+                        "durationMicroseconds": 128,
+                        "errorMessage": "Cannot access value for name SystemSettings",
+                        "functionName": "value",
+                        "line": 19
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 18,
+                        "durationMicroseconds": 102,
+                        "errorMessage": "Cannot access value for name SystemSettings",
+                        "functionName": "onMoved",
+                        "line": 24
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 18,
+                        "durationMicroseconds": 29,
+                        "errorMessage": "",
+                        "functionName": "onMoved",
+                        "line": 24
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 19,
+                        "durationMicroseconds": 92,
+                        "errorMessage": "Cannot access value for name SystemSettings",
+                        "functionName": "subtitle",
+                        "line": 29
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 18,
+                        "durationMicroseconds": 82,
+                        "errorMessage": "Cannot access value for name SystemSettings",
+                        "functionName": "checked",
+                        "line": 30
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 20,
+                        "durationMicroseconds": 71,
+                        "errorMessage": "Cannot access value for name SystemSettings",
+                        "functionName": "onToggled",
+                        "line": 31
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 20,
+                        "durationMicroseconds": 17,
+                        "errorMessage": "",
+                        "functionName": "onToggled",
+                        "line": 31
+                    }
+                ],
+                "filePath": "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Pages/Settings/DisplaySettings.qml"
+            }
+        ],
+        "moduleId": "NordicHeadunit(appNordicHeadunit)"
+    }
+]
