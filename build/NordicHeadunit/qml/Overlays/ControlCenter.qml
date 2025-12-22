@@ -72,9 +72,9 @@ Item {
             // ═══════════════════════════════════════════════════════════════
             GridLayout {
                 Layout.fillWidth: true
-                columns: 3
-                rowSpacing: 8
-                columnSpacing: 8
+                columns: 2
+                rowSpacing: 16
+                columnSpacing: 16
                 
                 // Toggle component
                 component QuickToggle : Rectangle {
@@ -165,21 +165,36 @@ Item {
                     onClicked: SystemSettings.darkMode = !SystemSettings.darkMode
                 }
                 
-                // Climate Auto
-                QuickToggle {
-                    label: "Climate"
-                    icon: "qrc:/qt/qml/NordicHeadunit/assets/icons/fan.svg"
-                    active: VehicleService.autoClimate
-                    onClicked: VehicleService.autoClimate = !VehicleService.autoClimate
+            // Volume Slider
+            RowLayout {
+                Layout.columnSpan: 2
+                Layout.fillWidth: true
+                spacing: 12
+                
+                NordicIcon {
+                    source: SystemSettings.masterVolume === 0 
+                        ? "qrc:/qt/qml/NordicHeadunit/assets/icons/volume_off.svg" 
+                        : "qrc:/qt/qml/NordicHeadunit/assets/icons/volume_up.svg"
+                    size: NordicIcon.Size.MD
+                    color: NordicTheme.colors.text.secondary
                 }
                 
-                // Defrost
-                QuickToggle {
-                    label: "Defrost"
-                    icon: "qrc:/qt/qml/NordicHeadunit/assets/icons/windscreen_defrost.svg"
-                    active: VehicleService.defrostEnabled
-                    onClicked: VehicleService.defrostEnabled = !VehicleService.defrostEnabled
+                NordicSlider {
+                    Layout.fillWidth: true
+                    from: 0
+                    to: 100
+                    value: SystemSettings.masterVolume
+                    onMoved: SystemSettings.masterVolume = value
                 }
+                
+                Text {
+                    text: SystemSettings.masterVolume + "%"
+                    font.pixelSize: 14
+                    font.family: "Helvetica"
+                    color: NordicTheme.colors.text.primary
+                    Layout.preferredWidth: 35
+                }
+            }
             }
             
             // Separator

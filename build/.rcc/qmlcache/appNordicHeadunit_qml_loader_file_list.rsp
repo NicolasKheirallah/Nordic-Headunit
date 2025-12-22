@@ -44,6 +44,7 @@
 /qt/qml/NordicHeadunit/qml/Overlays/OverlayManager.qml
 /qt/qml/NordicHeadunit/qml/Components/NordicButton.qml
 /qt/qml/NordicHeadunit/qml/Components/NordicCard.qml
+/qt/qml/NordicHeadunit/qml/Components/NordicGlass.qml
 /qt/qml/NordicHeadunit/qml/Components/NordicCircularGauge.qml
 /qt/qml/NordicHeadunit/qml/Components/NordicIcon.qml
 /qt/qml/NordicHeadunit/qml/Components/NordicListItem.qml
@@ -57,6 +58,11 @@
 /qt/qml/NordicHeadunit/qml/Components/DraggableWidget.qml
 /qt/qml/NordicHeadunit/qml/Components/WidgetGrid.qml
 /qt/qml/NordicHeadunit/qml/Components/MediaControlButton.qml
+/qt/qml/NordicHeadunit/qml/Components/Maps/MapSurface.qml
+/qt/qml/NordicHeadunit/qml/Components/Maps/GuidanceBanner.qml
+/qt/qml/NordicHeadunit/qml/Components/Maps/SearchSheet.qml
+/qt/qml/NordicHeadunit/qml/Components/Maps/RoutePreviewSheet.qml
+/qt/qml/NordicHeadunit/qml/Components/Maps/FloatingMapControls.qml
 /qt/qml/NordicHeadunit/qml/Widgets/NavigationWidget.qml
 /qt/qml/NordicHeadunit/qml/Widgets/WeatherWidget.qml
 /qt/qml/NordicHeadunit/qml/Widgets/NowPlayingWidget.qml
@@ -87,6 +93,7 @@
 /qt/qml/NordicHeadunit/qml/Pages/Settings/SystemSettingsPage.qml
 /qt/qml/NordicHeadunit/qml/Pages/Settings/SettingsSplitLayout.qml
 /qt/qml/NordicHeadunit/qml/Pages/Settings/SettingsSidebar.qml
+/qt/qml/NordicHeadunit/qml/Pages/Settings/MapSettings.qml
 /qt/qml/NordicHeadunit/qml/Pages/Settings/NavigationSettings.qml
 /qt/qml/NordicHeadunit/qml/Pages/Settings/PrivacySettings.qml
 /qt/qml/NordicHeadunit/qml/Pages/Settings/DateTimeSettings.qml

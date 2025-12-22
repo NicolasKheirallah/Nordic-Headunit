@@ -83,6 +83,10 @@ appnordicheadunit_qmltyperegistrations.cpp: /opt/homebrew/opt/qt@6/share/qt/meta
 appnordicheadunit_qmltyperegistrations.cpp: /opt/homebrew/opt/qt@6/share/qt/metatypes/qt6opengl_release_metatypes.json
 appnordicheadunit_qmltyperegistrations.cpp: /opt/homebrew/opt/qt@6/share/qt/metatypes/qt6quickcontrols2_release_metatypes.json
 appnordicheadunit_qmltyperegistrations.cpp: /opt/homebrew/opt/qt@6/share/qt/metatypes/qt6quickeffects_release_metatypes.json
+appnordicheadunit_qmltyperegistrations.cpp: /opt/homebrew/opt/qt@6/share/qt/metatypes/qt6location_release_metatypes.json
+appnordicheadunit_qmltyperegistrations.cpp: /opt/homebrew/opt/qt@6/share/qt/metatypes/qt6positioning_release_metatypes.json
+appnordicheadunit_qmltyperegistrations.cpp: /opt/homebrew/opt/qt@6/share/qt/metatypes/qt6positioningquick_release_metatypes.json
+appnordicheadunit_qmltyperegistrations.cpp: /opt/homebrew/opt/qt@6/share/qt/metatypes/qt6quickshapesprivate_release_metatypes.json
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic QML type registration for target appNordicHeadunit"
 	/opt/homebrew/opt/qt@6/share/qt/libexec/qmltyperegistrar --generate-qmltypes=/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/NordicHeadunit/appNordicHeadunit.qmltypes --import-name=NordicHeadunit --major-version=1 --minor-version=0 @/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/qmltypes/appNordicHeadunit_foreign_types.txt -o /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/appnordicheadunit_qmltyperegistrations.cpp /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/meta_types/qt6appnordicheadunit_metatypes.json
 	/opt/homebrew/bin/cmake -E make_directory /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/.qt/qmltypes

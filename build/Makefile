@@ -605,6 +605,126 @@ build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Equalizer_qml.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/appNordicHeadunit.dir/build.make CMakeFiles/appNordicHeadunit.dir/build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Equalizer_qml.cpp.s
 .PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Equalizer_qml.cpp.s
 
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/FloatingMapControls_qml.o: build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/FloatingMapControls_qml.cpp.o
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/FloatingMapControls_qml.o
+
+# target to build an object file
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/FloatingMapControls_qml.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/appNordicHeadunit.dir/build.make CMakeFiles/appNordicHeadunit.dir/build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/FloatingMapControls_qml.cpp.o
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/FloatingMapControls_qml.cpp.o
+
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/FloatingMapControls_qml.i: build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/FloatingMapControls_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/FloatingMapControls_qml.i
+
+# target to preprocess a source file
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/FloatingMapControls_qml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/appNordicHeadunit.dir/build.make CMakeFiles/appNordicHeadunit.dir/build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/FloatingMapControls_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/FloatingMapControls_qml.cpp.i
+
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/FloatingMapControls_qml.s: build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/FloatingMapControls_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/FloatingMapControls_qml.s
+
+# target to generate assembly for a file
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/FloatingMapControls_qml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/appNordicHeadunit.dir/build.make CMakeFiles/appNordicHeadunit.dir/build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/FloatingMapControls_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/FloatingMapControls_qml.cpp.s
+
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/GuidanceBanner_qml.o: build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/GuidanceBanner_qml.cpp.o
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/GuidanceBanner_qml.o
+
+# target to build an object file
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/GuidanceBanner_qml.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/appNordicHeadunit.dir/build.make CMakeFiles/appNordicHeadunit.dir/build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/GuidanceBanner_qml.cpp.o
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/GuidanceBanner_qml.cpp.o
+
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/GuidanceBanner_qml.i: build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/GuidanceBanner_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/GuidanceBanner_qml.i
+
+# target to preprocess a source file
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/GuidanceBanner_qml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/appNordicHeadunit.dir/build.make CMakeFiles/appNordicHeadunit.dir/build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/GuidanceBanner_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/GuidanceBanner_qml.cpp.i
+
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/GuidanceBanner_qml.s: build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/GuidanceBanner_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/GuidanceBanner_qml.s
+
+# target to generate assembly for a file
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/GuidanceBanner_qml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/appNordicHeadunit.dir/build.make CMakeFiles/appNordicHeadunit.dir/build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/GuidanceBanner_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/GuidanceBanner_qml.cpp.s
+
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/MapSurface_qml.o: build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/MapSurface_qml.cpp.o
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/MapSurface_qml.o
+
+# target to build an object file
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/MapSurface_qml.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/appNordicHeadunit.dir/build.make CMakeFiles/appNordicHeadunit.dir/build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/MapSurface_qml.cpp.o
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/MapSurface_qml.cpp.o
+
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/MapSurface_qml.i: build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/MapSurface_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/MapSurface_qml.i
+
+# target to preprocess a source file
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/MapSurface_qml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/appNordicHeadunit.dir/build.make CMakeFiles/appNordicHeadunit.dir/build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/MapSurface_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/MapSurface_qml.cpp.i
+
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/MapSurface_qml.s: build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/MapSurface_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/MapSurface_qml.s
+
+# target to generate assembly for a file
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/MapSurface_qml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/appNordicHeadunit.dir/build.make CMakeFiles/appNordicHeadunit.dir/build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/MapSurface_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/MapSurface_qml.cpp.s
+
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/RoutePreviewSheet_qml.o: build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/RoutePreviewSheet_qml.cpp.o
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/RoutePreviewSheet_qml.o
+
+# target to build an object file
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/RoutePreviewSheet_qml.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/appNordicHeadunit.dir/build.make CMakeFiles/appNordicHeadunit.dir/build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/RoutePreviewSheet_qml.cpp.o
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/RoutePreviewSheet_qml.cpp.o
+
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/RoutePreviewSheet_qml.i: build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/RoutePreviewSheet_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/RoutePreviewSheet_qml.i
+
+# target to preprocess a source file
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/RoutePreviewSheet_qml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/appNordicHeadunit.dir/build.make CMakeFiles/appNordicHeadunit.dir/build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/RoutePreviewSheet_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/RoutePreviewSheet_qml.cpp.i
+
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/RoutePreviewSheet_qml.s: build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/RoutePreviewSheet_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/RoutePreviewSheet_qml.s
+
+# target to generate assembly for a file
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/RoutePreviewSheet_qml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/appNordicHeadunit.dir/build.make CMakeFiles/appNordicHeadunit.dir/build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/RoutePreviewSheet_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/RoutePreviewSheet_qml.cpp.s
+
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/SearchSheet_qml.o: build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/SearchSheet_qml.cpp.o
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/SearchSheet_qml.o
+
+# target to build an object file
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/SearchSheet_qml.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/appNordicHeadunit.dir/build.make CMakeFiles/appNordicHeadunit.dir/build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/SearchSheet_qml.cpp.o
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/SearchSheet_qml.cpp.o
+
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/SearchSheet_qml.i: build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/SearchSheet_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/SearchSheet_qml.i
+
+# target to preprocess a source file
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/SearchSheet_qml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/appNordicHeadunit.dir/build.make CMakeFiles/appNordicHeadunit.dir/build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/SearchSheet_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/SearchSheet_qml.cpp.i
+
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/SearchSheet_qml.s: build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/SearchSheet_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/SearchSheet_qml.s
+
+# target to generate assembly for a file
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/SearchSheet_qml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/appNordicHeadunit.dir/build.make CMakeFiles/appNordicHeadunit.dir/build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/SearchSheet_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/SearchSheet_qml.cpp.s
+
 build/.rcc/qmlcache/appNordicHeadunit_qml/Components/MediaControlButton_qml.o: build/.rcc/qmlcache/appNordicHeadunit_qml/Components/MediaControlButton_qml.cpp.o
 .PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/MediaControlButton_qml.o
 
@@ -700,6 +820,30 @@ build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicCircularGauge_qml.s: 
 build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicCircularGauge_qml.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/appNordicHeadunit.dir/build.make CMakeFiles/appNordicHeadunit.dir/build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicCircularGauge_qml.cpp.s
 .PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicCircularGauge_qml.cpp.s
+
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicGlass_qml.o: build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicGlass_qml.cpp.o
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicGlass_qml.o
+
+# target to build an object file
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicGlass_qml.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/appNordicHeadunit.dir/build.make CMakeFiles/appNordicHeadunit.dir/build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicGlass_qml.cpp.o
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicGlass_qml.cpp.o
+
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicGlass_qml.i: build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicGlass_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicGlass_qml.i
+
+# target to preprocess a source file
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicGlass_qml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/appNordicHeadunit.dir/build.make CMakeFiles/appNordicHeadunit.dir/build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicGlass_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicGlass_qml.cpp.i
+
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicGlass_qml.s: build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicGlass_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicGlass_qml.s
+
+# target to generate assembly for a file
+build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicGlass_qml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/appNordicHeadunit.dir/build.make CMakeFiles/appNordicHeadunit.dir/build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicGlass_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicGlass_qml.cpp.s
 
 build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicIcon_qml.o: build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicIcon_qml.cpp.o
 .PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicIcon_qml.o
@@ -1925,6 +2069,30 @@ build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/LanguageSettings_qml.cp
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/appNordicHeadunit.dir/build.make CMakeFiles/appNordicHeadunit.dir/build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/LanguageSettings_qml.cpp.s
 .PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/LanguageSettings_qml.cpp.s
 
+build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/MapSettings_qml.o: build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/MapSettings_qml.cpp.o
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/MapSettings_qml.o
+
+# target to build an object file
+build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/MapSettings_qml.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/appNordicHeadunit.dir/build.make CMakeFiles/appNordicHeadunit.dir/build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/MapSettings_qml.cpp.o
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/MapSettings_qml.cpp.o
+
+build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/MapSettings_qml.i: build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/MapSettings_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/MapSettings_qml.i
+
+# target to preprocess a source file
+build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/MapSettings_qml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/appNordicHeadunit.dir/build.make CMakeFiles/appNordicHeadunit.dir/build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/MapSettings_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/MapSettings_qml.cpp.i
+
+build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/MapSettings_qml.s: build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/MapSettings_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/MapSettings_qml.s
+
+# target to generate assembly for a file
+build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/MapSettings_qml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/appNordicHeadunit.dir/build.make CMakeFiles/appNordicHeadunit.dir/build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/MapSettings_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/MapSettings_qml.cpp.s
+
 build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/NavigationSettings_qml.o: build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/NavigationSettings_qml.cpp.o
 .PHONY : build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/NavigationSettings_qml.o
 
@@ -2893,6 +3061,21 @@ help:
 	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Equalizer_qml.o"
 	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Equalizer_qml.i"
 	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Equalizer_qml.s"
+	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/FloatingMapControls_qml.o"
+	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/FloatingMapControls_qml.i"
+	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/FloatingMapControls_qml.s"
+	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/GuidanceBanner_qml.o"
+	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/GuidanceBanner_qml.i"
+	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/GuidanceBanner_qml.s"
+	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/MapSurface_qml.o"
+	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/MapSurface_qml.i"
+	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/MapSurface_qml.s"
+	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/RoutePreviewSheet_qml.o"
+	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/RoutePreviewSheet_qml.i"
+	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/RoutePreviewSheet_qml.s"
+	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/SearchSheet_qml.o"
+	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/SearchSheet_qml.i"
+	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/SearchSheet_qml.s"
 	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Components/MediaControlButton_qml.o"
 	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Components/MediaControlButton_qml.i"
 	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Components/MediaControlButton_qml.s"
@@ -2905,6 +3088,9 @@ help:
 	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicCircularGauge_qml.o"
 	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicCircularGauge_qml.i"
 	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicCircularGauge_qml.s"
+	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicGlass_qml.o"
+	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicGlass_qml.i"
+	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicGlass_qml.s"
 	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicIcon_qml.o"
 	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicIcon_qml.i"
 	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicIcon_qml.s"
@@ -3058,6 +3244,9 @@ help:
 	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/LanguageSettings_qml.o"
 	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/LanguageSettings_qml.i"
 	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/LanguageSettings_qml.s"
+	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/MapSettings_qml.o"
+	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/MapSettings_qml.i"
+	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/MapSettings_qml.s"
 	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/NavigationSettings_qml.o"
 	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/NavigationSettings_qml.i"
 	@echo "... build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/NavigationSettings_qml.s"

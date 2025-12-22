@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 52,
+                        "durationMicroseconds": 48,
                         "errorMessage": "Cannot access value for name depth",
                         "functionName": "navigateBack",
                         "line": 15
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 78,
-                        "durationMicroseconds": 51,
+                        "durationMicroseconds": 39,
                         "errorMessage": "Cannot access value for name NordicTheme",
                         "functionName": "duration",
                         "line": 40
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 125,
-                        "durationMicroseconds": 30,
+                        "durationMicroseconds": 23,
                         "errorMessage": "Cannot access value for name Easing",
                         "functionName": "type",
                         "line": 40
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 52,
-                        "durationMicroseconds": 8,
+                        "durationMicroseconds": 6,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "from",
                         "line": 41
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 81,
-                        "durationMicroseconds": 26,
+                        "durationMicroseconds": 23,
                         "errorMessage": "Cannot access value for name NordicTheme",
                         "functionName": "duration",
                         "line": 41
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 88,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 20,
                         "errorMessage": "Cannot access value for name NordicTheme",
                         "functionName": "duration",
                         "line": 48
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 80,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 22,
                         "errorMessage": "Cannot access value for name NordicTheme",
                         "functionName": "duration",
                         "line": 54
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 127,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 16,
                         "errorMessage": "Cannot access value for name Easing",
                         "functionName": "type",
                         "line": 54
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 88,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 21,
                         "errorMessage": "Cannot access value for name NordicTheme",
                         "functionName": "duration",
                         "line": 55
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 125,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 16,
                         "errorMessage": "Cannot access value for name Easing",
                         "functionName": "type",
                         "line": 61
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 81,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 21,
                         "errorMessage": "Cannot access value for name NordicTheme",
                         "functionName": "duration",
                         "line": 62
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 128,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 16,
                         "errorMessage": "Cannot access value for name Easing",
                         "functionName": "type",
                         "line": 62
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 78,
-                        "durationMicroseconds": 25,
+                        "durationMicroseconds": 21,
                         "errorMessage": "Cannot access value for name NordicTheme",
                         "functionName": "duration",
                         "line": 68
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 78,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 20,
                         "errorMessage": "Cannot access value for name NordicTheme",
                         "functionName": "duration",
                         "line": 74

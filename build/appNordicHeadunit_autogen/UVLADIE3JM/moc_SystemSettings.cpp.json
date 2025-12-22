@@ -2,6 +2,19 @@
     "classes": [
         {
             "className": "SystemSettings",
+            "enums": [
+                {
+                    "isClass": false,
+                    "isFlag": false,
+                    "name": "MapStyle",
+                    "values": [
+                        "Standard",
+                        "Dark",
+                        "Satellite",
+                        "Hybrid"
+                    ]
+                }
+            ],
             "lineNumber": 9,
             "methods": [
                 {
@@ -20,7 +33,7 @@
                             "type": "int"
                         }
                     ],
-                    "index": 22,
+                    "index": 24,
                     "name": "setDate",
                     "returnType": "void"
                 },
@@ -36,13 +49,13 @@
                             "type": "int"
                         }
                     ],
-                    "index": 23,
+                    "index": 25,
                     "name": "setTime",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
-                    "index": 24,
+                    "index": 26,
                     "name": "factoryReset",
                     "returnType": "void"
                 }
@@ -403,6 +416,36 @@
                     "stored": true,
                     "type": "QDateTime",
                     "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 24,
+                    "name": "mapStyle",
+                    "notify": "mapStyleChanged",
+                    "read": "mapStyle",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "MapStyle",
+                    "user": false,
+                    "write": "setMapStyle"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 25,
+                    "name": "mapOrientation",
+                    "notify": "mapOrientationChanged",
+                    "read": "mapOrientation",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setMapOrientation"
                 }
             ],
             "qualifiedClassName": "SystemSettings",
@@ -663,6 +706,30 @@
                     "access": "public",
                     "index": 21,
                     "name": "currentDateTimeChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "mapStyle",
+                            "type": "SystemSettings::MapStyle"
+                        }
+                    ],
+                    "index": 22,
+                    "name": "mapStyleChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "mapOrientation",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 23,
+                    "name": "mapOrientationChanged",
                     "returnType": "void"
                 }
             ],

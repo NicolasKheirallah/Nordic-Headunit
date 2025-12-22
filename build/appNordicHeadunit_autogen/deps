@@ -806,18 +806,26 @@ appNordicHeadunit_autogen/timestamp: \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/QDateTime \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/QDebug \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/QDir \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/QFlags \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/QIODevice \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/QJsonArray \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/QJsonDocument \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/QJsonObject \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/QList \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/QLoggingCategory \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/QMap \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/QMetaType \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/QMutex \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/QObject \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/QRect \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/QSettings \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/QSharedDataPointer \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/QSize \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/QSizeF \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/QString \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/QTimer \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/QTranslator \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/QUrl \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/QVariant \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/QVariantList \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/QVariantMap \
@@ -828,6 +836,7 @@ appNordicHeadunit_autogen/timestamp: \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/q20type_traits.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/q20utility.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/q23utility.h \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/q26numeric.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qabstracteventdispatcher.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qalgorithms.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qanystringview.h \
@@ -845,6 +854,8 @@ appNordicHeadunit_autogen/timestamp: \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qbytearraylist.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qbytearrayview.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qcalendar.h \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qcborcommon.h \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qcborvalue.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qchar.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qcompare.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qcompare_impl.h \
@@ -859,6 +870,7 @@ appNordicHeadunit_autogen/timestamp: \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qcoreapplication.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qcoreapplication_platform.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qcoreevent.h \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qcryptographichash.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qdarwinhelpers.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qdatastream.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qdatetime.h \
@@ -867,6 +879,7 @@ appNordicHeadunit_autogen/timestamp: \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qdir.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qdirlisting.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qelapsedtimer.h \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qendian.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qeventloop.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qexceptionhandling.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qfile.h \
@@ -886,6 +899,11 @@ appNordicHeadunit_autogen/timestamp: \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qiodevicebase.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qiterable.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qiterator.h \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qjsonarray.h \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qjsondocument.h \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qjsonobject.h \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qjsonparseerror.h \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qjsonvalue.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qlatin1stringview.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qline.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qlist.h \
@@ -915,6 +933,7 @@ appNordicHeadunit_autogen/timestamp: \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qprocessordetection.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qrect.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qrefcount.h \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qregularexpression.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qscopedpointer.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qscopeguard.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qset.h \
@@ -969,6 +988,7 @@ appNordicHeadunit_autogen/timestamp: \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qtypes.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qurl.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qutf8stringview.h \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/quuid.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qvariant.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qvariantlist.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtCore.framework/Versions/A/Headers/qvariantmap.h \
@@ -992,6 +1012,24 @@ appNordicHeadunit_autogen/timestamp: \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtGui.framework/Versions/A/Headers/qtguiglobal.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtGui.framework/Versions/A/Headers/qtransform.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtGui.framework/Versions/A/Headers/qwindowdefs.h \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtNetwork.framework/Versions/A/Headers/QNetworkAccessManager \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtNetwork.framework/Versions/A/Headers/QNetworkReply \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtNetwork.framework/Versions/A/Headers/QNetworkRequest \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtNetwork.framework/Versions/A/Headers/QSslConfiguration \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtNetwork.framework/Versions/A/Headers/QSslPreSharedKeyAuthenticator \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtNetwork.framework/Versions/A/Headers/qabstractsocket.h \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtNetwork.framework/Versions/A/Headers/qhostaddress.h \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtNetwork.framework/Versions/A/Headers/qhttpheaders.h \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtNetwork.framework/Versions/A/Headers/qnetworkaccessmanager.h \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtNetwork.framework/Versions/A/Headers/qnetworkreply.h \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtNetwork.framework/Versions/A/Headers/qnetworkrequest.h \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtNetwork.framework/Versions/A/Headers/qssl.h \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtNetwork.framework/Versions/A/Headers/qsslcertificate.h \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtNetwork.framework/Versions/A/Headers/qsslconfiguration.h \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtNetwork.framework/Versions/A/Headers/qsslerror.h \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtNetwork.framework/Versions/A/Headers/qsslpresharedkeyauthenticator.h \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtNetwork.framework/Versions/A/Headers/qsslsocket.h \
+	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtNetwork.framework/Versions/A/Headers/qtcpsocket.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtNetwork.framework/Versions/A/Headers/qtnetwork-config.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtNetwork.framework/Versions/A/Headers/qtnetworkexports.h \
 	/opt/homebrew/Cellar/qtbase/6.9.3_1/lib/QtNetwork.framework/Versions/A/Headers/qtnetworkglobal.h \
@@ -1015,6 +1053,10 @@ appNordicHeadunit_autogen/timestamp: \
 	/opt/homebrew/Cellar/qtdeclarative/6.9.3/lib/QtQml.framework/Versions/A/Headers/qtqml-config.h \
 	/opt/homebrew/Cellar/qtdeclarative/6.9.3/lib/QtQml.framework/Versions/A/Headers/qtqmlexports.h \
 	/opt/homebrew/Cellar/qtdeclarative/6.9.3/lib/QtQml.framework/Versions/A/Headers/qtqmlglobal.h \
+	/opt/homebrew/Cellar/qtpositioning/6.9.3/lib/QtPositioning.framework/Versions/A/Headers/QGeoCoordinate \
+	/opt/homebrew/Cellar/qtpositioning/6.9.3/lib/QtPositioning.framework/Versions/A/Headers/qgeocoordinate.h \
+	/opt/homebrew/Cellar/qtpositioning/6.9.3/lib/QtPositioning.framework/Versions/A/Headers/qpositioningglobal.h \
+	/opt/homebrew/Cellar/qtpositioning/6.9.3/lib/QtPositioning.framework/Versions/A/Headers/qtpositioningexports.h \
 	/opt/homebrew/lib/cmake/Qt6/FindWrapAtomic.cmake \
 	/opt/homebrew/lib/cmake/Qt6/FindWrapOpenGL.cmake \
 	/opt/homebrew/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake \
@@ -1272,6 +1314,30 @@ appNordicHeadunit_autogen/timestamp: \
 	/opt/homebrew/opt/qt@6/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsTargets-release.cmake \
 	/opt/homebrew/opt/qt@6/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsTargets.cmake \
 	/opt/homebrew/opt/qt@6/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsVersionlessTargets.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Location/Qt6LocationAdditionalTargetInfo.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Location/Qt6LocationConfig.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Location/Qt6LocationConfigVersion.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Location/Qt6LocationConfigVersionImpl.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Location/Qt6LocationDependencies.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Location/Qt6LocationPlugins.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Location/Qt6LocationTargets-release.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Location/Qt6LocationTargets.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Location/Qt6LocationVersionlessAliasTargets.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Location/Qt6QGeoServiceProviderFactoryItemsOverlayPluginAdditionalTargetInfo.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Location/Qt6QGeoServiceProviderFactoryItemsOverlayPluginConfig.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Location/Qt6QGeoServiceProviderFactoryItemsOverlayPluginTargets-release.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Location/Qt6QGeoServiceProviderFactoryItemsOverlayPluginTargets.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Location/Qt6QGeoServiceProviderFactoryOsmPluginAdditionalTargetInfo.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Location/Qt6QGeoServiceProviderFactoryOsmPluginConfig.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Location/Qt6QGeoServiceProviderFactoryOsmPluginTargets-release.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Location/Qt6QGeoServiceProviderFactoryOsmPluginTargets.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6LocationPrivate/Qt6LocationPrivateAdditionalTargetInfo.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6LocationPrivate/Qt6LocationPrivateConfig.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6LocationPrivate/Qt6LocationPrivateConfigVersion.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6LocationPrivate/Qt6LocationPrivateConfigVersionImpl.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6LocationPrivate/Qt6LocationPrivateDependencies.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6LocationPrivate/Qt6LocationPrivateTargets.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6LocationPrivate/Qt6LocationPrivateVersionlessAliasTargets.cmake \
 	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Network/Qt6NetworkAdditionalTargetInfo.cmake \
 	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake \
 	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Network/Qt6NetworkConfigVersion.cmake \
@@ -1323,6 +1389,49 @@ appNordicHeadunit_autogen/timestamp: \
 	/opt/homebrew/opt/qt@6/lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateDependencies.cmake \
 	/opt/homebrew/opt/qt@6/lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateTargets.cmake \
 	/opt/homebrew/opt/qt@6/lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateVersionlessAliasTargets.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Positioning/Qt6PositioningAdditionalTargetInfo.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Positioning/Qt6PositioningConfig.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Positioning/Qt6PositioningConfigVersion.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Positioning/Qt6PositioningConfigVersionImpl.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Positioning/Qt6PositioningDependencies.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Positioning/Qt6PositioningPlugins.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Positioning/Qt6PositioningTargets-release.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Positioning/Qt6PositioningTargets.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Positioning/Qt6PositioningVersionlessAliasTargets.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryCLPluginAdditionalTargetInfo.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryCLPluginConfig.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryCLPluginTargets-release.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryCLPluginTargets.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryNmeaPluginAdditionalTargetInfo.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryNmeaPluginConfig.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryNmeaPluginTargets-release.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryNmeaPluginTargets.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryPollPluginAdditionalTargetInfo.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryPollPluginConfig.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryPollPluginTargets-release.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryPollPluginTargets.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningPrivate/Qt6PositioningPrivateAdditionalTargetInfo.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningPrivate/Qt6PositioningPrivateConfig.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningPrivate/Qt6PositioningPrivateConfigVersion.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningPrivate/Qt6PositioningPrivateConfigVersionImpl.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningPrivate/Qt6PositioningPrivateDependencies.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningPrivate/Qt6PositioningPrivateTargets.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningPrivate/Qt6PositioningPrivateVersionlessAliasTargets.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningQuick/Qt6PositioningQuickAdditionalTargetInfo.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningQuick/Qt6PositioningQuickConfig.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningQuick/Qt6PositioningQuickConfigVersion.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningQuick/Qt6PositioningQuickConfigVersionImpl.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningQuick/Qt6PositioningQuickDependencies.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningQuick/Qt6PositioningQuickTargets-release.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningQuick/Qt6PositioningQuickTargets.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningQuick/Qt6PositioningQuickVersionlessAliasTargets.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningQuickPrivate/Qt6PositioningQuickPrivateAdditionalTargetInfo.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningQuickPrivate/Qt6PositioningQuickPrivateConfig.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningQuickPrivate/Qt6PositioningQuickPrivateConfigVersion.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningQuickPrivate/Qt6PositioningQuickPrivateConfigVersionImpl.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningQuickPrivate/Qt6PositioningQuickPrivateDependencies.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningQuickPrivate/Qt6PositioningQuickPrivateTargets.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningQuickPrivate/Qt6PositioningQuickPrivateVersionlessAliasTargets.cmake \
 	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Qml/QmlPlugins/Qt6DataVisualizationQmlpluginAdditionalTargetInfo.cmake \
 	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Qml/QmlPlugins/Qt6DataVisualizationQmlpluginConfig.cmake \
 	/opt/homebrew/opt/qt@6/lib/cmake/Qt6Qml/QmlPlugins/Qt6DataVisualizationQmlpluginTargets-release.cmake \
@@ -1937,6 +2046,14 @@ appNordicHeadunit_autogen/timestamp: \
 	/opt/homebrew/opt/qt@6/lib/cmake/Qt6QuickPrivate/Qt6QuickPrivateDependencies.cmake \
 	/opt/homebrew/opt/qt@6/lib/cmake/Qt6QuickPrivate/Qt6QuickPrivateTargets.cmake \
 	/opt/homebrew/opt/qt@6/lib/cmake/Qt6QuickPrivate/Qt6QuickPrivateVersionlessAliasTargets.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6QuickShapesPrivate/Qt6QuickShapesPrivateAdditionalTargetInfo.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6QuickShapesPrivate/Qt6QuickShapesPrivateConfig.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6QuickShapesPrivate/Qt6QuickShapesPrivateConfigVersion.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6QuickShapesPrivate/Qt6QuickShapesPrivateConfigVersionImpl.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6QuickShapesPrivate/Qt6QuickShapesPrivateDependencies.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6QuickShapesPrivate/Qt6QuickShapesPrivateTargets-release.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6QuickShapesPrivate/Qt6QuickShapesPrivateTargets.cmake \
+	/opt/homebrew/opt/qt@6/lib/cmake/Qt6QuickShapesPrivate/Qt6QuickShapesPrivateVersionlessAliasTargets.cmake \
 	/opt/homebrew/opt/qt@6/lib/cmake/Qt6QuickTemplates2/Qt6QuickTemplates2AdditionalTargetInfo.cmake \
 	/opt/homebrew/opt/qt@6/lib/cmake/Qt6QuickTemplates2/Qt6QuickTemplates2Config.cmake \
 	/opt/homebrew/opt/qt@6/lib/cmake/Qt6QuickTemplates2/Qt6QuickTemplates2ConfigVersion.cmake \

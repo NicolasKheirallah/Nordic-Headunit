@@ -39,6 +39,7 @@ AudioPolicy 1.0 qml/Services/AudioPolicy.qml
 OverlayManager 1.0 qml/Overlays/OverlayManager.qml
 NordicButton 1.0 qml/Components/NordicButton.qml
 NordicCard 1.0 qml/Components/NordicCard.qml
+NordicGlass 1.0 qml/Components/NordicGlass.qml
 NordicCircularGauge 1.0 qml/Components/NordicCircularGauge.qml
 NordicIcon 1.0 qml/Components/NordicIcon.qml
 NordicListItem 1.0 qml/Components/NordicListItem.qml
@@ -52,6 +53,11 @@ StatusIndicator 1.0 qml/Components/StatusIndicator.qml
 DraggableWidget 1.0 qml/Components/DraggableWidget.qml
 WidgetGrid 1.0 qml/Components/WidgetGrid.qml
 MediaControlButton 1.0 qml/Components/MediaControlButton.qml
+MapSurface 1.0 qml/Components/Maps/MapSurface.qml
+GuidanceBanner 1.0 qml/Components/Maps/GuidanceBanner.qml
+SearchSheet 1.0 qml/Components/Maps/SearchSheet.qml
+RoutePreviewSheet 1.0 qml/Components/Maps/RoutePreviewSheet.qml
+FloatingMapControls 1.0 qml/Components/Maps/FloatingMapControls.qml
 NavigationWidget 1.0 qml/Widgets/NavigationWidget.qml
 WeatherWidget 1.0 qml/Widgets/WeatherWidget.qml
 NowPlayingWidget 1.0 qml/Widgets/NowPlayingWidget.qml
@@ -82,6 +88,7 @@ VehicleSettings 1.0 qml/Pages/Settings/VehicleSettings.qml
 SystemSettingsPage 1.0 qml/Pages/Settings/SystemSettingsPage.qml
 SettingsSplitLayout 1.0 qml/Pages/Settings/SettingsSplitLayout.qml
 SettingsSidebar 1.0 qml/Pages/Settings/SettingsSidebar.qml
+MapSettings 1.0 qml/Pages/Settings/MapSettings.qml
 NavigationSettings 1.0 qml/Pages/Settings/NavigationSettings.qml
 PrivacySettings 1.0 qml/Pages/Settings/PrivacySettings.qml
 DateTimeSettings 1.0 qml/Pages/Settings/DateTimeSettings.qml

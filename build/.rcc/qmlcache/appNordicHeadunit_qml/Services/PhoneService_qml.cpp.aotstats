@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 28,
+                        "durationMicroseconds": 27,
                         "errorMessage": "",
                         "functionName": "onSearchQueryChanged",
                         "line": 83
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 29,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 15,
                         "errorMessage": "",
                         "functionName": "onRecentsFilterChanged",
                         "line": 84
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 790,
+                        "durationMicroseconds": 804,
                         "errorMessage": "Cannot use shadowable base type for further lookups: call to method get, returning QJSValue",
                         "functionName": "updateFilteredContacts",
                         "line": 88
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 354,
+                        "durationMicroseconds": 340,
                         "errorMessage": "Cannot use shadowable base type for further lookups: call to method get, returning QJSValue",
                         "functionName": "updateFilteredRecents",
                         "line": 100
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 131,
+                        "durationMicroseconds": 152,
                         "errorMessage": "",
                         "functionName": "onTriggered",
                         "line": 180
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 245,
+                        "durationMicroseconds": 248,
                         "errorMessage": "",
                         "functionName": "onTriggered",
                         "line": 194

@@ -2,7 +2,7 @@
     "classes": [
         {
             "className": "NavigationService",
-            "lineNumber": 6,
+            "lineNumber": 13,
             "methods": [
                 {
                     "access": "public",
@@ -12,14 +12,60 @@
                             "type": "QString"
                         }
                     ],
-                    "index": 2,
+                    "index": 11,
                     "name": "startNavigation",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
-                    "index": 3,
+                    "index": 12,
                     "name": "stopNavigation",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "query",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 13,
+                    "name": "searchPlaces",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "category",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 14,
+                    "name": "searchCategory",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 15,
+                    "name": "clearMapPins",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "start",
+                            "type": "QGeoCoordinate"
+                        },
+                        {
+                            "name": "end",
+                            "type": "QGeoCoordinate"
+                        }
+                    ],
+                    "index": 16,
+                    "name": "calculateRoute",
                     "returnType": "void"
                 }
             ],
@@ -30,6 +76,34 @@
                     "designable": true,
                     "final": false,
                     "index": 0,
+                    "name": "vehiclePosition",
+                    "notify": "vehiclePositionChanged",
+                    "read": "vehiclePosition",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QGeoCoordinate",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "vehicleBearing",
+                    "notify": "vehiclePositionChanged",
+                    "read": "vehicleBearing",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "qreal",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
                     "name": "isNavigating",
                     "notify": "navigationStateChanged",
                     "read": "isNavigating",
@@ -43,21 +117,7 @@
                     "constant": false,
                     "designable": true,
                     "final": false,
-                    "index": 1,
-                    "name": "destination",
-                    "notify": "navigationStateChanged",
-                    "read": "destination",
-                    "required": false,
-                    "scriptable": true,
-                    "stored": true,
-                    "type": "QString",
-                    "user": false
-                },
-                {
-                    "constant": false,
-                    "designable": true,
-                    "final": false,
-                    "index": 2,
+                    "index": 3,
                     "name": "nextManeuver",
                     "notify": "guidanceChanged",
                     "read": "nextManeuver",
@@ -71,7 +131,7 @@
                     "constant": false,
                     "designable": true,
                     "final": false,
-                    "index": 3,
+                    "index": 4,
                     "name": "distanceToManeuver",
                     "notify": "guidanceChanged",
                     "read": "distanceToManeuver",
@@ -85,14 +145,84 @@
                     "constant": false,
                     "designable": true,
                     "final": false,
-                    "index": 4,
-                    "name": "distanceMeters",
+                    "index": 5,
+                    "name": "destination",
+                    "notify": "navigationStateChanged",
+                    "read": "destination",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 6,
+                    "name": "currentRoadName",
                     "notify": "guidanceChanged",
-                    "read": "distanceMeters",
+                    "read": "currentRoadName",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 7,
+                    "name": "speedLimit",
+                    "notify": "guidanceChanged",
+                    "read": "speedLimit",
                     "required": false,
                     "scriptable": true,
                     "stored": true,
                     "type": "int",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 8,
+                    "name": "trafficSegments",
+                    "notify": "routeCalculated",
+                    "read": "trafficSegments",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QVariantList",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 9,
+                    "name": "recentSearches",
+                    "notify": "recentSearchesChanged",
+                    "read": "recentSearches",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QVariantList",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 10,
+                    "name": "mapPins",
+                    "notify": "mapPinsChanged",
+                    "read": "mapPins",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QVariantList",
                     "user": false
                 }
             ],
@@ -108,6 +238,86 @@
                     "access": "public",
                     "index": 1,
                     "name": "guidanceChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 2,
+                    "name": "vehiclePositionChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "text",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "voiceInstruction",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "results",
+                            "type": "QVariantList"
+                        }
+                    ],
+                    "index": 4,
+                    "name": "searchResultReceived",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 5,
+                    "name": "recentSearchesChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 6,
+                    "name": "mapPinsChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "routeData",
+                            "type": "QVariantMap"
+                        }
+                    ],
+                    "index": 7,
+                    "name": "routeCalculated",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "message",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 8,
+                    "name": "errorOccurred",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "private",
+                    "index": 9,
+                    "name": "onSearchFinished",
+                    "returnType": "void"
+                },
+                {
+                    "access": "private",
+                    "index": 10,
+                    "name": "onRouteFinished",
                     "returnType": "void"
                 }
             ],

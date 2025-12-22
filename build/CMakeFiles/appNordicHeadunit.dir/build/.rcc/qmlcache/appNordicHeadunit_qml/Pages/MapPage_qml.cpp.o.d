@@ -966,42 +966,6 @@ CMakeFiles/appNordicHeadunit.dir/build/.rcc/qmlcache/appNordicHeadunit_qml/Pages
   /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/cassert \
   /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/q20iterator.h \
   /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/qtyperevision.h \
-  /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/qrandom.h \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/random \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__random/bernoulli_distribution.h \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__random/uniform_real_distribution.h \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__random/generate_canonical.h \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__random/binomial_distribution.h \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__random/cauchy_distribution.h \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__random/chi_squared_distribution.h \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__random/gamma_distribution.h \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__random/exponential_distribution.h \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__random/default_random_engine.h \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__random/linear_congruential_engine.h \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__random/is_seed_sequence.h \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__random/discard_block_engine.h \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__random/discrete_distribution.h \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__random/extreme_value_distribution.h \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__random/fisher_f_distribution.h \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__random/geometric_distribution.h \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__random/negative_binomial_distribution.h \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__random/poisson_distribution.h \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__random/clamp_to_integral.h \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__random/normal_distribution.h \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__random/independent_bits_engine.h \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__random/knuth_b.h \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__random/shuffle_order_engine.h \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__random/lognormal_distribution.h \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__random/mersenne_twister_engine.h \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__random/piecewise_constant_distribution.h \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__random/piecewise_linear_distribution.h \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__random/random_device.h \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__random/ranlux.h \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__random/subtract_with_carry_engine.h \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__random/seed_seq.h \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__random/student_t_distribution.h \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__random/uniform_random_bit_generator.h \
-  /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__random/weibull_distribution.h \
   /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/qtimezone.h \
   /opt/homebrew/opt/qt@6/lib/QtQml.framework/Headers/qjsengine.h \
   /opt/homebrew/opt/qt@6/lib/QtQml.framework/Headers/qjsmanagedvalue.h \

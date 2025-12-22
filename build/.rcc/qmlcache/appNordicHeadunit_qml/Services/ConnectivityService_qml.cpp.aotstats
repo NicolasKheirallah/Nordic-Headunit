@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 5,
-                        "durationMicroseconds": 98,
+                        "durationMicroseconds": 100,
                         "errorMessage": "",
                         "functionName": "startWifiScan",
                         "line": 58
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 5,
-                        "durationMicroseconds": 32,
+                        "durationMicroseconds": 31,
                         "errorMessage": "",
                         "functionName": "startBluetoothScan",
                         "line": 63
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 52,
+                        "durationMicroseconds": 66,
                         "errorMessage": "Cannot find name scanningWifi",
                         "functionName": "onTriggered",
                         "line": 71
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 30,
+                        "durationMicroseconds": 34,
                         "errorMessage": "Cannot find name scanningBluetooth",
                         "functionName": "onTriggered",
                         "line": 83

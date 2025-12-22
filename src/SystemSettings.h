@@ -42,6 +42,17 @@ class SystemSettings : public QObject
     Q_PROPERTY(QStringList availableTimeZones READ availableTimeZones CONSTANT)
     Q_PROPERTY(QDateTime currentDateTime READ currentDateTime NOTIFY currentDateTimeChanged)
     
+    // Map Settings
+    enum MapStyle {
+        Standard,
+        Dark,
+        Satellite,
+        Hybrid
+    };
+    Q_ENUM(MapStyle)
+    Q_PROPERTY(MapStyle mapStyle READ mapStyle WRITE setMapStyle NOTIFY mapStyleChanged)
+    Q_PROPERTY(int mapOrientation READ mapOrientation WRITE setMapOrientation NOTIFY mapOrientationChanged)
+
     // Manual Time Helpers
     Q_INVOKABLE void setDate(int year, int month, int day);
     Q_INVOKABLE void setTime(int hour, int minute);
@@ -119,6 +130,12 @@ public:
     
     QStringList availableTimeZones() const;
     QDateTime currentDateTime() const;
+
+    SystemSettings::MapStyle mapStyle() const;
+    void setMapStyle(SystemSettings::MapStyle style);
+    
+    int mapOrientation() const;
+    void setMapOrientation(int orientation);
     
     Q_INVOKABLE void factoryReset();
 
@@ -150,6 +167,8 @@ signals:
     void use24HourFormatChanged(bool use24HourFormat);
     void timeZoneChanged(const QString &timeZone);
     void currentDateTimeChanged();
+    void mapStyleChanged(SystemSettings::MapStyle mapStyle);
+    void mapOrientationChanged(int mapOrientation);
 
 private:
     QSettings m_settings;
@@ -181,6 +200,8 @@ private:
     bool m_autoTime;
     bool m_use24HourFormat;
     QString m_timeZone;
+    MapStyle m_mapStyle;
+    int m_mapOrientation = 1; // Default to Heading-up (1)
     qint64 m_timeOffsetMs = 0; // Manual offset from system clock
     
     IAudioHAL *m_audioHal;

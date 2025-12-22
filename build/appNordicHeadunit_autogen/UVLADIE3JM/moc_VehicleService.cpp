@@ -56,10 +56,14 @@ template <> constexpr inline auto VehicleService::qt_create_metaobjectdata<qt_me
         "leftSeatHeatChanged",
         "on",
         "rightSeatHeatChanged",
+        "leftSeatVentilationChanged",
+        "rightSeatVentilationChanged",
         "acEnabledChanged",
         "autoClimateChanged",
         "recircEnabledChanged",
         "defrostEnabledChanged",
+        "frontDefrostEnabledChanged",
+        "rearDefrostEnabledChanged",
         "frontLeftDoorOpenChanged",
         "open",
         "frontRightDoorOpenChanged",
@@ -86,10 +90,14 @@ template <> constexpr inline auto VehicleService::qt_create_metaobjectdata<qt_me
         "fanSpeed",
         "leftSeatHeat",
         "rightSeatHeat",
+        "leftSeatVentilation",
+        "rightSeatVentilation",
         "acEnabled",
         "autoClimate",
         "recircEnabled",
         "defrostEnabled",
+        "frontDefrostEnabled",
+        "rearDefrostEnabled",
         "frontLeftDoorOpen",
         "frontRightDoorOpen",
         "rearLeftDoorOpen",
@@ -159,70 +167,86 @@ template <> constexpr inline auto VehicleService::qt_create_metaobjectdata<qt_me
         QtMocHelpers::SignalData<void(bool)>(17, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::Bool, 16 },
         }}),
-        // Signal 'acEnabledChanged'
+        // Signal 'leftSeatVentilationChanged'
         QtMocHelpers::SignalData<void(bool)>(18, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::Bool, 16 },
         }}),
-        // Signal 'autoClimateChanged'
+        // Signal 'rightSeatVentilationChanged'
         QtMocHelpers::SignalData<void(bool)>(19, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::Bool, 16 },
         }}),
-        // Signal 'recircEnabledChanged'
+        // Signal 'acEnabledChanged'
         QtMocHelpers::SignalData<void(bool)>(20, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::Bool, 16 },
         }}),
-        // Signal 'defrostEnabledChanged'
+        // Signal 'autoClimateChanged'
         QtMocHelpers::SignalData<void(bool)>(21, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::Bool, 16 },
         }}),
-        // Signal 'frontLeftDoorOpenChanged'
+        // Signal 'recircEnabledChanged'
         QtMocHelpers::SignalData<void(bool)>(22, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::Bool, 23 },
+            { QMetaType::Bool, 16 },
+        }}),
+        // Signal 'defrostEnabledChanged'
+        QtMocHelpers::SignalData<void(bool)>(23, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Bool, 16 },
+        }}),
+        // Signal 'frontDefrostEnabledChanged'
+        QtMocHelpers::SignalData<void(bool)>(24, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Bool, 16 },
+        }}),
+        // Signal 'rearDefrostEnabledChanged'
+        QtMocHelpers::SignalData<void(bool)>(25, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Bool, 16 },
+        }}),
+        // Signal 'frontLeftDoorOpenChanged'
+        QtMocHelpers::SignalData<void(bool)>(26, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Bool, 27 },
         }}),
         // Signal 'frontRightDoorOpenChanged'
-        QtMocHelpers::SignalData<void(bool)>(24, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::Bool, 23 },
+        QtMocHelpers::SignalData<void(bool)>(28, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Bool, 27 },
         }}),
         // Signal 'rearLeftDoorOpenChanged'
-        QtMocHelpers::SignalData<void(bool)>(25, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::Bool, 23 },
+        QtMocHelpers::SignalData<void(bool)>(29, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Bool, 27 },
         }}),
         // Signal 'rearRightDoorOpenChanged'
-        QtMocHelpers::SignalData<void(bool)>(26, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::Bool, 23 },
+        QtMocHelpers::SignalData<void(bool)>(30, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Bool, 27 },
         }}),
         // Signal 'trunkOpenChanged'
-        QtMocHelpers::SignalData<void(bool)>(27, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::Bool, 23 },
+        QtMocHelpers::SignalData<void(bool)>(31, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Bool, 27 },
         }}),
         // Signal 'hoodOpenChanged'
-        QtMocHelpers::SignalData<void(bool)>(28, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::Bool, 23 },
+        QtMocHelpers::SignalData<void(bool)>(32, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Bool, 27 },
         }}),
         // Signal 'doorsStatusChanged'
-        QtMocHelpers::SignalData<void()>(29, 2, QMC::AccessPublic, QMetaType::Void),
-        // Signal 'connectionStateChanged'
-        QtMocHelpers::SignalData<void()>(30, 2, QMC::AccessPublic, QMetaType::Void),
-        // Signal 'ignitionStateChanged'
-        QtMocHelpers::SignalData<void()>(31, 2, QMC::AccessPublic, QMetaType::Void),
-        // Signal 'lastUpdateTimeChanged'
-        QtMocHelpers::SignalData<void()>(32, 2, QMC::AccessPublic, QMetaType::Void),
-        // Signal 'handbrakeEngagedChanged'
         QtMocHelpers::SignalData<void()>(33, 2, QMC::AccessPublic, QMetaType::Void),
-        // Signal 'batteryStatusChanged'
+        // Signal 'connectionStateChanged'
         QtMocHelpers::SignalData<void()>(34, 2, QMC::AccessPublic, QMetaType::Void),
-        // Signal 'tirePressureChanged'
+        // Signal 'ignitionStateChanged'
         QtMocHelpers::SignalData<void()>(35, 2, QMC::AccessPublic, QMetaType::Void),
-        // Signal 'tripDataChanged'
+        // Signal 'lastUpdateTimeChanged'
         QtMocHelpers::SignalData<void()>(36, 2, QMC::AccessPublic, QMetaType::Void),
-        // Signal 'warningsChanged'
+        // Signal 'handbrakeEngagedChanged'
         QtMocHelpers::SignalData<void()>(37, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'batteryStatusChanged'
+        QtMocHelpers::SignalData<void()>(38, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'tirePressureChanged'
+        QtMocHelpers::SignalData<void()>(39, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'tripDataChanged'
+        QtMocHelpers::SignalData<void()>(40, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'warningsChanged'
+        QtMocHelpers::SignalData<void()>(41, 2, QMC::AccessPublic, QMetaType::Void),
         // Signal 'isLockedChanged'
-        QtMocHelpers::SignalData<void(bool)>(38, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::Bool, 39 },
+        QtMocHelpers::SignalData<void(bool)>(42, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Bool, 43 },
         }}),
         // Signal 'interiorLightOnChanged'
-        QtMocHelpers::SignalData<void(bool)>(40, 2, QMC::AccessPublic, QMetaType::Void, {{
+        QtMocHelpers::SignalData<void(bool)>(44, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::Bool, 16 },
         }}),
     };
@@ -232,79 +256,87 @@ template <> constexpr inline auto VehicleService::qt_create_metaobjectdata<qt_me
         // property 'gear'
         QtMocHelpers::PropertyData<QString>(5, QMetaType::QString, QMC::DefaultPropertyFlags, 1),
         // property 'outsideTemp'
-        QtMocHelpers::PropertyData<double>(41, QMetaType::Double, QMC::DefaultPropertyFlags, 2),
+        QtMocHelpers::PropertyData<double>(45, QMetaType::Double, QMC::DefaultPropertyFlags, 2),
         // property 'batteryLevel'
-        QtMocHelpers::PropertyData<int>(42, QMetaType::Int, QMC::DefaultPropertyFlags, 3),
+        QtMocHelpers::PropertyData<int>(46, QMetaType::Int, QMC::DefaultPropertyFlags, 3),
         // property 'range'
         QtMocHelpers::PropertyData<int>(11, QMetaType::Int, QMC::DefaultPropertyFlags, 4),
         // property 'driverTemp'
-        QtMocHelpers::PropertyData<int>(43, QMetaType::Int, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 5),
+        QtMocHelpers::PropertyData<int>(47, QMetaType::Int, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 5),
         // property 'passengerTemp'
-        QtMocHelpers::PropertyData<int>(44, QMetaType::Int, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 6),
+        QtMocHelpers::PropertyData<int>(48, QMetaType::Int, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 6),
         // property 'fanSpeed'
-        QtMocHelpers::PropertyData<int>(45, QMetaType::Int, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 7),
+        QtMocHelpers::PropertyData<int>(49, QMetaType::Int, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 7),
         // property 'leftSeatHeat'
-        QtMocHelpers::PropertyData<bool>(46, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 8),
+        QtMocHelpers::PropertyData<bool>(50, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 8),
         // property 'rightSeatHeat'
-        QtMocHelpers::PropertyData<bool>(47, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 9),
+        QtMocHelpers::PropertyData<bool>(51, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 9),
+        // property 'leftSeatVentilation'
+        QtMocHelpers::PropertyData<bool>(52, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 10),
+        // property 'rightSeatVentilation'
+        QtMocHelpers::PropertyData<bool>(53, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 11),
         // property 'acEnabled'
-        QtMocHelpers::PropertyData<bool>(48, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 10),
+        QtMocHelpers::PropertyData<bool>(54, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 12),
         // property 'autoClimate'
-        QtMocHelpers::PropertyData<bool>(49, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 11),
+        QtMocHelpers::PropertyData<bool>(55, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 13),
         // property 'recircEnabled'
-        QtMocHelpers::PropertyData<bool>(50, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 12),
+        QtMocHelpers::PropertyData<bool>(56, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 14),
         // property 'defrostEnabled'
-        QtMocHelpers::PropertyData<bool>(51, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 13),
+        QtMocHelpers::PropertyData<bool>(57, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 15),
+        // property 'frontDefrostEnabled'
+        QtMocHelpers::PropertyData<bool>(58, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 16),
+        // property 'rearDefrostEnabled'
+        QtMocHelpers::PropertyData<bool>(59, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 17),
         // property 'frontLeftDoorOpen'
-        QtMocHelpers::PropertyData<bool>(52, QMetaType::Bool, QMC::DefaultPropertyFlags, 14),
+        QtMocHelpers::PropertyData<bool>(60, QMetaType::Bool, QMC::DefaultPropertyFlags, 18),
         // property 'frontRightDoorOpen'
-        QtMocHelpers::PropertyData<bool>(53, QMetaType::Bool, QMC::DefaultPropertyFlags, 15),
+        QtMocHelpers::PropertyData<bool>(61, QMetaType::Bool, QMC::DefaultPropertyFlags, 19),
         // property 'rearLeftDoorOpen'
-        QtMocHelpers::PropertyData<bool>(54, QMetaType::Bool, QMC::DefaultPropertyFlags, 16),
+        QtMocHelpers::PropertyData<bool>(62, QMetaType::Bool, QMC::DefaultPropertyFlags, 20),
         // property 'rearRightDoorOpen'
-        QtMocHelpers::PropertyData<bool>(55, QMetaType::Bool, QMC::DefaultPropertyFlags, 17),
+        QtMocHelpers::PropertyData<bool>(63, QMetaType::Bool, QMC::DefaultPropertyFlags, 21),
         // property 'trunkOpen'
-        QtMocHelpers::PropertyData<bool>(56, QMetaType::Bool, QMC::DefaultPropertyFlags, 18),
+        QtMocHelpers::PropertyData<bool>(64, QMetaType::Bool, QMC::DefaultPropertyFlags, 22),
         // property 'hoodOpen'
-        QtMocHelpers::PropertyData<bool>(57, QMetaType::Bool, QMC::DefaultPropertyFlags, 19),
+        QtMocHelpers::PropertyData<bool>(65, QMetaType::Bool, QMC::DefaultPropertyFlags, 23),
         // property 'doorsStatus'
-        QtMocHelpers::PropertyData<QString>(58, QMetaType::QString, QMC::DefaultPropertyFlags, 20),
+        QtMocHelpers::PropertyData<QString>(66, QMetaType::QString, QMC::DefaultPropertyFlags, 24),
         // property 'connectionState'
-        QtMocHelpers::PropertyData<QString>(59, QMetaType::QString, QMC::DefaultPropertyFlags, 21),
+        QtMocHelpers::PropertyData<QString>(67, QMetaType::QString, QMC::DefaultPropertyFlags, 25),
         // property 'ignitionState'
-        QtMocHelpers::PropertyData<QString>(60, QMetaType::QString, QMC::DefaultPropertyFlags, 22),
+        QtMocHelpers::PropertyData<QString>(68, QMetaType::QString, QMC::DefaultPropertyFlags, 26),
         // property 'lastUpdateTime'
-        QtMocHelpers::PropertyData<QString>(61, QMetaType::QString, QMC::DefaultPropertyFlags, 23),
+        QtMocHelpers::PropertyData<QString>(69, QMetaType::QString, QMC::DefaultPropertyFlags, 27),
         // property 'handbrakeEngaged'
-        QtMocHelpers::PropertyData<bool>(62, QMetaType::Bool, QMC::DefaultPropertyFlags, 24),
+        QtMocHelpers::PropertyData<bool>(70, QMetaType::Bool, QMC::DefaultPropertyFlags, 28),
         // property 'batteryStatus'
-        QtMocHelpers::PropertyData<QString>(63, QMetaType::QString, QMC::DefaultPropertyFlags, 25),
+        QtMocHelpers::PropertyData<QString>(71, QMetaType::QString, QMC::DefaultPropertyFlags, 29),
         // property 'tirePressureFL'
-        QtMocHelpers::PropertyData<double>(64, QMetaType::Double, QMC::DefaultPropertyFlags, 26),
+        QtMocHelpers::PropertyData<double>(72, QMetaType::Double, QMC::DefaultPropertyFlags, 30),
         // property 'tirePressureFR'
-        QtMocHelpers::PropertyData<double>(65, QMetaType::Double, QMC::DefaultPropertyFlags, 26),
+        QtMocHelpers::PropertyData<double>(73, QMetaType::Double, QMC::DefaultPropertyFlags, 30),
         // property 'tirePressureRL'
-        QtMocHelpers::PropertyData<double>(66, QMetaType::Double, QMC::DefaultPropertyFlags, 26),
+        QtMocHelpers::PropertyData<double>(74, QMetaType::Double, QMC::DefaultPropertyFlags, 30),
         // property 'tirePressureRR'
-        QtMocHelpers::PropertyData<double>(67, QMetaType::Double, QMC::DefaultPropertyFlags, 26),
+        QtMocHelpers::PropertyData<double>(75, QMetaType::Double, QMC::DefaultPropertyFlags, 30),
         // property 'tirePressureSupported'
-        QtMocHelpers::PropertyData<bool>(68, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Constant),
+        QtMocHelpers::PropertyData<bool>(76, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Constant),
         // property 'tripDistance'
-        QtMocHelpers::PropertyData<int>(69, QMetaType::Int, QMC::DefaultPropertyFlags, 27),
+        QtMocHelpers::PropertyData<int>(77, QMetaType::Int, QMC::DefaultPropertyFlags, 31),
         // property 'tripTime'
-        QtMocHelpers::PropertyData<int>(70, QMetaType::Int, QMC::DefaultPropertyFlags, 27),
+        QtMocHelpers::PropertyData<int>(78, QMetaType::Int, QMC::DefaultPropertyFlags, 31),
         // property 'avgSpeed'
-        QtMocHelpers::PropertyData<int>(71, QMetaType::Int, QMC::DefaultPropertyFlags, 27),
+        QtMocHelpers::PropertyData<int>(79, QMetaType::Int, QMC::DefaultPropertyFlags, 31),
         // property 'fuelConsumption'
-        QtMocHelpers::PropertyData<double>(72, QMetaType::Double, QMC::DefaultPropertyFlags, 27),
+        QtMocHelpers::PropertyData<double>(80, QMetaType::Double, QMC::DefaultPropertyFlags, 31),
         // property 'warnings'
-        QtMocHelpers::PropertyData<QVariantList>(73, 0x80000000 | 74, QMC::DefaultPropertyFlags | QMC::EnumOrFlag, 28),
+        QtMocHelpers::PropertyData<QVariantList>(81, 0x80000000 | 82, QMC::DefaultPropertyFlags | QMC::EnumOrFlag, 32),
         // property 'hasWarnings'
-        QtMocHelpers::PropertyData<bool>(75, QMetaType::Bool, QMC::DefaultPropertyFlags, 28),
+        QtMocHelpers::PropertyData<bool>(83, QMetaType::Bool, QMC::DefaultPropertyFlags, 32),
         // property 'isLocked'
-        QtMocHelpers::PropertyData<bool>(76, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 29),
+        QtMocHelpers::PropertyData<bool>(84, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 33),
         // property 'interiorLightOn'
-        QtMocHelpers::PropertyData<bool>(77, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 30),
+        QtMocHelpers::PropertyData<bool>(85, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 34),
     };
     QtMocHelpers::UintData qt_enums {
     };
@@ -336,27 +368,31 @@ void VehicleService::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         case 7: _t->fanSpeedChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         case 8: _t->leftSeatHeatChanged((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
         case 9: _t->rightSeatHeatChanged((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
-        case 10: _t->acEnabledChanged((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
-        case 11: _t->autoClimateChanged((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
-        case 12: _t->recircEnabledChanged((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
-        case 13: _t->defrostEnabledChanged((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
-        case 14: _t->frontLeftDoorOpenChanged((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
-        case 15: _t->frontRightDoorOpenChanged((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
-        case 16: _t->rearLeftDoorOpenChanged((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
-        case 17: _t->rearRightDoorOpenChanged((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
-        case 18: _t->trunkOpenChanged((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
-        case 19: _t->hoodOpenChanged((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
-        case 20: _t->doorsStatusChanged(); break;
-        case 21: _t->connectionStateChanged(); break;
-        case 22: _t->ignitionStateChanged(); break;
-        case 23: _t->lastUpdateTimeChanged(); break;
-        case 24: _t->handbrakeEngagedChanged(); break;
-        case 25: _t->batteryStatusChanged(); break;
-        case 26: _t->tirePressureChanged(); break;
-        case 27: _t->tripDataChanged(); break;
-        case 28: _t->warningsChanged(); break;
-        case 29: _t->isLockedChanged((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
-        case 30: _t->interiorLightOnChanged((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 10: _t->leftSeatVentilationChanged((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 11: _t->rightSeatVentilationChanged((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 12: _t->acEnabledChanged((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 13: _t->autoClimateChanged((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 14: _t->recircEnabledChanged((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 15: _t->defrostEnabledChanged((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 16: _t->frontDefrostEnabledChanged((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 17: _t->rearDefrostEnabledChanged((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 18: _t->frontLeftDoorOpenChanged((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 19: _t->frontRightDoorOpenChanged((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 20: _t->rearLeftDoorOpenChanged((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 21: _t->rearRightDoorOpenChanged((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 22: _t->trunkOpenChanged((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 23: _t->hoodOpenChanged((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 24: _t->doorsStatusChanged(); break;
+        case 25: _t->connectionStateChanged(); break;
+        case 26: _t->ignitionStateChanged(); break;
+        case 27: _t->lastUpdateTimeChanged(); break;
+        case 28: _t->handbrakeEngagedChanged(); break;
+        case 29: _t->batteryStatusChanged(); break;
+        case 30: _t->tirePressureChanged(); break;
+        case 31: _t->tripDataChanged(); break;
+        case 32: _t->warningsChanged(); break;
+        case 33: _t->isLockedChanged((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 34: _t->interiorLightOnChanged((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
         default: ;
         }
     }
@@ -381,47 +417,55 @@ void VehicleService::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
             return;
         if (QtMocHelpers::indexOfMethod<void (VehicleService::*)(bool )>(_a, &VehicleService::rightSeatHeatChanged, 9))
             return;
-        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)(bool )>(_a, &VehicleService::acEnabledChanged, 10))
+        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)(bool )>(_a, &VehicleService::leftSeatVentilationChanged, 10))
             return;
-        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)(bool )>(_a, &VehicleService::autoClimateChanged, 11))
+        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)(bool )>(_a, &VehicleService::rightSeatVentilationChanged, 11))
             return;
-        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)(bool )>(_a, &VehicleService::recircEnabledChanged, 12))
+        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)(bool )>(_a, &VehicleService::acEnabledChanged, 12))
             return;
-        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)(bool )>(_a, &VehicleService::defrostEnabledChanged, 13))
+        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)(bool )>(_a, &VehicleService::autoClimateChanged, 13))
             return;
-        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)(bool )>(_a, &VehicleService::frontLeftDoorOpenChanged, 14))
+        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)(bool )>(_a, &VehicleService::recircEnabledChanged, 14))
             return;
-        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)(bool )>(_a, &VehicleService::frontRightDoorOpenChanged, 15))
+        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)(bool )>(_a, &VehicleService::defrostEnabledChanged, 15))
             return;
-        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)(bool )>(_a, &VehicleService::rearLeftDoorOpenChanged, 16))
+        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)(bool )>(_a, &VehicleService::frontDefrostEnabledChanged, 16))
             return;
-        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)(bool )>(_a, &VehicleService::rearRightDoorOpenChanged, 17))
+        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)(bool )>(_a, &VehicleService::rearDefrostEnabledChanged, 17))
             return;
-        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)(bool )>(_a, &VehicleService::trunkOpenChanged, 18))
+        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)(bool )>(_a, &VehicleService::frontLeftDoorOpenChanged, 18))
             return;
-        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)(bool )>(_a, &VehicleService::hoodOpenChanged, 19))
+        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)(bool )>(_a, &VehicleService::frontRightDoorOpenChanged, 19))
             return;
-        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)()>(_a, &VehicleService::doorsStatusChanged, 20))
+        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)(bool )>(_a, &VehicleService::rearLeftDoorOpenChanged, 20))
             return;
-        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)()>(_a, &VehicleService::connectionStateChanged, 21))
+        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)(bool )>(_a, &VehicleService::rearRightDoorOpenChanged, 21))
             return;
-        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)()>(_a, &VehicleService::ignitionStateChanged, 22))
+        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)(bool )>(_a, &VehicleService::trunkOpenChanged, 22))
             return;
-        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)()>(_a, &VehicleService::lastUpdateTimeChanged, 23))
+        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)(bool )>(_a, &VehicleService::hoodOpenChanged, 23))
             return;
-        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)()>(_a, &VehicleService::handbrakeEngagedChanged, 24))
+        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)()>(_a, &VehicleService::doorsStatusChanged, 24))
             return;
-        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)()>(_a, &VehicleService::batteryStatusChanged, 25))
+        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)()>(_a, &VehicleService::connectionStateChanged, 25))
             return;
-        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)()>(_a, &VehicleService::tirePressureChanged, 26))
+        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)()>(_a, &VehicleService::ignitionStateChanged, 26))
             return;
-        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)()>(_a, &VehicleService::tripDataChanged, 27))
+        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)()>(_a, &VehicleService::lastUpdateTimeChanged, 27))
             return;
-        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)()>(_a, &VehicleService::warningsChanged, 28))
+        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)()>(_a, &VehicleService::handbrakeEngagedChanged, 28))
             return;
-        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)(bool )>(_a, &VehicleService::isLockedChanged, 29))
+        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)()>(_a, &VehicleService::batteryStatusChanged, 29))
             return;
-        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)(bool )>(_a, &VehicleService::interiorLightOnChanged, 30))
+        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)()>(_a, &VehicleService::tirePressureChanged, 30))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)()>(_a, &VehicleService::tripDataChanged, 31))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)()>(_a, &VehicleService::warningsChanged, 32))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)(bool )>(_a, &VehicleService::isLockedChanged, 33))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (VehicleService::*)(bool )>(_a, &VehicleService::interiorLightOnChanged, 34))
             return;
     }
     if (_c == QMetaObject::ReadProperty) {
@@ -437,35 +481,39 @@ void VehicleService::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         case 7: *reinterpret_cast<int*>(_v) = _t->fanSpeed(); break;
         case 8: *reinterpret_cast<bool*>(_v) = _t->leftSeatHeat(); break;
         case 9: *reinterpret_cast<bool*>(_v) = _t->rightSeatHeat(); break;
-        case 10: *reinterpret_cast<bool*>(_v) = _t->acEnabled(); break;
-        case 11: *reinterpret_cast<bool*>(_v) = _t->autoClimate(); break;
-        case 12: *reinterpret_cast<bool*>(_v) = _t->recircEnabled(); break;
-        case 13: *reinterpret_cast<bool*>(_v) = _t->defrostEnabled(); break;
-        case 14: *reinterpret_cast<bool*>(_v) = _t->frontLeftDoorOpen(); break;
-        case 15: *reinterpret_cast<bool*>(_v) = _t->frontRightDoorOpen(); break;
-        case 16: *reinterpret_cast<bool*>(_v) = _t->rearLeftDoorOpen(); break;
-        case 17: *reinterpret_cast<bool*>(_v) = _t->rearRightDoorOpen(); break;
-        case 18: *reinterpret_cast<bool*>(_v) = _t->trunkOpen(); break;
-        case 19: *reinterpret_cast<bool*>(_v) = _t->hoodOpen(); break;
-        case 20: *reinterpret_cast<QString*>(_v) = _t->doorsStatus(); break;
-        case 21: *reinterpret_cast<QString*>(_v) = _t->connectionState(); break;
-        case 22: *reinterpret_cast<QString*>(_v) = _t->ignitionState(); break;
-        case 23: *reinterpret_cast<QString*>(_v) = _t->lastUpdateTime(); break;
-        case 24: *reinterpret_cast<bool*>(_v) = _t->handbrakeEngaged(); break;
-        case 25: *reinterpret_cast<QString*>(_v) = _t->batteryStatus(); break;
-        case 26: *reinterpret_cast<double*>(_v) = _t->tirePressureFL(); break;
-        case 27: *reinterpret_cast<double*>(_v) = _t->tirePressureFR(); break;
-        case 28: *reinterpret_cast<double*>(_v) = _t->tirePressureRL(); break;
-        case 29: *reinterpret_cast<double*>(_v) = _t->tirePressureRR(); break;
-        case 30: *reinterpret_cast<bool*>(_v) = _t->tirePressureSupported(); break;
-        case 31: *reinterpret_cast<int*>(_v) = _t->tripDistance(); break;
-        case 32: *reinterpret_cast<int*>(_v) = _t->tripTime(); break;
-        case 33: *reinterpret_cast<int*>(_v) = _t->avgSpeed(); break;
-        case 34: *reinterpret_cast<double*>(_v) = _t->fuelConsumption(); break;
-        case 35: *reinterpret_cast<QVariantList*>(_v) = _t->warnings(); break;
-        case 36: *reinterpret_cast<bool*>(_v) = _t->hasWarnings(); break;
-        case 37: *reinterpret_cast<bool*>(_v) = _t->isLocked(); break;
-        case 38: *reinterpret_cast<bool*>(_v) = _t->interiorLightOn(); break;
+        case 10: *reinterpret_cast<bool*>(_v) = _t->leftSeatVentilation(); break;
+        case 11: *reinterpret_cast<bool*>(_v) = _t->rightSeatVentilation(); break;
+        case 12: *reinterpret_cast<bool*>(_v) = _t->acEnabled(); break;
+        case 13: *reinterpret_cast<bool*>(_v) = _t->autoClimate(); break;
+        case 14: *reinterpret_cast<bool*>(_v) = _t->recircEnabled(); break;
+        case 15: *reinterpret_cast<bool*>(_v) = _t->defrostEnabled(); break;
+        case 16: *reinterpret_cast<bool*>(_v) = _t->frontDefrostEnabled(); break;
+        case 17: *reinterpret_cast<bool*>(_v) = _t->rearDefrostEnabled(); break;
+        case 18: *reinterpret_cast<bool*>(_v) = _t->frontLeftDoorOpen(); break;
+        case 19: *reinterpret_cast<bool*>(_v) = _t->frontRightDoorOpen(); break;
+        case 20: *reinterpret_cast<bool*>(_v) = _t->rearLeftDoorOpen(); break;
+        case 21: *reinterpret_cast<bool*>(_v) = _t->rearRightDoorOpen(); break;
+        case 22: *reinterpret_cast<bool*>(_v) = _t->trunkOpen(); break;
+        case 23: *reinterpret_cast<bool*>(_v) = _t->hoodOpen(); break;
+        case 24: *reinterpret_cast<QString*>(_v) = _t->doorsStatus(); break;
+        case 25: *reinterpret_cast<QString*>(_v) = _t->connectionState(); break;
+        case 26: *reinterpret_cast<QString*>(_v) = _t->ignitionState(); break;
+        case 27: *reinterpret_cast<QString*>(_v) = _t->lastUpdateTime(); break;
+        case 28: *reinterpret_cast<bool*>(_v) = _t->handbrakeEngaged(); break;
+        case 29: *reinterpret_cast<QString*>(_v) = _t->batteryStatus(); break;
+        case 30: *reinterpret_cast<double*>(_v) = _t->tirePressureFL(); break;
+        case 31: *reinterpret_cast<double*>(_v) = _t->tirePressureFR(); break;
+        case 32: *reinterpret_cast<double*>(_v) = _t->tirePressureRL(); break;
+        case 33: *reinterpret_cast<double*>(_v) = _t->tirePressureRR(); break;
+        case 34: *reinterpret_cast<bool*>(_v) = _t->tirePressureSupported(); break;
+        case 35: *reinterpret_cast<int*>(_v) = _t->tripDistance(); break;
+        case 36: *reinterpret_cast<int*>(_v) = _t->tripTime(); break;
+        case 37: *reinterpret_cast<int*>(_v) = _t->avgSpeed(); break;
+        case 38: *reinterpret_cast<double*>(_v) = _t->fuelConsumption(); break;
+        case 39: *reinterpret_cast<QVariantList*>(_v) = _t->warnings(); break;
+        case 40: *reinterpret_cast<bool*>(_v) = _t->hasWarnings(); break;
+        case 41: *reinterpret_cast<bool*>(_v) = _t->isLocked(); break;
+        case 42: *reinterpret_cast<bool*>(_v) = _t->interiorLightOn(); break;
         default: break;
         }
     }
@@ -477,12 +525,16 @@ void VehicleService::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         case 7: _t->setFanSpeed(*reinterpret_cast<int*>(_v)); break;
         case 8: _t->setLeftSeatHeat(*reinterpret_cast<bool*>(_v)); break;
         case 9: _t->setRightSeatHeat(*reinterpret_cast<bool*>(_v)); break;
-        case 10: _t->setAcEnabled(*reinterpret_cast<bool*>(_v)); break;
-        case 11: _t->setAutoClimate(*reinterpret_cast<bool*>(_v)); break;
-        case 12: _t->setRecircEnabled(*reinterpret_cast<bool*>(_v)); break;
-        case 13: _t->setDefrostEnabled(*reinterpret_cast<bool*>(_v)); break;
-        case 37: _t->setIsLocked(*reinterpret_cast<bool*>(_v)); break;
-        case 38: _t->setInteriorLightOn(*reinterpret_cast<bool*>(_v)); break;
+        case 10: _t->setLeftSeatVentilation(*reinterpret_cast<bool*>(_v)); break;
+        case 11: _t->setRightSeatVentilation(*reinterpret_cast<bool*>(_v)); break;
+        case 12: _t->setAcEnabled(*reinterpret_cast<bool*>(_v)); break;
+        case 13: _t->setAutoClimate(*reinterpret_cast<bool*>(_v)); break;
+        case 14: _t->setRecircEnabled(*reinterpret_cast<bool*>(_v)); break;
+        case 15: _t->setDefrostEnabled(*reinterpret_cast<bool*>(_v)); break;
+        case 16: _t->setFrontDefrostEnabled(*reinterpret_cast<bool*>(_v)); break;
+        case 17: _t->setRearDefrostEnabled(*reinterpret_cast<bool*>(_v)); break;
+        case 41: _t->setIsLocked(*reinterpret_cast<bool*>(_v)); break;
+        case 42: _t->setInteriorLightOn(*reinterpret_cast<bool*>(_v)); break;
         default: break;
         }
     }
@@ -507,20 +559,20 @@ int VehicleService::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 31)
+        if (_id < 35)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 31;
+        _id -= 35;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 31)
+        if (_id < 35)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 31;
+        _id -= 35;
     }
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::BindableProperty
             || _c == QMetaObject::RegisterPropertyMetaType) {
         qt_static_metacall(this, _c, _id, _a);
-        _id -= 39;
+        _id -= 43;
     }
     return _id;
 }
@@ -586,128 +638,152 @@ void VehicleService::rightSeatHeatChanged(bool _t1)
 }
 
 // SIGNAL 10
-void VehicleService::acEnabledChanged(bool _t1)
+void VehicleService::leftSeatVentilationChanged(bool _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 10, nullptr, _t1);
 }
 
 // SIGNAL 11
-void VehicleService::autoClimateChanged(bool _t1)
+void VehicleService::rightSeatVentilationChanged(bool _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 11, nullptr, _t1);
 }
 
 // SIGNAL 12
-void VehicleService::recircEnabledChanged(bool _t1)
+void VehicleService::acEnabledChanged(bool _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 12, nullptr, _t1);
 }
 
 // SIGNAL 13
-void VehicleService::defrostEnabledChanged(bool _t1)
+void VehicleService::autoClimateChanged(bool _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 13, nullptr, _t1);
 }
 
 // SIGNAL 14
-void VehicleService::frontLeftDoorOpenChanged(bool _t1)
+void VehicleService::recircEnabledChanged(bool _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 14, nullptr, _t1);
 }
 
 // SIGNAL 15
-void VehicleService::frontRightDoorOpenChanged(bool _t1)
+void VehicleService::defrostEnabledChanged(bool _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 15, nullptr, _t1);
 }
 
 // SIGNAL 16
-void VehicleService::rearLeftDoorOpenChanged(bool _t1)
+void VehicleService::frontDefrostEnabledChanged(bool _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 16, nullptr, _t1);
 }
 
 // SIGNAL 17
-void VehicleService::rearRightDoorOpenChanged(bool _t1)
+void VehicleService::rearDefrostEnabledChanged(bool _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 17, nullptr, _t1);
 }
 
 // SIGNAL 18
-void VehicleService::trunkOpenChanged(bool _t1)
+void VehicleService::frontLeftDoorOpenChanged(bool _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 18, nullptr, _t1);
 }
 
 // SIGNAL 19
-void VehicleService::hoodOpenChanged(bool _t1)
+void VehicleService::frontRightDoorOpenChanged(bool _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 19, nullptr, _t1);
 }
 
 // SIGNAL 20
-void VehicleService::doorsStatusChanged()
+void VehicleService::rearLeftDoorOpenChanged(bool _t1)
 {
-    QMetaObject::activate(this, &staticMetaObject, 20, nullptr);
+    QMetaObject::activate<void>(this, &staticMetaObject, 20, nullptr, _t1);
 }
 
 // SIGNAL 21
-void VehicleService::connectionStateChanged()
+void VehicleService::rearRightDoorOpenChanged(bool _t1)
 {
-    QMetaObject::activate(this, &staticMetaObject, 21, nullptr);
+    QMetaObject::activate<void>(this, &staticMetaObject, 21, nullptr, _t1);
 }
 
 // SIGNAL 22
-void VehicleService::ignitionStateChanged()
+void VehicleService::trunkOpenChanged(bool _t1)
 {
-    QMetaObject::activate(this, &staticMetaObject, 22, nullptr);
+    QMetaObject::activate<void>(this, &staticMetaObject, 22, nullptr, _t1);
 }
 
 // SIGNAL 23
-void VehicleService::lastUpdateTimeChanged()
+void VehicleService::hoodOpenChanged(bool _t1)
 {
-    QMetaObject::activate(this, &staticMetaObject, 23, nullptr);
+    QMetaObject::activate<void>(this, &staticMetaObject, 23, nullptr, _t1);
 }
 
 // SIGNAL 24
-void VehicleService::handbrakeEngagedChanged()
+void VehicleService::doorsStatusChanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 24, nullptr);
 }
 
 // SIGNAL 25
-void VehicleService::batteryStatusChanged()
+void VehicleService::connectionStateChanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 25, nullptr);
 }
 
 // SIGNAL 26
-void VehicleService::tirePressureChanged()
+void VehicleService::ignitionStateChanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 26, nullptr);
 }
 
 // SIGNAL 27
-void VehicleService::tripDataChanged()
+void VehicleService::lastUpdateTimeChanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 27, nullptr);
 }
 
 // SIGNAL 28
-void VehicleService::warningsChanged()
+void VehicleService::handbrakeEngagedChanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 28, nullptr);
 }
 
 // SIGNAL 29
-void VehicleService::isLockedChanged(bool _t1)
+void VehicleService::batteryStatusChanged()
 {
-    QMetaObject::activate<void>(this, &staticMetaObject, 29, nullptr, _t1);
+    QMetaObject::activate(this, &staticMetaObject, 29, nullptr);
 }
 
 // SIGNAL 30
+void VehicleService::tirePressureChanged()
+{
+    QMetaObject::activate(this, &staticMetaObject, 30, nullptr);
+}
+
+// SIGNAL 31
+void VehicleService::tripDataChanged()
+{
+    QMetaObject::activate(this, &staticMetaObject, 31, nullptr);
+}
+
+// SIGNAL 32
+void VehicleService::warningsChanged()
+{
+    QMetaObject::activate(this, &staticMetaObject, 32, nullptr);
+}
+
+// SIGNAL 33
+void VehicleService::isLockedChanged(bool _t1)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 33, nullptr, _t1);
+}
+
+// SIGNAL 34
 void VehicleService::interiorLightOnChanged(bool _t1)
 {
-    QMetaObject::activate<void>(this, &staticMetaObject, 30, nullptr, _t1);
+    QMetaObject::activate<void>(this, &staticMetaObject, 34, nullptr, _t1);
 }
 QT_WARNING_POP

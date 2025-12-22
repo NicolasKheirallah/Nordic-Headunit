@@ -4,6 +4,7 @@ import QtQuick.Controls
 
 import NordicHeadunit
 import "../Components"
+import "../Components/Maps"
 import "../Widgets"
 
 Page {
@@ -64,9 +65,54 @@ Page {
             Layout.fillWidth: true
             opacity: 0 // Start hidden for animation
             
-            NavigationWidget {
+            NordicCard {
                 anchors.fill: parent
-                // Mock properties for display if needed, or rely on internal service bindings
+                variant: NordicCard.Variant.Filled
+                padding: 0 // Full bleed
+                
+                // Live Map Background
+                MapSurface {
+                    id: homeMap
+                    anchors.fill: parent
+                    zoomLevel: 12.5
+                    tilt: 45.0
+                    bearing: 20.0
+                    // Disable interactions for "Ambient" mode
+                    enabled: false 
+                }
+                
+                // Interaction Layer (Go to Full Map)
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: {
+                         // Traverse up to find MainLayout
+                         var appLayout = root.parent
+                         while (appLayout && !appLayout.currentTab) appLayout = appLayout.parent
+                         if (appLayout) appLayout.currentTab = 1 // Switch to Maps
+                    }
+                }
+                
+                // Hero Text Overlay
+                ColumnLayout {
+                    anchors.bottom: parent.bottom
+                    anchors.left: parent.left
+                    anchors.margins: 24
+                    spacing: 4
+                    
+                    NordicText { 
+                        text: "Explore" 
+                        type: NordicText.Type.HeadlineLarge 
+                        color: NordicTheme.colors.text.inverse
+                        style: Text.Outline; styleColor: "black"
+                    }
+                    NordicText { 
+                        text: "Tap to navigate" 
+                        type: NordicText.Type.BodyMedium 
+                        color: NordicTheme.colors.text.inverse 
+                        opacity: 0.8
+                        style: Text.Outline; styleColor: "black"
+                    }
+                }
             }
         }
         

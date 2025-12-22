@@ -36,6 +36,7 @@
 /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/.rcc/qmlcache/appNordicHeadunit_qml/Overlays/OverlayManager_qml.cpp.aotstats
 /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicButton_qml.cpp.aotstats
 /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicCard_qml.cpp.aotstats
+/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicGlass_qml.cpp.aotstats
 /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicCircularGauge_qml.cpp.aotstats
 /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicIcon_qml.cpp.aotstats
 /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/.rcc/qmlcache/appNordicHeadunit_qml/Components/NordicListItem_qml.cpp.aotstats
@@ -49,6 +50,11 @@
 /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/.rcc/qmlcache/appNordicHeadunit_qml/Components/DraggableWidget_qml.cpp.aotstats
 /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/.rcc/qmlcache/appNordicHeadunit_qml/Components/WidgetGrid_qml.cpp.aotstats
 /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/.rcc/qmlcache/appNordicHeadunit_qml/Components/MediaControlButton_qml.cpp.aotstats
+/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/MapSurface_qml.cpp.aotstats
+/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/GuidanceBanner_qml.cpp.aotstats
+/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/SearchSheet_qml.cpp.aotstats
+/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/RoutePreviewSheet_qml.cpp.aotstats
+/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/.rcc/qmlcache/appNordicHeadunit_qml/Components/Maps/FloatingMapControls_qml.cpp.aotstats
 /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/.rcc/qmlcache/appNordicHeadunit_qml/Widgets/NavigationWidget_qml.cpp.aotstats
 /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/.rcc/qmlcache/appNordicHeadunit_qml/Widgets/WeatherWidget_qml.cpp.aotstats
 /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/.rcc/qmlcache/appNordicHeadunit_qml/Widgets/NowPlayingWidget_qml.cpp.aotstats
@@ -79,6 +85,7 @@
 /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/SystemSettingsPage_qml.cpp.aotstats
 /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/SettingsSplitLayout_qml.cpp.aotstats
 /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/SettingsSidebar_qml.cpp.aotstats
+/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/MapSettings_qml.cpp.aotstats
 /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/NavigationSettings_qml.cpp.aotstats
 /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/PrivacySettings_qml.cpp.aotstats
 /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/.rcc/qmlcache/appNordicHeadunit_qml/Pages/Settings/DateTimeSettings_qml.cpp.aotstats

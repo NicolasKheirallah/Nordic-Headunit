@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 125,
+                        "durationMicroseconds": 129,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "checked",
                         "line": 13
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 84,
+                        "durationMicroseconds": 86,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "onCheckedChanged",
                         "line": 14
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 71,
+                        "durationMicroseconds": 78,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "checked",
                         "line": 20
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 69,
+                        "durationMicroseconds": 76,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "onCheckedChanged",
                         "line": 21
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 78,
+                        "durationMicroseconds": 82,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "subtitle",
                         "line": 26
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 18,
-                        "durationMicroseconds": 75,
+                        "durationMicroseconds": 69,
                         "errorMessage": "",
                         "functionName": "opacity",
                         "line": 29
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 17,
                         "errorMessage": "Cannot retrieve a non-object type by ID: timeZoneDialog",
                         "functionName": "onClicked",
                         "line": 30
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 93,
+                        "durationMicroseconds": 86,
                         "errorMessage": "",
                         "functionName": "subtitle",
                         "line": 35
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 76,
+                        "durationMicroseconds": 71,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "enabled",
                         "line": 37
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 18,
-                        "durationMicroseconds": 34,
+                        "durationMicroseconds": 32,
                         "errorMessage": "",
                         "functionName": "opacity",
                         "line": 38
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 67,
+                        "durationMicroseconds": 74,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "enabled",
                         "line": 46
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 18,
-                        "durationMicroseconds": 27,
+                        "durationMicroseconds": 29,
                         "errorMessage": "",
                         "functionName": "opacity",
                         "line": 47
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 8,
+                        "durationMicroseconds": 9,
                         "errorMessage": "Cannot retrieve a non-object type by ID: timeDialog",
                         "functionName": "onClicked",
                         "line": 48
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 232,
+                        "durationMicroseconds": 257,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "model",
                         "line": 66
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 30,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 72
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 43,
-                        "durationMicroseconds": 121,
+                        "durationMicroseconds": 131,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "isSelected",
                         "line": 76
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 72,
+                        "durationMicroseconds": 69,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "text",
                         "line": 80
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 20,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 81
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 1218,
+                        "durationMicroseconds": 1262,
                         "errorMessage": "Cannot access value for name isSelected",
                         "functionName": "color",
                         "line": 82
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 18,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 79
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 165,
+                        "durationMicroseconds": 162,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "onClicked",
                         "line": 87
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 13,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 86
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 19,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 96
@@ -222,7 +222,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 49,
+                        "durationMicroseconds": 47,
                         "errorMessage": "Cannot access value for name index",
                         "functionName": "visible",
                         "line": 99
@@ -230,7 +230,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 37,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 22,
                         "errorMessage": "",
                         "functionName": "bottom",
                         "line": 95
@@ -262,7 +262,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 22,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 121
@@ -270,7 +270,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 116,
+                        "durationMicroseconds": 94,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "text",
                         "line": 127
@@ -278,7 +278,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 106,
+                        "durationMicroseconds": 86,
                         "errorMessage": "Cannot access value for name Tumbler",
                         "functionName": "color",
                         "line": 128
@@ -286,7 +286,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 42,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 19,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 130
@@ -294,7 +294,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 40,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 15,
                         "errorMessage": "",
                         "functionName": "verticalAlignment",
                         "line": 131
@@ -302,7 +302,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 155,
+                        "durationMicroseconds": 145,
                         "errorMessage": "Cannot access value for name Tumbler",
                         "functionName": "opacity",
                         "line": 132
@@ -350,7 +350,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 20,
                         "errorMessage": "Cannot access value for name NordicButton",
                         "functionName": "variant",
                         "line": 176
@@ -374,7 +374,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 8,
+                        "durationMicroseconds": 6,
                         "errorMessage": "Cannot load property spacing from const QMetaObject.",
                         "functionName": "spacing",
                         "line": 191
@@ -382,7 +382,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 23,
+                        "durationMicroseconds": 18,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 190

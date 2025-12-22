@@ -22,10 +22,14 @@ class VehicleService : public QObject
     Q_PROPERTY(int fanSpeed READ fanSpeed WRITE setFanSpeed NOTIFY fanSpeedChanged)
     Q_PROPERTY(bool leftSeatHeat READ leftSeatHeat WRITE setLeftSeatHeat NOTIFY leftSeatHeatChanged)
     Q_PROPERTY(bool rightSeatHeat READ rightSeatHeat WRITE setRightSeatHeat NOTIFY rightSeatHeatChanged)
+    Q_PROPERTY(bool leftSeatVentilation READ leftSeatVentilation WRITE setLeftSeatVentilation NOTIFY leftSeatVentilationChanged)
+    Q_PROPERTY(bool rightSeatVentilation READ rightSeatVentilation WRITE setRightSeatVentilation NOTIFY rightSeatVentilationChanged)
     Q_PROPERTY(bool acEnabled READ acEnabled WRITE setAcEnabled NOTIFY acEnabledChanged)
     Q_PROPERTY(bool autoClimate READ autoClimate WRITE setAutoClimate NOTIFY autoClimateChanged)
     Q_PROPERTY(bool recircEnabled READ recircEnabled WRITE setRecircEnabled NOTIFY recircEnabledChanged)
     Q_PROPERTY(bool defrostEnabled READ defrostEnabled WRITE setDefrostEnabled NOTIFY defrostEnabledChanged)
+    Q_PROPERTY(bool frontDefrostEnabled READ frontDefrostEnabled WRITE setFrontDefrostEnabled NOTIFY frontDefrostEnabledChanged)
+    Q_PROPERTY(bool rearDefrostEnabled READ rearDefrostEnabled WRITE setRearDefrostEnabled NOTIFY rearDefrostEnabledChanged)
     
     // Door status (read-only)
     Q_PROPERTY(bool frontLeftDoorOpen READ frontLeftDoorOpen NOTIFY frontLeftDoorOpenChanged)
@@ -85,6 +89,10 @@ public:
     void setLeftSeatHeat(bool on);
     bool rightSeatHeat() const;
     void setRightSeatHeat(bool on);
+    bool leftSeatVentilation() const;
+    void setLeftSeatVentilation(bool on);
+    bool rightSeatVentilation() const;
+    void setRightSeatVentilation(bool on);
     bool acEnabled() const;
     void setAcEnabled(bool on);
     bool autoClimate() const;
@@ -93,6 +101,10 @@ public:
     void setRecircEnabled(bool on);
     bool defrostEnabled() const;
     void setDefrostEnabled(bool on);
+    bool frontDefrostEnabled() const;
+    void setFrontDefrostEnabled(bool on);
+    bool rearDefrostEnabled() const;
+    void setRearDefrostEnabled(bool on);
     
     // Door status
     bool frontLeftDoorOpen() const;
@@ -144,10 +156,14 @@ signals:
     void fanSpeedChanged(int speed);
     void leftSeatHeatChanged(bool on);
     void rightSeatHeatChanged(bool on);
+    void leftSeatVentilationChanged(bool on);
+    void rightSeatVentilationChanged(bool on);
     void acEnabledChanged(bool on);
     void autoClimateChanged(bool on);
     void recircEnabledChanged(bool on);
     void defrostEnabledChanged(bool on);
+    void frontDefrostEnabledChanged(bool on);
+    void rearDefrostEnabledChanged(bool on);
     void frontLeftDoorOpenChanged(bool open);
     void frontRightDoorOpenChanged(bool open);
     void rearLeftDoorOpenChanged(bool open);
@@ -182,10 +198,14 @@ private:
     int m_fanSpeed;
     bool m_leftSeatHeat;
     bool m_rightSeatHeat;
+    bool m_leftSeatVentilation;
+    bool m_rightSeatVentilation;
     bool m_acEnabled;
     bool m_autoClimate;
     bool m_recircEnabled;
     bool m_defrostEnabled;
+    bool m_frontDefrostEnabled;
+    bool m_rearDefrostEnabled;
     
     // Door status
     bool m_frontLeftDoorOpen = false;

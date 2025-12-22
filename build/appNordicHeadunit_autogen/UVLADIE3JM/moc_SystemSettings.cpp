@@ -83,6 +83,11 @@ template <> constexpr inline auto SystemSettings::qt_create_metaobjectdata<qt_me
         "timeZoneChanged",
         "timeZone",
         "currentDateTimeChanged",
+        "mapStyleChanged",
+        "SystemSettings::MapStyle",
+        "mapStyle",
+        "mapOrientationChanged",
+        "mapOrientation",
         "setDate",
         "year",
         "month",
@@ -93,7 +98,12 @@ template <> constexpr inline auto SystemSettings::qt_create_metaobjectdata<qt_me
         "factoryReset",
         "version",
         "availableTimeZones",
-        "currentDateTime"
+        "currentDateTime",
+        "MapStyle",
+        "Standard",
+        "Dark",
+        "Satellite",
+        "Hybrid"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -183,16 +193,24 @@ template <> constexpr inline auto SystemSettings::qt_create_metaobjectdata<qt_me
         }}),
         // Signal 'currentDateTimeChanged'
         QtMocHelpers::SignalData<void()>(44, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'mapStyleChanged'
+        QtMocHelpers::SignalData<void(SystemSettings::MapStyle)>(45, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { 0x80000000 | 46, 47 },
+        }}),
+        // Signal 'mapOrientationChanged'
+        QtMocHelpers::SignalData<void(int)>(48, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Int, 49 },
+        }}),
         // Method 'setDate'
-        QtMocHelpers::MethodData<void(int, int, int)>(45, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::Int, 46 }, { QMetaType::Int, 47 }, { QMetaType::Int, 48 },
+        QtMocHelpers::MethodData<void(int, int, int)>(50, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 51 }, { QMetaType::Int, 52 }, { QMetaType::Int, 53 },
         }}),
         // Method 'setTime'
-        QtMocHelpers::MethodData<void(int, int)>(49, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::Int, 50 }, { QMetaType::Int, 51 },
+        QtMocHelpers::MethodData<void(int, int)>(54, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 55 }, { QMetaType::Int, 56 },
         }}),
         // Method 'factoryReset'
-        QtMocHelpers::MethodData<void()>(52, 2, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::MethodData<void()>(57, 2, QMC::AccessPublic, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
         // property 'darkMode'
@@ -212,7 +230,7 @@ template <> constexpr inline auto SystemSettings::qt_create_metaobjectdata<qt_me
         // property 'language'
         QtMocHelpers::PropertyData<QString>(17, QMetaType::QString, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 7),
         // property 'version'
-        QtMocHelpers::PropertyData<QString>(53, QMetaType::QString, QMC::DefaultPropertyFlags | QMC::Constant),
+        QtMocHelpers::PropertyData<QString>(58, QMetaType::QString, QMC::DefaultPropertyFlags | QMC::Constant),
         // property 'eqBass'
         QtMocHelpers::PropertyData<int>(19, QMetaType::Int, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 8),
         // property 'eqMid'
@@ -240,11 +258,22 @@ template <> constexpr inline auto SystemSettings::qt_create_metaobjectdata<qt_me
         // property 'timeZone'
         QtMocHelpers::PropertyData<QString>(43, QMetaType::QString, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 20),
         // property 'availableTimeZones'
-        QtMocHelpers::PropertyData<QStringList>(54, QMetaType::QStringList, QMC::DefaultPropertyFlags | QMC::Constant),
+        QtMocHelpers::PropertyData<QStringList>(59, QMetaType::QStringList, QMC::DefaultPropertyFlags | QMC::Constant),
         // property 'currentDateTime'
-        QtMocHelpers::PropertyData<QDateTime>(55, QMetaType::QDateTime, QMC::DefaultPropertyFlags, 21),
+        QtMocHelpers::PropertyData<QDateTime>(60, QMetaType::QDateTime, QMC::DefaultPropertyFlags, 21),
+        // property 'mapStyle'
+        QtMocHelpers::PropertyData<enum MapStyle>(47, 0x80000000 | 61, QMC::DefaultPropertyFlags | QMC::Writable | QMC::EnumOrFlag | QMC::StdCppSet, 22),
+        // property 'mapOrientation'
+        QtMocHelpers::PropertyData<int>(49, QMetaType::Int, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 23),
     };
     QtMocHelpers::UintData qt_enums {
+        // enum 'MapStyle'
+        QtMocHelpers::EnumData<enum MapStyle>(61, 61, QMC::EnumFlags{}).add({
+            {   62, MapStyle::Standard },
+            {   63, MapStyle::Dark },
+            {   64, MapStyle::Satellite },
+            {   65, MapStyle::Hybrid },
+        }),
     };
     return QtMocHelpers::metaObjectData<SystemSettings, qt_meta_tag_ZN14SystemSettingsE_t>(QMC::MetaObjectFlag{}, qt_stringData,
             qt_methods, qt_properties, qt_enums);
@@ -286,9 +315,11 @@ void SystemSettings::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         case 19: _t->use24HourFormatChanged((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
         case 20: _t->timeZoneChanged((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         case 21: _t->currentDateTimeChanged(); break;
-        case 22: _t->setDate((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[3]))); break;
-        case 23: _t->setTime((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[2]))); break;
-        case 24: _t->factoryReset(); break;
+        case 22: _t->mapStyleChanged((*reinterpret_cast< std::add_pointer_t<SystemSettings::MapStyle>>(_a[1]))); break;
+        case 23: _t->mapOrientationChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 24: _t->setDate((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[3]))); break;
+        case 25: _t->setTime((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[2]))); break;
+        case 26: _t->factoryReset(); break;
         default: ;
         }
     }
@@ -337,6 +368,10 @@ void SystemSettings::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
             return;
         if (QtMocHelpers::indexOfMethod<void (SystemSettings::*)()>(_a, &SystemSettings::currentDateTimeChanged, 21))
             return;
+        if (QtMocHelpers::indexOfMethod<void (SystemSettings::*)(SystemSettings::MapStyle )>(_a, &SystemSettings::mapStyleChanged, 22))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (SystemSettings::*)(int )>(_a, &SystemSettings::mapOrientationChanged, 23))
+            return;
     }
     if (_c == QMetaObject::ReadProperty) {
         void *_v = _a[0];
@@ -365,6 +400,8 @@ void SystemSettings::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         case 21: *reinterpret_cast<QString*>(_v) = _t->timeZone(); break;
         case 22: *reinterpret_cast<QStringList*>(_v) = _t->availableTimeZones(); break;
         case 23: *reinterpret_cast<QDateTime*>(_v) = _t->currentDateTime(); break;
+        case 24: *reinterpret_cast<enum MapStyle*>(_v) = _t->mapStyle(); break;
+        case 25: *reinterpret_cast<int*>(_v) = _t->mapOrientation(); break;
         default: break;
         }
     }
@@ -392,6 +429,8 @@ void SystemSettings::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         case 19: _t->setAutoTime(*reinterpret_cast<bool*>(_v)); break;
         case 20: _t->setUse24HourFormat(*reinterpret_cast<bool*>(_v)); break;
         case 21: _t->setTimeZone(*reinterpret_cast<QString*>(_v)); break;
+        case 24: _t->setMapStyle(*reinterpret_cast<enum MapStyle*>(_v)); break;
+        case 25: _t->setMapOrientation(*reinterpret_cast<int*>(_v)); break;
         default: break;
         }
     }
@@ -416,20 +455,20 @@ int SystemSettings::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 25)
+        if (_id < 27)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 25;
+        _id -= 27;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 25)
+        if (_id < 27)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 25;
+        _id -= 27;
     }
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::BindableProperty
             || _c == QMetaObject::RegisterPropertyMetaType) {
         qt_static_metacall(this, _c, _id, _a);
-        _id -= 24;
+        _id -= 26;
     }
     return _id;
 }
@@ -564,5 +603,17 @@ void SystemSettings::timeZoneChanged(const QString & _t1)
 void SystemSettings::currentDateTimeChanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 21, nullptr);
+}
+
+// SIGNAL 22
+void SystemSettings::mapStyleChanged(SystemSettings::MapStyle _t1)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 22, nullptr, _t1);
+}
+
+// SIGNAL 23
+void SystemSettings::mapOrientationChanged(int _t1)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 23, nullptr, _t1);
 }
 QT_WARNING_POP

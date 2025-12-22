@@ -114,6 +114,8 @@ CMakeFiles/appNordicHeadunit_copy_res: .qt/appNordicHeadunit_res.txt
 .qt/appNordicHeadunit_res.txt: /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/assets/icons/fan.svg
 .qt/appNordicHeadunit_res.txt: /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/assets/icons/windscreen_defrost.svg
 .qt/appNordicHeadunit_res.txt: /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/assets/icons/heated-front-seat.svg
+.qt/appNordicHeadunit_res.txt: /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/assets/icons/ventilated-front-seat.svg
+.qt/appNordicHeadunit_res.txt: /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/assets/icons/rear-window-defrost.svg
 .qt/appNordicHeadunit_res.txt: /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/assets/icons/navigation-arrow.svg
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Copying appNordicHeadunit qml resources into build dir"
 	/opt/homebrew/bin/cmake -DFILES_INFO_PATH=/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/.qt/appNordicHeadunit_res.cmake -P /opt/homebrew/opt/qt@6/lib/cmake/Qt6Qml/Qt6QmlCopyFiles.cmake

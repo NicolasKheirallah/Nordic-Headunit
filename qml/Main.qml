@@ -28,22 +28,58 @@ ApplicationWindow {
             overlayManager.toggleNotifications()
         }
         
-        // Content Area using SwipeView for instant page switching
+        // Content Area using SwipeView with LAZY LOADING
+        // PERFORMANCE FIX: Only load current + adjacent pages instead of all 6
         SwipeView {
             id: pageView
             Layout.fillWidth: true
             Layout.fillHeight: true
             currentIndex: appLayout.currentTab
             interactive: false  // Disable swipe gestures, use DockBar only
-            clip: true  // Prevent adjacent pages from being visible
+            clip: true
             
-            // All pages - stay alive, instant switching, state preserved
-            HomePage {}
-            MapPage {}
-            MediaPage {}
-            PhonePage {}
-            VehiclePage {}
-            SettingsPage {}
+            // Helper to determine if page should be loaded (current or adjacent)
+            function shouldLoad(index) {
+                return Math.abs(currentIndex - index) <= 1
+            }
+            
+            // Page 0: Home
+            Loader {
+                active: pageView.shouldLoad(0)
+                sourceComponent: Component { HomePage {} }
+                // Keep loaded after first activation for instant re-access
+                onActiveChanged: if (active) active = true
+            }
+            // Page 1: Map (heavy - benefits most from lazy loading)
+            Loader {
+                active: pageView.shouldLoad(1)
+                sourceComponent: Component { MapPage {} }
+                onActiveChanged: if (active) active = true
+            }
+            // Page 2: Media
+            Loader {
+                active: pageView.shouldLoad(2)
+                sourceComponent: Component { MediaPage {} }
+                onActiveChanged: if (active) active = true
+            }
+            // Page 3: Phone
+            Loader {
+                active: pageView.shouldLoad(3)
+                sourceComponent: Component { PhonePage {} }
+                onActiveChanged: if (active) active = true
+            }
+            // Page 4: Vehicle
+            Loader {
+                active: pageView.shouldLoad(4)
+                sourceComponent: Component { VehiclePage {} }
+                onActiveChanged: if (active) active = true
+            }
+            // Page 5: Settings
+            Loader {
+                active: pageView.shouldLoad(5)
+                sourceComponent: Component { SettingsPage {} }
+                onActiveChanged: if (active) active = true
+            }
         }
     }
     

@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 39,
-                        "durationMicroseconds": 1190,
+                        "durationMicroseconds": 1272,
                         "errorMessage": "Cannot load property layout from const QMetaObject.",
                         "functionName": "isCompact",
                         "line": 17
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 123,
+                        "durationMicroseconds": 116,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "pageComponents",
                         "line": 25
@@ -25,7 +25,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Functions without type annotations won't be compiled",
                         "functionName": "openCategory",
-                        "line": 39
+                        "line": 38
                     },
                     {
                         "codegenSuccessful": false,
@@ -33,12 +33,12 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Functions without type annotations won't be compiled",
                         "functionName": "openContent",
-                        "line": 185
+                        "line": 189
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 80,
+                        "durationMicroseconds": 94,
                         "errorMessage": "Cannot access value for name NordicTheme",
                         "functionName": "color",
                         "line": 12
@@ -46,82 +46,82 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 10,
+                        "durationMicroseconds": 23,
                         "errorMessage": "Cannot access value for name isCompact",
                         "functionName": "visible",
-                        "line": 57
+                        "line": 56
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 37,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 56
+                        "line": 55
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 5,
+                        "durationMicroseconds": 12,
                         "errorMessage": "Cannot retrieve a non-object type by ID: root",
                         "functionName": "selectedIndex",
+                        "line": 68
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 33,
+                        "durationMicroseconds": 15,
+                        "errorMessage": "Cannot retrieve a non-object type by ID: root",
+                        "functionName": "onCategorySelected",
+                        "line": 69
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 33,
+                        "durationMicroseconds": 21,
+                        "errorMessage": "",
+                        "functionName": "onCategorySelected",
                         "line": 69
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 33,
-                        "durationMicroseconds": 10,
-                        "errorMessage": "Cannot retrieve a non-object type by ID: root",
-                        "functionName": "onCategorySelected",
-                        "line": 70
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 33,
-                        "durationMicroseconds": 12,
-                        "errorMessage": "",
-                        "functionName": "onCategorySelected",
-                        "line": 70
-                    },
-                    {
-                        "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 8,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
-                        "line": 77
+                        "line": 76
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 43,
-                        "durationMicroseconds": 33,
+                        "durationMicroseconds": 40,
                         "errorMessage": "",
                         "functionName": "onSourceComponentChanged",
-                        "line": 97
+                        "line": 96
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 16,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 88
+                        "line": 87
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 9,
                         "errorMessage": "Cannot load property spacing from const QMetaObject.",
                         "functionName": "margins",
-                        "line": 89
+                        "line": 88
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 47,
+                        "durationMicroseconds": 51,
                         "errorMessage": "Cannot access value for name isCompact",
                         "functionName": "onCompleted",
-                        "line": 104
+                        "line": 103
                     },
                     {
                         "codegenSuccessful": false,
@@ -129,7 +129,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find property \"visible\".",
                         "functionName": "visible",
-                        "line": 115
+                        "line": 114
                     },
                     {
                         "codegenSuccessful": false,
@@ -137,7 +137,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find property \"fill\".",
                         "functionName": "fill",
-                        "line": 114
+                        "line": 113
                     },
                     {
                         "codegenSuccessful": false,
@@ -145,63 +145,63 @@
                         "durationMicroseconds": 6,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "selectedIndex",
-                        "line": 120
+                        "line": 119
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 33,
-                        "durationMicroseconds": 5,
+                        "durationMicroseconds": 9,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "onCategorySelected",
-                        "line": 121
+                        "line": 120
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 10,
+                        "durationMicroseconds": 12,
                         "errorMessage": "",
                         "functionName": "onCategorySelected",
-                        "line": 121
+                        "line": 120
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 54,
-                        "durationMicroseconds": 5,
+                        "durationMicroseconds": 7,
                         "errorMessage": "Cannot access value for name stackView",
                         "functionName": "from",
-                        "line": 126
+                        "line": 125
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 106,
-                        "durationMicroseconds": 25,
+                        "durationMicroseconds": 27,
                         "errorMessage": "Cannot access value for name Easing",
                         "functionName": "type",
-                        "line": 126
+                        "line": 125
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 61,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 7,
                         "errorMessage": "Cannot access value for name stackView",
                         "functionName": "to",
-                        "line": 129
+                        "line": 128
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 113,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 21,
                         "errorMessage": "Cannot access value for name Easing",
                         "functionName": "type",
-                        "line": 129
+                        "line": 128
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 54,
-                        "durationMicroseconds": 5,
+                        "durationMicroseconds": 6,
                         "errorMessage": "Cannot access value for name stackView",
                         "functionName": "from",
-                        "line": 132
+                        "line": 131
                     },
                     {
                         "codegenSuccessful": false,
@@ -209,7 +209,7 @@
                         "durationMicroseconds": 17,
                         "errorMessage": "Cannot access value for name Easing",
                         "functionName": "type",
-                        "line": 132
+                        "line": 131
                     },
                     {
                         "codegenSuccessful": false,
@@ -217,20 +217,20 @@
                         "durationMicroseconds": 4,
                         "errorMessage": "Cannot access value for name stackView",
                         "functionName": "to",
-                        "line": 135
+                        "line": 134
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 106,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 16,
                         "errorMessage": "Cannot access value for name Easing",
                         "functionName": "type",
-                        "line": 135
+                        "line": 134
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 90,
+                        "durationMicroseconds": 116,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "value",
                         "line": 152
@@ -238,7 +238,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 75,
+                        "durationMicroseconds": 82,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "onMoved",
                         "line": 154
@@ -254,18 +254,34 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 34,
+                        "durationMicroseconds": 46,
                         "errorMessage": "Cannot access value for name isCompact",
                         "functionName": "onClicked",
                         "line": 160
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 32,
+                        "column": 28,
+                        "durationMicroseconds": 12,
+                        "errorMessage": "Cannot access value for name root",
+                        "functionName": "onWifiClicked",
+                        "line": 177
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 33,
                         "durationMicroseconds": 11,
                         "errorMessage": "Cannot access value for name root",
+                        "functionName": "onBluetoothClicked",
+                        "line": 178
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 10,
+                        "errorMessage": "Cannot access value for name root",
                         "functionName": "onLanguageClicked",
-                        "line": 199
+                        "line": 202
                     }
                 ],
                 "filePath": "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Pages/SettingsPage.qml"

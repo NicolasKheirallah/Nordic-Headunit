@@ -92,6 +92,10 @@ set(src_and_dest_list
     "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/NordicHeadunit/assets/icons/windscreen_defrost.svg"
     "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/assets/icons/heated-front-seat.svg"
     "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/NordicHeadunit/assets/icons/heated-front-seat.svg"
+    "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/assets/icons/ventilated-front-seat.svg"
+    "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/NordicHeadunit/assets/icons/ventilated-front-seat.svg"
+    "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/assets/icons/rear-window-defrost.svg"
+    "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/NordicHeadunit/assets/icons/rear-window-defrost.svg"
     "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/assets/icons/navigation-arrow.svg"
     "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/NordicHeadunit/assets/icons/navigation-arrow.svg"
 

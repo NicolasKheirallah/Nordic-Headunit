@@ -1005,7 +1005,7 @@
         "classes": [
             {
                 "className": "NavigationService",
-                "lineNumber": 6,
+                "lineNumber": 13,
                 "methods": [
                     {
                         "access": "public",
@@ -1015,14 +1015,60 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 2,
+                        "index": 11,
                         "name": "startNavigation",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
-                        "index": 3,
+                        "index": 12,
                         "name": "stopNavigation",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "query",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 13,
+                        "name": "searchPlaces",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "category",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 14,
+                        "name": "searchCategory",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 15,
+                        "name": "clearMapPins",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "start",
+                                "type": "QGeoCoordinate"
+                            },
+                            {
+                                "name": "end",
+                                "type": "QGeoCoordinate"
+                            }
+                        ],
+                        "index": 16,
+                        "name": "calculateRoute",
                         "returnType": "void"
                     }
                 ],
@@ -1033,6 +1079,34 @@
                         "designable": true,
                         "final": false,
                         "index": 0,
+                        "name": "vehiclePosition",
+                        "notify": "vehiclePositionChanged",
+                        "read": "vehiclePosition",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QGeoCoordinate",
+                        "user": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 1,
+                        "name": "vehicleBearing",
+                        "notify": "vehiclePositionChanged",
+                        "read": "vehicleBearing",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "qreal",
+                        "user": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 2,
                         "name": "isNavigating",
                         "notify": "navigationStateChanged",
                         "read": "isNavigating",
@@ -1046,21 +1120,7 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 1,
-                        "name": "destination",
-                        "notify": "navigationStateChanged",
-                        "read": "destination",
-                        "required": false,
-                        "scriptable": true,
-                        "stored": true,
-                        "type": "QString",
-                        "user": false
-                    },
-                    {
-                        "constant": false,
-                        "designable": true,
-                        "final": false,
-                        "index": 2,
+                        "index": 3,
                         "name": "nextManeuver",
                         "notify": "guidanceChanged",
                         "read": "nextManeuver",
@@ -1074,7 +1134,7 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 3,
+                        "index": 4,
                         "name": "distanceToManeuver",
                         "notify": "guidanceChanged",
                         "read": "distanceToManeuver",
@@ -1088,14 +1148,84 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 4,
-                        "name": "distanceMeters",
+                        "index": 5,
+                        "name": "destination",
+                        "notify": "navigationStateChanged",
+                        "read": "destination",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QString",
+                        "user": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 6,
+                        "name": "currentRoadName",
                         "notify": "guidanceChanged",
-                        "read": "distanceMeters",
+                        "read": "currentRoadName",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QString",
+                        "user": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 7,
+                        "name": "speedLimit",
+                        "notify": "guidanceChanged",
+                        "read": "speedLimit",
                         "required": false,
                         "scriptable": true,
                         "stored": true,
                         "type": "int",
+                        "user": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 8,
+                        "name": "trafficSegments",
+                        "notify": "routeCalculated",
+                        "read": "trafficSegments",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QVariantList",
+                        "user": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 9,
+                        "name": "recentSearches",
+                        "notify": "recentSearchesChanged",
+                        "read": "recentSearches",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QVariantList",
+                        "user": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 10,
+                        "name": "mapPins",
+                        "notify": "mapPinsChanged",
+                        "read": "mapPins",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QVariantList",
                         "user": false
                     }
                 ],
@@ -1111,6 +1241,86 @@
                         "access": "public",
                         "index": 1,
                         "name": "guidanceChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 2,
+                        "name": "vehiclePositionChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "text",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 3,
+                        "name": "voiceInstruction",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "results",
+                                "type": "QVariantList"
+                            }
+                        ],
+                        "index": 4,
+                        "name": "searchResultReceived",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 5,
+                        "name": "recentSearchesChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 6,
+                        "name": "mapPinsChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "routeData",
+                                "type": "QVariantMap"
+                            }
+                        ],
+                        "index": 7,
+                        "name": "routeCalculated",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "message",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 8,
+                        "name": "errorOccurred",
+                        "returnType": "void"
+                    }
+                ],
+                "slots": [
+                    {
+                        "access": "private",
+                        "index": 9,
+                        "name": "onSearchFinished",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "private",
+                        "index": 10,
+                        "name": "onRouteFinished",
                         "returnType": "void"
                     }
                 ],
@@ -1275,6 +1485,19 @@
         "classes": [
             {
                 "className": "SystemSettings",
+                "enums": [
+                    {
+                        "isClass": false,
+                        "isFlag": false,
+                        "name": "MapStyle",
+                        "values": [
+                            "Standard",
+                            "Dark",
+                            "Satellite",
+                            "Hybrid"
+                        ]
+                    }
+                ],
                 "lineNumber": 9,
                 "methods": [
                     {
@@ -1293,7 +1516,7 @@
                                 "type": "int"
                             }
                         ],
-                        "index": 22,
+                        "index": 24,
                         "name": "setDate",
                         "returnType": "void"
                     },
@@ -1309,13 +1532,13 @@
                                 "type": "int"
                             }
                         ],
-                        "index": 23,
+                        "index": 25,
                         "name": "setTime",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
-                        "index": 24,
+                        "index": 26,
                         "name": "factoryReset",
                         "returnType": "void"
                     }
@@ -1676,6 +1899,36 @@
                         "stored": true,
                         "type": "QDateTime",
                         "user": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 24,
+                        "name": "mapStyle",
+                        "notify": "mapStyleChanged",
+                        "read": "mapStyle",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "MapStyle",
+                        "user": false,
+                        "write": "setMapStyle"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 25,
+                        "name": "mapOrientation",
+                        "notify": "mapOrientationChanged",
+                        "read": "mapOrientation",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "int",
+                        "user": false,
+                        "write": "setMapOrientation"
                     }
                 ],
                 "qualifiedClassName": "SystemSettings",
@@ -1937,6 +2190,30 @@
                         "index": 21,
                         "name": "currentDateTimeChanged",
                         "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "mapStyle",
+                                "type": "SystemSettings::MapStyle"
+                            }
+                        ],
+                        "index": 22,
+                        "name": "mapStyleChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "mapOrientation",
+                                "type": "int"
+                            }
+                        ],
+                        "index": 23,
+                        "name": "mapOrientationChanged",
+                        "returnType": "void"
                     }
                 ],
                 "superClasses": [
@@ -2176,6 +2453,36 @@
                         "designable": true,
                         "final": false,
                         "index": 10,
+                        "name": "leftSeatVentilation",
+                        "notify": "leftSeatVentilationChanged",
+                        "read": "leftSeatVentilation",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false,
+                        "write": "setLeftSeatVentilation"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 11,
+                        "name": "rightSeatVentilation",
+                        "notify": "rightSeatVentilationChanged",
+                        "read": "rightSeatVentilation",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false,
+                        "write": "setRightSeatVentilation"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 12,
                         "name": "acEnabled",
                         "notify": "acEnabledChanged",
                         "read": "acEnabled",
@@ -2190,7 +2497,7 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 11,
+                        "index": 13,
                         "name": "autoClimate",
                         "notify": "autoClimateChanged",
                         "read": "autoClimate",
@@ -2205,7 +2512,7 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 12,
+                        "index": 14,
                         "name": "recircEnabled",
                         "notify": "recircEnabledChanged",
                         "read": "recircEnabled",
@@ -2220,7 +2527,7 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 13,
+                        "index": 15,
                         "name": "defrostEnabled",
                         "notify": "defrostEnabledChanged",
                         "read": "defrostEnabled",
@@ -2235,7 +2542,37 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 14,
+                        "index": 16,
+                        "name": "frontDefrostEnabled",
+                        "notify": "frontDefrostEnabledChanged",
+                        "read": "frontDefrostEnabled",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false,
+                        "write": "setFrontDefrostEnabled"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 17,
+                        "name": "rearDefrostEnabled",
+                        "notify": "rearDefrostEnabledChanged",
+                        "read": "rearDefrostEnabled",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false,
+                        "write": "setRearDefrostEnabled"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 18,
                         "name": "frontLeftDoorOpen",
                         "notify": "frontLeftDoorOpenChanged",
                         "read": "frontLeftDoorOpen",
@@ -2249,7 +2586,7 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 15,
+                        "index": 19,
                         "name": "frontRightDoorOpen",
                         "notify": "frontRightDoorOpenChanged",
                         "read": "frontRightDoorOpen",
@@ -2263,7 +2600,7 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 16,
+                        "index": 20,
                         "name": "rearLeftDoorOpen",
                         "notify": "rearLeftDoorOpenChanged",
                         "read": "rearLeftDoorOpen",
@@ -2277,7 +2614,7 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 17,
+                        "index": 21,
                         "name": "rearRightDoorOpen",
                         "notify": "rearRightDoorOpenChanged",
                         "read": "rearRightDoorOpen",
@@ -2291,7 +2628,7 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 18,
+                        "index": 22,
                         "name": "trunkOpen",
                         "notify": "trunkOpenChanged",
                         "read": "trunkOpen",
@@ -2305,7 +2642,7 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 19,
+                        "index": 23,
                         "name": "hoodOpen",
                         "notify": "hoodOpenChanged",
                         "read": "hoodOpen",
@@ -2319,7 +2656,7 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 20,
+                        "index": 24,
                         "name": "doorsStatus",
                         "notify": "doorsStatusChanged",
                         "read": "doorsStatus",
@@ -2333,7 +2670,7 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 21,
+                        "index": 25,
                         "name": "connectionState",
                         "notify": "connectionStateChanged",
                         "read": "connectionState",
@@ -2347,7 +2684,7 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 22,
+                        "index": 26,
                         "name": "ignitionState",
                         "notify": "ignitionStateChanged",
                         "read": "ignitionState",
@@ -2361,7 +2698,7 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 23,
+                        "index": 27,
                         "name": "lastUpdateTime",
                         "notify": "lastUpdateTimeChanged",
                         "read": "lastUpdateTime",
@@ -2375,7 +2712,7 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 24,
+                        "index": 28,
                         "name": "handbrakeEngaged",
                         "notify": "handbrakeEngagedChanged",
                         "read": "handbrakeEngaged",
@@ -2389,7 +2726,7 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 25,
+                        "index": 29,
                         "name": "batteryStatus",
                         "notify": "batteryStatusChanged",
                         "read": "batteryStatus",
@@ -2403,7 +2740,7 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 26,
+                        "index": 30,
                         "name": "tirePressureFL",
                         "notify": "tirePressureChanged",
                         "read": "tirePressureFL",
@@ -2417,7 +2754,7 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 27,
+                        "index": 31,
                         "name": "tirePressureFR",
                         "notify": "tirePressureChanged",
                         "read": "tirePressureFR",
@@ -2431,7 +2768,7 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 28,
+                        "index": 32,
                         "name": "tirePressureRL",
                         "notify": "tirePressureChanged",
                         "read": "tirePressureRL",
@@ -2445,7 +2782,7 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 29,
+                        "index": 33,
                         "name": "tirePressureRR",
                         "notify": "tirePressureChanged",
                         "read": "tirePressureRR",
@@ -2459,7 +2796,7 @@
                         "constant": true,
                         "designable": true,
                         "final": false,
-                        "index": 30,
+                        "index": 34,
                         "name": "tirePressureSupported",
                         "read": "tirePressureSupported",
                         "required": false,
@@ -2472,7 +2809,7 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 31,
+                        "index": 35,
                         "name": "tripDistance",
                         "notify": "tripDataChanged",
                         "read": "tripDistance",
@@ -2486,7 +2823,7 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 32,
+                        "index": 36,
                         "name": "tripTime",
                         "notify": "tripDataChanged",
                         "read": "tripTime",
@@ -2500,7 +2837,7 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 33,
+                        "index": 37,
                         "name": "avgSpeed",
                         "notify": "tripDataChanged",
                         "read": "avgSpeed",
@@ -2514,7 +2851,7 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 34,
+                        "index": 38,
                         "name": "fuelConsumption",
                         "notify": "tripDataChanged",
                         "read": "fuelConsumption",
@@ -2528,7 +2865,7 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 35,
+                        "index": 39,
                         "name": "warnings",
                         "notify": "warningsChanged",
                         "read": "warnings",
@@ -2542,7 +2879,7 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 36,
+                        "index": 40,
                         "name": "hasWarnings",
                         "notify": "warningsChanged",
                         "read": "hasWarnings",
@@ -2556,7 +2893,7 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 37,
+                        "index": 41,
                         "name": "isLocked",
                         "notify": "isLockedChanged",
                         "read": "isLocked",
@@ -2571,7 +2908,7 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 38,
+                        "index": 42,
                         "name": "interiorLightOn",
                         "notify": "interiorLightOnChanged",
                         "read": "interiorLightOn",
@@ -2714,7 +3051,7 @@
                             }
                         ],
                         "index": 10,
-                        "name": "acEnabledChanged",
+                        "name": "leftSeatVentilationChanged",
                         "returnType": "void"
                     },
                     {
@@ -2726,7 +3063,7 @@
                             }
                         ],
                         "index": 11,
-                        "name": "autoClimateChanged",
+                        "name": "rightSeatVentilationChanged",
                         "returnType": "void"
                     },
                     {
@@ -2738,7 +3075,7 @@
                             }
                         ],
                         "index": 12,
-                        "name": "recircEnabledChanged",
+                        "name": "acEnabledChanged",
                         "returnType": "void"
                     },
                     {
@@ -2750,6 +3087,30 @@
                             }
                         ],
                         "index": 13,
+                        "name": "autoClimateChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "on",
+                                "type": "bool"
+                            }
+                        ],
+                        "index": 14,
+                        "name": "recircEnabledChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "on",
+                                "type": "bool"
+                            }
+                        ],
+                        "index": 15,
                         "name": "defrostEnabledChanged",
                         "returnType": "void"
                     },
@@ -2757,48 +3118,24 @@
                         "access": "public",
                         "arguments": [
                             {
-                                "name": "open",
-                                "type": "bool"
-                            }
-                        ],
-                        "index": 14,
-                        "name": "frontLeftDoorOpenChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "public",
-                        "arguments": [
-                            {
-                                "name": "open",
-                                "type": "bool"
-                            }
-                        ],
-                        "index": 15,
-                        "name": "frontRightDoorOpenChanged",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "public",
-                        "arguments": [
-                            {
-                                "name": "open",
+                                "name": "on",
                                 "type": "bool"
                             }
                         ],
                         "index": 16,
-                        "name": "rearLeftDoorOpenChanged",
+                        "name": "frontDefrostEnabledChanged",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
                         "arguments": [
                             {
-                                "name": "open",
+                                "name": "on",
                                 "type": "bool"
                             }
                         ],
                         "index": 17,
-                        "name": "rearRightDoorOpenChanged",
+                        "name": "rearDefrostEnabledChanged",
                         "returnType": "void"
                     },
                     {
@@ -2810,7 +3147,7 @@
                             }
                         ],
                         "index": 18,
-                        "name": "trunkOpenChanged",
+                        "name": "frontLeftDoorOpenChanged",
                         "returnType": "void"
                     },
                     {
@@ -2822,60 +3159,108 @@
                             }
                         ],
                         "index": 19,
+                        "name": "frontRightDoorOpenChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "open",
+                                "type": "bool"
+                            }
+                        ],
+                        "index": 20,
+                        "name": "rearLeftDoorOpenChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "open",
+                                "type": "bool"
+                            }
+                        ],
+                        "index": 21,
+                        "name": "rearRightDoorOpenChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "open",
+                                "type": "bool"
+                            }
+                        ],
+                        "index": 22,
+                        "name": "trunkOpenChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "open",
+                                "type": "bool"
+                            }
+                        ],
+                        "index": 23,
                         "name": "hoodOpenChanged",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
-                        "index": 20,
+                        "index": 24,
                         "name": "doorsStatusChanged",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
-                        "index": 21,
+                        "index": 25,
                         "name": "connectionStateChanged",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
-                        "index": 22,
+                        "index": 26,
                         "name": "ignitionStateChanged",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
-                        "index": 23,
+                        "index": 27,
                         "name": "lastUpdateTimeChanged",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
-                        "index": 24,
+                        "index": 28,
                         "name": "handbrakeEngagedChanged",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
-                        "index": 25,
+                        "index": 29,
                         "name": "batteryStatusChanged",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
-                        "index": 26,
+                        "index": 30,
                         "name": "tirePressureChanged",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
-                        "index": 27,
+                        "index": 31,
                         "name": "tripDataChanged",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
-                        "index": 28,
+                        "index": 32,
                         "name": "warningsChanged",
                         "returnType": "void"
                     },
@@ -2887,7 +3272,7 @@
                                 "type": "bool"
                             }
                         ],
-                        "index": 29,
+                        "index": 33,
                         "name": "isLockedChanged",
                         "returnType": "void"
                     },
@@ -2899,7 +3284,7 @@
                                 "type": "bool"
                             }
                         ],
-                        "index": 30,
+                        "index": 34,
                         "name": "interiorLightOnChanged",
                         "returnType": "void"
                     }

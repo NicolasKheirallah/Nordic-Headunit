@@ -108,143 +108,157 @@ Rectangle {
             
             Item { Layout.fillWidth: true }  // Left spacer
             
-            // --- Driver Seat Heat ---
-            Item {
-                width: 48; height: 48
+            // ═══════════════════════════════════════════════════════════════
+            // DRIVER CLUSTER
+            // ═══════════════════════════════════════════════════════════════
+            Row {
+                spacing: 8
                 
-                Rectangle {
-                    anchors.fill: parent
-                    radius: 8
-                    color: internal.leftSeatLevel > 0 ? NordicTheme.colors.accent.warm : 
-                           leftSeatMouse.pressed ? NordicTheme.colors.bg.elevated : NordicTheme.colors.bg.elevated
-                }
-                
-                Column {
-                    anchors.centerIn: parent
-                    spacing: 2
-                    
-                    NordicIcon {
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        source: "qrc:/qt/qml/NordicHeadunit/assets/icons/heated-front-seat.svg"
-                        size: NordicIcon.Size.SM
-                        color: internal.leftSeatLevel > 0 ? "white" : NordicTheme.colors.text.secondary
+                // Heated Seat
+                Item {
+                    width: 48; height: 48
+                    Rectangle {
+                        anchors.fill: parent; radius: 8
+                        color: internal.leftSeatHeatLevel > 0 ? NordicTheme.colors.accent.warm : 
+                               leftSeatHeatMouse.pressed ? NordicTheme.colors.bg.elevated : NordicTheme.colors.bg.elevated
                     }
-                    
-                    Row {
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        spacing: 2
-                        Repeater {
-                            model: 3
-                            Rectangle {
-                                width: 6; height: 3
-                                radius: 1
-                                color: index < internal.leftSeatLevel 
-                                    ? "white" : (internal.leftSeatLevel > 0 ? Qt.rgba(1,1,1,0.3) : NordicTheme.colors.border.muted)
+                    Column {
+                        anchors.centerIn: parent; spacing: 2
+                        NordicIcon {
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            source: "qrc:/qt/qml/NordicHeadunit/assets/icons/heated-front-seat.svg"
+                            size: NordicIcon.Size.SM
+                            color: internal.leftSeatHeatLevel > 0 ? "white" : NordicTheme.colors.text.secondary
+                        }
+                        Row {
+                            anchors.horizontalCenter: parent.horizontalCenter; spacing: 2
+                            Repeater {
+                                model: 3
+                                Rectangle {
+                                    width: 6; height: 3; radius: 1
+                                    color: index < internal.leftSeatHeatLevel ? "white" : (internal.leftSeatHeatLevel > 0 ? Qt.rgba(1,1,1,0.3) : NordicTheme.colors.border.muted)
+                                }
                             }
+                        }
+                    }
+                    MouseArea {
+                        id: leftSeatHeatMouse; anchors.fill: parent
+                        onClicked: {
+                            internal.leftSeatHeatLevel = (internal.leftSeatHeatLevel + 1) % 4
+                            if (internal.leftSeatHeatLevel > 0) internal.leftSeatVentLevel = 0 // Mutual exclusion
+                        }
+                    }
+                }
+
+                // Ventilated Seat
+                Item {
+                    width: 48; height: 48
+                    Rectangle {
+                        anchors.fill: parent; radius: 8
+                        color: internal.leftSeatVentLevel > 0 ? NordicTheme.colors.accent.primary : 
+                               leftSeatVentMouse.pressed ? NordicTheme.colors.bg.elevated : NordicTheme.colors.bg.elevated
+                    }
+                    Column {
+                        anchors.centerIn: parent; spacing: 2
+                        NordicIcon {
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            source: "qrc:/qt/qml/NordicHeadunit/assets/icons/ventilated-front-seat.svg"
+                            size: NordicIcon.Size.SM
+                            color: internal.leftSeatVentLevel > 0 ? "white" : NordicTheme.colors.text.secondary
+                        }
+                        Row {
+                            anchors.horizontalCenter: parent.horizontalCenter; spacing: 2
+                            Repeater {
+                                model: 3
+                                Rectangle {
+                                    width: 6; height: 3; radius: 1
+                                    color: index < internal.leftSeatVentLevel ? "white" : (internal.leftSeatVentLevel > 0 ? Qt.rgba(1,1,1,0.3) : NordicTheme.colors.border.muted)
+                                }
+                            }
+                        }
+                    }
+                    MouseArea {
+                        id: leftSeatVentMouse; anchors.fill: parent
+                        onClicked: {
+                            internal.leftSeatVentLevel = (internal.leftSeatVentLevel + 1) % 4
+                            if (internal.leftSeatVentLevel > 0) internal.leftSeatHeatLevel = 0 // Mutual exclusion
                         }
                     }
                 }
                 
-                MouseArea {
-                    id: leftSeatMouse
-                    anchors.fill: parent
-                    onClicked: internal.leftSeatLevel = (internal.leftSeatLevel + 1) % 4
-                }
-            }
-            
-            // --- Driver Temperature ---
-            RowLayout {
-                spacing: 4
-                
-                Item {
-                    width: 36; height: 44
-                    Rectangle {
-                        anchors.fill: parent; radius: 6
-                        color: dMinus.pressed ? NordicTheme.colors.bg.elevated : "transparent"
+                Item { width: 12; height: 1 } // Spacer
+
+                // Temperature
+                RowLayout {
+                    spacing: 4
+                    Item {
+                        width: 36; height: 44
+                        Rectangle { anchors.fill: parent; radius: 6; color: dMinus.pressed ? NordicTheme.colors.bg.elevated : "transparent" }
+                        Text { anchors.centerIn: parent; text: "−"; font.pixelSize: 22; font.family: "Helvetica"; color: NordicTheme.colors.text.secondary }
+                        MouseArea { id: dMinus; anchors.fill: parent; onClicked: VehicleService.driverTemp = Math.max(16, VehicleService.driverTemp - 1) }
                     }
                     Text {
-                        anchors.centerIn: parent
-                        text: "−"; font.pixelSize: 22; font.family: "Helvetica"
-                        color: NordicTheme.colors.text.secondary
+                        text: VehicleService.driverTemp + "°"
+                        font.pixelSize: 24; font.weight: Font.Medium; font.family: "Helvetica"; color: NordicTheme.colors.text.primary
                     }
-                    MouseArea {
-                        id: dMinus; anchors.fill: parent
-                        onClicked: VehicleService.driverTemp = Math.max(16, VehicleService.driverTemp - 1)
-                    }
-                }
-                
-                Text {
-                    text: VehicleService.driverTemp + "°"
-                    font.pixelSize: 24; font.weight: Font.Medium; font.family: "Helvetica"
-                    color: NordicTheme.colors.text.primary
-                }
-                
-                Item {
-                    width: 36; height: 44
-                    Rectangle {
-                        anchors.fill: parent; radius: 6
-                        color: dPlus.pressed ? NordicTheme.colors.bg.elevated : "transparent"
-                    }
-                    Text {
-                        anchors.centerIn: parent
-                        text: "+"; font.pixelSize: 22; font.family: "Helvetica"
-                        color: NordicTheme.colors.text.secondary
-                    }
-                    MouseArea {
-                        id: dPlus; anchors.fill: parent
-                        onClicked: VehicleService.driverTemp = Math.min(28, VehicleService.driverTemp + 1)
+                    Item {
+                        width: 36; height: 44
+                        Rectangle { anchors.fill: parent; radius: 6; color: dPlus.pressed ? NordicTheme.colors.bg.elevated : "transparent" }
+                        Text { anchors.centerIn: parent; text: "+"; font.pixelSize: 22; font.family: "Helvetica"; color: NordicTheme.colors.text.secondary }
+                        MouseArea { id: dPlus; anchors.fill: parent; onClicked: VehicleService.driverTemp = Math.min(28, VehicleService.driverTemp + 1) }
                     }
                 }
             }
-            
-            // --- Fan Control (Centered) ---
-            RowLayout {
-                spacing: 2
+
+            Item { Layout.fillWidth: true }  // Spacer
+
+            // ═══════════════════════════════════════════════════════════════
+            // CENTRAL CLUSTER (Defrosts & Fan)
+            // ═══════════════════════════════════════════════════════════════
+            Row {
+                spacing: 8
                 
-                Item {
-                    width: 28; height: 36
-                    Rectangle {
-                        anchors.fill: parent; radius: 4
-                        color: fanMinus.pressed ? NordicTheme.colors.bg.elevated : "transparent"
-                    }
-                    Text {
-                        anchors.centerIn: parent
-                        text: "−"; font.pixelSize: 16; font.family: "Helvetica"
-                        color: NordicTheme.colors.text.tertiary
-                    }
-                    MouseArea {
-                        id: fanMinus; anchors.fill: parent
-                        onClicked: VehicleService.fanSpeed = Math.max(0, VehicleService.fanSpeed - 1)
-                    }
-                }
-                
+                // Front Defrost
                 Item {
                     width: 48; height: 48
-                    
+                    Rectangle {
+                        anchors.fill: parent; radius: 8
+                        color: VehicleService.frontDefrostEnabled ? NordicTheme.colors.semantic.warning : 
+                               fDefrostMouse.pressed ? NordicTheme.colors.bg.elevated : NordicTheme.colors.bg.elevated
+                    }
+                    NordicIcon {
+                        anchors.centerIn: parent
+                        source: "qrc:/qt/qml/NordicHeadunit/assets/icons/windscreen_defrost.svg"
+                        size: NordicIcon.Size.SM
+                        color: VehicleService.frontDefrostEnabled ? "black" : NordicTheme.colors.text.secondary
+                    }
+                    MouseArea {
+                        id: fDefrostMouse; anchors.fill: parent
+                        onClicked: VehicleService.frontDefrostEnabled = !VehicleService.frontDefrostEnabled
+                    }
+                }
+
+                // Fan Control
+                Item {
+                    width: 48; height: 48
                     Rectangle {
                         anchors.fill: parent; radius: 8
                         color: VehicleService.autoClimate ? NordicTheme.colors.accent.primary : NordicTheme.colors.bg.elevated
                     }
-                    
                     Column {
-                        anchors.centerIn: parent
-                        spacing: 2
-                        
+                        anchors.centerIn: parent; spacing: 2
                         NordicIcon {
                             anchors.horizontalCenter: parent.horizontalCenter
                             source: "qrc:/qt/qml/NordicHeadunit/assets/icons/fan.svg"
                             size: NordicIcon.Size.SM
                             color: VehicleService.autoClimate ? "white" : NordicTheme.colors.text.secondary
                         }
-                        
                         Row {
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            spacing: 1
+                            anchors.horizontalCenter: parent.horizontalCenter; spacing: 1
                             Repeater {
                                 model: 5
                                 Rectangle {
-                                    width: 4; height: 3 + index
-                                    radius: 1
+                                    width: 4; height: 3 + index; radius: 1
                                     color: index < VehicleService.fanSpeed 
                                         ? (VehicleService.autoClimate ? "white" : NordicTheme.colors.accent.primary)
                                         : (VehicleService.autoClimate ? Qt.rgba(1,1,1,0.3) : NordicTheme.colors.border.muted)
@@ -252,117 +266,134 @@ Rectangle {
                             }
                         }
                     }
-                    
                     MouseArea {
                         anchors.fill: parent
                         onClicked: VehicleService.fanSpeed = (VehicleService.fanSpeed + 1) % 6
                     }
                 }
-                
+
+                // Rear Defrost
                 Item {
-                    width: 28; height: 36
+                    width: 48; height: 48
                     Rectangle {
-                        anchors.fill: parent; radius: 4
-                        color: fanPlus.pressed ? NordicTheme.colors.bg.elevated : "transparent"
+                        anchors.fill: parent; radius: 8
+                        color: VehicleService.rearDefrostEnabled ? NordicTheme.colors.semantic.warning : 
+                               rDefrostMouse.pressed ? NordicTheme.colors.bg.elevated : NordicTheme.colors.bg.elevated
                     }
-                    Text {
-                        anchors.centerIn: parent
-                        text: "+"; font.pixelSize: 16; font.family: "Helvetica"
-                        color: NordicTheme.colors.text.tertiary
-                    }
-                    MouseArea {
-                        id: fanPlus; anchors.fill: parent
-                        onClicked: VehicleService.fanSpeed = Math.min(5, VehicleService.fanSpeed + 1)
-                    }
-                }
-            }
-            
-            // --- Passenger Temperature ---
-            RowLayout {
-                spacing: 4
-                
-                Item {
-                    width: 36; height: 44
-                    Rectangle {
-                        anchors.fill: parent; radius: 6
-                        color: pMinus.pressed ? NordicTheme.colors.bg.elevated : "transparent"
-                    }
-                    Text {
-                        anchors.centerIn: parent
-                        text: "−"; font.pixelSize: 22; font.family: "Helvetica"
-                        color: NordicTheme.colors.text.secondary
-                    }
-                    MouseArea {
-                        id: pMinus; anchors.fill: parent
-                        onClicked: VehicleService.passengerTemp = Math.max(16, VehicleService.passengerTemp - 1)
-                    }
-                }
-                
-                Text {
-                    text: VehicleService.passengerTemp + "°"
-                    font.pixelSize: 24; font.weight: Font.Medium; font.family: "Helvetica"
-                    color: NordicTheme.colors.text.primary
-                }
-                
-                Item {
-                    width: 36; height: 44
-                    Rectangle {
-                        anchors.fill: parent; radius: 6
-                        color: pPlus.pressed ? NordicTheme.colors.bg.elevated : "transparent"
-                    }
-                    Text {
-                        anchors.centerIn: parent
-                        text: "+"; font.pixelSize: 22; font.family: "Helvetica"
-                        color: NordicTheme.colors.text.secondary
-                    }
-                    MouseArea {
-                        id: pPlus; anchors.fill: parent
-                        onClicked: VehicleService.passengerTemp = Math.min(28, VehicleService.passengerTemp + 1)
-                    }
-                }
-            }
-            
-            // --- Passenger Seat Heat ---
-            Item {
-                width: 48; height: 48
-                
-                Rectangle {
-                    anchors.fill: parent
-                    radius: 8
-                    color: internal.rightSeatLevel > 0 ? NordicTheme.colors.accent.warm : 
-                           rightSeatMouse.pressed ? NordicTheme.colors.bg.elevated : NordicTheme.colors.bg.elevated
-                }
-                
-                Column {
-                    anchors.centerIn: parent
-                    spacing: 2
-                    
                     NordicIcon {
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        source: "qrc:/qt/qml/NordicHeadunit/assets/icons/heated-front-seat.svg"
+                        anchors.centerIn: parent
+                        source: "qrc:/qt/qml/NordicHeadunit/assets/icons/rear-window-defrost.svg"
                         size: NordicIcon.Size.SM
-                        color: internal.rightSeatLevel > 0 ? "white" : NordicTheme.colors.text.secondary
+                        color: VehicleService.rearDefrostEnabled ? "black" : NordicTheme.colors.text.secondary
                     }
-                    
-                    Row {
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        spacing: 2
-                        Repeater {
-                            model: 3
-                            Rectangle {
-                                width: 6; height: 3
-                                radius: 1
-                                color: index < internal.rightSeatLevel 
-                                    ? "white" : (internal.rightSeatLevel > 0 ? Qt.rgba(1,1,1,0.3) : NordicTheme.colors.border.muted)
+                    MouseArea {
+                        id: rDefrostMouse; anchors.fill: parent
+                        onClicked: VehicleService.rearDefrostEnabled = !VehicleService.rearDefrostEnabled
+                    }
+                }
+            }
+
+            Item { Layout.fillWidth: true }  // Spacer
+
+            // ═══════════════════════════════════════════════════════════════
+            // PASSENGER CLUSTER
+            // ═══════════════════════════════════════════════════════════════
+            Row {
+                spacing: 8
+                
+                // Temperature
+                RowLayout {
+                    spacing: 4
+                    Item {
+                        width: 36; height: 44
+                        Rectangle { anchors.fill: parent; radius: 6; color: pMinus.pressed ? NordicTheme.colors.bg.elevated : "transparent" }
+                        Text { anchors.centerIn: parent; text: "−"; font.pixelSize: 22; font.family: "Helvetica"; color: NordicTheme.colors.text.secondary }
+                        MouseArea { id: pMinus; anchors.fill: parent; onClicked: VehicleService.passengerTemp = Math.max(16, VehicleService.passengerTemp - 1) }
+                    }
+                    Text {
+                        text: VehicleService.passengerTemp + "°"
+                        font.pixelSize: 24; font.weight: Font.Medium; font.family: "Helvetica"; color: NordicTheme.colors.text.primary
+                    }
+                    Item {
+                        width: 36; height: 44
+                        Rectangle { anchors.fill: parent; radius: 6; color: pPlus.pressed ? NordicTheme.colors.bg.elevated : "transparent" }
+                        Text { anchors.centerIn: parent; text: "+"; font.pixelSize: 22; font.family: "Helvetica"; color: NordicTheme.colors.text.secondary }
+                        MouseArea { id: pPlus; anchors.fill: parent; onClicked: VehicleService.passengerTemp = Math.min(28, VehicleService.passengerTemp + 1) }
+                    }
+                }
+                
+                Item { width: 12; height: 1 } // Spacer
+
+                // Ventilated Seat
+                Item {
+                    width: 48; height: 48
+                    Rectangle {
+                        anchors.fill: parent; radius: 8
+                        color: internal.rightSeatVentLevel > 0 ? NordicTheme.colors.accent.primary : 
+                               rightSeatVentMouse.pressed ? NordicTheme.colors.bg.elevated : NordicTheme.colors.bg.elevated
+                    }
+                    Column {
+                        anchors.centerIn: parent; spacing: 2
+                        NordicIcon {
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            source: "qrc:/qt/qml/NordicHeadunit/assets/icons/ventilated-front-seat.svg"
+                            size: NordicIcon.Size.SM
+                            color: internal.rightSeatVentLevel > 0 ? "white" : NordicTheme.colors.text.secondary
+                        }
+                        Row {
+                            anchors.horizontalCenter: parent.horizontalCenter; spacing: 2
+                            Repeater {
+                                model: 3
+                                Rectangle {
+                                    width: 6; height: 3; radius: 1
+                                    color: index < internal.rightSeatVentLevel ? "white" : (internal.rightSeatVentLevel > 0 ? Qt.rgba(1,1,1,0.3) : NordicTheme.colors.border.muted)
+                                }
                             }
                         }
                     }
+                    MouseArea {
+                        id: rightSeatVentMouse; anchors.fill: parent
+                        onClicked: {
+                            internal.rightSeatVentLevel = (internal.rightSeatVentLevel + 1) % 4
+                            if (internal.rightSeatVentLevel > 0) internal.rightSeatHeatLevel = 0 // Mutual exclusion
+                        }
+                    }
                 }
-                
-                MouseArea {
-                    id: rightSeatMouse
-                    anchors.fill: parent
-                    onClicked: internal.rightSeatLevel = (internal.rightSeatLevel + 1) % 4
+
+                // Heated Seat
+                Item {
+                    width: 48; height: 48
+                    Rectangle {
+                        anchors.fill: parent; radius: 8
+                        color: internal.rightSeatHeatLevel > 0 ? NordicTheme.colors.accent.warm : 
+                               rightSeatHeatMouse.pressed ? NordicTheme.colors.bg.elevated : NordicTheme.colors.bg.elevated
+                    }
+                    Column {
+                        anchors.centerIn: parent; spacing: 2
+                        NordicIcon {
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            source: "qrc:/qt/qml/NordicHeadunit/assets/icons/heated-front-seat.svg"
+                            size: NordicIcon.Size.SM
+                            color: internal.rightSeatHeatLevel > 0 ? "white" : NordicTheme.colors.text.secondary
+                        }
+                        Row {
+                            anchors.horizontalCenter: parent.horizontalCenter; spacing: 2
+                            Repeater {
+                                model: 3
+                                Rectangle {
+                                    width: 6; height: 3; radius: 1
+                                    color: index < internal.rightSeatHeatLevel ? "white" : (internal.rightSeatHeatLevel > 0 ? Qt.rgba(1,1,1,0.3) : NordicTheme.colors.border.muted)
+                                }
+                            }
+                        }
+                    }
+                    MouseArea {
+                        id: rightSeatHeatMouse; anchors.fill: parent
+                        onClicked: {
+                            internal.rightSeatHeatLevel = (internal.rightSeatHeatLevel + 1) % 4
+                            if (internal.rightSeatHeatLevel > 0) internal.rightSeatVentLevel = 0 // Mutual exclusion
+                        }
+                    }
                 }
             }
             
@@ -438,9 +469,14 @@ Rectangle {
     
     QtObject {
         id: internal
-        property int leftSeatLevel: VehicleService.leftSeatHeat ? 3 : 0
-        property int rightSeatLevel: VehicleService.rightSeatHeat ? 3 : 0
-        onLeftSeatLevelChanged: VehicleService.leftSeatHeat = leftSeatLevel > 0
-        onRightSeatLevelChanged: VehicleService.rightSeatHeat = rightSeatLevel > 0
+        property int leftSeatHeatLevel: VehicleService.leftSeatHeat ? 3 : 0
+        property int leftSeatVentLevel: VehicleService.leftSeatVentilation ? 3 : 0
+        property int rightSeatHeatLevel: VehicleService.rightSeatHeat ? 3 : 0
+        property int rightSeatVentLevel: VehicleService.rightSeatVentilation ? 3 : 0
+        
+        onLeftSeatHeatLevelChanged: VehicleService.leftSeatHeat = leftSeatHeatLevel > 0
+        onLeftSeatVentLevelChanged: VehicleService.leftSeatVentilation = leftSeatVentLevel > 0
+        onRightSeatHeatLevelChanged: VehicleService.rightSeatHeat = rightSeatHeatLevel > 0
+        onRightSeatVentLevelChanged: VehicleService.rightSeatVentilation = rightSeatVentLevel > 0
     }
 }

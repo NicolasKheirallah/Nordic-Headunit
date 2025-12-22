@@ -13,6 +13,8 @@ Item {
     property alias font: textItem.font
     property alias fontSizeMode: textItem.fontSizeMode
     property alias minimumPixelSize: textItem.minimumPixelSize
+    property alias style: textItem.style
+    property alias styleColor: textItem.styleColor
     
     property int wrapMode: Text.NoWrap // Default to NoWrap for single line scrolling
     property int horizontalAlignment: Text.AlignLeft

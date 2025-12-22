@@ -5,7 +5,7 @@ project(NordicHeadunit VERSION 0.1 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 6.4 REQUIRED COMPONENTS Quick QuickControls2 QuickEffects LinguistTools)
+find_package(Qt6 6.4 REQUIRED COMPONENTS Quick QuickControls2 QuickEffects LinguistTools Network Location Positioning)
 
 qt_standard_project_setup()
 
@@ -78,6 +78,7 @@ qt_add_qml_module(appNordicHeadunit
     qml/Overlays/OverlayManager.qml
     qml/Components/NordicButton.qml
         qml/Components/NordicCard.qml
+        qml/Components/NordicGlass.qml
         qml/Components/NordicCircularGauge.qml
         qml/Components/NordicIcon.qml
         qml/Components/NordicListItem.qml
@@ -91,6 +92,12 @@ qt_add_qml_module(appNordicHeadunit
     qml/Components/DraggableWidget.qml
     qml/Components/WidgetGrid.qml
     qml/Components/MediaControlButton.qml
+    # Premium Maps Components
+    qml/Components/Maps/MapSurface.qml
+    qml/Components/Maps/GuidanceBanner.qml
+    qml/Components/Maps/SearchSheet.qml
+    qml/Components/Maps/RoutePreviewSheet.qml
+    qml/Components/Maps/FloatingMapControls.qml
     qml/Widgets/NavigationWidget.qml
     qml/Widgets/WeatherWidget.qml
     qml/Widgets/NowPlayingWidget.qml
@@ -123,6 +130,7 @@ qt_add_qml_module(appNordicHeadunit
     qml/Pages/Settings/SystemSettingsPage.qml
     qml/Pages/Settings/SettingsSplitLayout.qml
     qml/Pages/Settings/SettingsSidebar.qml
+    qml/Pages/Settings/MapSettings.qml
     qml/Pages/Settings/NavigationSettings.qml
     qml/Pages/Settings/PrivacySettings.qml
     qml/Pages/Settings/DateTimeSettings.qml
@@ -173,7 +181,10 @@ qt_add_qml_module(appNordicHeadunit
         assets/icons/fan.svg
         assets/icons/windscreen_defrost.svg
         assets/icons/heated-front-seat.svg
+        assets/icons/ventilated-front-seat.svg
+        assets/icons/rear-window-defrost.svg
         assets/icons/navigation-arrow.svg
+        assets/icons/check.svg
 )
 
 if(COMMAND qt6_add_translations)
@@ -205,7 +216,7 @@ set_source_files_properties(qml/Services/PhoneService.qml PROPERTIES QT_QML_SING
 
 # Link against Qt modules
 target_link_libraries(appNordicHeadunit
-    PRIVATE Qt6::Quick Qt6::QuickControls2 Qt6::QuickEffects
+    PRIVATE Qt6::Quick Qt6::QuickControls2 Qt6::QuickEffects Qt6::Network Qt6::Location Qt6::Positioning
 )
 
 # Resources

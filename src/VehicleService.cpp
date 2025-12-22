@@ -19,6 +19,10 @@ VehicleService::VehicleService(IVehicleHAL *hal, QObject *parent)
     , m_autoClimate(true)
     , m_recircEnabled(false)
     , m_defrostEnabled(false)
+    , m_leftSeatVentilation(false)
+    , m_rightSeatVentilation(false)
+    , m_frontDefrostEnabled(false)
+    , m_rearDefrostEnabled(false)
 {
     if (!m_hal) {
         qWarning() << "VehicleService created with null HAL!";
@@ -87,6 +91,8 @@ int VehicleService::passengerTemp() const { return m_passengerTemp; }
 int VehicleService::fanSpeed() const { return m_fanSpeed; }
 bool VehicleService::leftSeatHeat() const { return m_leftSeatHeat; }
 bool VehicleService::rightSeatHeat() const { return m_rightSeatHeat; }
+bool VehicleService::leftSeatVentilation() const { return m_leftSeatVentilation; }
+bool VehicleService::rightSeatVentilation() const { return m_rightSeatVentilation; }
 
 void VehicleService::setDriverTemp(int temp) {
     if (m_driverTemp == temp) return;
@@ -123,6 +129,20 @@ void VehicleService::setRightSeatHeat(bool on) {
     if (m_hal) m_hal->setRightSeatHeat(on);
 }
 
+void VehicleService::setLeftSeatVentilation(bool on) {
+    if (m_leftSeatVentilation == on) return;
+    m_leftSeatVentilation = on;
+    emit leftSeatVentilationChanged(m_leftSeatVentilation);
+    // if (m_hal) m_hal->setLeftSeatVentilation(on); // Assuming HAL support or mock
+}
+
+void VehicleService::setRightSeatVentilation(bool on) {
+    if (m_rightSeatVentilation == on) return;
+    m_rightSeatVentilation = on;
+    emit rightSeatVentilationChanged(m_rightSeatVentilation);
+    // if (m_hal) m_hal->setRightSeatVentilation(on); // Assuming HAL support or mock
+}
+
 bool VehicleService::acEnabled() const { return m_acEnabled; }
 void VehicleService::setAcEnabled(bool on) {
     if (m_acEnabled == on) return;
@@ -149,6 +169,20 @@ void VehicleService::setDefrostEnabled(bool on) {
     if (m_defrostEnabled == on) return;
     m_defrostEnabled = on;
     emit defrostEnabledChanged(m_defrostEnabled);
+}
+
+bool VehicleService::frontDefrostEnabled() const { return m_frontDefrostEnabled; }
+void VehicleService::setFrontDefrostEnabled(bool on) {
+    if (m_frontDefrostEnabled == on) return;
+    m_frontDefrostEnabled = on;
+    emit frontDefrostEnabledChanged(m_frontDefrostEnabled);
+}
+
+bool VehicleService::rearDefrostEnabled() const { return m_rearDefrostEnabled; }
+void VehicleService::setRearDefrostEnabled(bool on) {
+    if (m_rearDefrostEnabled == on) return;
+    m_rearDefrostEnabled = on;
+    emit rearDefrostEnabledChanged(m_rearDefrostEnabled);
 }
 
 // Door Status

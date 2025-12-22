@@ -26,50 +26,39 @@ Item {
     }
     
     // Bottom Center Overlay
-    Rectangle {
+    NordicCard {
         id: panel
-        width: 260
-        height: 110
-        radius: NordicTheme.shapes.radius_xl
-        color: NordicTheme.colors.bg.elevated
-        
-        // Glass Blur
-        layer.enabled: true
-        layer.effect: MultiEffect {
-            blurEnabled: true
-            blurMax: 64
-            blur: 1.0
-            saturation: 1.2
-        }
-        
-        // Gradient Border (Stroke)
-        Rectangle {
-            anchors.fill: parent
-            radius: parent.radius
-            color: "transparent"
-            border.width: 1
-            border.color: Qt.rgba(1,1,1,0.1)
-        }
+        variant: NordicCard.Variant.Glass
+        width: 320 // Wider for icons
+        height: 100
         
         anchors.bottom: parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter
-        anchors.bottomMargin: visibleState ? 120 : -height // Above DockBar/Nav
+        anchors.bottomMargin: visibleState ? 120 : -height 
         
         Behavior on anchors.bottomMargin { NumberAnimation { duration: 400; easing.type: Easing.OutBack } }
         
+        // Interactive Content
         RowLayout {
             anchors.centerIn: parent
             spacing: NordicTheme.spacing.space_4
             
-            // Icon with Glow
-            Item {
-                width: 40; height: 40
-                NordicIcon {
-                    anchors.centerIn: parent
-                    source: "qrc:/qt/qml/NordicHeadunit/assets/icons/car.svg"
-                    size: NordicIcon.Size.LG
-                    color: NordicTheme.colors.accent.primary
+            // Decrease Temp
+            NordicButton {
+                text: "-"
+                variant: NordicButton.Variant.Tertiary
+                size: NordicButton.Size.Sm
+                onClicked: {
+                    VehicleService.driverTemp = Math.max(16, VehicleService.driverTemp - 1)
+                    hideTimer.restart()
                 }
+            }
+            
+            // Icon
+            NordicIcon {
+                source: "qrc:/qt/qml/NordicHeadunit/assets/icons/car.svg"
+                size: NordicIcon.Size.MD // Slightly smaller
+                color: NordicTheme.colors.accent.primary
             }
             
             // Temperature Display
@@ -79,11 +68,24 @@ Item {
                     text: "Cabin Temp"
                     type: NordicText.Type.Caption
                     color: NordicTheme.colors.text.secondary
+                    Layout.alignment: Qt.AlignHCenter
                 }
                 NordicText {
                     text: root.temperature + "°C"
                     type: NordicText.Type.DisplayMedium
                     color: NordicTheme.colors.text.primary
+                    Layout.alignment: Qt.AlignHCenter
+                }
+            }
+            
+            // Increase Temp
+            NordicButton {
+                text: "+"
+                variant: NordicButton.Variant.Tertiary
+                size: NordicButton.Size.Sm
+                onClicked: {
+                    VehicleService.driverTemp = Math.min(30, VehicleService.driverTemp + 1)
+                    hideTimer.restart()
                 }
             }
         }

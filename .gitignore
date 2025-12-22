@@ -1,0 +1,86 @@
+# Build directories
+build/
+cmake-build-*/
+out/
+
+# Qt generated files
+*.pro.user
+*.pro.user*
+*.qbs.user
+*.qbs.user*
+*.moc
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
+ui_*.h
+*.qm
+*.autosave
+
+# CMake generated
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+
+# Compiled Object files
+*.o
+*.obj
+*.lo
+*.slo
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+appNordicHeadunit
+
+# IDE specific
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Qt Creator
+*.autosave
+CMakeLists.txt.user*
+
+# ccache
+.ccache/
+
+# Package files
+*.tar.gz
+*.zip
+*.deb
+*.rpm
+
+# Logs
+*.log
+
+# QML cache
+.qmlc
+*.jsc
+
+# Translations generated
+*.qm
+
+# Dependencies (if using package managers)
+node_modules/
+vcpkg_installed/

@@ -104,13 +104,12 @@ Item {
     // 3. Settings Model (JS Array for qsTr support)
     // ---------------------------------------------------------------------
     property var settingsData: [
-        { title: qsTr("Vehicle"), icon: "qrc:/qt/qml/NordicHeadunit/assets/icons/car.svg" },
         { title: qsTr("Display"), icon: "qrc:/qt/qml/NordicHeadunit/assets/icons/settings.svg" },
-        { title: qsTr("Sound"), icon: "qrc:/qt/qml/NordicHeadunit/assets/icons/music.svg" },
         { title: qsTr("Connectivity"), icon: "qrc:/qt/qml/NordicHeadunit/assets/icons/wifi.svg" },
+        { title: qsTr("Vehicle"), icon: "qrc:/qt/qml/NordicHeadunit/assets/icons/car.svg" },
         { title: qsTr("Navigation"), icon: "qrc:/qt/qml/NordicHeadunit/assets/icons/map.svg" },
+        { title: qsTr("Privacy"), icon: "qrc:/qt/qml/NordicHeadunit/assets/icons/lock.svg" },
         { title: qsTr("Date & Time"), icon: "qrc:/qt/qml/NordicHeadunit/assets/icons/clock.svg" },
-        { title: qsTr("System"), icon: "qrc:/qt/qml/NordicHeadunit/assets/icons/settings.svg" },
-        { title: qsTr("Privacy"), icon: "qrc:/qt/qml/NordicHeadunit/assets/icons/lock.svg" }
+        { title: qsTr("System"), icon: "qrc:/qt/qml/NordicHeadunit/assets/icons/settings.svg" }
     ]
 }

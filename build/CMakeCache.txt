@@ -343,6 +343,12 @@ Qt6Gui_DIR:PATH=/opt/homebrew/opt/qt@6/lib/cmake/Qt6Gui
 //The directory containing a CMake configuration file for Qt6LinguistTools.
 Qt6LinguistTools_DIR:PATH=/opt/homebrew/opt/qt@6/lib/cmake/Qt6LinguistTools
 
+//The directory containing a CMake configuration file for Qt6LocationPrivate.
+Qt6LocationPrivate_DIR:PATH=/opt/homebrew/opt/qt@6/lib/cmake/Qt6LocationPrivate
+
+//The directory containing a CMake configuration file for Qt6Location.
+Qt6Location_DIR:PATH=/opt/homebrew/opt/qt@6/lib/cmake/Qt6Location
+
 //The directory containing a CMake configuration file for Qt6NetworkPrivate.
 Qt6NetworkPrivate_DIR:PATH=/opt/homebrew/opt/qt@6/lib/cmake/Qt6NetworkPrivate
 
@@ -354,6 +360,18 @@ Qt6OpenGLPrivate_DIR:PATH=/opt/homebrew/opt/qt@6/lib/cmake/Qt6OpenGLPrivate
 
 //The directory containing a CMake configuration file for Qt6OpenGL.
 Qt6OpenGL_DIR:PATH=/opt/homebrew/opt/qt@6/lib/cmake/Qt6OpenGL
+
+//The directory containing a CMake configuration file for Qt6PositioningPrivate.
+Qt6PositioningPrivate_DIR:PATH=/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningPrivate
+
+//The directory containing a CMake configuration file for Qt6PositioningQuickPrivate.
+Qt6PositioningQuickPrivate_DIR:PATH=/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningQuickPrivate
+
+//The directory containing a CMake configuration file for Qt6PositioningQuick.
+Qt6PositioningQuick_DIR:PATH=/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningQuick
+
+//The directory containing a CMake configuration file for Qt6Positioning.
+Qt6Positioning_DIR:PATH=/opt/homebrew/opt/qt@6/lib/cmake/Qt6Positioning
 
 //The directory containing a CMake configuration file for Qt6QmlAssetDownloaderPrivate.
 Qt6QmlAssetDownloaderPrivate_DIR:PATH=/opt/homebrew/opt/qt@6/lib/cmake/Qt6QmlAssetDownloaderPrivate
@@ -411,6 +429,9 @@ Qt6QuickEffects_DIR:PATH=/opt/homebrew/opt/qt@6/lib/cmake/Qt6QuickEffects
 
 //The directory containing a CMake configuration file for Qt6QuickPrivate.
 Qt6QuickPrivate_DIR:PATH=/opt/homebrew/opt/qt@6/lib/cmake/Qt6QuickPrivate
+
+//The directory containing a CMake configuration file for Qt6QuickShapesPrivate.
+Qt6QuickShapesPrivate_DIR:PATH=/opt/homebrew/opt/qt@6/lib/cmake/Qt6QuickShapesPrivate
 
 //The directory containing a CMake configuration file for Qt6QuickTemplates2Private.
 Qt6QuickTemplates2Private_DIR:PATH=/opt/homebrew/opt/qt@6/lib/cmake/Qt6QuickTemplates2Private
@@ -859,6 +880,8 @@ QT_FEATURE_graphicsframecapture:INTERNAL=ON
 QT_FEATURE_gssapi:INTERNAL=ON
 //Qt feature: gui (from target Qt6::Core)
 QT_FEATURE_gui:INTERNAL=ON
+//Qt feature: gypsy (from target Qt6::Positioning)
+QT_FEATURE_gypsy:INTERNAL=OFF
 //Qt feature: harfbuzz (from target Qt6::Gui)
 QT_FEATURE_harfbuzz:INTERNAL=ON
 //Qt feature: highdpiscaling (from target Qt6::Gui)
@@ -1382,6 +1405,8 @@ QT_FEATURE_whatsthis:INTERNAL=ON
 QT_FEATURE_wheelevent:INTERNAL=ON
 //Qt feature: widgets (from target Qt6::Core)
 QT_FEATURE_widgets:INTERNAL=ON
+//Qt feature: winrt_geolocation (from target Qt6::Positioning)
+QT_FEATURE_winrt_geolocation:INTERNAL=OFF
 //Qt feature: x86intrin (from target Qt6::Core)
 QT_FEATURE_x86intrin:INTERNAL=OFF
 //Qt feature: xcb (from target Qt6::Gui)

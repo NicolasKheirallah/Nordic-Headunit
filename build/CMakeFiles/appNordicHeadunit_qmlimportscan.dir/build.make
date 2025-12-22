@@ -111,6 +111,7 @@ CMakeFiles/appNordicHeadunit_qmlimportscan: .qt/qml_imports/appNordicHeadunit_bu
 .qt/qml_imports/appNordicHeadunit_build.cmake: /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Overlays/OverlayManager.qml
 .qt/qml_imports/appNordicHeadunit_build.cmake: /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Components/NordicButton.qml
 .qt/qml_imports/appNordicHeadunit_build.cmake: /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Components/NordicCard.qml
+.qt/qml_imports/appNordicHeadunit_build.cmake: /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Components/NordicGlass.qml
 .qt/qml_imports/appNordicHeadunit_build.cmake: /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Components/NordicCircularGauge.qml
 .qt/qml_imports/appNordicHeadunit_build.cmake: /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Components/NordicIcon.qml
 .qt/qml_imports/appNordicHeadunit_build.cmake: /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Components/NordicListItem.qml
@@ -124,6 +125,11 @@ CMakeFiles/appNordicHeadunit_qmlimportscan: .qt/qml_imports/appNordicHeadunit_bu
 .qt/qml_imports/appNordicHeadunit_build.cmake: /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Components/DraggableWidget.qml
 .qt/qml_imports/appNordicHeadunit_build.cmake: /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Components/WidgetGrid.qml
 .qt/qml_imports/appNordicHeadunit_build.cmake: /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Components/MediaControlButton.qml
+.qt/qml_imports/appNordicHeadunit_build.cmake: /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Components/Maps/MapSurface.qml
+.qt/qml_imports/appNordicHeadunit_build.cmake: /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Components/Maps/GuidanceBanner.qml
+.qt/qml_imports/appNordicHeadunit_build.cmake: /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Components/Maps/SearchSheet.qml
+.qt/qml_imports/appNordicHeadunit_build.cmake: /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Components/Maps/RoutePreviewSheet.qml
+.qt/qml_imports/appNordicHeadunit_build.cmake: /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Components/Maps/FloatingMapControls.qml
 .qt/qml_imports/appNordicHeadunit_build.cmake: /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Widgets/NavigationWidget.qml
 .qt/qml_imports/appNordicHeadunit_build.cmake: /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Widgets/WeatherWidget.qml
 .qt/qml_imports/appNordicHeadunit_build.cmake: /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Widgets/NowPlayingWidget.qml
@@ -154,6 +160,7 @@ CMakeFiles/appNordicHeadunit_qmlimportscan: .qt/qml_imports/appNordicHeadunit_bu
 .qt/qml_imports/appNordicHeadunit_build.cmake: /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Pages/Settings/SystemSettingsPage.qml
 .qt/qml_imports/appNordicHeadunit_build.cmake: /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Pages/Settings/SettingsSplitLayout.qml
 .qt/qml_imports/appNordicHeadunit_build.cmake: /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Pages/Settings/SettingsSidebar.qml
+.qt/qml_imports/appNordicHeadunit_build.cmake: /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Pages/Settings/MapSettings.qml
 .qt/qml_imports/appNordicHeadunit_build.cmake: /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Pages/Settings/NavigationSettings.qml
 .qt/qml_imports/appNordicHeadunit_build.cmake: /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Pages/Settings/PrivacySettings.qml
 .qt/qml_imports/appNordicHeadunit_build.cmake: /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Pages/Settings/DateTimeSettings.qml

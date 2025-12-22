@@ -7,17 +7,16 @@ import "../../Components"
 SettingsSubPage {
     title: "Connectivity"
     
-    property Component wifiSettingsPage: null // To be injected or handled via router
-    property Component bluetoothSettingsPage: null
+    // Signals for sub-page navigation
+    signal wifiClicked()
+    signal bluetoothClicked()
     
     // WiFi Page Link
     SettingsItem {
         title: "WiFi"
         subtitle: SystemSettings.wifiEnabled ? "Connected to Nordic_5G" : "Off"
         showChevron: true
-        onClicked: {
-            if (wifiSettingsPage) settingsStack.push(wifiSettingsPage)
-        }
+        onClicked: wifiClicked()
         
         // Small indicator if off
         rightComponent: StatusIndicator {
@@ -33,9 +32,7 @@ SettingsSubPage {
         title: "Bluetooth"
         subtitle: SystemSettings.bluetoothEnabled ? "Nicolas' iPhone Connected" : "Off"
         showChevron: true
-        onClicked: {
-            if (bluetoothSettingsPage) settingsStack.push(bluetoothSettingsPage)
-        }
+        onClicked: bluetoothClicked()
         
         rightComponent: StatusIndicator {
             active: SystemSettings.bluetoothEnabled

@@ -1014,6 +1014,56 @@ CMakeFiles/appNordicHeadunit.dir/appNordicHeadunit_autogen/mocs_compilation.cpp.
   /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/QString \
   /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/appNordicHeadunit_autogen/UVLADIE3JM/moc_NavigationService.cpp \
   /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/appNordicHeadunit_autogen/UVLADIE3JM/../../../src/NavigationService.h \
+  /opt/homebrew/opt/qt@6/lib/QtNetwork.framework/Headers/QNetworkAccessManager \
+  /opt/homebrew/opt/qt@6/lib/QtNetwork.framework/Headers/qnetworkaccessmanager.h \
+  /opt/homebrew/opt/qt@6/lib/QtNetwork.framework/Headers/qtnetworkglobal.h \
+  /opt/homebrew/opt/qt@6/lib/QtNetwork.framework/Headers/qtnetwork-config.h \
+  /opt/homebrew/opt/qt@6/lib/QtNetwork.framework/Headers/qtnetworkexports.h \
+  /opt/homebrew/opt/qt@6/lib/QtNetwork.framework/Headers/qnetworkrequest.h \
+  /opt/homebrew/opt/qt@6/lib/QtNetwork.framework/Headers/qhttpheaders.h \
+  /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/QSharedDataPointer \
+  /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/QUrl \
+  /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/qurl.h \
+  /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/q26numeric.h \
+  /opt/homebrew/opt/qt@6/lib/QtNetwork.framework/Headers/QSslConfiguration \
+  /opt/homebrew/opt/qt@6/lib/QtNetwork.framework/Headers/qsslconfiguration.h \
+  /opt/homebrew/opt/qt@6/lib/QtNetwork.framework/Headers/qsslsocket.h \
+  /opt/homebrew/opt/qt@6/lib/QtNetwork.framework/Headers/qtcpsocket.h \
+  /opt/homebrew/opt/qt@6/lib/QtNetwork.framework/Headers/qabstractsocket.h \
+  /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/qiodevice.h \
+  /opt/homebrew/opt/qt@6/lib/QtNetwork.framework/Headers/qhostaddress.h \
+  /opt/homebrew/opt/qt@6/lib/QtNetwork.framework/Headers/qsslerror.h \
+  /opt/homebrew/opt/qt@6/lib/QtNetwork.framework/Headers/qsslcertificate.h \
+  /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/qcryptographichash.h \
+  /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/qdatetime.h \
+  /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/qcalendar.h \
+  /opt/homebrew/opt/qt@6/lib/QtNetwork.framework/Headers/qssl.h \
+  /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/QFlags \
+  /opt/homebrew/opt/qt@6/lib/QtNetwork.framework/Headers/QSslPreSharedKeyAuthenticator \
+  /opt/homebrew/opt/qt@6/lib/QtNetwork.framework/Headers/qsslpresharedkeyauthenticator.h \
+  /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/QMetaType \
+  /opt/homebrew/opt/qt@6/lib/QtNetwork.framework/Headers/QNetworkReply \
+  /opt/homebrew/opt/qt@6/lib/QtNetwork.framework/Headers/qnetworkreply.h \
+  /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/QIODevice \
+  /opt/homebrew/opt/qt@6/lib/QtNetwork.framework/Headers/QNetworkRequest \
+  /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/QJsonDocument \
+  /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/qjsondocument.h \
+  /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/qjsonparseerror.h \
+  /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/QJsonObject \
+  /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/qjsonobject.h \
+  /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/qjsonvalue.h \
+  /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/qcborvalue.h \
+  /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/qcborcommon.h \
+  /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/qregularexpression.h \
+  /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/quuid.h \
+  /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/qendian.h \
+  /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/QJsonArray \
+  /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/qjsonarray.h \
+  /opt/homebrew/opt/qt@6/lib/QtPositioning.framework/Headers/QGeoCoordinate \
+  /opt/homebrew/opt/qt@6/lib/QtPositioning.framework/Headers/qgeocoordinate.h \
+  /opt/homebrew/opt/qt@6/lib/QtPositioning.framework/Headers/qpositioningglobal.h \
+  /opt/homebrew/opt/qt@6/lib/QtPositioning.framework/Headers/qtpositioningexports.h \
+  /opt/homebrew/opt/qt@6/lib/QtNetwork.framework/Headers/QSslError \
   /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/appNordicHeadunit_autogen/UVLADIE3JM/moc_PhoneService.cpp \
   /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/appNordicHeadunit_autogen/UVLADIE3JM/../../../src/PhoneService.h \
   /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/appNordicHeadunit_autogen/UVLADIE3JM/moc_SystemSettings.cpp \
@@ -1021,8 +1071,6 @@ CMakeFiles/appNordicHeadunit.dir/appNordicHeadunit_autogen/mocs_compilation.cpp.
   /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/QSettings \
   /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/qsettings.h \
   /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/QDateTime \
-  /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/qdatetime.h \
-  /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/qcalendar.h \
   /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/appNordicHeadunit_autogen/UVLADIE3JM/../../../src/HAL/IAudioHAL.h \
   /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/appNordicHeadunit_autogen/UVLADIE3JM/moc_TranslationService.cpp \
   /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/appNordicHeadunit_autogen/UVLADIE3JM/../../../src/TranslationService.h \
@@ -1030,15 +1078,11 @@ CMakeFiles/appNordicHeadunit.dir/appNordicHeadunit_autogen/mocs_compilation.cpp.
   /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/qtranslator.h \
   /opt/homebrew/opt/qt@6/lib/QtQml.framework/Headers/QQmlEngine \
   /opt/homebrew/opt/qt@6/lib/QtQml.framework/Headers/qqmlengine.h \
-  /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/qurl.h \
   /opt/homebrew/opt/qt@6/lib/QtQml.framework/Headers/qjsengine.h \
   /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/qtimezone.h \
   /opt/homebrew/opt/qt@6/lib/QtQml.framework/Headers/qjsvalue.h \
   /opt/homebrew/opt/qt@6/lib/QtQml.framework/Headers/qtqmlglobal.h \
   /opt/homebrew/opt/qt@6/lib/QtQml.framework/Headers/qtqml-config.h \
-  /opt/homebrew/opt/qt@6/lib/QtNetwork.framework/Headers/qtnetworkglobal.h \
-  /opt/homebrew/opt/qt@6/lib/QtNetwork.framework/Headers/qtnetwork-config.h \
-  /opt/homebrew/opt/qt@6/lib/QtNetwork.framework/Headers/qtnetworkexports.h \
   /opt/homebrew/opt/qt@6/lib/QtQml.framework/Headers/qtqmlexports.h \
   /opt/homebrew/opt/qt@6/lib/QtQml.framework/Headers/qjsmanagedvalue.h \
   /opt/homebrew/opt/qt@6/lib/QtQml.framework/Headers/qjsprimitivevalue.h \
@@ -1061,7 +1105,6 @@ CMakeFiles/appNordicHeadunit.dir/appNordicHeadunit_autogen/mocs_compilation.cpp.
   /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/qdir.h \
   /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/qdirlisting.h \
   /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/qfiledevice.h \
-  /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/qiodevice.h \
   /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/qfile.h \
   /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/filesystem \
   /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1/__filesystem/copy_options.h \

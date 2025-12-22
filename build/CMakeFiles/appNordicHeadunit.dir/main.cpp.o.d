@@ -1375,10 +1375,18 @@ CMakeFiles/appNordicHeadunit.dir/main.cpp.o: \
   /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/src/MediaService.h \
   /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/QVariantMap \
   /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/src/NavigationService.h \
+  /opt/homebrew/opt/qt@6/lib/QtNetwork.framework/Headers/QNetworkReply \
+  /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/QJsonDocument \
+  /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/QJsonObject \
+  /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/QJsonArray \
+  /opt/homebrew/opt/qt@6/lib/QtPositioning.framework/Headers/QGeoCoordinate \
+  /opt/homebrew/opt/qt@6/lib/QtPositioning.framework/Headers/qgeocoordinate.h \
+  /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/QDebug \
+  /opt/homebrew/opt/qt@6/lib/QtPositioning.framework/Headers/qpositioningglobal.h \
+  /opt/homebrew/opt/qt@6/lib/QtPositioning.framework/Headers/qtpositioningexports.h \
   /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/src/PhoneService.h \
   /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/src/LayoutService.h \
   /opt/homebrew/opt/qt@6/lib/QtGui.framework/Headers/QScreen \
-  /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/QDebug \
   /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/src/TranslationService.h \
   /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/QTranslator \
   /opt/homebrew/opt/qt@6/lib/QtCore.framework/Headers/QDir \

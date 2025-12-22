@@ -1770,8 +1770,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/CMakeScratch/TryCompile-O5rdMV"
-      binary: "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/CMakeScratch/TryCompile-O5rdMV"
+      source: "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/CMakeScratch/TryCompile-9k2wQB"
+      binary: "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/CMakeScratch/TryCompile-9k2wQB"
     cmakeVariables:
       CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/opt/homebrew/Cellar/llvm/21.1.8/bin/clang-scan-deps"
       CMAKE_CXX_FLAGS: ""
@@ -1785,12 +1785,12 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/CMakeScratch/TryCompile-O5rdMV'
+        Change Dir: '/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/CMakeScratch/TryCompile-9k2wQB'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_185b5/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_185b5.dir/build.make CMakeFiles/cmTC_185b5.dir/build
-        Building CXX object CMakeFiles/cmTC_185b5.dir/CMakeCXXCompilerABI.cpp.o
-        /opt/homebrew/opt/llvm/bin/clang++   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_185b5.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_185b5.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_185b5.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_bb427/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_bb427.dir/build.make CMakeFiles/cmTC_bb427.dir/build
+        Building CXX object CMakeFiles/cmTC_bb427.dir/CMakeCXXCompilerABI.cpp.o
+        /opt/homebrew/opt/llvm/bin/clang++   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_bb427.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_bb427.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_bb427.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         Homebrew clang version 21.1.8
         Target: arm64-apple-darwin25.2.0
         Thread model: posix
@@ -1800,7 +1800,7 @@ events:
         User configuration file directory: /Users/nicolaskheirallah/.config/clang
         clang++: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
          (in-process)
-         "/opt/homebrew/Cellar/llvm/21.1.8/bin/clang-21" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Werror=undef-prefix -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -funwind-tables=1 -target-sdk-version=26.2 -fcompatibility-qualified-id-block-type-checking -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-modulemap-allow-subdirectory-search -enable-tlsdesc -target-cpu apple-m1 -target-feature +v8.4a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +ccpp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +flagm -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/CMakeScratch/TryCompile-O5rdMV -target-linker-version 1230.1 -v -fcoverage-compilation-dir=/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/CMakeScratch/TryCompile-O5rdMV -resource-dir /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21 -dependency-file CMakeFiles/cmTC_185b5.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_185b5.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk -internal-isystem /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/local/include -internal-isystem /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/Library/Frameworks -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_185b5.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+         "/opt/homebrew/Cellar/llvm/21.1.8/bin/clang-21" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Werror=undef-prefix -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -funwind-tables=1 -target-sdk-version=26.2 -fcompatibility-qualified-id-block-type-checking -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-modulemap-allow-subdirectory-search -enable-tlsdesc -target-cpu apple-m1 -target-feature +v8.4a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +ccpp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +flagm -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/CMakeScratch/TryCompile-9k2wQB -target-linker-version 1230.1 -v -fcoverage-compilation-dir=/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/CMakeScratch/TryCompile-9k2wQB -resource-dir /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21 -dependency-file CMakeFiles/cmTC_bb427.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_bb427.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk -internal-isystem /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/local/include -internal-isystem /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/Library/Frameworks -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_bb427.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         clang -cc1 version 21.1.8 based upon LLVM 21.1.8 default target arm64-apple-darwin25.2.0
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/local/include"
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/Library/Frameworks"
@@ -1812,8 +1812,8 @@ events:
          /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks (framework directory)
          /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/SubFrameworks (framework directory)
         End of search list.
-        Linking CXX executable cmTC_185b5
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_185b5.dir/link.txt --verbose=1
+        Linking CXX executable cmTC_bb427
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bb427.dir/link.txt --verbose=1
         Homebrew clang version 21.1.8
         Target: arm64-apple-darwin25.2.0
         Thread model: posix
@@ -1821,7 +1821,7 @@ events:
         Configuration file: /opt/homebrew/etc/clang/arm64-apple-darwin25.cfg
         System configuration file directory: /opt/homebrew/etc/clang
         User configuration file directory: /Users/nicolaskheirallah/.config/clang
-         "/usr/bin/ld" -demangle -lto_library /opt/homebrew/Cellar/llvm/21.1.8/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_185b5 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_185b5.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21/lib/darwin/libclang_rt.osx.a
+         "/usr/bin/ld" -demangle -lto_library /opt/homebrew/Cellar/llvm/21.1.8/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_bb427 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_bb427.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21/lib/darwin/libclang_rt.osx.a
         @(#)PROGRAM:ld PROJECT:ld-1230.1
         BUILD 06:36:05 Dec  2 2025
         configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em armv8m.main armv8.1m.main
@@ -1833,7 +1833,7 @@ events:
         	/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/lib/swift
         Framework search paths:
         	/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks
-        /opt/homebrew/opt/llvm/bin/clang++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_185b5.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_185b5
+        /opt/homebrew/opt/llvm/bin/clang++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_bb427.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_bb427
         
       exitCode: 0
   -
@@ -1875,12 +1875,12 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/CMakeScratch/TryCompile-O5rdMV']
+        ignore line: [Change Dir: '/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/CMakeScratch/TryCompile-9k2wQB']
         ignore line: []
-        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_185b5/fast]
-        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_185b5.dir/build.make CMakeFiles/cmTC_185b5.dir/build]
-        ignore line: [Building CXX object CMakeFiles/cmTC_185b5.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/opt/homebrew/opt/llvm/bin/clang++   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_185b5.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_185b5.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_185b5.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_bb427/fast]
+        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_bb427.dir/build.make CMakeFiles/cmTC_bb427.dir/build]
+        ignore line: [Building CXX object CMakeFiles/cmTC_bb427.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/opt/homebrew/opt/llvm/bin/clang++   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_bb427.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_bb427.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_bb427.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Homebrew clang version 21.1.8]
         ignore line: [Target: arm64-apple-darwin25.2.0]
         ignore line: [Thread model: posix]
@@ -1890,7 +1890,7 @@ events:
         ignore line: [User configuration file directory: /Users/nicolaskheirallah/.config/clang]
         ignore line: [clang++: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
         ignore line: [ (in-process)]
-        ignore line: [ "/opt/homebrew/Cellar/llvm/21.1.8/bin/clang-21" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Werror=undef-prefix -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -funwind-tables=1 -target-sdk-version=26.2 -fcompatibility-qualified-id-block-type-checking -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-modulemap-allow-subdirectory-search -enable-tlsdesc -target-cpu apple-m1 -target-feature +v8.4a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +ccpp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +flagm -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/CMakeScratch/TryCompile-O5rdMV -target-linker-version 1230.1 -v -fcoverage-compilation-dir=/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/CMakeScratch/TryCompile-O5rdMV -resource-dir /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21 -dependency-file CMakeFiles/cmTC_185b5.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_185b5.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk -internal-isystem /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/local/include -internal-isystem /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/Library/Frameworks -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_185b5.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [ "/opt/homebrew/Cellar/llvm/21.1.8/bin/clang-21" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Werror=undef-prefix -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -funwind-tables=1 -target-sdk-version=26.2 -fcompatibility-qualified-id-block-type-checking -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-modulemap-allow-subdirectory-search -enable-tlsdesc -target-cpu apple-m1 -target-feature +v8.4a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +ccpp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +flagm -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/CMakeScratch/TryCompile-9k2wQB -target-linker-version 1230.1 -v -fcoverage-compilation-dir=/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/CMakeScratch/TryCompile-9k2wQB -resource-dir /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21 -dependency-file CMakeFiles/cmTC_bb427.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_bb427.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk -internal-isystem /opt/homebrew/Cellar/llvm/21.1.8/bin/../include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/local/include -internal-isystem /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/Library/Frameworks -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_bb427.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [clang -cc1 version 21.1.8 based upon LLVM 21.1.8 default target arm64-apple-darwin25.2.0]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/usr/local/include"]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/Library/Frameworks"]
@@ -1902,8 +1902,8 @@ events:
         ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/Frameworks (framework directory)]
         ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk/System/Library/SubFrameworks (framework directory)]
         ignore line: [End of search list.]
-        ignore line: [Linking CXX executable cmTC_185b5]
-        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_185b5.dir/link.txt --verbose=1]
+        ignore line: [Linking CXX executable cmTC_bb427]
+        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bb427.dir/link.txt --verbose=1]
         ignore line: [Homebrew clang version 21.1.8]
         ignore line: [Target: arm64-apple-darwin25.2.0]
         ignore line: [Thread model: posix]
@@ -1911,7 +1911,7 @@ events:
         ignore line: [Configuration file: /opt/homebrew/etc/clang/arm64-apple-darwin25.cfg]
         ignore line: [System configuration file directory: /opt/homebrew/etc/clang]
         ignore line: [User configuration file directory: /Users/nicolaskheirallah/.config/clang]
-        link line: [ "/usr/bin/ld" -demangle -lto_library /opt/homebrew/Cellar/llvm/21.1.8/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_185b5 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_185b5.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21/lib/darwin/libclang_rt.osx.a]
+        link line: [ "/usr/bin/ld" -demangle -lto_library /opt/homebrew/Cellar/llvm/21.1.8/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_bb427 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_bb427.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21/lib/darwin/libclang_rt.osx.a]
           arg [/usr/bin/ld] ==> ignore
           arg [-demangle] ==> ignore
           arg [-lto_library] ==> ignore, skip following value
@@ -1928,11 +1928,11 @@ events:
           arg [-mllvm] ==> ignore
           arg [-enable-linkonceodr-outlining] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_185b5] ==> ignore
+          arg [cmTC_bb427] ==> ignore
           arg [-search_paths_first] ==> ignore
           arg [-headerpad_max_install_names] ==> ignore
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_185b5.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_bb427.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lc++] ==> lib [c++]
           arg [-lSystem] ==> lib [System]
           arg [/opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21/lib/darwin/libclang_rt.osx.a] ==> lib [/opt/homebrew/Cellar/llvm/21.1.8/lib/clang/21/lib/darwin/libclang_rt.osx.a]
@@ -1981,8 +1981,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/CMakeScratch/TryCompile-1aXRC2"
-      binary: "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/CMakeScratch/TryCompile-1aXRC2"
+      source: "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/CMakeScratch/TryCompile-Nm8Hx1"
+      binary: "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/CMakeScratch/TryCompile-Nm8Hx1"
     cmakeVariables:
       CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/opt/homebrew/Cellar/llvm/21.1.8/bin/clang-scan-deps"
       CMAKE_CXX_FLAGS: ""
@@ -1996,15 +1996,15 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: '/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/CMakeScratch/TryCompile-1aXRC2'
+        Change Dir: '/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/CMakeScratch/TryCompile-Nm8Hx1'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_7d31b/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_7d31b.dir/build.make CMakeFiles/cmTC_7d31b.dir/build
-        Building CXX object CMakeFiles/cmTC_7d31b.dir/src.cxx.o
-        /opt/homebrew/opt/llvm/bin/clang++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++17 -arch arm64 -MD -MT CMakeFiles/cmTC_7d31b.dir/src.cxx.o -MF CMakeFiles/cmTC_7d31b.dir/src.cxx.o.d -o CMakeFiles/cmTC_7d31b.dir/src.cxx.o -c /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/CMakeScratch/TryCompile-1aXRC2/src.cxx
-        Linking CXX executable cmTC_7d31b
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7d31b.dir/link.txt --verbose=1
-        /opt/homebrew/opt/llvm/bin/clang++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_7d31b.dir/src.cxx.o -o cmTC_7d31b
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_797bd/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_797bd.dir/build.make CMakeFiles/cmTC_797bd.dir/build
+        Building CXX object CMakeFiles/cmTC_797bd.dir/src.cxx.o
+        /opt/homebrew/opt/llvm/bin/clang++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++17 -arch arm64 -MD -MT CMakeFiles/cmTC_797bd.dir/src.cxx.o -MF CMakeFiles/cmTC_797bd.dir/src.cxx.o.d -o CMakeFiles/cmTC_797bd.dir/src.cxx.o -c /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/CMakeScratch/TryCompile-Nm8Hx1/src.cxx
+        Linking CXX executable cmTC_797bd
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_797bd.dir/link.txt --verbose=1
+        /opt/homebrew/opt/llvm/bin/clang++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_797bd.dir/src.cxx.o -o cmTC_797bd
         
       exitCode: 0
   -
@@ -2271,8 +2271,8 @@ events:
     checks:
       - "Performing Test HAVE_STDATOMIC"
     directories:
-      source: "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/CMakeScratch/TryCompile-5DGNhx"
-      binary: "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/CMakeScratch/TryCompile-5DGNhx"
+      source: "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/CMakeScratch/TryCompile-9IwtvD"
+      binary: "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/CMakeScratch/TryCompile-9IwtvD"
     cmakeVariables:
       CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/opt/homebrew/Cellar/llvm/21.1.8/bin/clang-scan-deps"
       CMAKE_CXX_FLAGS: ""
@@ -2286,15 +2286,15 @@ events:
       variable: "HAVE_STDATOMIC"
       cached: true
       stdout: |
-        Change Dir: '/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/CMakeScratch/TryCompile-5DGNhx'
+        Change Dir: '/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/CMakeScratch/TryCompile-9IwtvD'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_92e29/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_92e29.dir/build.make CMakeFiles/cmTC_92e29.dir/build
-        Building CXX object CMakeFiles/cmTC_92e29.dir/src.cxx.o
-        /opt/homebrew/opt/llvm/bin/clang++ -DHAVE_STDATOMIC  -std=gnu++17 -arch arm64 -MD -MT CMakeFiles/cmTC_92e29.dir/src.cxx.o -MF CMakeFiles/cmTC_92e29.dir/src.cxx.o.d -o CMakeFiles/cmTC_92e29.dir/src.cxx.o -c /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/CMakeScratch/TryCompile-5DGNhx/src.cxx
-        Linking CXX executable cmTC_92e29
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_92e29.dir/link.txt --verbose=1
-        /opt/homebrew/opt/llvm/bin/clang++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_92e29.dir/src.cxx.o -o cmTC_92e29
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_32d71/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_32d71.dir/build.make CMakeFiles/cmTC_32d71.dir/build
+        Building CXX object CMakeFiles/cmTC_32d71.dir/src.cxx.o
+        /opt/homebrew/opt/llvm/bin/clang++ -DHAVE_STDATOMIC  -std=gnu++17 -arch arm64 -MD -MT CMakeFiles/cmTC_32d71.dir/src.cxx.o -MF CMakeFiles/cmTC_32d71.dir/src.cxx.o.d -o CMakeFiles/cmTC_32d71.dir/src.cxx.o -c /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/CMakeScratch/TryCompile-9IwtvD/src.cxx
+        Linking CXX executable cmTC_32d71
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_32d71.dir/link.txt --verbose=1
+        /opt/homebrew/opt/llvm/bin/clang++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_32d71.dir/src.cxx.o -o cmTC_32d71
         
       exitCode: 0
   -
@@ -10031,6 +10031,892 @@ events:
   -
     kind: "find_package-v1"
     backtrace:
+      - "/opt/homebrew/opt/qt@6/lib/cmake/Qt6Positioning/Qt6PositioningConfig.cmake:85 (find_package)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
+      - "/opt/homebrew/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:142 (find_dependency)"
+      - "/opt/homebrew/opt/qt@6/lib/cmake/Qt6Location/Qt6LocationDependencies.cmake:45 (_qt_internal_find_qt_dependencies)"
+      - "/opt/homebrew/opt/qt@6/lib/cmake/Qt6Location/Qt6LocationConfig.cmake:43 (include)"
+      - "/opt/homebrew/opt/qt@6/lib/cmake/Qt6/Qt6Config.cmake:235 (find_package)"
+      - "CMakeLists.txt:8 (find_package)"
+    name: "Qt6PositioningPrivate"
+    configs:
+      -
+        filename: "Qt6PositioningPrivateConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "qt6positioningprivate-config.cmake"
+        kind: "cmake"
+    version_request:
+      version: "6.9.3"
+      version_complete: "6.9.3"
+      exact: true
+    settings:
+      required: "optional"
+      quiet: true
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "Qt6PositioningPrivate"
+      search_paths:
+        - "/opt/homebrew/opt/qt@6/lib/cmake/Qt6Positioning/.."
+        - "/opt/homebrew/opt/qt@6/lib/cmake"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: false
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/pkgRedirects/Qt6PositioningPrivateConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/pkgRedirects/qt6positioningprivate-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningPrivateConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/opt/qt@6/lib/cmake/qt6positioningprivate-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found:
+      path: "/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningPrivate/Qt6PositioningPrivateConfig.cmake"
+      mode: "config"
+      version: "6.9.3"
+    search_context:
+      ENV{PATH}:
+        - "/opt/homebrew/opt/qt@6/bin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/Users/nicolaskheirallah/.antigravity/antigravity/bin"
+        - "/Users/nicolaskheirallah/.nvm/versions/node/v22.18.0/bin"
+        - "/opt/homebrew/opt/node@18/bin"
+        - "/opt/homebrew/opt/node@18/bin"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/Users/nicolaskheirallah/.nvm/versions/node/v22.18.0/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
+        - "/opt/homebrew/opt/qt@6/bin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/Users/nicolaskheirallah/.antigravity/antigravity/bin"
+        - "/opt/homebrew/opt/node@18/bin"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/Users/nicolaskheirallah/.nvm/versions/node/v22.18.0/bin"
+        - "/Users/nicolaskheirallah/.lmstudio/bin"
+        - "/Users/nicolaskheirallah/.lmstudio/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/sw"
+        - "/opt/local"
+      CMAKE_SYSTEM_FRAMEWORK_PATH:
+        - "~/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Network/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Frameworks"
+        - "/Network/Library/Frameworks"
+        - "/System/Library/Frameworks"
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
+      - "/opt/homebrew/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:142 (find_dependency)"
+      - "/opt/homebrew/opt/qt@6/lib/cmake/Qt6Location/Qt6LocationDependencies.cmake:45 (_qt_internal_find_qt_dependencies)"
+      - "/opt/homebrew/opt/qt@6/lib/cmake/Qt6Location/Qt6LocationConfig.cmake:43 (include)"
+      - "/opt/homebrew/opt/qt@6/lib/cmake/Qt6/Qt6Config.cmake:235 (find_package)"
+      - "CMakeLists.txt:8 (find_package)"
+    name: "Qt6Positioning"
+    configs:
+      -
+        filename: "Qt6PositioningConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "qt6positioning-config.cmake"
+        kind: "cmake"
+    version_request:
+      version: "6.9.3"
+      version_complete: "6.9.3"
+      exact: false
+    settings:
+      required: "optional"
+      quiet: false
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "Qt6Positioning"
+      search_paths:
+        - "/opt/homebrew/opt/qt@6/lib/cmake/Qt6Location/.."
+        - "/opt/homebrew/opt/qt@6/lib/cmake"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: false
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/pkgRedirects/Qt6PositioningConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/pkgRedirects/qt6positioning-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/opt/qt@6/lib/cmake/qt6positioning-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningQuickPrivate/Qt6PositioningConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningQuickPrivate/qt6positioning-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningQuick/Qt6PositioningConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningQuick/qt6positioning-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningPrivate/Qt6PositioningConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningPrivate/qt6positioning-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found:
+      path: "/opt/homebrew/opt/qt@6/lib/cmake/Qt6Positioning/Qt6PositioningConfig.cmake"
+      mode: "config"
+      version: "6.9.3"
+    search_context:
+      ENV{PATH}:
+        - "/opt/homebrew/opt/qt@6/bin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/Users/nicolaskheirallah/.antigravity/antigravity/bin"
+        - "/Users/nicolaskheirallah/.nvm/versions/node/v22.18.0/bin"
+        - "/opt/homebrew/opt/node@18/bin"
+        - "/opt/homebrew/opt/node@18/bin"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/Users/nicolaskheirallah/.nvm/versions/node/v22.18.0/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
+        - "/opt/homebrew/opt/qt@6/bin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/Users/nicolaskheirallah/.antigravity/antigravity/bin"
+        - "/opt/homebrew/opt/node@18/bin"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/Users/nicolaskheirallah/.nvm/versions/node/v22.18.0/bin"
+        - "/Users/nicolaskheirallah/.lmstudio/bin"
+        - "/Users/nicolaskheirallah/.lmstudio/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/sw"
+        - "/opt/local"
+      CMAKE_SYSTEM_FRAMEWORK_PATH:
+        - "~/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Network/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Frameworks"
+        - "/Network/Library/Frameworks"
+        - "/System/Library/Frameworks"
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningQuick/Qt6PositioningQuickConfig.cmake:85 (find_package)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
+      - "/opt/homebrew/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:142 (find_dependency)"
+      - "/opt/homebrew/opt/qt@6/lib/cmake/Qt6Location/Qt6LocationDependencies.cmake:45 (_qt_internal_find_qt_dependencies)"
+      - "/opt/homebrew/opt/qt@6/lib/cmake/Qt6Location/Qt6LocationConfig.cmake:43 (include)"
+      - "/opt/homebrew/opt/qt@6/lib/cmake/Qt6/Qt6Config.cmake:235 (find_package)"
+      - "CMakeLists.txt:8 (find_package)"
+    name: "Qt6PositioningQuickPrivate"
+    configs:
+      -
+        filename: "Qt6PositioningQuickPrivateConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "qt6positioningquickprivate-config.cmake"
+        kind: "cmake"
+    version_request:
+      version: "6.9.3"
+      version_complete: "6.9.3"
+      exact: true
+    settings:
+      required: "optional"
+      quiet: true
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "Qt6PositioningQuickPrivate"
+      search_paths:
+        - "/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningQuick/.."
+        - "/opt/homebrew/opt/qt@6/lib/cmake"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: false
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/pkgRedirects/Qt6PositioningQuickPrivateConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/pkgRedirects/qt6positioningquickprivate-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningQuickPrivateConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/opt/qt@6/lib/cmake/qt6positioningquickprivate-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found:
+      path: "/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningQuickPrivate/Qt6PositioningQuickPrivateConfig.cmake"
+      mode: "config"
+      version: "6.9.3"
+    search_context:
+      ENV{PATH}:
+        - "/opt/homebrew/opt/qt@6/bin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/Users/nicolaskheirallah/.antigravity/antigravity/bin"
+        - "/Users/nicolaskheirallah/.nvm/versions/node/v22.18.0/bin"
+        - "/opt/homebrew/opt/node@18/bin"
+        - "/opt/homebrew/opt/node@18/bin"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/Users/nicolaskheirallah/.nvm/versions/node/v22.18.0/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
+        - "/opt/homebrew/opt/qt@6/bin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/Users/nicolaskheirallah/.antigravity/antigravity/bin"
+        - "/opt/homebrew/opt/node@18/bin"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/Users/nicolaskheirallah/.nvm/versions/node/v22.18.0/bin"
+        - "/Users/nicolaskheirallah/.lmstudio/bin"
+        - "/Users/nicolaskheirallah/.lmstudio/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/sw"
+        - "/opt/local"
+      CMAKE_SYSTEM_FRAMEWORK_PATH:
+        - "~/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Network/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Frameworks"
+        - "/Network/Library/Frameworks"
+        - "/System/Library/Frameworks"
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
+      - "/opt/homebrew/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:142 (find_dependency)"
+      - "/opt/homebrew/opt/qt@6/lib/cmake/Qt6Location/Qt6LocationDependencies.cmake:45 (_qt_internal_find_qt_dependencies)"
+      - "/opt/homebrew/opt/qt@6/lib/cmake/Qt6Location/Qt6LocationConfig.cmake:43 (include)"
+      - "/opt/homebrew/opt/qt@6/lib/cmake/Qt6/Qt6Config.cmake:235 (find_package)"
+      - "CMakeLists.txt:8 (find_package)"
+    name: "Qt6PositioningQuick"
+    configs:
+      -
+        filename: "Qt6PositioningQuickConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "qt6positioningquick-config.cmake"
+        kind: "cmake"
+    version_request:
+      version: "6.9.3"
+      version_complete: "6.9.3"
+      exact: false
+    settings:
+      required: "optional"
+      quiet: false
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "Qt6PositioningQuick"
+      search_paths:
+        - "/opt/homebrew/opt/qt@6/lib/cmake/Qt6Location/.."
+        - "/opt/homebrew/opt/qt@6/lib/cmake"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: false
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/pkgRedirects/Qt6PositioningQuickConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/pkgRedirects/qt6positioningquick-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningQuickConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/opt/qt@6/lib/cmake/qt6positioningquick-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningQuickPrivate/Qt6PositioningQuickConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningQuickPrivate/qt6positioningquick-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found:
+      path: "/opt/homebrew/opt/qt@6/lib/cmake/Qt6PositioningQuick/Qt6PositioningQuickConfig.cmake"
+      mode: "config"
+      version: "6.9.3"
+    search_context:
+      ENV{PATH}:
+        - "/opt/homebrew/opt/qt@6/bin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/Users/nicolaskheirallah/.antigravity/antigravity/bin"
+        - "/Users/nicolaskheirallah/.nvm/versions/node/v22.18.0/bin"
+        - "/opt/homebrew/opt/node@18/bin"
+        - "/opt/homebrew/opt/node@18/bin"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/Users/nicolaskheirallah/.nvm/versions/node/v22.18.0/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
+        - "/opt/homebrew/opt/qt@6/bin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/Users/nicolaskheirallah/.antigravity/antigravity/bin"
+        - "/opt/homebrew/opt/node@18/bin"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/Users/nicolaskheirallah/.nvm/versions/node/v22.18.0/bin"
+        - "/Users/nicolaskheirallah/.lmstudio/bin"
+        - "/Users/nicolaskheirallah/.lmstudio/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/sw"
+        - "/opt/local"
+      CMAKE_SYSTEM_FRAMEWORK_PATH:
+        - "~/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Network/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Frameworks"
+        - "/Network/Library/Frameworks"
+        - "/System/Library/Frameworks"
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
+      - "/opt/homebrew/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:142 (find_dependency)"
+      - "/opt/homebrew/opt/qt@6/lib/cmake/Qt6Location/Qt6LocationDependencies.cmake:45 (_qt_internal_find_qt_dependencies)"
+      - "/opt/homebrew/opt/qt@6/lib/cmake/Qt6Location/Qt6LocationConfig.cmake:43 (include)"
+      - "/opt/homebrew/opt/qt@6/lib/cmake/Qt6/Qt6Config.cmake:235 (find_package)"
+      - "CMakeLists.txt:8 (find_package)"
+    name: "Qt6QuickShapesPrivate"
+    configs:
+      -
+        filename: "Qt6QuickShapesPrivateConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "qt6quickshapesprivate-config.cmake"
+        kind: "cmake"
+    version_request:
+      version: "6.9.3"
+      version_complete: "6.9.3"
+      exact: false
+    settings:
+      required: "optional"
+      quiet: false
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "Qt6QuickShapesPrivate"
+      search_paths:
+        - "/opt/homebrew/opt/qt@6/lib/cmake/Qt6Location/.."
+        - "/opt/homebrew/opt/qt@6/lib/cmake"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: false
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/pkgRedirects/Qt6QuickShapesPrivateConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/pkgRedirects/qt6quickshapesprivate-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/opt/qt@6/lib/cmake/Qt6QuickShapesPrivateConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/opt/qt@6/lib/cmake/qt6quickshapesprivate-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found:
+      path: "/opt/homebrew/opt/qt@6/lib/cmake/Qt6QuickShapesPrivate/Qt6QuickShapesPrivateConfig.cmake"
+      mode: "config"
+      version: "6.9.3"
+    search_context:
+      ENV{PATH}:
+        - "/opt/homebrew/opt/qt@6/bin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/Users/nicolaskheirallah/.antigravity/antigravity/bin"
+        - "/Users/nicolaskheirallah/.nvm/versions/node/v22.18.0/bin"
+        - "/opt/homebrew/opt/node@18/bin"
+        - "/opt/homebrew/opt/node@18/bin"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/Users/nicolaskheirallah/.nvm/versions/node/v22.18.0/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
+        - "/opt/homebrew/opt/qt@6/bin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/Users/nicolaskheirallah/.antigravity/antigravity/bin"
+        - "/opt/homebrew/opt/node@18/bin"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/Users/nicolaskheirallah/.nvm/versions/node/v22.18.0/bin"
+        - "/Users/nicolaskheirallah/.lmstudio/bin"
+        - "/Users/nicolaskheirallah/.lmstudio/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/sw"
+        - "/opt/local"
+      CMAKE_SYSTEM_FRAMEWORK_PATH:
+        - "~/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Network/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Frameworks"
+        - "/Network/Library/Frameworks"
+        - "/System/Library/Frameworks"
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "/opt/homebrew/opt/qt@6/lib/cmake/Qt6Location/Qt6LocationConfig.cmake:85 (find_package)"
+      - "/opt/homebrew/opt/qt@6/lib/cmake/Qt6/Qt6Config.cmake:235 (find_package)"
+      - "CMakeLists.txt:8 (find_package)"
+    name: "Qt6LocationPrivate"
+    configs:
+      -
+        filename: "Qt6LocationPrivateConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "qt6locationprivate-config.cmake"
+        kind: "cmake"
+    version_request:
+      version: "6.9.3"
+      version_complete: "6.9.3"
+      exact: true
+    settings:
+      required: "optional"
+      quiet: true
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "Qt6LocationPrivate"
+      search_paths:
+        - "/opt/homebrew/opt/qt@6/lib/cmake/Qt6Location/.."
+        - "/opt/homebrew/opt/qt@6/lib/cmake"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: false
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/pkgRedirects/Qt6LocationPrivateConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/pkgRedirects/qt6locationprivate-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/opt/qt@6/lib/cmake/Qt6LocationPrivateConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/opt/qt@6/lib/cmake/qt6locationprivate-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found:
+      path: "/opt/homebrew/opt/qt@6/lib/cmake/Qt6LocationPrivate/Qt6LocationPrivateConfig.cmake"
+      mode: "config"
+      version: "6.9.3"
+    search_context:
+      ENV{PATH}:
+        - "/opt/homebrew/opt/qt@6/bin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/Users/nicolaskheirallah/.antigravity/antigravity/bin"
+        - "/Users/nicolaskheirallah/.nvm/versions/node/v22.18.0/bin"
+        - "/opt/homebrew/opt/node@18/bin"
+        - "/opt/homebrew/opt/node@18/bin"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/Users/nicolaskheirallah/.nvm/versions/node/v22.18.0/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
+        - "/opt/homebrew/opt/qt@6/bin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/Users/nicolaskheirallah/.antigravity/antigravity/bin"
+        - "/opt/homebrew/opt/node@18/bin"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/Users/nicolaskheirallah/.nvm/versions/node/v22.18.0/bin"
+        - "/Users/nicolaskheirallah/.lmstudio/bin"
+        - "/Users/nicolaskheirallah/.lmstudio/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/sw"
+        - "/opt/local"
+      CMAKE_SYSTEM_FRAMEWORK_PATH:
+        - "~/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Network/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Frameworks"
+        - "/Network/Library/Frameworks"
+        - "/System/Library/Frameworks"
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "/opt/homebrew/opt/qt@6/lib/cmake/Qt6/Qt6Config.cmake:235 (find_package)"
+      - "CMakeLists.txt:8 (find_package)"
+    name: "Qt6Location"
+    configs:
+      -
+        filename: "Qt6LocationConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "qt6location-config.cmake"
+        kind: "cmake"
+    version_request:
+      version: "6.4"
+      version_complete: "6.4"
+      exact: false
+    settings:
+      required: "optional"
+      quiet: false
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "Qt6Location"
+      search_paths:
+        - "/opt/homebrew/opt/qt@6/lib/cmake"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: false
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/pkgRedirects/Qt6LocationConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles/pkgRedirects/qt6location-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/opt/qt@6/lib/cmake/Qt6LocationConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/opt/qt@6/lib/cmake/qt6location-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/opt/qt@6/lib/cmake/Qt6LocationPrivate/Qt6LocationConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/opt/qt@6/lib/cmake/Qt6LocationPrivate/qt6location-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found:
+      path: "/opt/homebrew/opt/qt@6/lib/cmake/Qt6Location/Qt6LocationConfig.cmake"
+      mode: "config"
+      version: "6.9.3"
+    search_context:
+      ENV{PATH}:
+        - "/opt/homebrew/opt/qt@6/bin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/Users/nicolaskheirallah/.antigravity/antigravity/bin"
+        - "/Users/nicolaskheirallah/.nvm/versions/node/v22.18.0/bin"
+        - "/opt/homebrew/opt/node@18/bin"
+        - "/opt/homebrew/opt/node@18/bin"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/Users/nicolaskheirallah/.nvm/versions/node/v22.18.0/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
+        - "/opt/homebrew/opt/qt@6/bin"
+        - "/opt/homebrew/opt/llvm/bin"
+        - "/Users/nicolaskheirallah/.antigravity/antigravity/bin"
+        - "/opt/homebrew/opt/node@18/bin"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/Users/nicolaskheirallah/.nvm/versions/node/v22.18.0/bin"
+        - "/Users/nicolaskheirallah/.lmstudio/bin"
+        - "/Users/nicolaskheirallah/.lmstudio/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/sw"
+        - "/opt/local"
+      CMAKE_SYSTEM_FRAMEWORK_PATH:
+        - "~/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Network/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Frameworks"
+        - "/Network/Library/Frameworks"
+        - "/System/Library/Frameworks"
+  -
+    kind: "find_package-v1"
+    backtrace:
       - "CMakeLists.txt:8 (find_package)"
     name: "Qt6"
     components:
@@ -10048,6 +10934,18 @@ events:
         found: false
       -
         name: "LinguistTools"
+        required: true
+        found: false
+      -
+        name: "Network"
+        required: true
+        found: false
+      -
+        name: "Location"
+        required: true
+        found: false
+      -
+        name: "Positioning"
         required: true
         found: false
     configs:

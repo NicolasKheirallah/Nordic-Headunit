@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 2354,
+                        "durationMicroseconds": 2440,
                         "errorMessage": "",
                         "functionName": "variant",
                         "line": 16
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 234,
+                        "durationMicroseconds": 229,
                         "errorMessage": "Cannot access value for name variant",
                         "functionName": "color",
                         "line": 30
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 167,
+                        "durationMicroseconds": 161,
                         "errorMessage": "Cannot access value for name variant",
                         "functionName": "radius",
                         "line": 45
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 329,
+                        "durationMicroseconds": 312,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "color",
                         "line": 37
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 75,
+                        "durationMicroseconds": 72,
                         "errorMessage": "Cannot access value for name variant",
                         "functionName": "width",
                         "line": 44
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 100,
+                        "durationMicroseconds": 101,
                         "errorMessage": "Cannot access value for name NordicTheme",
                         "functionName": "font",
                         "line": 52
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 252,
+                        "durationMicroseconds": 247,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "color",
                         "line": 53

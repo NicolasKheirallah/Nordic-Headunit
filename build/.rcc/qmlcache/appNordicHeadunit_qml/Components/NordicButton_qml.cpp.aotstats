@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 1696,
+                        "durationMicroseconds": 1758,
                         "errorMessage": "",
                         "functionName": "variant",
                         "line": 22
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 23,
+                        "durationMicroseconds": 27,
                         "errorMessage": "",
                         "functionName": "size",
                         "line": 26
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 41,
-                        "durationMicroseconds": 118,
+                        "durationMicroseconds": 124,
                         "errorMessage": "",
                         "functionName": "targetHeight",
                         "line": 35
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 40,
-                        "durationMicroseconds": 97,
+                        "durationMicroseconds": 98,
                         "errorMessage": "",
                         "functionName": "sidePadding",
                         "line": 45
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 37,
-                        "durationMicroseconds": 1164,
+                        "durationMicroseconds": 1287,
                         "errorMessage": "Cannot load property typography from const QMetaObject.",
                         "functionName": "btnFont",
                         "line": 55
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 42,
-                        "durationMicroseconds": 97,
+                        "durationMicroseconds": 103,
                         "errorMessage": "",
                         "functionName": "iconDimension",
                         "line": 65
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 307,
+                        "durationMicroseconds": 330,
                         "errorMessage": "Cannot access value for name enabled",
                         "functionName": "bgColor",
                         "line": 79
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 43,
-                        "durationMicroseconds": 110,
+                        "durationMicroseconds": 83,
                         "errorMessage": "Cannot access value for name enabled",
                         "functionName": "contentColor",
                         "line": 113
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 42,
-                        "durationMicroseconds": 27,
+                        "durationMicroseconds": 26,
                         "errorMessage": "Cannot retrieve a non-object type by ID: root",
                         "functionName": "borderColor",
                         "line": 138
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 15,
                         "errorMessage": "method clicked cannot be resolved.",
                         "functionName": "onReturnPressed",
                         "line": 17
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 25,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 5,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "implicitHeight",
                         "line": 159
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 195,
+                        "durationMicroseconds": 203,
                         "errorMessage": "Cannot access value for name variant",
                         "functionName": "radius",
                         "line": 166
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 10,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "scale",
                         "line": 183
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 1,
+                        "durationMicroseconds": 2,
                         "errorMessage": "Cannot access value for name parent",
                         "functionName": "centerIn",
                         "line": 160
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 63,
                         "errorMessage": "Cannot access value for name variant",
                         "functionName": "width",
                         "line": 168
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 4,
+                        "durationMicroseconds": 5,
                         "errorMessage": "Cannot access value for name parent",
                         "functionName": "radius",
                         "line": 178
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 5,
+                        "durationMicroseconds": 4,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "visible",
                         "line": 179
@@ -222,7 +222,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 49,
+                        "durationMicroseconds": 52,
                         "errorMessage": "Cannot access value for name NordicTheme",
                         "functionName": "color",
                         "line": 176
@@ -230,7 +230,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 57,
-                        "durationMicroseconds": 27,
+                        "durationMicroseconds": 28,
                         "errorMessage": "Cannot access value for name NordicTheme",
                         "functionName": "duration",
                         "line": 184
@@ -238,7 +238,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 107,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 23,
                         "errorMessage": "Cannot access value for name Easing",
                         "functionName": "type",
                         "line": 184
@@ -254,7 +254,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 68,
+                        "durationMicroseconds": 71,
                         "errorMessage": "Cannot access value for name NordicTheme",
                         "functionName": "spacing",
                         "line": 192
@@ -278,7 +278,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 3,
+                        "durationMicroseconds": 4,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "color",
                         "line": 198
@@ -286,7 +286,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 3,
+                        "durationMicroseconds": 5,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "font",
                         "line": 199
@@ -310,7 +310,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 328,
+                        "durationMicroseconds": 344,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "size",
                         "line": 206
@@ -334,7 +334,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 37,
-                        "durationMicroseconds": 2,
+                        "durationMicroseconds": 3,
                         "errorMessage": "Cannot access value for name parent",
                         "functionName": "verticalCenter",
                         "line": 214
@@ -342,7 +342,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 11,
+                        "durationMicroseconds": 10,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "visible",
                         "line": 220
@@ -350,7 +350,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 3,
+                        "durationMicroseconds": 4,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "text",
                         "line": 221
@@ -374,7 +374,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 37,
-                        "durationMicroseconds": 3,
+                        "durationMicroseconds": 2,
                         "errorMessage": "Cannot access value for name parent",
                         "functionName": "verticalCenter",
                         "line": 224
@@ -406,7 +406,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 8,
+                        "durationMicroseconds": 9,
                         "errorMessage": "Cannot retrieve a non-object type by ID: root",
                         "functionName": "running",
                         "line": 240

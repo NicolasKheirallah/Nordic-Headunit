@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 29,
-                        "durationMicroseconds": 68,
+                        "durationMicroseconds": 66,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "darkMode",
                         "line": 7
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 25,
+                        "durationMicroseconds": 34,
                         "errorMessage": "Cannot access value for name LayoutService",
                         "functionName": "isCompact",
                         "line": 16
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 17,
                         "errorMessage": "Cannot access value for name LayoutService",
                         "functionName": "widthClass",
                         "line": 18
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 37,
-                        "durationMicroseconds": 27,
+                        "durationMicroseconds": 25,
                         "errorMessage": "Cannot access value for name LayoutService",
                         "functionName": "contentHeight",
                         "line": 23
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 10,
                         "errorMessage": "Cannot access value for name darkMode",
                         "functionName": "bg_secondary",
                         "line": 40
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 8,
                         "errorMessage": "Cannot access value for name darkMode",
                         "functionName": "bg_surface",
                         "line": 41
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 37,
-                        "durationMicroseconds": 11,
+                        "durationMicroseconds": 7,
                         "errorMessage": "Cannot access value for name darkMode",
                         "functionName": "bg_elevated",
                         "line": 42
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 8,
+                        "durationMicroseconds": 10,
                         "errorMessage": "Cannot access value for name darkMode",
                         "functionName": "bg_overlay",
                         "line": 43
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 8,
+                        "durationMicroseconds": 7,
                         "errorMessage": "Cannot access value for name darkMode",
                         "functionName": "bg_glass",
                         "line": 46
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 9,
+                        "durationMicroseconds": 7,
                         "errorMessage": "Cannot access value for name darkMode",
                         "functionName": "text_primary",
                         "line": 49
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 40,
-                        "durationMicroseconds": 8,
+                        "durationMicroseconds": 7,
                         "errorMessage": "Cannot access value for name darkMode",
                         "functionName": "text_secondary",
                         "line": 50
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 39,
-                        "durationMicroseconds": 9,
+                        "durationMicroseconds": 8,
                         "errorMessage": "Cannot access value for name darkMode",
                         "functionName": "text_tertiary",
                         "line": 51
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 8,
+                        "durationMicroseconds": 7,
                         "errorMessage": "Cannot access value for name darkMode",
                         "functionName": "text_inverse",
                         "line": 52
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 41,
-                        "durationMicroseconds": 8,
+                        "durationMicroseconds": 7,
                         "errorMessage": "Cannot access value for name darkMode",
                         "functionName": "border_emphasis",
                         "line": 58
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 40,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 10,
                         "errorMessage": "Cannot access value for name darkMode",
                         "functionName": "accent_primary",
                         "line": 61
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 42,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 11,
                         "errorMessage": "Cannot access value for name darkMode",
                         "functionName": "accent_secondary",
                         "line": 62
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 41,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 10,
                         "errorMessage": "Cannot access value for name darkMode",
                         "functionName": "accent_tertiary",
                         "line": 63
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 37,
-                        "durationMicroseconds": 8,
+                        "durationMicroseconds": 12,
                         "errorMessage": "Cannot access value for name darkMode",
                         "functionName": "accent_warm",
                         "line": 66
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 42,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 8,
                         "errorMessage": "Cannot access value for name darkMode",
                         "functionName": "semantic_warning",
                         "line": 70
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 39,
-                        "durationMicroseconds": 8,
+                        "durationMicroseconds": 7,
                         "errorMessage": "Cannot access value for name darkMode",
                         "functionName": "semantic_info",
                         "line": 72
@@ -222,7 +222,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 37,
-                        "durationMicroseconds": 57,
+                        "durationMicroseconds": 65,
                         "errorMessage": "",
                         "functionName": "primary",
                         "line": 87
@@ -230,7 +230,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 23,
+                        "durationMicroseconds": 24,
                         "errorMessage": "",
                         "functionName": "secondary",
                         "line": 88
@@ -238,7 +238,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 37,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 18,
                         "errorMessage": "",
                         "functionName": "surface",
                         "line": 89
@@ -246,7 +246,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 38,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 18,
                         "errorMessage": "",
                         "functionName": "elevated",
                         "line": 90
@@ -254,7 +254,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 37,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 17,
                         "errorMessage": "",
                         "functionName": "overlay",
                         "line": 91
@@ -262,7 +262,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 17,
                         "errorMessage": "",
                         "functionName": "glass",
                         "line": 92
@@ -270,7 +270,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 37,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 19,
                         "errorMessage": "",
                         "functionName": "primary",
                         "line": 96
@@ -286,7 +286,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 38,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 17,
                         "errorMessage": "",
                         "functionName": "tertiary",
                         "line": 98
@@ -294,7 +294,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 37,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 17,
                         "errorMessage": "",
                         "functionName": "inverse",
                         "line": 99
@@ -302,7 +302,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 17,
                         "errorMessage": "",
                         "functionName": "link",
                         "line": 100
@@ -310,7 +310,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 18,
                         "errorMessage": "",
                         "functionName": "purple",
                         "line": 104
@@ -326,7 +326,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 18,
                         "errorMessage": "",
                         "functionName": "aurora",
                         "line": 106
@@ -334,7 +334,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 38,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 21,
                         "errorMessage": "",
                         "functionName": "primary",
                         "line": 110
@@ -342,7 +342,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 40,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 25,
                         "errorMessage": "",
                         "functionName": "secondary",
                         "line": 111
@@ -350,7 +350,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 19,
                         "errorMessage": "",
                         "functionName": "tertiary",
                         "line": 112
@@ -358,7 +358,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 17,
                         "errorMessage": "",
                         "functionName": "warm",
                         "line": 113
@@ -366,7 +366,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 38,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 17,
                         "errorMessage": "",
                         "functionName": "success",
                         "line": 117
@@ -374,7 +374,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 38,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 16,
                         "errorMessage": "",
                         "functionName": "warning",
                         "line": 118
@@ -390,7 +390,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 17,
                         "errorMessage": "",
                         "functionName": "info",
                         "line": 120
@@ -398,7 +398,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 44,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 17,
                         "errorMessage": "",
                         "functionName": "default_color",
                         "line": 124
@@ -406,7 +406,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 15,
                         "errorMessage": "",
                         "functionName": "muted",
                         "line": 125
@@ -414,7 +414,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 17,
                         "errorMessage": "",
                         "functionName": "emphasis",
                         "line": 126
@@ -422,7 +422,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 42,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 18,
                         "errorMessage": "",
                         "functionName": "aurora_start",
                         "line": 130
@@ -438,7 +438,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 42,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 23,
                         "errorMessage": "",
                         "functionName": "sunset_start",
                         "line": 132
@@ -446,7 +446,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 40,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 23,
                         "errorMessage": "",
                         "functionName": "sunset_end",
                         "line": 133
@@ -454,7 +454,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 41,
-                        "durationMicroseconds": 27,
+                        "durationMicroseconds": 28,
                         "errorMessage": "Cannot access value for name darkMode",
                         "functionName": "shadow_color_sm",
                         "line": 142
@@ -462,7 +462,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 41,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot access value for name darkMode",
                         "functionName": "shadow_color_md",
                         "line": 143
@@ -470,7 +470,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 41,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 23,
                         "errorMessage": "Cannot access value for name darkMode",
                         "functionName": "shadow_color_lg",
                         "line": 144
@@ -486,7 +486,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 75,
+                        "durationMicroseconds": 80,
                         "errorMessage": "Cannot access value for name LayoutService",
                         "functionName": "scale",
                         "line": 161
@@ -494,7 +494,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 37,
-                        "durationMicroseconds": 135,
+                        "durationMicroseconds": 141,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method font, returning QVariant -> QFont stored as QVariant",
                         "functionName": "display_hero",
                         "line": 163
@@ -502,7 +502,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 114,
+                        "durationMicroseconds": 105,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method font, returning QVariant -> QFont stored as QVariant",
                         "functionName": "display_large",
                         "line": 167
@@ -510,7 +510,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 39,
-                        "durationMicroseconds": 97,
+                        "durationMicroseconds": 95,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method font, returning QVariant -> QFont stored as QVariant",
                         "functionName": "display_medium",
                         "line": 171
@@ -518,7 +518,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 92,
+                        "durationMicroseconds": 94,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method font, returning QVariant -> QFont stored as QVariant",
                         "functionName": "display_small",
                         "line": 175
@@ -526,7 +526,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 39,
-                        "durationMicroseconds": 87,
+                        "durationMicroseconds": 91,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method font, returning QVariant -> QFont stored as QVariant",
                         "functionName": "headline_large",
                         "line": 179
@@ -542,7 +542,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 39,
-                        "durationMicroseconds": 88,
+                        "durationMicroseconds": 78,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method font, returning QVariant -> QFont stored as QVariant",
                         "functionName": "headline_small",
                         "line": 187
@@ -550,7 +550,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 79,
+                        "durationMicroseconds": 75,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method font, returning QVariant -> QFont stored as QVariant",
                         "functionName": "title_large",
                         "line": 191
@@ -566,7 +566,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 76,
+                        "durationMicroseconds": 73,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method font, returning QVariant -> QFont stored as QVariant",
                         "functionName": "title_small",
                         "line": 199
@@ -574,7 +574,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 35,
-                        "durationMicroseconds": 88,
+                        "durationMicroseconds": 73,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method font, returning QVariant -> QFont stored as QVariant",
                         "functionName": "body_large",
                         "line": 203
@@ -590,7 +590,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 35,
-                        "durationMicroseconds": 87,
+                        "durationMicroseconds": 89,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method font, returning QVariant -> QFont stored as QVariant",
                         "functionName": "body_small",
                         "line": 211
@@ -598,7 +598,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 99,
+                        "durationMicroseconds": 90,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method font, returning QVariant -> QFont stored as QVariant",
                         "functionName": "caption",
                         "line": 215
@@ -606,7 +606,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 33,
-                        "durationMicroseconds": 124,
+                        "durationMicroseconds": 106,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method font, returning QVariant -> QFont stored as QVariant",
                         "functionName": "overline",
                         "line": 219
@@ -622,7 +622,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 46,
+                        "durationMicroseconds": 45,
                         "errorMessage": "",
                         "functionName": "space_1",
                         "line": 233
@@ -630,7 +630,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 40,
+                        "durationMicroseconds": 41,
                         "errorMessage": "",
                         "functionName": "space_2",
                         "line": 234
@@ -638,7 +638,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 40,
+                        "durationMicroseconds": 39,
                         "errorMessage": "",
                         "functionName": "space_3",
                         "line": 235
@@ -646,7 +646,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 38,
+                        "durationMicroseconds": 39,
                         "errorMessage": "",
                         "functionName": "space_4",
                         "line": 236
@@ -654,7 +654,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 38,
+                        "durationMicroseconds": 42,
                         "errorMessage": "",
                         "functionName": "space_5",
                         "line": 237
@@ -662,7 +662,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 37,
+                        "durationMicroseconds": 38,
                         "errorMessage": "",
                         "functionName": "space_6",
                         "line": 238
@@ -670,7 +670,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 39,
+                        "durationMicroseconds": 37,
                         "errorMessage": "",
                         "functionName": "space_7",
                         "line": 239
@@ -678,7 +678,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 37,
+                        "durationMicroseconds": 38,
                         "errorMessage": "",
                         "functionName": "space_8",
                         "line": 240
@@ -694,7 +694,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 32,
-                        "durationMicroseconds": 37,
+                        "durationMicroseconds": 38,
                         "errorMessage": "",
                         "functionName": "space_10",
                         "line": 242
@@ -702,7 +702,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 32,
-                        "durationMicroseconds": 39,
+                        "durationMicroseconds": 37,
                         "errorMessage": "",
                         "functionName": "space_11",
                         "line": 243
@@ -710,7 +710,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 19,
                         "errorMessage": "",
                         "functionName": "ease_linear",
                         "line": 275
@@ -718,7 +718,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 32,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 17,
                         "errorMessage": "",
                         "functionName": "ease_out",
                         "line": 276
@@ -734,7 +734,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 16,
                         "errorMessage": "",
                         "functionName": "ease_in_out",
                         "line": 278
@@ -742,7 +742,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 14,
                         "errorMessage": "",
                         "functionName": "ease_bounce",
                         "line": 279

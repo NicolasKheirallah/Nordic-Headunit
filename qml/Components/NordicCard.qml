@@ -9,9 +9,14 @@ Item {
     default property alias content: container.data
     
     // API
-    // Variants: elevated, outlined, filled, interactive, media, glass
-    enum Variant { Elevated, Outlined, Filled, Interactive, Media, Glass }
+    // Variants: elevated, outlined, filled, interactive, media, glass, custom
+    enum Variant { Elevated, Outlined, Filled, Interactive, Media, Glass, Custom }
     property int variant: NordicCard.Variant.Elevated
+    
+    // Style Aliases
+    property alias border: bgRect.border
+    property alias radius: bgRect.radius
+    property alias color: bgRect.color // Override standard color logic if needed
     
     // Media Source (only for Media variant)
     property string mediaSource: ""
@@ -31,9 +36,9 @@ Item {
     // -------------------------------------------------------------------------
     
     readonly property color bgColor: {
-        // Glass: Semi-transparent for blur effect
+        // Glass: handled by NordicGlass component background
         if (variant === NordicCard.Variant.Glass) {
-            return Qt.rgba(NordicTheme.colors.bg.surface.r, NordicTheme.colors.bg.surface.g, NordicTheme.colors.bg.surface.b, 0.7)
+            return "transparent"
         }
         
         if (variant === NordicCard.Variant.Filled || variant === NordicCard.Variant.Media) {
@@ -52,9 +57,9 @@ Item {
     }
     
     readonly property color borderColor: {
-        // Glass: Subtle accent glow border
+        // Glass: handled by NordicGlass component
         if (variant === NordicCard.Variant.Glass) {
-            return Qt.rgba(NordicTheme.colors.accent.primary.r, NordicTheme.colors.accent.primary.g, NordicTheme.colors.accent.primary.b, 0.3)
+            return "transparent"
         }
         
         if (variant === NordicCard.Variant.Outlined) {
@@ -79,6 +84,19 @@ Item {
     // -------------------------------------------------------------------------
     // Implementation
     // -------------------------------------------------------------------------
+
+    // Unified Glass Background
+    NordicGlass {
+        id: glassBg
+        anchors.fill: parent
+        radius: bgRect.radius
+        // Pass the standard glass color
+        color: Qt.rgba(NordicTheme.colors.bg.surface.r, NordicTheme.colors.bg.surface.g, NordicTheme.colors.bg.surface.b, 0.7)
+        // Pass the standard glass border
+        borderColor: Qt.rgba(NordicTheme.colors.accent.primary.r, NordicTheme.colors.accent.primary.g, NordicTheme.colors.accent.primary.b, 0.3)
+        
+        visible: variant === NordicCard.Variant.Glass
+    }
 
     // Shadow Layer (Behind background)
     Rectangle {
@@ -107,6 +125,7 @@ Item {
         radius: NordicTheme.shapes.radius_xl
         
         border.width: (variant === NordicCard.Variant.Outlined || variant === NordicCard.Variant.Glass) ? 1 : 0
+        // Use 'root.borderColor' unless overridden
         border.color: root.borderColor
         
         clip: true // Click effects and media clipped to radius

@@ -271,6 +271,13 @@ namespace _qt_qml_NordicHeadunit_qml_Components_NordicCard_qml {
         reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
     };
 }
+namespace _qt_qml_NordicHeadunit_qml_Components_NordicGlass_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
 namespace _qt_qml_NordicHeadunit_qml_Components_NordicCircularGauge_qml { 
     extern const unsigned char qmlData[];
     extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
@@ -356,6 +363,41 @@ namespace _qt_qml_NordicHeadunit_qml_Components_WidgetGrid_qml {
     };
 }
 namespace _qt_qml_NordicHeadunit_qml_Components_MediaControlButton_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
+namespace _qt_qml_NordicHeadunit_qml_Components_Maps_MapSurface_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
+namespace _qt_qml_NordicHeadunit_qml_Components_Maps_GuidanceBanner_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
+namespace _qt_qml_NordicHeadunit_qml_Components_Maps_SearchSheet_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
+namespace _qt_qml_NordicHeadunit_qml_Components_Maps_RoutePreviewSheet_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
+namespace _qt_qml_NordicHeadunit_qml_Components_Maps_FloatingMapControls_qml { 
     extern const unsigned char qmlData[];
     extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
     const QQmlPrivate::CachedQmlUnit unit = {
@@ -572,6 +614,13 @@ namespace _qt_qml_NordicHeadunit_qml_Pages_Settings_SettingsSidebar_qml {
         reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
     };
 }
+namespace _qt_qml_NordicHeadunit_qml_Pages_Settings_MapSettings_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
 namespace _qt_qml_NordicHeadunit_qml_Pages_Settings_NavigationSettings_qml { 
     extern const unsigned char qmlData[];
     extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
@@ -652,6 +701,7 @@ Registry::Registry() {
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NordicHeadunit/qml/Overlays/OverlayManager.qml"), &QmlCacheGeneratedCode::_qt_qml_NordicHeadunit_qml_Overlays_OverlayManager_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NordicHeadunit/qml/Components/NordicButton.qml"), &QmlCacheGeneratedCode::_qt_qml_NordicHeadunit_qml_Components_NordicButton_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NordicHeadunit/qml/Components/NordicCard.qml"), &QmlCacheGeneratedCode::_qt_qml_NordicHeadunit_qml_Components_NordicCard_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NordicHeadunit/qml/Components/NordicGlass.qml"), &QmlCacheGeneratedCode::_qt_qml_NordicHeadunit_qml_Components_NordicGlass_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NordicHeadunit/qml/Components/NordicCircularGauge.qml"), &QmlCacheGeneratedCode::_qt_qml_NordicHeadunit_qml_Components_NordicCircularGauge_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NordicHeadunit/qml/Components/NordicIcon.qml"), &QmlCacheGeneratedCode::_qt_qml_NordicHeadunit_qml_Components_NordicIcon_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NordicHeadunit/qml/Components/NordicListItem.qml"), &QmlCacheGeneratedCode::_qt_qml_NordicHeadunit_qml_Components_NordicListItem_qml::unit);
@@ -665,6 +715,11 @@ Registry::Registry() {
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NordicHeadunit/qml/Components/DraggableWidget.qml"), &QmlCacheGeneratedCode::_qt_qml_NordicHeadunit_qml_Components_DraggableWidget_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NordicHeadunit/qml/Components/WidgetGrid.qml"), &QmlCacheGeneratedCode::_qt_qml_NordicHeadunit_qml_Components_WidgetGrid_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NordicHeadunit/qml/Components/MediaControlButton.qml"), &QmlCacheGeneratedCode::_qt_qml_NordicHeadunit_qml_Components_MediaControlButton_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NordicHeadunit/qml/Components/Maps/MapSurface.qml"), &QmlCacheGeneratedCode::_qt_qml_NordicHeadunit_qml_Components_Maps_MapSurface_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NordicHeadunit/qml/Components/Maps/GuidanceBanner.qml"), &QmlCacheGeneratedCode::_qt_qml_NordicHeadunit_qml_Components_Maps_GuidanceBanner_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NordicHeadunit/qml/Components/Maps/SearchSheet.qml"), &QmlCacheGeneratedCode::_qt_qml_NordicHeadunit_qml_Components_Maps_SearchSheet_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NordicHeadunit/qml/Components/Maps/RoutePreviewSheet.qml"), &QmlCacheGeneratedCode::_qt_qml_NordicHeadunit_qml_Components_Maps_RoutePreviewSheet_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NordicHeadunit/qml/Components/Maps/FloatingMapControls.qml"), &QmlCacheGeneratedCode::_qt_qml_NordicHeadunit_qml_Components_Maps_FloatingMapControls_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NordicHeadunit/qml/Widgets/NavigationWidget.qml"), &QmlCacheGeneratedCode::_qt_qml_NordicHeadunit_qml_Widgets_NavigationWidget_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NordicHeadunit/qml/Widgets/WeatherWidget.qml"), &QmlCacheGeneratedCode::_qt_qml_NordicHeadunit_qml_Widgets_WeatherWidget_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NordicHeadunit/qml/Widgets/NowPlayingWidget.qml"), &QmlCacheGeneratedCode::_qt_qml_NordicHeadunit_qml_Widgets_NowPlayingWidget_qml::unit);
@@ -695,6 +750,7 @@ Registry::Registry() {
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NordicHeadunit/qml/Pages/Settings/SystemSettingsPage.qml"), &QmlCacheGeneratedCode::_qt_qml_NordicHeadunit_qml_Pages_Settings_SystemSettingsPage_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NordicHeadunit/qml/Pages/Settings/SettingsSplitLayout.qml"), &QmlCacheGeneratedCode::_qt_qml_NordicHeadunit_qml_Pages_Settings_SettingsSplitLayout_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NordicHeadunit/qml/Pages/Settings/SettingsSidebar.qml"), &QmlCacheGeneratedCode::_qt_qml_NordicHeadunit_qml_Pages_Settings_SettingsSidebar_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NordicHeadunit/qml/Pages/Settings/MapSettings.qml"), &QmlCacheGeneratedCode::_qt_qml_NordicHeadunit_qml_Pages_Settings_MapSettings_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NordicHeadunit/qml/Pages/Settings/NavigationSettings.qml"), &QmlCacheGeneratedCode::_qt_qml_NordicHeadunit_qml_Pages_Settings_NavigationSettings_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NordicHeadunit/qml/Pages/Settings/PrivacySettings.qml"), &QmlCacheGeneratedCode::_qt_qml_NordicHeadunit_qml_Pages_Settings_PrivacySettings_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/NordicHeadunit/qml/Pages/Settings/DateTimeSettings.qml"), &QmlCacheGeneratedCode::_qt_qml_NordicHeadunit_qml_Pages_Settings_DateTimeSettings_qml::unit);

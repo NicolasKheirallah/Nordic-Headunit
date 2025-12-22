@@ -8,6 +8,7 @@
     <file alias="qml/Pages/Media/qmldir">/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/NordicHeadunit/qml/Pages/Media/qmldir</file>
     <file alias="qml/Overlays/qmldir">/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/NordicHeadunit/qml/Overlays/qmldir</file>
     <file alias="qml/Services/qmldir">/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/NordicHeadunit/qml/Services/qmldir</file>
+    <file alias="qml/Components/Maps/qmldir">/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/NordicHeadunit/qml/Components/Maps/qmldir</file>
     <file alias="qml/Widgets/qmldir">/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/NordicHeadunit/qml/Widgets/qmldir</file>
     <file alias="qml/Pages/Settings/qmldir">/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/NordicHeadunit/qml/Pages/Settings/qmldir</file>
   </qresource>

@@ -62,6 +62,9 @@ void SystemSettings::loadSettings()
     m_autoTime = m_settings.value("datetime/autoTime", true).toBool();
     m_use24HourFormat = m_settings.value("datetime/use24HourFormat", true).toBool();
     m_timeZone = m_settings.value("datetime/timeZone", "Europe/Stockholm").toString();
+    
+    // Map Style
+    m_mapStyle = static_cast<MapStyle>(m_settings.value("map/style", 0).toInt());
 }
 
 void SystemSettings::saveSettings()
@@ -97,6 +100,9 @@ void SystemSettings::saveSettings()
     m_settings.setValue("datetime/autoTime", m_autoTime);
     m_settings.setValue("datetime/use24HourFormat", m_use24HourFormat);
     m_settings.setValue("datetime/timeZone", m_timeZone);
+    
+    // Map Style
+    m_settings.setValue("map/style", static_cast<int>(m_mapStyle));
     
     m_settings.sync(); // Ensure write to disk
 }
@@ -293,6 +299,27 @@ void SystemSettings::setBottomBarEnabled(bool bottomBarEnabled)
     m_bottomBarEnabled = bottomBarEnabled;
     saveSettings();
     emit bottomBarEnabledChanged(m_bottomBarEnabled);
+}
+
+// Map Style
+SystemSettings::MapStyle SystemSettings::mapStyle() const { return m_mapStyle; }
+void SystemSettings::setMapStyle(SystemSettings::MapStyle style)
+{
+    if (m_mapStyle == style) return;
+    m_mapStyle = style;
+    saveSettings();
+    emit mapStyleChanged(m_mapStyle);
+}
+
+// Map Orientation (0=NorthUp, 1=HeadingUp)
+int SystemSettings::mapOrientation() const { return m_mapOrientation; }
+void SystemSettings::setMapOrientation(int orientation)
+{
+    if (m_mapOrientation == orientation) return;
+    m_mapOrientation = orientation;
+    m_settings.setValue("map/orientation", m_mapOrientation);
+    m_settings.sync();
+    emit mapOrientationChanged(m_mapOrientation);
 }
 
 // Date & Time

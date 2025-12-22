@@ -278,4 +278,13 @@ QtObject {
         property var ease_in_out: Easing.InOutCubic
         property var ease_bounce: Easing.OutBack
     }
+    
+    // -------------------------------------------------------------------------
+    // Helper Functions
+    // -------------------------------------------------------------------------
+    
+    // PERFORMANCE: Centralized icon path to avoid repeated string concatenation
+    function icon(name) {
+        return "qrc:/qt/qml/NordicHeadunit/assets/icons/" + name + ".svg"
+    }
 }

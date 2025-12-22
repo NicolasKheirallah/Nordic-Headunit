@@ -23,14 +23,13 @@ Page {
     // Page Registry
     // -------------------------------------------------------------------------
     property var pageComponents: [
-        vehiclePage,        // 0
-        displayPage,        // 1
-        soundPage,          // 2
-        connectivityPage,   // 3
-        navigationPage,     // 4
-        dateTimePage,       // 5
-        systemPage,         // 6
-        privacyPage         // 7
+        displayPage,        // 0 - Display
+        connectivityPage,   // 1 - Connectivity (NEW)
+        vehiclePage,        // 2 - Vehicle
+        navigationPage,     // 3 - Navigation
+        privacyPage,        // 4 - Privacy
+        dateTimePage,       // 5 - Date & Time
+        systemPage          // 6 - System
     ]
     
     // -------------------------------------------------------------------------
@@ -142,6 +141,7 @@ Page {
     
     Component { id: vehiclePage; VehicleSettings {} }
     Component { id: displayPage; DisplaySettings {} }
+    Component { id: navigationPage; MapSettings {} }
     
     Component { 
         id: soundPage
@@ -174,10 +174,14 @@ Page {
     Component { 
         id: connectivityPage
         ConnectivitySettings {
-            wifiSettingsPage: Component { WifiSettings {} }
-            bluetoothSettingsPage: Component { BluetoothSettings {} }
+            onWifiClicked: root.openContent(wifiSettingsPage)
+            onBluetoothClicked: root.openContent(bluetoothSettingsPage)
         } 
     }
+    
+    // Sub-pages for Connectivity
+    Component { id: wifiSettingsPage; WifiSettings {} }
+    Component { id: bluetoothSettingsPage; BluetoothSettings {} }
     
     // -------------------------------------------------------------------------
     // Navigation Helper
@@ -190,7 +194,6 @@ Page {
         }
     }
 
-    Component { id: navigationPage; NavigationSettings {} }
     Component { id: dateTimePage; DateTimeSettings {} }
     
     Component { 
