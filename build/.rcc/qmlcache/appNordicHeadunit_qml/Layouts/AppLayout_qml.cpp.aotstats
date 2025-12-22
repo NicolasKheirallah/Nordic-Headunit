@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 39,
-                        "durationMicroseconds": 106,
+                        "durationMicroseconds": 114,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "pageTitles",
                         "line": 26
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 30,
+                        "durationMicroseconds": 29,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 29
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 77,
+                        "durationMicroseconds": 80,
                         "errorMessage": "Cannot generate efficient code for LoadElement with non-list base type (component in /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Layouts/AppLayout.qml)::pageTitles with type QVariant (adjusted to QJSValue, stored as QJSValue)",
                         "functionName": "title",
                         "line": 37
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 32,
-                        "durationMicroseconds": 34,
+                        "durationMicroseconds": 35,
                         "errorMessage": "",
                         "functionName": "onSettingsClicked",
                         "line": 44
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 23,
+                        "durationMicroseconds": 22,
                         "errorMessage": "",
                         "functionName": "onNotificationClicked",
                         "line": 45
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 15,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 58
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 102,
+                        "durationMicroseconds": 100,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "visible",
                         "line": 72

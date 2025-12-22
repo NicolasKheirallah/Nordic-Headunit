@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 1427,
+                        "durationMicroseconds": 1316,
                         "errorMessage": "",
                         "functionName": "size",
                         "line": 18
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 171,
+                        "durationMicroseconds": 169,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "color",
                         "line": 35
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 56,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 28,
                         "errorMessage": "Cannot access value for name NordicTheme",
                         "functionName": "duration",
                         "line": 38
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 6,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "visible",
                         "line": 48
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 48,
+                        "durationMicroseconds": 47,
                         "errorMessage": "Cannot access value for name NordicTheme",
                         "functionName": "spacing",
                         "line": 55
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 67,
+                        "durationMicroseconds": 66,
                         "errorMessage": "Cannot access value for name NordicText",
                         "functionName": "type",
                         "line": 59
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 38,
+                        "durationMicroseconds": 39,
                         "errorMessage": "Cannot access value for name Text",
                         "functionName": "elide",
                         "line": 61
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 87,
+                        "durationMicroseconds": 86,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "visible",
                         "line": 65
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 5,
+                        "durationMicroseconds": 4,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "text",
                         "line": 66
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 56,
+                        "durationMicroseconds": 55,
                         "errorMessage": "Cannot access value for name NordicTheme",
                         "functionName": "color",
                         "line": 68
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 34,
+                        "durationMicroseconds": 36,
                         "errorMessage": "Cannot access value for name Text",
                         "functionName": "elide",
                         "line": 70
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 5,
+                        "durationMicroseconds": 6,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "visible",
                         "line": 78
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 1237,
+                        "durationMicroseconds": 1163,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 88
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 40,
                         "errorMessage": "",
                         "functionName": "bottom",
                         "line": 83
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 29,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 14,
                         "errorMessage": "Cannot retrieve a non-object type by ID: root",
                         "functionName": "leftMargin",
                         "line": 86
@@ -230,7 +230,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 24,
                         "errorMessage": "",
                         "functionName": "cursorShape",
                         "line": 95
@@ -238,7 +238,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 14,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 93

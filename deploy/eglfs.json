@@ -1,0 +1,22 @@
+{
+  "device": "/dev/dri/card0",
+  "hwcursor": false,
+  "pbuffers": true,
+  "outputs": [
+    {
+      "name": "HDMI-A-1",
+      "mode": "preferred",
+      "primary": true
+    },
+    {
+      "name": "HDMI-A-2",
+      "mode": "preferred"
+    },
+    {
+      "name": "DSI-1",
+      "mode": "preferred",
+      "primary": true
+    }
+  ],
+  "separateScreens": false
+}

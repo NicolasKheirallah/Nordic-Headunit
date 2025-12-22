@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 73,
+                        "durationMicroseconds": 68,
                         "errorMessage": "",
                         "functionName": "onEditModeChanged",
                         "line": 22
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 43,
+                        "durationMicroseconds": 41,
                         "errorMessage": "",
                         "functionName": "canUndo",
                         "line": 26
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 1246,
+                        "durationMicroseconds": 1221,
                         "errorMessage": "Cannot load property layout from const QMetaObject.",
                         "functionName": "columns",
                         "line": 33
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 37,
-                        "durationMicroseconds": 80,
+                        "durationMicroseconds": 85,
                         "errorMessage": "",
                         "functionName": "spacing",
                         "line": 42
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 62,
                         "errorMessage": "",
                         "functionName": "margin",
                         "line": 43
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 73,
+                        "durationMicroseconds": 76,
                         "errorMessage": "",
                         "functionName": "cellWidth",
                         "line": 48
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 40,
-                        "durationMicroseconds": 56,
+                        "durationMicroseconds": 65,
                         "errorMessage": "",
                         "functionName": "cellHeight",
                         "line": 51
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 20,
                         "errorMessage": "",
                         "functionName": "onColumnsChanged",
                         "line": 54
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 359,
+                        "durationMicroseconds": 327,
                         "errorMessage": "Instruction \"generate_StoreLocal\" not implemented",
                         "functionName": "reflowLayout",
                         "line": 57
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 79,
+                        "durationMicroseconds": 78,
                         "errorMessage": "",
                         "functionName": "maxRows",
                         "line": 126
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 43,
-                        "durationMicroseconds": 2175,
+                        "durationMicroseconds": 2060,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "widgetRegistry",
                         "line": 130
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 363,
+                        "durationMicroseconds": 354,
                         "errorMessage": "Cannot use shadowable base type for further lookups: call to method get, returning QJSValue",
                         "functionName": "updateContentHeight",
                         "line": 255
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 1029,
+                        "durationMicroseconds": 969,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "saveLayout",
                         "line": 374
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 1946,
+                        "durationMicroseconds": 1851,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "loadLayout",
                         "line": 388
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 342,
+                        "durationMicroseconds": 324,
                         "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
                         "functionName": "loadDefaultLayout",
                         "line": 402
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 20,
                         "errorMessage": "Cannot load property widgetType from (component in /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Components/WidgetGrid.qml)::lastDeletedWidget with type QVariant.",
                         "functionName": "undoDelete",
                         "line": 431
@@ -222,7 +222,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 13,
                         "errorMessage": "",
                         "functionName": "layoutPresets",
                         "line": 442
@@ -294,7 +294,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 220,
+                        "durationMicroseconds": 204,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "onCompleted",
                         "line": 489
@@ -302,7 +302,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 27,
+                        "durationMicroseconds": 29,
                         "errorMessage": "",
                         "functionName": "onLongPressed",
                         "line": 557
@@ -318,7 +318,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 47,
+                        "durationMicroseconds": 46,
                         "errorMessage": "",
                         "functionName": "contentHeight",
                         "line": 565
@@ -326,7 +326,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 26,
                         "errorMessage": "",
                         "functionName": "boundsBehavior",
                         "line": 567
@@ -334,7 +334,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 12,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 561
@@ -342,7 +342,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 16,
                         "errorMessage": "Cannot access value for name widgetModel",
                         "functionName": "visible",
                         "line": 573
@@ -350,7 +350,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 576
@@ -358,7 +358,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 39,
+                        "durationMicroseconds": 38,
                         "errorMessage": "",
                         "functionName": "opacity",
                         "line": 579
@@ -366,7 +366,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 22,
                         "errorMessage": "",
                         "functionName": "right",
                         "line": 574
@@ -374,7 +374,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 55,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 19,
                         "errorMessage": "",
                         "functionName": "top",
                         "line": 574
@@ -382,7 +382,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 84,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 14,
                         "errorMessage": "",
                         "functionName": "margins",
                         "line": 574
@@ -398,7 +398,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 17,
                         "errorMessage": "",
                         "functionName": "size",
                         "line": 588
@@ -414,7 +414,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 12,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 586
@@ -422,7 +422,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 19,
                         "errorMessage": "",
                         "functionName": "cursorShape",
                         "line": 596
@@ -438,7 +438,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 11,
+                        "durationMicroseconds": 12,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 594
@@ -446,7 +446,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 15,
                         "errorMessage": "",
                         "functionName": "visible",
                         "line": 602
@@ -454,7 +454,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 31,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 606
@@ -462,7 +462,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 5,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 609
@@ -470,7 +470,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 32,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 20,
                         "errorMessage": "",
                         "functionName": "right",
                         "line": 603
@@ -478,7 +478,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 41,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 18,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
                         "line": 604
@@ -486,7 +486,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 16,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 615
@@ -494,7 +494,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 5,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 616
@@ -510,7 +510,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 14,
                         "errorMessage": "",
                         "functionName": "visible",
                         "line": 624
@@ -518,7 +518,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 28,
+                        "durationMicroseconds": 27,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 626
@@ -526,7 +526,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 5,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 627
@@ -534,7 +534,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 18,
                         "errorMessage": "",
                         "functionName": "right",
                         "line": 625
@@ -542,7 +542,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 55,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 18,
                         "errorMessage": "",
                         "functionName": "top",
                         "line": 625
@@ -550,7 +550,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 84,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 14,
                         "errorMessage": "",
                         "functionName": "margins",
                         "line": 625
@@ -558,7 +558,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 60,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 17,
                         "errorMessage": "",
                         "functionName": "cursorShape",
                         "line": 629
@@ -566,7 +566,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 94,
-                        "durationMicroseconds": 26,
+                        "durationMicroseconds": 24,
                         "errorMessage": "",
                         "functionName": "onClicked",
                         "line": 629
@@ -574,7 +574,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 11,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 629
@@ -582,7 +582,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 91,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 15,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 630
@@ -590,7 +590,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 57,
-                        "durationMicroseconds": 11,
+                        "durationMicroseconds": 10,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 630
@@ -598,7 +598,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 39,
+                        "durationMicroseconds": 36,
                         "errorMessage": "",
                         "functionName": "visible",
                         "line": 635
@@ -606,7 +606,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 55,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 9,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 637
@@ -614,7 +614,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 18,
                         "errorMessage": "",
                         "functionName": "right",
                         "line": 636
@@ -622,7 +622,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 58,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 18,
                         "errorMessage": "",
                         "functionName": "top",
                         "line": 636
@@ -630,7 +630,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 87,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 14,
                         "errorMessage": "",
                         "functionName": "margins",
                         "line": 636
@@ -638,7 +638,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 60,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 16,
                         "errorMessage": "",
                         "functionName": "cursorShape",
                         "line": 638
@@ -654,7 +654,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 10,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 638
@@ -662,7 +662,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 78,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 15,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 639
@@ -686,7 +686,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 8,
+                        "durationMicroseconds": 7,
                         "errorMessage": "Cannot access value for name widgetModel",
                         "functionName": "visible",
                         "line": 644
@@ -694,7 +694,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 10,
+                        "durationMicroseconds": 11,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 645
@@ -702,7 +702,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 11,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 648
@@ -710,7 +710,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 14,
                         "errorMessage": "",
                         "functionName": "size",
                         "line": 651
@@ -726,7 +726,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 15,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 653
@@ -734,7 +734,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 14,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 657
@@ -742,7 +742,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 5,
+                        "durationMicroseconds": 6,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 658
@@ -750,7 +750,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 42,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 16,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 659
@@ -758,7 +758,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 15,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 660
@@ -774,7 +774,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 6,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 665
@@ -782,7 +782,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 42,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 13,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 666
@@ -798,7 +798,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 20,
                         "errorMessage": "Cannot access value for name columns",
                         "functionName": "model",
                         "line": 674
@@ -806,7 +806,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 39,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 13,
                         "errorMessage": "Cannot access value for name index",
                         "functionName": "gridCol",
                         "line": 677
@@ -814,7 +814,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 39,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 14,
                         "errorMessage": "Cannot access value for name index",
                         "functionName": "gridRow",
                         "line": 678
@@ -822,7 +822,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 56,
                         "errorMessage": "method calcX cannot be resolved.",
                         "functionName": "x",
                         "line": 680
@@ -830,7 +830,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 44,
+                        "durationMicroseconds": 40,
                         "errorMessage": "method calcY cannot be resolved.",
                         "functionName": "y",
                         "line": 681
@@ -838,7 +838,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 8,
+                        "durationMicroseconds": 5,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "width",
                         "line": 682
@@ -854,7 +854,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 39,
+                        "durationMicroseconds": 35,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 684
@@ -862,7 +862,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 25,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 5,
                         "errorMessage": "Cannot load property shapes from const QMetaObject.",
                         "functionName": "radius",
                         "line": 687
@@ -870,7 +870,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 14,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 685
@@ -878,7 +878,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 33,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 686
@@ -894,7 +894,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 33,
+                        "durationMicroseconds": 29,
                         "errorMessage": "",
                         "functionName": "opacity",
                         "line": 698
@@ -926,7 +926,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 21,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "onClicked",
                         "line": 708
@@ -934,7 +934,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 11,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 705
@@ -942,7 +942,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 5,
                         "errorMessage": "Cannot access value for name widgetModel",
                         "functionName": "model",
                         "line": 719
@@ -950,7 +950,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 6,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "widgetId",
                         "line": 722
@@ -958,7 +958,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 5,
+                        "durationMicroseconds": 4,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "gridWidth",
                         "line": 723
@@ -974,7 +974,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 5,
+                        "durationMicroseconds": 6,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "editMode",
                         "line": 724
@@ -1006,7 +1006,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 56,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 5,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "cellHeight",
                         "line": 730
@@ -1014,7 +1014,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 82,
-                        "durationMicroseconds": 5,
+                        "durationMicroseconds": 6,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "spacing",
                         "line": 730
@@ -1030,7 +1030,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 47,
+                        "durationMicroseconds": 43,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "y",
                         "line": 733
@@ -1038,7 +1038,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 62,
+                        "durationMicroseconds": 59,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "width",
                         "line": 734
@@ -1046,7 +1046,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 25,
-                        "durationMicroseconds": 65,
+                        "durationMicroseconds": 60,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "height",
                         "line": 735
@@ -1054,7 +1054,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 10,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "onDeleteRequested",
                         "line": 743
@@ -1062,7 +1062,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 155,
+                        "durationMicroseconds": 134,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "onDragEnded",
                         "line": 744
@@ -1078,7 +1078,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 11,
+                        "durationMicroseconds": 10,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "onResizeRequested",
                         "line": 745
@@ -1086,7 +1086,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 11,
+                        "durationMicroseconds": 12,
                         "errorMessage": "",
                         "functionName": "onResizeRequested",
                         "line": 745
@@ -1094,7 +1094,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 42,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 6,
                         "errorMessage": "Cannot access value for name editMode",
                         "functionName": "enabled",
                         "line": 738
@@ -1102,7 +1102,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 99,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 18,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 738
@@ -1118,7 +1118,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 99,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 15,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 739
@@ -1126,7 +1126,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 46,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 5,
                         "errorMessage": "Cannot access value for name editMode",
                         "functionName": "enabled",
                         "line": 740
@@ -1134,7 +1134,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 103,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 14,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 740
@@ -1142,7 +1142,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 47,
-                        "durationMicroseconds": 8,
+                        "durationMicroseconds": 7,
                         "errorMessage": "Cannot access value for name editMode",
                         "functionName": "enabled",
                         "line": 741
@@ -1150,7 +1150,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 104,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 19,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 741
@@ -1158,7 +1158,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 29,
-                        "durationMicroseconds": 93,
+                        "durationMicroseconds": 101,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "source",
                         "line": 751
@@ -1166,7 +1166,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 27,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "onStatusChanged",
                         "line": 753
@@ -1174,7 +1174,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 48,
+                        "durationMicroseconds": 47,
                         "errorMessage": "Cannot access value for name widgetRegistry",
                         "functionName": "onLoaded",
                         "line": 759
@@ -1190,7 +1190,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 32,
+                        "durationMicroseconds": 40,
                         "errorMessage": "",
                         "functionName": "visible",
                         "line": 768
@@ -1230,7 +1230,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 38,
                         "errorMessage": "",
                         "functionName": "visible",
                         "line": 780
@@ -1238,7 +1238,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 5,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 781
@@ -1254,7 +1254,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 11,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 779
@@ -1262,7 +1262,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 39,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 6,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 782
@@ -1270,7 +1270,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 5,
                         "errorMessage": "Cannot load property spacing from const QMetaObject.",
                         "functionName": "spacing",
                         "line": 788
@@ -1278,7 +1278,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 47,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 11,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 787
@@ -1294,7 +1294,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 16,
                         "errorMessage": "",
                         "functionName": "size",
                         "line": 793
@@ -1310,7 +1310,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 40,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 5,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 799
@@ -1318,7 +1318,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 23,
+                        "durationMicroseconds": 15,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 800
@@ -1326,7 +1326,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 51,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 15,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 801
@@ -1334,7 +1334,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 42,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 17,
                         "errorMessage": "",
                         "functionName": "variant",
                         "line": 805
@@ -1342,7 +1342,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 17,
                         "errorMessage": "",
                         "functionName": "size",
                         "line": 806
@@ -1358,7 +1358,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 51,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 17,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 808
@@ -1366,7 +1366,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 18,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 18,
                         "errorMessage": "",
                         "functionName": "visible",
                         "line": 825
@@ -1374,7 +1374,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 52,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 5,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 827
@@ -1382,7 +1382,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 19,
                         "errorMessage": "",
                         "functionName": "bottom",
                         "line": 826
@@ -1390,7 +1390,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 66,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 19,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 826
@@ -1398,7 +1398,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 56,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 16,
                         "errorMessage": "",
                         "functionName": "cursorShape",
                         "line": 828
@@ -1406,7 +1406,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 90,
-                        "durationMicroseconds": 8,
+                        "durationMicroseconds": 7,
                         "errorMessage": "Cannot retrieve a non-object type by ID: widgetPicker",
                         "functionName": "onClicked",
                         "line": 828
@@ -1414,7 +1414,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 11,
+                        "durationMicroseconds": 10,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 828
@@ -1422,7 +1422,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 11,
+                        "durationMicroseconds": 12,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 830
@@ -1462,7 +1462,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 68,
+                        "durationMicroseconds": 62,
                         "errorMessage": "Cannot access value for name NordicTheme",
                         "functionName": "color",
                         "line": 846
@@ -1470,7 +1470,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 57,
+                        "durationMicroseconds": 52,
                         "errorMessage": "Cannot access value for name NordicTheme",
                         "functionName": "radius",
                         "line": 847
@@ -1478,7 +1478,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 54,
+                        "durationMicroseconds": 49,
                         "errorMessage": "Cannot access value for name NordicTheme",
                         "functionName": "color",
                         "line": 848
@@ -1486,7 +1486,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 5,
                         "errorMessage": "Cannot load property spacing from const QMetaObject.",
                         "functionName": "spacing",
                         "line": 863
@@ -1510,7 +1510,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 15,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 871
@@ -1518,7 +1518,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 6,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 872
@@ -1526,7 +1526,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 16,
                         "errorMessage": "",
                         "functionName": "variant",
                         "line": 877
@@ -1558,7 +1558,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 48,
+                        "durationMicroseconds": 43,
                         "errorMessage": "",
                         "functionName": "columns",
                         "line": 893
@@ -1566,7 +1566,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 33,
-                        "durationMicroseconds": 5,
+                        "durationMicroseconds": 6,
                         "errorMessage": "Cannot load property spacing from const QMetaObject.",
                         "functionName": "rowSpacing",
                         "line": 894
@@ -1574,7 +1574,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 4,
+                        "durationMicroseconds": 6,
                         "errorMessage": "Cannot load property spacing from const QMetaObject.",
                         "functionName": "columnSpacing",
                         "line": 895
@@ -1582,7 +1582,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 8,
                         "errorMessage": "Cannot retrieve a non-object type by ID: gridScrollView",
                         "functionName": "width",
                         "line": 896
@@ -1590,7 +1590,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 141,
+                        "durationMicroseconds": 148,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "model",
                         "line": 899
@@ -1598,7 +1598,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 37,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 7,
                         "errorMessage": "Cannot load property shapes from const QMetaObject.",
                         "functionName": "radius",
                         "line": 904
@@ -1606,7 +1606,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 21,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 905
@@ -1614,7 +1614,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 47,
-                        "durationMicroseconds": 70,
+                        "durationMicroseconds": 84,
                         "errorMessage": "Cannot access value for name widgetRegistry",
                         "functionName": "reg",
                         "line": 909
@@ -1622,7 +1622,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 43,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 9,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 906
@@ -1630,7 +1630,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 46,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 17,
                         "errorMessage": "",
                         "functionName": "cursorShape",
                         "line": 917
@@ -1638,7 +1638,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 44,
-                        "durationMicroseconds": 94,
+                        "durationMicroseconds": 85,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "onClicked",
                         "line": 918
@@ -1646,7 +1646,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 47,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 11,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 915
@@ -1654,7 +1654,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 42,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 6,
                         "errorMessage": "Cannot load property spacing from const QMetaObject.",
                         "functionName": "spacing",
                         "line": 924
@@ -1662,7 +1662,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 47,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 11,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 922
@@ -1678,7 +1678,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 44,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 5,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 929
@@ -1686,7 +1686,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 55,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 16,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 930
@@ -1694,7 +1694,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 49,
-                        "durationMicroseconds": 23,
+                        "durationMicroseconds": 21,
                         "errorMessage": "Cannot load property reg from QQuickItem::parent with type QQuickItem.",
                         "functionName": "source",
                         "line": 934
@@ -1710,7 +1710,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 47,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 17,
                         "errorMessage": "",
                         "functionName": "size",
                         "line": 936
@@ -1718,7 +1718,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 59,
-                        "durationMicroseconds": 10,
+                        "durationMicroseconds": 13,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 933
@@ -1726,7 +1726,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 43,
-                        "durationMicroseconds": 87,
+                        "durationMicroseconds": 79,
                         "errorMessage": "Cannot load property reg from QQuickItem::parent with type QQuickItem.",
                         "functionName": "text",
                         "line": 941
@@ -1734,7 +1734,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 43,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 15,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 942
@@ -1750,7 +1750,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 44,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 15,
                         "errorMessage": "",
                         "functionName": "elide",
                         "line": 946
@@ -1758,7 +1758,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 55,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 16,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 945
@@ -1766,7 +1766,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 18,
-                        "durationMicroseconds": 28,
+                        "durationMicroseconds": 26,
                         "errorMessage": "",
                         "functionName": "visible",
                         "line": 963
@@ -1774,7 +1774,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 53,
+                        "durationMicroseconds": 50,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method rgba, returning QVariant -> QColor stored as QVariant",
                         "functionName": "color",
                         "line": 964
@@ -1790,7 +1790,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 26,
+                        "durationMicroseconds": 30,
                         "errorMessage": "",
                         "functionName": "onClicked",
                         "line": 970
@@ -1798,7 +1798,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 11,
+                        "durationMicroseconds": 10,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 969
@@ -1806,7 +1806,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 30,
+                        "durationMicroseconds": 27,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 977
@@ -1814,7 +1814,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 27,
+                        "durationMicroseconds": 32,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 978
@@ -1822,7 +1822,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 5,
+                        "durationMicroseconds": 7,
                         "errorMessage": "Cannot load property shapes from const QMetaObject.",
                         "functionName": "radius",
                         "line": 979
@@ -1830,7 +1830,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 8,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 980
@@ -1838,7 +1838,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 44,
+                        "durationMicroseconds": 41,
                         "errorMessage": "",
                         "functionName": "scale",
                         "line": 983
@@ -1846,7 +1846,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 41,
+                        "durationMicroseconds": 39,
                         "errorMessage": "",
                         "functionName": "opacity",
                         "line": 984
@@ -1854,7 +1854,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 11,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 976
@@ -1878,7 +1878,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 16,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 999
@@ -1886,7 +1886,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 32,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 26,
                         "errorMessage": "",
                         "functionName": "right",
                         "line": 995
@@ -1894,7 +1894,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 24,
                         "errorMessage": "",
                         "functionName": "top",
                         "line": 996
@@ -1902,7 +1902,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 15,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 1007
@@ -1910,7 +1910,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 6,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 1008
@@ -1918,7 +1918,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 11,
+                        "durationMicroseconds": 10,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 1005
@@ -1926,7 +1926,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 16,
                         "errorMessage": "",
                         "functionName": "cursorShape",
                         "line": 1015
@@ -1934,7 +1934,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 32,
-                        "durationMicroseconds": 26,
+                        "durationMicroseconds": 24,
                         "errorMessage": "",
                         "functionName": "onClicked",
                         "line": 1016
@@ -1950,7 +1950,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 25,
-                        "durationMicroseconds": 93,
+                        "durationMicroseconds": 87,
                         "errorMessage": "method getWidgetSource cannot be resolved.",
                         "functionName": "source",
                         "line": 1025
@@ -1958,7 +1958,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 11,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 1023

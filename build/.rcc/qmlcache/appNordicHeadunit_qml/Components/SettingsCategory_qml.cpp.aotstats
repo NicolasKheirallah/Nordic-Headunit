@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 12,
-                        "durationMicroseconds": 1171,
+                        "durationMicroseconds": 1073,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 18
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 8,
+                        "durationMicroseconds": 6,
                         "errorMessage": "Cannot load property spacing from const QMetaObject.",
                         "functionName": "leftMargin",
                         "line": 14
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 40,
+                        "durationMicroseconds": 39,
                         "errorMessage": "Type (component in /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Components/SettingsCategory.qml)::parent with type QQuickItem does not have a property clicked for calling",
                         "functionName": "onClicked",
                         "line": 26
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 5,
+                        "durationMicroseconds": 6,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 38
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 5,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 44
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 11,
+                        "durationMicroseconds": 12,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 42
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 18,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 51
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 17,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 56
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 5,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 57
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 14,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 61
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 5,
+                        "durationMicroseconds": 6,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 62
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 17,
                         "errorMessage": "",
                         "functionName": "elide",
                         "line": 63
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 46,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 70
@@ -222,7 +222,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 5,
+                        "durationMicroseconds": 20,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 71

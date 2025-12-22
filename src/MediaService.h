@@ -106,6 +106,9 @@ public:
     Q_INVOKABLE void tuneRadio(const QString &frequency);
     Q_INVOKABLE void tuneRadioByIndex(int index);
     Q_INVOKABLE void tuneToFrequency(const QString &frequency);
+    Q_INVOKABLE void tuneStep(double step);  // +/- 0.1 MHz per tap
+    Q_INVOKABLE void seekForward();          // Search for next station
+    Q_INVOKABLE void seekBackward();         // Search for previous station
     Q_INVOKABLE void scanRadioStations();
     Q_INVOKABLE void playTrack(int index);
     Q_INVOKABLE void playFromRecent(int index);

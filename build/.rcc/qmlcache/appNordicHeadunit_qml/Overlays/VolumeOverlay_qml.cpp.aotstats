@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 105,
+                        "durationMicroseconds": 106,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "volume",
                         "line": 9
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 1081,
+                        "durationMicroseconds": 1263,
                         "errorMessage": "Cannot load property shapes from const QMetaObject.",
                         "functionName": "radius",
                         "line": 31
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 8,
+                        "durationMicroseconds": 14,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 32
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 39,
+                        "durationMicroseconds": 46,
                         "errorMessage": "",
                         "functionName": "top",
                         "line": 36
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 25,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 37
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 27,
                         "errorMessage": "Cannot access value for name visibleState",
                         "functionName": "topMargin",
                         "line": 38
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 87,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 23,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 40
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 8,
                         "errorMessage": "Cannot load property spacing from const QMetaObject.",
                         "functionName": "spacing",
                         "line": 51
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 14,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 49
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 5,
+                        "durationMicroseconds": 7,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 63
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 53,
+                        "durationMicroseconds": 57,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 66
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 29,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 19,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 67
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 5,
+                        "durationMicroseconds": 6,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 69
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 34,
+                        "durationMicroseconds": 33,
                         "errorMessage": "",
                         "functionName": "text",
                         "line": 74
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 17,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 75
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 38,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 18,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 77

@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 33,
-                        "durationMicroseconds": 1205,
+                        "durationMicroseconds": 1181,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "accentColor",
                         "line": 16
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 67,
+                        "durationMicroseconds": 60,
                         "errorMessage": "",
                         "functionName": "range",
                         "line": 22
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 45,
-                        "durationMicroseconds": 44,
+                        "durationMicroseconds": 40,
                         "errorMessage": "",
                         "functionName": "normalizedValue",
                         "line": 23
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 20,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 29
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 11,
+                        "durationMicroseconds": 9,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "strokeColor",
                         "line": 35
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 27,
+                        "durationMicroseconds": 25,
                         "errorMessage": "",
                         "functionName": "capStyle",
                         "line": 38
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 40,
+                        "durationMicroseconds": 37,
                         "errorMessage": "",
                         "functionName": "centerX",
                         "line": 41
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 30,
+                        "durationMicroseconds": 28,
                         "errorMessage": "",
                         "functionName": "centerY",
                         "line": 42
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 44,
+                        "durationMicroseconds": 39,
                         "errorMessage": "",
                         "functionName": "radiusX",
                         "line": 43
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 41,
+                        "durationMicroseconds": 36,
                         "errorMessage": "",
                         "functionName": "radiusY",
                         "line": 44
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 21,
                         "errorMessage": "",
                         "functionName": "strokeColor",
                         "line": 52
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 18,
                         "errorMessage": "",
                         "functionName": "capStyle",
                         "line": 55
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 25,
+                        "durationMicroseconds": 27,
                         "errorMessage": "",
                         "functionName": "centerX",
                         "line": 58
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 36,
                         "errorMessage": "",
                         "functionName": "radiusY",
                         "line": 61
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 29,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 16,
                         "errorMessage": "",
                         "functionName": "startAngle",
                         "line": 62
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 12,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 70
@@ -222,7 +222,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 10,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 84
@@ -230,7 +230,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 27,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 81
@@ -238,7 +238,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 15,
                         "errorMessage": "",
                         "functionName": "text",
                         "line": 89

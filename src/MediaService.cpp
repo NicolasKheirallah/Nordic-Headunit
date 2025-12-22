@@ -329,6 +329,63 @@ void MediaService::tuneToFrequency(const QString &frequency)
     play();
 }
 
+void MediaService::tuneStep(double step)
+{
+    // Step frequency by given amount (typically ±0.1 MHz)
+    if (m_radioStations.isEmpty()) return;
+    
+    // Parse current frequency
+    double currentFreq = m_radioStations[m_currentRadioIndex].frequency.toDouble();
+    double newFreq = currentFreq + step;
+    
+    // Clamp to FM range
+    if (newFreq < 87.5) newFreq = 108.0;
+    if (newFreq > 108.0) newFreq = 87.5;
+    
+    // Update the current station's frequency
+    m_radioStations[m_currentRadioIndex].frequency = QString::number(newFreq, 'f', 1);
+    m_radioStations[m_currentRadioIndex].name = "FM " + m_radioStations[m_currentRadioIndex].frequency;
+    
+    if (m_currentSource != "Radio") {
+        setCurrentSource("Radio");
+    }
+    emit radioChanged();
+    emit radioStationsChanged();
+}
+
+void MediaService::seekForward()
+{
+    // Seek to next preset station (simulates finding next strong station)
+    if (m_radioStations.isEmpty()) return;
+    
+    m_currentRadioIndex = (m_currentRadioIndex + 1) % m_radioStations.size();
+    
+    if (m_currentSource != "Radio") {
+        setCurrentSource("Radio");
+    }
+    emit radioChanged();
+    emit radioStationsChanged();
+    emit trackChanged();
+}
+
+void MediaService::seekBackward()
+{
+    // Seek to previous preset station (simulates finding previous strong station)
+    if (m_radioStations.isEmpty()) return;
+    
+    m_currentRadioIndex = m_currentRadioIndex - 1;
+    if (m_currentRadioIndex < 0) {
+        m_currentRadioIndex = m_radioStations.size() - 1;
+    }
+    
+    if (m_currentSource != "Radio") {
+        setCurrentSource("Radio");
+    }
+    emit radioChanged();
+    emit radioStationsChanged();
+    emit trackChanged();
+}
+
 void MediaService::scanRadioStations()
 {
     // Mock: simulate a station scan by resetting to default stations

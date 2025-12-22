@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 12,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 32,
                         "errorMessage": "Cannot access value for name control",
                         "functionName": "x",
                         "line": 13
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 12,
-                        "durationMicroseconds": 23,
+                        "durationMicroseconds": 22,
                         "errorMessage": "Cannot access value for name control",
                         "functionName": "y",
                         "line": 14
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 5,
                         "errorMessage": "Cannot access value for name control",
                         "functionName": "width",
                         "line": 17
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 2,
+                        "durationMicroseconds": 1,
                         "errorMessage": "Cannot access value for name implicitHeight",
                         "functionName": "height",
                         "line": 18
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 215,
+                        "durationMicroseconds": 222,
                         "errorMessage": "Cannot access value for name Qt",
                         "functionName": "color",
                         "line": 20
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 55,
+                        "durationMicroseconds": 49,
                         "errorMessage": "Cannot access value for name NordicTheme",
                         "functionName": "color",
                         "line": 26
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 12,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 16,
                         "errorMessage": "Cannot access value for name control",
                         "functionName": "x",
                         "line": 33
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 12,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 11,
                         "errorMessage": "Cannot access value for name control",
                         "functionName": "y",
                         "line": 34
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 53,
+                        "durationMicroseconds": 48,
                         "errorMessage": "Cannot access value for name NordicTheme",
                         "functionName": "color",
                         "line": 38
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 51,
+                        "durationMicroseconds": 46,
                         "errorMessage": "Cannot access value for name NordicTheme",
                         "functionName": "color",
                         "line": 39
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 5,
+                        "durationMicroseconds": 6,
                         "errorMessage": "Cannot access value for name control",
                         "functionName": "enabled",
                         "line": 58
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 41,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 28,
                         "errorMessage": "Cannot access value for name NordicTheme",
                         "functionName": "duration",
                         "line": 59

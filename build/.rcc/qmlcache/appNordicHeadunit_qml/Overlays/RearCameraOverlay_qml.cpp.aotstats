@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 5,
-                        "durationMicroseconds": 59,
+                        "durationMicroseconds": 69,
                         "errorMessage": "",
                         "functionName": "show",
                         "line": 11
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 5,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 16,
                         "errorMessage": "",
                         "functionName": "hide",
                         "line": 12
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 25,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 16
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 15,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 21
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 26,
+                        "durationMicroseconds": 28,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 29
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 343,
+                        "durationMicroseconds": 364,
                         "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
                         "functionName": "onPaint",
                         "line": 35
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 19,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 69
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 29,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 23,
                         "errorMessage": "",
                         "functionName": "bottom",
                         "line": 64
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 20,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 66

@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 5,
-                        "durationMicroseconds": 67,
+                        "durationMicroseconds": 69,
                         "errorMessage": "",
                         "functionName": "toggle",
                         "line": 13
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 74,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 35,
                         "errorMessage": "",
                         "functionName": "onClicked",
                         "line": 19
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 14,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 19
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 17,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 33,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 26
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 1136,
+                        "durationMicroseconds": 1084,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 32
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 8,
                         "errorMessage": "Cannot load property shapes from const QMetaObject.",
                         "functionName": "radius",
                         "line": 33
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 65,
+                        "durationMicroseconds": 66,
                         "errorMessage": "",
                         "functionName": "topMargin",
                         "line": 30
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 87,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 21,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 45
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 8,
                         "errorMessage": "Cannot load property spacing from const QMetaObject.",
                         "functionName": "spacing",
                         "line": 50
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 12,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 48
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 16,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 56
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 19,
                         "errorMessage": "",
                         "functionName": "variant",
                         "line": 61
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 18,
                         "errorMessage": "",
                         "functionName": "size",
                         "line": 62
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 79,
+                        "durationMicroseconds": 74,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 82
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 45,
-                        "durationMicroseconds": 23,
+                        "durationMicroseconds": 24,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "dTitle",
                         "line": 87
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 44,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 22,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "dBody",
                         "line": 88
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 44,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 17,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "dIcon",
                         "line": 89
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 5,
                         "errorMessage": "Cannot load property spacing from const QMetaObject.",
                         "functionName": "spacing",
                         "line": 94
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 15,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 92
@@ -222,7 +222,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 42,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 5,
                         "errorMessage": "Cannot load property spacing from const QMetaObject.",
                         "functionName": "margins",
                         "line": 93
@@ -230,7 +230,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 37,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 35,
                         "errorMessage": "",
                         "functionName": "source",
                         "line": 97
@@ -262,7 +262,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 48,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 16,
                         "errorMessage": "",
                         "functionName": "text",
                         "line": 105
@@ -270,7 +270,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 78,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 14,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 105
@@ -278,7 +278,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 112,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 7,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 105
@@ -286,7 +286,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 17,
                         "errorMessage": "",
                         "functionName": "variant",
                         "line": 109
@@ -294,7 +294,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 15,
                         "errorMessage": "",
                         "functionName": "size",
                         "line": 111

@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 113,
+                        "durationMicroseconds": 108,
                         "errorMessage": "Cannot access value for name NordicTheme",
                         "functionName": "color",
                         "line": 14
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 8,
+                        "durationMicroseconds": 9,
                         "errorMessage": "Cannot access value for name parent",
                         "functionName": "width",
                         "line": 19
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 4,
+                        "durationMicroseconds": 3,
                         "errorMessage": "Cannot access value for name parent",
                         "functionName": "height",
                         "line": 20
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 1,
+                        "durationMicroseconds": 2,
                         "errorMessage": "Cannot access value for name parent",
                         "functionName": "centerIn",
                         "line": 18
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 14,
                         "errorMessage": "Cannot access value for name Gradient",
                         "functionName": "orientation",
                         "line": 24
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 54,
-                        "durationMicroseconds": 53,
+                        "durationMicroseconds": 54,
                         "errorMessage": "Cannot access value for name Qt",
                         "functionName": "color",
                         "line": 26
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 46,
+                        "durationMicroseconds": 41,
                         "errorMessage": "",
                         "functionName": "target",
                         "line": 43
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 114,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 58,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 43
@@ -78,26 +78,10 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 16,
                         "errorMessage": "",
                         "functionName": "target",
                         "line": 44
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 115,
-                        "durationMicroseconds": 20,
-                        "errorMessage": "",
-                        "functionName": "type",
-                        "line": 44
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 39,
-                        "durationMicroseconds": 17,
-                        "errorMessage": "",
-                        "functionName": "target",
-                        "line": 49
                     },
                     {
                         "codegenSuccessful": true,
@@ -105,7 +89,7 @@
                         "durationMicroseconds": 16,
                         "errorMessage": "",
                         "functionName": "type",
-                        "line": 49
+                        "line": 44
                     },
                     {
                         "codegenSuccessful": true,
@@ -113,12 +97,28 @@
                         "durationMicroseconds": 14,
                         "errorMessage": "",
                         "functionName": "target",
+                        "line": 49
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 115,
+                        "durationMicroseconds": 16,
+                        "errorMessage": "",
+                        "functionName": "type",
+                        "line": 49
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 39,
+                        "durationMicroseconds": 13,
+                        "errorMessage": "",
+                        "functionName": "target",
                         "line": 50
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 98,
-                        "durationMicroseconds": 9,
+                        "durationMicroseconds": 10,
                         "errorMessage": "Cannot retrieve a non-object type by ID: root",
                         "functionName": "to",
                         "line": 50
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 145,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 15,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 50
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 1188,
+                        "durationMicroseconds": 1259,
                         "errorMessage": "Cannot load property spacing from const QMetaObject.",
                         "functionName": "spacing",
                         "line": 58
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 17,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 56
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 6,
                         "errorMessage": "Cannot load property spacing from const QMetaObject.",
                         "functionName": "margins",
                         "line": 57
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 8,
                         "errorMessage": "Cannot retrieve a non-object type by ID: root",
                         "functionName": "preferredWidth",
                         "line": 77
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 299,
+                        "durationMicroseconds": 295,
                         "errorMessage": "Cannot retrieve a non-object type by ID: root",
                         "functionName": "drivingMode",
                         "line": 89
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 30,
+                        "durationMicroseconds": 34,
                         "errorMessage": "Cannot retrieve a non-object type by ID: root",
                         "functionName": "onNavigateTo",
                         "line": 96
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 13,
                         "errorMessage": "",
                         "functionName": "onNavigateTo",
                         "line": 96
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 52,
+                        "durationMicroseconds": 49,
                         "errorMessage": "Cannot retrieve a non-object type by ID: root",
                         "functionName": "onShowToast",
                         "line": 102
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 13,
                         "errorMessage": "",
                         "functionName": "onShowToast",
                         "line": 102
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 13,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 83

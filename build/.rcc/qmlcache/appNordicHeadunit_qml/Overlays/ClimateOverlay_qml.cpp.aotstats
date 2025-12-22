@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 126,
+                        "durationMicroseconds": 132,
                         "errorMessage": "Cannot access value for name VehicleService",
                         "functionName": "temperature",
                         "line": 10
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 68,
+                        "durationMicroseconds": 61,
                         "errorMessage": "",
                         "functionName": "onTriggered",
                         "line": 16
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 1115,
+                        "durationMicroseconds": 1101,
                         "errorMessage": "Cannot load property shapes from const QMetaObject.",
                         "functionName": "radius",
                         "line": 33
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 9,
+                        "durationMicroseconds": 8,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 34
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 23,
                         "errorMessage": "Cannot load property radius from (component in /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Overlays/ClimateOverlay.qml)::parent with type QQuickItem.",
                         "functionName": "radius",
                         "line": 48
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 71,
+                        "durationMicroseconds": 70,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method rgba, returning QVariant -> QColor stored as QVariant",
                         "functionName": "color",
                         "line": 51
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 8,
+                        "durationMicroseconds": 9,
                         "errorMessage": "Cannot load property spacing from const QMetaObject.",
                         "functionName": "spacing",
                         "line": 62
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 18,
                         "errorMessage": "",
                         "functionName": "size",
                         "line": 70
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 8,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 71
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 11,
+                        "durationMicroseconds": 16,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 68
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 21,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 80
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 39,
+                        "durationMicroseconds": 37,
                         "errorMessage": "",
                         "functionName": "text",
                         "line": 84
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 15,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 85

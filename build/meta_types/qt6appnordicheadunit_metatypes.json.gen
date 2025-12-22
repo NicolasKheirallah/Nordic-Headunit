@@ -496,7 +496,31 @@
                     },
                     {
                         "access": "public",
+                        "arguments": [
+                            {
+                                "name": "step",
+                                "type": "double"
+                            }
+                        ],
                         "index": 25,
+                        "name": "tuneStep",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 26,
+                        "name": "seekForward",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 27,
+                        "name": "seekBackward",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 28,
                         "name": "scanRadioStations",
                         "returnType": "void"
                     },
@@ -508,7 +532,7 @@
                                 "type": "int"
                             }
                         ],
-                        "index": 26,
+                        "index": 29,
                         "name": "playTrack",
                         "returnType": "void"
                     },
@@ -520,7 +544,7 @@
                                 "type": "int"
                             }
                         ],
-                        "index": 27,
+                        "index": 30,
                         "name": "playFromRecent",
                         "returnType": "void"
                     },
@@ -532,7 +556,7 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 28,
+                        "index": 31,
                         "name": "playPlaylist",
                         "returnType": "void"
                     }

@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 29,
-                        "durationMicroseconds": 82,
+                        "durationMicroseconds": 95,
                         "errorMessage": "",
                         "functionName": "iconSize",
                         "line": 18
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 12,
-                        "durationMicroseconds": 55,
+                        "durationMicroseconds": 61,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 24
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 13,
-                        "durationMicroseconds": 37,
+                        "durationMicroseconds": 38,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 25
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 12,
-                        "durationMicroseconds": 1212,
+                        "durationMicroseconds": 1425,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 29
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 12,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 63,
                         "errorMessage": "",
                         "functionName": "scale",
                         "line": 54
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 37,
+                        "durationMicroseconds": 38,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 48
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 25,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 49
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 17,
-                        "durationMicroseconds": 23,
+                        "durationMicroseconds": 24,
                         "errorMessage": "",
                         "functionName": "source",
                         "line": 59
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 31,
                         "errorMessage": "Cannot access value for name isPrimary",
                         "functionName": "color",
                         "line": 61
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 17,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 58
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 23,
                         "errorMessage": "",
                         "functionName": "cursorShape",
                         "line": 73
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 30,
+                        "durationMicroseconds": 33,
                         "errorMessage": "",
                         "functionName": "onClicked",
                         "line": 74
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 18,
                         "errorMessage": "",
                         "functionName": "role",
                         "line": 78

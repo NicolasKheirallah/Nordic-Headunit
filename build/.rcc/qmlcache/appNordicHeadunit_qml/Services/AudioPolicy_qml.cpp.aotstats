@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 121,
+                        "durationMicroseconds": 123,
                         "errorMessage": "",
                         "functionName": "focusState",
                         "line": 13
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 73,
+                        "durationMicroseconds": 67,
                         "errorMessage": "",
                         "functionName": "targetVolume",
                         "line": 20
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 75,
+                        "durationMicroseconds": 62,
                         "errorMessage": "",
                         "functionName": "onFocusStateChanged",
                         "line": 33

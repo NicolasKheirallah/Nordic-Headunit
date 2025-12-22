@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 32,
-                        "durationMicroseconds": 66,
+                        "durationMicroseconds": 64,
                         "errorMessage": "",
                         "functionName": "callState",
                         "line": 17
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 28,
                         "errorMessage": "",
                         "functionName": "onSearchQueryChanged",
                         "line": 83
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 29,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 16,
                         "errorMessage": "",
                         "functionName": "onRecentsFilterChanged",
                         "line": 84
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 832,
+                        "durationMicroseconds": 790,
                         "errorMessage": "Cannot use shadowable base type for further lookups: call to method get, returning QJSValue",
                         "functionName": "updateFilteredContacts",
                         "line": 88
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 367,
+                        "durationMicroseconds": 354,
                         "errorMessage": "Cannot use shadowable base type for further lookups: call to method get, returning QJSValue",
                         "functionName": "updateFilteredRecents",
                         "line": 100
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 5,
-                        "durationMicroseconds": 72,
+                        "durationMicroseconds": 70,
                         "errorMessage": "",
                         "functionName": "endCall",
                         "line": 135
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 20,
                         "errorMessage": "",
                         "functionName": "onCompleted",
                         "line": 78
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 141,
+                        "durationMicroseconds": 131,
                         "errorMessage": "",
                         "functionName": "onTriggered",
                         "line": 180
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 271,
+                        "durationMicroseconds": 245,
                         "errorMessage": "",
                         "functionName": "onTriggered",
                         "line": 194

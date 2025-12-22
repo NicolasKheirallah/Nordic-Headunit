@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 1177,
+                        "durationMicroseconds": 1053,
                         "errorMessage": "Cannot load property spacing from const QMetaObject.",
                         "functionName": "leftMargin",
                         "line": 17
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 29,
-                        "durationMicroseconds": 8,
+                        "durationMicroseconds": 9,
                         "errorMessage": "Cannot load property spacing from const QMetaObject.",
                         "functionName": "rightMargin",
                         "line": 18
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 56,
+                        "durationMicroseconds": 48,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 21
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 9,
                         "errorMessage": "Cannot load property spacing from const QMetaObject.",
                         "functionName": "margins",
                         "line": 22
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 57,
-                        "durationMicroseconds": 25,
+                        "durationMicroseconds": 26,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 24
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 50,
+                        "durationMicroseconds": 63,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "model",
                         "line": 31
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 123,
+                        "durationMicroseconds": 119,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "color",
                         "line": 34
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 35,
-                        "durationMicroseconds": 79,
+                        "durationMicroseconds": 75,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "text",
                         "line": 38
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 140,
+                        "durationMicroseconds": 133,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "color",
                         "line": 39
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 47,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 16,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 37
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 70,
-                        "durationMicroseconds": 146,
+                        "durationMicroseconds": 137,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "onClicked",
                         "line": 41
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 83,
+                        "durationMicroseconds": 76,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "checked",
                         "line": 54
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 71,
+                        "durationMicroseconds": 67,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "onToggled",
                         "line": 55
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 13,
                         "errorMessage": "",
                         "functionName": "onToggled",
                         "line": 55
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 77,
+                        "durationMicroseconds": 69,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "checked",
                         "line": 61
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 62,
+                        "durationMicroseconds": 68,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "onToggled",
                         "line": 62
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 9,
+                        "durationMicroseconds": 10,
                         "errorMessage": "",
                         "functionName": "onToggled",
                         "line": 62
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 64,
+                        "durationMicroseconds": 60,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "onToggled",
                         "line": 69
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 11,
+                        "durationMicroseconds": 9,
                         "errorMessage": "",
                         "functionName": "onToggled",
                         "line": 69
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 63,
+                        "durationMicroseconds": 60,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "checked",
                         "line": 75
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 63,
+                        "durationMicroseconds": 62,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "onToggled",
                         "line": 76

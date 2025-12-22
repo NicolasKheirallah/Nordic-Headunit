@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 1957,
+                        "durationMicroseconds": 2302,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 10
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 1149,
+                        "durationMicroseconds": 1602,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 11
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 25,
-                        "durationMicroseconds": 33,
+                        "durationMicroseconds": 119,
                         "errorMessage": "",
                         "functionName": "elide",
                         "line": 12
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 29,
                         "errorMessage": "",
                         "functionName": "wrapMode",
                         "line": 17
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 22,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 18
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 37,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 20,
                         "errorMessage": "",
                         "functionName": "verticalAlignment",
                         "line": 19
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 74,
+                        "durationMicroseconds": 65,
                         "errorMessage": "",
                         "functionName": "implicitWidth",
                         "line": 29
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 55,
+                        "durationMicroseconds": 46,
                         "errorMessage": "",
                         "functionName": "implicitHeight",
                         "line": 30
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 11,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 16,
                         "errorMessage": "",
                         "functionName": "clip",
                         "line": 31
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 12,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 21,
                         "errorMessage": "",
                         "functionName": "x",
                         "line": 35
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 12,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 18,
                         "errorMessage": "",
                         "functionName": "y",
                         "line": 36
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 16,
-                        "durationMicroseconds": 50,
+                        "durationMicroseconds": 57,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 37
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 15,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 19,
                         "errorMessage": "",
                         "functionName": "text",
                         "line": 38
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 16,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 25,
                         "errorMessage": "",
                         "functionName": "color",
                         "line": 39
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 16,
-                        "durationMicroseconds": 64,
+                        "durationMicroseconds": 77,
                         "errorMessage": "",
                         "functionName": "elide",
                         "line": 40
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 50,
+                        "durationMicroseconds": 58,
                         "errorMessage": "",
                         "functionName": "wrapMode",
                         "line": 41
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 21,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 42
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 15,
-                        "durationMicroseconds": 131,
+                        "durationMicroseconds": 177,
                         "errorMessage": "Cannot load property typography from const QMetaObject.",
                         "functionName": "font",
                         "line": 46
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 37,
-                        "durationMicroseconds": 72,
+                        "durationMicroseconds": 99,
                         "errorMessage": "",
                         "functionName": "shouldScroll",
                         "line": 68
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 29,
                         "errorMessage": "",
                         "functionName": "running",
                         "line": 72
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 22,
                         "errorMessage": "",
                         "functionName": "loops",
                         "line": 73
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 87,
                         "errorMessage": "",
                         "functionName": "to",
                         "line": 80
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 99,
+                        "durationMicroseconds": 115,
                         "errorMessage": "",
                         "functionName": "duration",
                         "line": 81
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 25,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 82
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 37,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 24,
                         "errorMessage": "",
                         "functionName": "value",
                         "line": 87

@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 164,
+                        "durationMicroseconds": 135,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "subtitle",
                         "line": 12
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 89,
+                        "durationMicroseconds": 77,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "checked",
                         "line": 13
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 68,
+                        "durationMicroseconds": 69,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "onToggled",
                         "line": 14
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 128,
+                        "durationMicroseconds": 73,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "value",
                         "line": 19
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 102,
+                        "durationMicroseconds": 65,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "onMoved",
                         "line": 24
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 18,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 27,
                         "errorMessage": "",
                         "functionName": "onMoved",
                         "line": 24
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 92,
+                        "durationMicroseconds": 65,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "subtitle",
                         "line": 29
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 82,
+                        "durationMicroseconds": 61,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "checked",
                         "line": 30
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 71,
+                        "durationMicroseconds": 65,
                         "errorMessage": "Cannot access value for name SystemSettings",
                         "functionName": "onToggled",
                         "line": 31
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 13,
                         "errorMessage": "",
                         "functionName": "onToggled",
                         "line": 31

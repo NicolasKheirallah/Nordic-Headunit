@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 39,
-                        "durationMicroseconds": 1180,
+                        "durationMicroseconds": 1207,
                         "errorMessage": "Cannot load property layout from const QMetaObject.",
                         "functionName": "isCompact",
                         "line": 15
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 1193,
+                        "durationMicroseconds": 1172,
                         "errorMessage": "Cannot load property callState from const QMetaObject.",
                         "functionName": "inCall",
                         "line": 20
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 95,
+                        "durationMicroseconds": 85,
                         "errorMessage": "Cannot access value for name NordicTheme",
                         "functionName": "color",
                         "line": 10
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 43,
+                        "durationMicroseconds": 42,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 29
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 20,
                         "errorMessage": "Cannot access value for name isCompact",
                         "functionName": "margins",
                         "line": 30
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 14,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 46
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 30,
+                        "durationMicroseconds": 17,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 53
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 35,
-                        "durationMicroseconds": 10,
+                        "durationMicroseconds": 8,
                         "errorMessage": "Cannot access value for name currentTab",
                         "functionName": "isActive",
                         "line": 61
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 35,
-                        "durationMicroseconds": 10,
+                        "durationMicroseconds": 8,
                         "errorMessage": "Cannot access value for name currentTab",
                         "functionName": "isActive",
                         "line": 67
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 7,
                         "errorMessage": "Cannot find name currentTab",
                         "functionName": "onClicked",
                         "line": 68
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 35,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 6,
                         "errorMessage": "Cannot access value for name currentTab",
                         "functionName": "isActive",
                         "line": 73
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 5,
                         "errorMessage": "Cannot find name currentTab",
                         "functionName": "onClicked",
                         "line": 74
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 35,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 6,
                         "errorMessage": "Cannot access value for name currentTab",
                         "functionName": "isActive",
                         "line": 79
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 8,
+                        "durationMicroseconds": 5,
                         "errorMessage": "Cannot find name currentTab",
                         "functionName": "onClicked",
                         "line": 80
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 26,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 15,
                         "errorMessage": "",
                         "functionName": "variant",
                         "line": 91
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 12,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 94
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 5,
                         "errorMessage": "Cannot access value for name isCompact",
                         "functionName": "visible",
                         "line": 108
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 12,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 107
@@ -222,7 +222,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 5,
                         "errorMessage": "Cannot access value for name currentTab",
                         "functionName": "currentIndex",
                         "line": 115
@@ -230,7 +230,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 8,
+                        "durationMicroseconds": 5,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 127
@@ -238,7 +238,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 12,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 130
@@ -246,7 +246,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 35,
-                        "durationMicroseconds": 8,
+                        "durationMicroseconds": 7,
                         "errorMessage": "Cannot access value for name currentTab",
                         "functionName": "isActive",
                         "line": 136
@@ -254,7 +254,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 5,
                         "errorMessage": "Cannot find name currentTab",
                         "functionName": "onClicked",
                         "line": 137
@@ -262,7 +262,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 35,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 8,
                         "errorMessage": "Cannot access value for name currentTab",
                         "functionName": "isActive",
                         "line": 142
@@ -310,7 +310,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 5,
                         "errorMessage": "Cannot load property shapes from const QMetaObject.",
                         "functionName": "radius",
                         "line": 174
@@ -318,7 +318,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 175
@@ -326,7 +326,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 11,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 179
@@ -342,7 +342,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 17,
                         "errorMessage": "Cannot access value for name isActive",
                         "functionName": "color",
                         "line": 185
@@ -350,7 +350,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 15,
                         "errorMessage": "",
                         "functionName": "size",
                         "line": 186
@@ -358,7 +358,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 21,
                         "errorMessage": "Cannot load property text from QQuickItem::parent with type QQuickItem.",
                         "functionName": "text",
                         "line": 190
@@ -366,7 +366,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 14,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 191
@@ -374,7 +374,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 16,
                         "errorMessage": "Cannot access value for name isActive",
                         "functionName": "color",
                         "line": 192
@@ -382,7 +382,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 32,
                         "errorMessage": "Type (component in /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Pages/PhonePage.qml)::parent with type QQuickItem does not have a property clicked for calling",
                         "functionName": "onClicked",
                         "line": 201
@@ -390,7 +390,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 11,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 199
@@ -398,7 +398,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 12,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 216
@@ -406,7 +406,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 25,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 5,
                         "errorMessage": "Cannot access value for name icon",
                         "functionName": "source",
                         "line": 221
@@ -414,7 +414,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 16,
                         "errorMessage": "Cannot access value for name isActive",
                         "functionName": "color",
                         "line": 222
@@ -422,7 +422,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 14,
                         "errorMessage": "",
                         "functionName": "size",
                         "line": 223
@@ -430,7 +430,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 19,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 220
@@ -438,7 +438,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 16,
                         "errorMessage": "Cannot load property text from QQuickItem::parent with type QQuickItem.",
                         "functionName": "text",
                         "line": 228
@@ -446,7 +446,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 14,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 229
@@ -454,7 +454,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 17,
                         "errorMessage": "Cannot access value for name isActive",
                         "functionName": "color",
                         "line": 230
@@ -470,7 +470,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 28,
+                        "durationMicroseconds": 25,
                         "errorMessage": "Type (component in /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Pages/PhonePage.qml)::parent with type QQuickItem does not have a property clicked for calling",
                         "functionName": "onClicked",
                         "line": 236
@@ -478,7 +478,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 11,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 235

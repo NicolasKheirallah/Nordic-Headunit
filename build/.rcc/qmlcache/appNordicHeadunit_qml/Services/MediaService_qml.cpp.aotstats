@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 5,
-                        "durationMicroseconds": 94,
+                        "durationMicroseconds": 71,
                         "errorMessage": "",
                         "functionName": "togglePlayPause",
                         "line": 49
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 129,
+                        "durationMicroseconds": 122,
                         "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
                         "functionName": "next",
                         "line": 53
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 79,
+                        "durationMicroseconds": 77,
                         "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
                         "functionName": "previous",
                         "line": 64
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 5,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 20,
                         "errorMessage": "",
                         "functionName": "toggleFavorite",
                         "line": 81
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 743,
+                        "durationMicroseconds": 773,
                         "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
                         "functionName": "_mockBackendFetch",
                         "line": 106
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 117,
+                        "durationMicroseconds": 111,
                         "errorMessage": "",
                         "functionName": "onTriggered",
                         "line": 146

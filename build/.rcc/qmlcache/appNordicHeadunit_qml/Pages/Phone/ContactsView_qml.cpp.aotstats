@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 14,
-                        "durationMicroseconds": 1165,
+                        "durationMicroseconds": 1185,
                         "errorMessage": "Cannot load property spacing from const QMetaObject.",
                         "functionName": "spacing",
                         "line": 7
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 1151,
+                        "durationMicroseconds": 1145,
                         "errorMessage": "Cannot load property filteredContacts from const QMetaObject.",
                         "functionName": "model",
                         "line": 24
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 10,
+                        "durationMicroseconds": 9,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "text",
                         "line": 28
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 10,
+                        "durationMicroseconds": 12,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "text",
                         "line": 39
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 92,
+                        "durationMicroseconds": 74,
                         "errorMessage": "Cannot access value for name NordicText",
                         "functionName": "type",
                         "line": 40
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 63,
+                        "durationMicroseconds": 66,
                         "errorMessage": "Cannot access value for name NordicTheme",
                         "functionName": "color",
                         "line": 41
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 66,
+                        "durationMicroseconds": 67,
                         "errorMessage": "",
                         "functionName": "visible",
                         "line": 51
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 23,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 52
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 7,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 53
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 20,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 49

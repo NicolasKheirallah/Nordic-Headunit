@@ -70,6 +70,10 @@ template <> constexpr inline auto MediaService::qt_create_metaobjectdata<qt_meta
         "tuneRadioByIndex",
         "index",
         "tuneToFrequency",
+        "tuneStep",
+        "step",
+        "seekForward",
+        "seekBackward",
         "scanRadioStations",
         "playTrack",
         "playFromRecent",
@@ -162,68 +166,76 @@ template <> constexpr inline auto MediaService::qt_create_metaobjectdata<qt_meta
         QtMocHelpers::MethodData<void(const QString &)>(31, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::QString, 28 },
         }}),
+        // Method 'tuneStep'
+        QtMocHelpers::MethodData<void(double)>(32, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Double, 33 },
+        }}),
+        // Method 'seekForward'
+        QtMocHelpers::MethodData<void()>(34, 2, QMC::AccessPublic, QMetaType::Void),
+        // Method 'seekBackward'
+        QtMocHelpers::MethodData<void()>(35, 2, QMC::AccessPublic, QMetaType::Void),
         // Method 'scanRadioStations'
-        QtMocHelpers::MethodData<void()>(32, 2, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::MethodData<void()>(36, 2, QMC::AccessPublic, QMetaType::Void),
         // Method 'playTrack'
-        QtMocHelpers::MethodData<void(int)>(33, 2, QMC::AccessPublic, QMetaType::Void, {{
+        QtMocHelpers::MethodData<void(int)>(37, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::Int, 30 },
         }}),
         // Method 'playFromRecent'
-        QtMocHelpers::MethodData<void(int)>(34, 2, QMC::AccessPublic, QMetaType::Void, {{
+        QtMocHelpers::MethodData<void(int)>(38, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::Int, 30 },
         }}),
         // Method 'playPlaylist'
-        QtMocHelpers::MethodData<void(const QString &)>(35, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QString, 36 },
+        QtMocHelpers::MethodData<void(const QString &)>(39, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 40 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
         // property 'title'
-        QtMocHelpers::PropertyData<QString>(37, QMetaType::QString, QMC::DefaultPropertyFlags, 0),
+        QtMocHelpers::PropertyData<QString>(41, QMetaType::QString, QMC::DefaultPropertyFlags, 0),
         // property 'artist'
-        QtMocHelpers::PropertyData<QString>(38, QMetaType::QString, QMC::DefaultPropertyFlags, 0),
+        QtMocHelpers::PropertyData<QString>(42, QMetaType::QString, QMC::DefaultPropertyFlags, 0),
         // property 'coverSource'
-        QtMocHelpers::PropertyData<QString>(39, QMetaType::QString, QMC::DefaultPropertyFlags, 0),
+        QtMocHelpers::PropertyData<QString>(43, QMetaType::QString, QMC::DefaultPropertyFlags, 0),
         // property 'playing'
         QtMocHelpers::PropertyData<bool>(4, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 1),
         // property 'position'
         QtMocHelpers::PropertyData<int>(24, QMetaType::Int, QMC::DefaultPropertyFlags, 2),
         // property 'duration'
-        QtMocHelpers::PropertyData<int>(40, QMetaType::Int, QMC::DefaultPropertyFlags, 0),
+        QtMocHelpers::PropertyData<int>(44, QMetaType::Int, QMC::DefaultPropertyFlags, 0),
         // property 'progress'
-        QtMocHelpers::PropertyData<double>(41, QMetaType::Double, QMC::DefaultPropertyFlags, 2),
+        QtMocHelpers::PropertyData<double>(45, QMetaType::Double, QMC::DefaultPropertyFlags, 2),
         // property 'shuffleEnabled'
-        QtMocHelpers::PropertyData<bool>(42, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 8),
+        QtMocHelpers::PropertyData<bool>(46, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 8),
         // property 'repeatEnabled'
-        QtMocHelpers::PropertyData<bool>(43, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 9),
+        QtMocHelpers::PropertyData<bool>(47, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 9),
         // property 'currentSource'
-        QtMocHelpers::PropertyData<QString>(44, QMetaType::QString, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 3),
+        QtMocHelpers::PropertyData<QString>(48, QMetaType::QString, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 3),
         // property 'isRadioMode'
-        QtMocHelpers::PropertyData<bool>(45, QMetaType::Bool, QMC::DefaultPropertyFlags, 3),
+        QtMocHelpers::PropertyData<bool>(49, QMetaType::Bool, QMC::DefaultPropertyFlags, 3),
         // property 'sources'
-        QtMocHelpers::PropertyData<QVariantList>(46, 0x80000000 | 47, QMC::DefaultPropertyFlags | QMC::EnumOrFlag, 6),
+        QtMocHelpers::PropertyData<QVariantList>(50, 0x80000000 | 51, QMC::DefaultPropertyFlags | QMC::EnumOrFlag, 6),
         // property 'radioStations'
-        QtMocHelpers::PropertyData<QVariantList>(48, 0x80000000 | 47, QMC::DefaultPropertyFlags | QMC::EnumOrFlag, 7),
+        QtMocHelpers::PropertyData<QVariantList>(52, 0x80000000 | 51, QMC::DefaultPropertyFlags | QMC::EnumOrFlag, 7),
         // property 'recentItems'
-        QtMocHelpers::PropertyData<QVariantList>(49, 0x80000000 | 47, QMC::DefaultPropertyFlags | QMC::EnumOrFlag, 5),
+        QtMocHelpers::PropertyData<QVariantList>(53, 0x80000000 | 51, QMC::DefaultPropertyFlags | QMC::EnumOrFlag, 5),
         // property 'library'
-        QtMocHelpers::PropertyData<QVariantList>(50, 0x80000000 | 47, QMC::DefaultPropertyFlags | QMC::EnumOrFlag | QMC::Constant),
+        QtMocHelpers::PropertyData<QVariantList>(54, 0x80000000 | 51, QMC::DefaultPropertyFlags | QMC::EnumOrFlag | QMC::Constant),
         // property 'playlist'
-        QtMocHelpers::PropertyData<QVariantList>(51, 0x80000000 | 47, QMC::DefaultPropertyFlags | QMC::EnumOrFlag, 10),
+        QtMocHelpers::PropertyData<QVariantList>(55, 0x80000000 | 51, QMC::DefaultPropertyFlags | QMC::EnumOrFlag, 10),
         // property 'radioFrequency'
-        QtMocHelpers::PropertyData<QString>(52, QMetaType::QString, QMC::DefaultPropertyFlags, 4),
+        QtMocHelpers::PropertyData<QString>(56, QMetaType::QString, QMC::DefaultPropertyFlags, 4),
         // property 'radioName'
-        QtMocHelpers::PropertyData<QString>(53, QMetaType::QString, QMC::DefaultPropertyFlags, 4),
+        QtMocHelpers::PropertyData<QString>(57, QMetaType::QString, QMC::DefaultPropertyFlags, 4),
         // property 'currentRadioIndex'
-        QtMocHelpers::PropertyData<int>(54, QMetaType::Int, QMC::DefaultPropertyFlags, 4),
+        QtMocHelpers::PropertyData<int>(58, QMetaType::Int, QMC::DefaultPropertyFlags, 4),
         // property 'isConnected'
-        QtMocHelpers::PropertyData<bool>(55, QMetaType::Bool, QMC::DefaultPropertyFlags, 11),
+        QtMocHelpers::PropertyData<bool>(59, QMetaType::Bool, QMC::DefaultPropertyFlags, 11),
         // property 'isLoading'
-        QtMocHelpers::PropertyData<bool>(56, QMetaType::Bool, QMC::DefaultPropertyFlags, 12),
+        QtMocHelpers::PropertyData<bool>(60, QMetaType::Bool, QMC::DefaultPropertyFlags, 12),
         // property 'hasError'
-        QtMocHelpers::PropertyData<bool>(57, QMetaType::Bool, QMC::DefaultPropertyFlags, 13),
+        QtMocHelpers::PropertyData<bool>(61, QMetaType::Bool, QMC::DefaultPropertyFlags, 13),
         // property 'errorMessage'
-        QtMocHelpers::PropertyData<QString>(58, QMetaType::QString, QMC::DefaultPropertyFlags, 13),
+        QtMocHelpers::PropertyData<QString>(62, QMetaType::QString, QMC::DefaultPropertyFlags, 13),
     };
     QtMocHelpers::UintData qt_enums {
     };
@@ -270,10 +282,13 @@ void MediaService::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 22: _t->tuneRadio((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         case 23: _t->tuneRadioByIndex((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         case 24: _t->tuneToFrequency((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 25: _t->scanRadioStations(); break;
-        case 26: _t->playTrack((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 27: _t->playFromRecent((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 28: _t->playPlaylist((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 25: _t->tuneStep((*reinterpret_cast< std::add_pointer_t<double>>(_a[1]))); break;
+        case 26: _t->seekForward(); break;
+        case 27: _t->seekBackward(); break;
+        case 28: _t->scanRadioStations(); break;
+        case 29: _t->playTrack((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 30: _t->playFromRecent((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 31: _t->playPlaylist((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         default: ;
         }
     }
@@ -367,14 +382,14 @@ int MediaService::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 29)
+        if (_id < 32)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 29;
+        _id -= 32;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 29)
+        if (_id < 32)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 29;
+        _id -= 32;
     }
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::BindableProperty

@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 2225,
+                        "durationMicroseconds": 2851,
                         "errorMessage": "",
                         "functionName": "variant",
                         "line": 14
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 50,
+                        "durationMicroseconds": 43,
                         "errorMessage": "",
                         "functionName": "clickable",
                         "line": 19
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 1238,
+                        "durationMicroseconds": 1216,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "bgColor",
                         "line": 33
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 42,
-                        "durationMicroseconds": 77,
+                        "durationMicroseconds": 107,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "borderColor",
                         "line": 54
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 40,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 26,
                         "errorMessage": "Cannot load property darkMode from const QMetaObject.",
                         "functionName": "showShadow",
                         "line": 73
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 12,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 59,
                         "errorMessage": "",
                         "functionName": "scale",
                         "line": 76
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 7,
                         "errorMessage": "Cannot load property spacing from const QMetaObject.",
                         "functionName": "padding",
                         "line": 152
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 53,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 6,
                         "errorMessage": "Cannot load property motion from const QMetaObject.",
                         "functionName": "duration",
                         "line": 77
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 103,
-                        "durationMicroseconds": 25,
+                        "durationMicroseconds": 26,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 77
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 18,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 23,
                         "errorMessage": "",
                         "functionName": "visible",
                         "line": 88
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 17,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 16,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 89
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 16,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 86
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 24,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 16,
                         "errorMessage": "",
                         "functionName": "enabled",
                         "line": 91
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 25,
-                        "durationMicroseconds": 9,
+                        "durationMicroseconds": 10,
                         "errorMessage": "Cannot access value for name hovered",
                         "functionName": "shadowBlur",
                         "line": 96
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 5,
+                        "durationMicroseconds": 6,
                         "errorMessage": "Cannot load property shapes from const QMetaObject.",
                         "functionName": "radius",
                         "line": 107
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 22,
                         "errorMessage": "Cannot access value for name variant",
                         "functionName": "width",
                         "line": 109
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 18,
                         "errorMessage": "",
                         "functionName": "color",
                         "line": 110
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 56,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 5,
                         "errorMessage": "Cannot load property motion from const QMetaObject.",
                         "functionName": "duration",
                         "line": 114
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 15,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 123
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 33,
+                        "durationMicroseconds": 31,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 124
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 19,
                         "errorMessage": "",
                         "functionName": "fillMode",
                         "line": 125
@@ -222,7 +222,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 11,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 134
@@ -230,7 +230,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 33,
+                        "durationMicroseconds": 35,
                         "errorMessage": "Cannot access value for name variant",
                         "functionName": "topMargin",
                         "line": 135
@@ -238,7 +238,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 15,
                         "errorMessage": "",
                         "functionName": "margins",
                         "line": 136
@@ -246,7 +246,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 21,
-                        "durationMicroseconds": 26,
+                        "durationMicroseconds": 29,
                         "errorMessage": "Cannot load property radius from (component in /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Components/NordicCard.qml)::parent with type QQuickItem.",
                         "functionName": "radius",
                         "line": 146
@@ -254,7 +254,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 15,
                         "errorMessage": "",
                         "functionName": "visible",
                         "line": 147
@@ -262,7 +262,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 10,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 141
@@ -278,7 +278,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 18,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 14,
                         "errorMessage": "",
                         "functionName": "enabled",
                         "line": 159
@@ -294,7 +294,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 28,
                         "errorMessage": "",
                         "functionName": "onEntered",
                         "line": 162
@@ -302,7 +302,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 21,
                         "errorMessage": "",
                         "functionName": "onExited",
                         "line": 163
@@ -310,7 +310,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 23,
                         "errorMessage": "",
                         "functionName": "onPressed",
                         "line": 164
@@ -318,7 +318,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 21,
-                        "durationMicroseconds": 23,
+                        "durationMicroseconds": 21,
                         "errorMessage": "",
                         "functionName": "onReleased",
                         "line": 165
@@ -326,7 +326,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 28,
                         "errorMessage": "",
                         "functionName": "onClicked",
                         "line": 166
@@ -334,7 +334,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 11,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 158

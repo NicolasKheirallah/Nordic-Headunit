@@ -104,11 +104,11 @@ clean: CMakeFiles/appNordicHeadunit_autogen.dir/clean
 # Target rules for target CMakeFiles/appNordicHeadunit.dir
 
 # All Build rule for target.
+CMakeFiles/appNordicHeadunit.dir/all: CMakeFiles/appNordicHeadunit_autogen_timestamp_deps.dir/all
 CMakeFiles/appNordicHeadunit.dir/all: CMakeFiles/appNordicHeadunit_copy_qml.dir/all
 CMakeFiles/appNordicHeadunit.dir/all: CMakeFiles/appNordicHeadunit_copy_res.dir/all
 CMakeFiles/appNordicHeadunit.dir/all: CMakeFiles/appNordicHeadunit_qmlimportscan.dir/all
 CMakeFiles/appNordicHeadunit.dir/all: CMakeFiles/appNordicHeadunit_autogen.dir/all
-CMakeFiles/appNordicHeadunit.dir/all: CMakeFiles/appNordicHeadunit_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/appNordicHeadunit.dir/build.make CMakeFiles/appNordicHeadunit.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/appNordicHeadunit.dir/build.make CMakeFiles/appNordicHeadunit.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles --progress-num=2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68 "Built target appNordicHeadunit"
@@ -126,8 +126,8 @@ appNordicHeadunit: CMakeFiles/appNordicHeadunit.dir/rule
 .PHONY : appNordicHeadunit
 
 # codegen rule for target.
-CMakeFiles/appNordicHeadunit.dir/codegen: CMakeFiles/appNordicHeadunit_qmlimportscan.dir/all
 CMakeFiles/appNordicHeadunit.dir/codegen: CMakeFiles/appNordicHeadunit_autogen_timestamp_deps.dir/all
+CMakeFiles/appNordicHeadunit.dir/codegen: CMakeFiles/appNordicHeadunit_qmlimportscan.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/appNordicHeadunit.dir/build.make CMakeFiles/appNordicHeadunit.dir/codegen
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles --progress-num=2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68 "Finished codegen for target appNordicHeadunit"
 .PHONY : CMakeFiles/appNordicHeadunit.dir/codegen
@@ -461,8 +461,8 @@ CMakeFiles/appNordicHeadunit_copy_res.dir/clean:
 # Target rules for target CMakeFiles/module_appNordicHeadunit_aotstats_target.dir
 
 # All Build rule for target.
-CMakeFiles/module_appNordicHeadunit_aotstats_target.dir/all: CMakeFiles/appNordicHeadunit_qmltyperegistration.dir/all
 CMakeFiles/module_appNordicHeadunit_aotstats_target.dir/all: CMakeFiles/appNordicHeadunit_autogen_timestamp_deps.dir/all
+CMakeFiles/module_appNordicHeadunit_aotstats_target.dir/all: CMakeFiles/appNordicHeadunit_qmltyperegistration.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/module_appNordicHeadunit_aotstats_target.dir/build.make CMakeFiles/module_appNordicHeadunit_aotstats_target.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/module_appNordicHeadunit_aotstats_target.dir/build.make CMakeFiles/module_appNordicHeadunit_aotstats_target.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles --progress-num=72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100 "Built target module_appNordicHeadunit_aotstats_target"
@@ -480,8 +480,8 @@ module_appNordicHeadunit_aotstats_target: CMakeFiles/module_appNordicHeadunit_ao
 .PHONY : module_appNordicHeadunit_aotstats_target
 
 # codegen rule for target.
-CMakeFiles/module_appNordicHeadunit_aotstats_target.dir/codegen: CMakeFiles/appNordicHeadunit_qmltyperegistration.dir/all
 CMakeFiles/module_appNordicHeadunit_aotstats_target.dir/codegen: CMakeFiles/appNordicHeadunit_autogen_timestamp_deps.dir/all
+CMakeFiles/module_appNordicHeadunit_aotstats_target.dir/codegen: CMakeFiles/appNordicHeadunit_qmltyperegistration.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/module_appNordicHeadunit_aotstats_target.dir/build.make CMakeFiles/module_appNordicHeadunit_aotstats_target.dir/codegen
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles --progress-num=72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100 "Finished codegen for target module_appNordicHeadunit_aotstats_target"
 .PHONY : CMakeFiles/module_appNordicHeadunit_aotstats_target.dir/codegen
@@ -495,8 +495,8 @@ CMakeFiles/module_appNordicHeadunit_aotstats_target.dir/clean:
 # Target rules for target CMakeFiles/all_aotstats.dir
 
 # All Build rule for target.
-CMakeFiles/all_aotstats.dir/all: CMakeFiles/module_appNordicHeadunit_aotstats_target.dir/all
 CMakeFiles/all_aotstats.dir/all: CMakeFiles/appNordicHeadunit_autogen_timestamp_deps.dir/all
+CMakeFiles/all_aotstats.dir/all: CMakeFiles/module_appNordicHeadunit_aotstats_target.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/all_aotstats.dir/build.make CMakeFiles/all_aotstats.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/all_aotstats.dir/build.make CMakeFiles/all_aotstats.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles --progress-num= "Built target all_aotstats"
@@ -514,8 +514,8 @@ all_aotstats: CMakeFiles/all_aotstats.dir/rule
 .PHONY : all_aotstats
 
 # codegen rule for target.
-CMakeFiles/all_aotstats.dir/codegen: CMakeFiles/module_appNordicHeadunit_aotstats_target.dir/all
 CMakeFiles/all_aotstats.dir/codegen: CMakeFiles/appNordicHeadunit_autogen_timestamp_deps.dir/all
+CMakeFiles/all_aotstats.dir/codegen: CMakeFiles/module_appNordicHeadunit_aotstats_target.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/all_aotstats.dir/build.make CMakeFiles/all_aotstats.dir/codegen
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/build/CMakeFiles --progress-num= "Finished codegen for target all_aotstats"
 .PHONY : CMakeFiles/all_aotstats.dir/codegen

@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 16,
-                        "durationMicroseconds": 374,
+                        "durationMicroseconds": 317,
                         "errorMessage": "Cannot access value for name TranslationService",
                         "functionName": "model",
                         "line": 15
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 46,
+                        "durationMicroseconds": 43,
                         "errorMessage": "",
                         "functionName": "preferredHeight",
                         "line": 12
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 27,
+                        "durationMicroseconds": 28,
                         "errorMessage": "Cannot access value for name TranslationService",
                         "functionName": "onClicked",
                         "line": 32
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 62,
+                        "durationMicroseconds": 63,
                         "errorMessage": "Cannot access value for name NordicTheme",
                         "functionName": "color",
                         "line": 26
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 30,
-                        "durationMicroseconds": 140,
+                        "durationMicroseconds": 119,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "visible",
                         "line": 27
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 27,
-                        "durationMicroseconds": 53,
+                        "durationMicroseconds": 47,
                         "errorMessage": "Cannot access value for name NordicIcon",
                         "functionName": "size",
                         "line": 28

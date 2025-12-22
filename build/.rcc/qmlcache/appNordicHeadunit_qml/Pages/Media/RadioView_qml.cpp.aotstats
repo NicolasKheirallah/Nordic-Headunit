@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 46,
-                        "durationMicroseconds": 934,
+                        "durationMicroseconds": 890,
                         "errorMessage": "Cannot load property radioFrequency from const QMetaObject.",
                         "functionName": "radioFrequency",
                         "line": 12
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 41,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 14,
                         "errorMessage": "Cannot load property radioName from const QMetaObject.",
                         "functionName": "radioName",
                         "line": 13
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 46,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 9,
                         "errorMessage": "Cannot load property currentRadioIndex from const QMetaObject.",
                         "functionName": "currentRadioIndex",
                         "line": 14
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 42,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 9,
                         "errorMessage": "Cannot load property radioStations from const QMetaObject.",
                         "functionName": "radioStations",
                         "line": 15
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 37,
-                        "durationMicroseconds": 11,
+                        "durationMicroseconds": 8,
                         "errorMessage": "Cannot load property playing from const QMetaObject.",
                         "functionName": "playing",
                         "line": 16
@@ -54,82 +54,82 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 30,
                         "errorMessage": "",
                         "functionName": "alignment",
-                        "line": 29
+                        "line": 31
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 43,
+                        "durationMicroseconds": 44,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "model",
-                        "line": 33
+                        "line": 35
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 1176,
+                        "durationMicroseconds": 1077,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "color",
-                        "line": 38
+                        "line": 40
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 119,
+                        "durationMicroseconds": 114,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "text",
-                        "line": 43
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 32,
-                        "durationMicroseconds": 95,
-                        "errorMessage": "Cannot access value for name root",
-                        "functionName": "color",
-                        "line": 47
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 43,
-                        "durationMicroseconds": 19,
-                        "errorMessage": "",
-                        "functionName": "centerIn",
-                        "line": 42
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 38,
-                        "durationMicroseconds": 21,
-                        "errorMessage": "",
-                        "functionName": "weight",
                         "line": 45
                     },
                     {
                         "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 86,
+                        "errorMessage": "Cannot access value for name root",
+                        "functionName": "color",
+                        "line": 49
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 15,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 44
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 38,
+                        "durationMicroseconds": 18,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 47
+                    },
+                    {
+                        "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 72,
+                        "durationMicroseconds": 66,
                         "errorMessage": "Cannot access value for name root",
                         "functionName": "onClicked",
-                        "line": 53
+                        "line": 55
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 12,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 52
+                        "line": 54
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 8,
+                        "durationMicroseconds": 7,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
-                        "line": 64
+                        "line": 68
                     },
                     {
                         "codegenSuccessful": true,
@@ -137,31 +137,31 @@
                         "durationMicroseconds": 13,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 67
+                        "line": 71
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 32,
-                        "durationMicroseconds": 32,
-                        "errorMessage": "Cannot load property length from (component in /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Pages/Media/RadioView.qml)::radioStations with type QVariant.",
-                        "functionName": "onClicked",
-                        "line": 75
+                        "column": 31,
+                        "durationMicroseconds": 21,
+                        "errorMessage": "Type const QMetaObject does not have a property tuneStep for calling",
+                        "functionName": "onTapped",
+                        "line": 80
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 32,
-                        "durationMicroseconds": 52,
-                        "errorMessage": "Type const QMetaObject does not have a property tuneToFrequency for calling",
-                        "functionName": "onClicked",
-                        "line": 87
+                        "column": 29,
+                        "durationMicroseconds": 13,
+                        "errorMessage": "Type const QMetaObject does not have a property seekBackward for calling",
+                        "functionName": "onHeld",
+                        "line": 83
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 43,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 11,
                         "errorMessage": "",
                         "functionName": "centerIn",
-                        "line": 99
+                        "line": 94
                     },
                     {
                         "codegenSuccessful": true,
@@ -169,15 +169,15 @@
                         "durationMicroseconds": 25,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
-                        "line": 103
+                        "line": 98
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 19,
                         "errorMessage": "",
                         "functionName": "text",
-                        "line": 107
+                        "line": 102
                     },
                     {
                         "codegenSuccessful": false,
@@ -185,31 +185,31 @@
                         "durationMicroseconds": 6,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
-                        "line": 111
+                        "line": 106
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 46,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 16,
                         "errorMessage": "",
                         "functionName": "weight",
-                        "line": 109
+                        "line": 104
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 86,
+                        "durationMicroseconds": 89,
                         "errorMessage": "",
                         "functionName": "text",
-                        "line": 115
+                        "line": 110
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 40,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 6,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
-                        "line": 119
+                        "line": 114
                     },
                     {
                         "codegenSuccessful": true,
@@ -217,68 +217,84 @@
                         "durationMicroseconds": 17,
                         "errorMessage": "",
                         "functionName": "weight",
-                        "line": 117
+                        "line": 112
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 49,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 21,
                         "errorMessage": "",
                         "functionName": "bottom",
-                        "line": 120
+                        "line": 115
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 16,
                         "errorMessage": "",
                         "functionName": "text",
-                        "line": 127
+                        "line": 122
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 5,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
-                        "line": 130
+                        "line": 125
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 55,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 18,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
-                        "line": 126
+                        "line": 121
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 32,
-                        "durationMicroseconds": 47,
-                        "errorMessage": "Type const QMetaObject does not have a property tuneToFrequency for calling",
-                        "functionName": "onClicked",
-                        "line": 140
+                        "column": 31,
+                        "durationMicroseconds": 14,
+                        "errorMessage": "Type const QMetaObject does not have a property tuneStep for calling",
+                        "functionName": "onTapped",
+                        "line": 135
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 32,
-                        "durationMicroseconds": 30,
-                        "errorMessage": "Cannot load property length from (component in /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Pages/Media/RadioView.qml)::radioStations with type QVariant.",
-                        "functionName": "onClicked",
-                        "line": 150
+                        "column": 29,
+                        "durationMicroseconds": 13,
+                        "errorMessage": "Type const QMetaObject does not have a property seekForward for calling",
+                        "functionName": "onHeld",
+                        "line": 138
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 17,
                         "errorMessage": "",
                         "functionName": "alignment",
-                        "line": 160
+                        "line": 149
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 34,
+                        "errorMessage": "",
+                        "functionName": "text",
+                        "line": 154
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 21,
+                        "errorMessage": "Type const QMetaObject does not have a property scanRadioStations for calling",
+                        "functionName": "onClicked",
+                        "line": 156
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 14,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 167
@@ -286,418 +302,66 @@
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 5,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 169
                     },
                     {
                         "codegenSuccessful": true,
+                        "column": 29,
+                        "durationMicroseconds": 37,
+                        "errorMessage": "",
+                        "functionName": "source",
+                        "line": 173
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 27,
+                        "durationMicroseconds": 17,
+                        "errorMessage": "",
+                        "functionName": "size",
+                        "line": 174
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 5,
+                        "errorMessage": "Cannot load property colors from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 175
+                    },
+                    {
+                        "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 11,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 172
                     },
                     {
-                        "codegenSuccessful": true,
-                        "column": 31,
-                        "durationMicroseconds": 16,
-                        "errorMessage": "",
-                        "functionName": "size",
-                        "line": 177
-                    },
-                    {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 5,
-                        "errorMessage": "Cannot load property colors from const QMetaObject.",
-                        "functionName": "color",
-                        "line": 178
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 49,
-                        "durationMicroseconds": 20,
-                        "errorMessage": "",
-                        "functionName": "verticalCenter",
-                        "line": 179
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 32,
-                        "durationMicroseconds": 5,
-                        "errorMessage": "Cannot load property colors from const QMetaObject.",
-                        "functionName": "color",
-                        "line": 187
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 38,
-                        "durationMicroseconds": 15,
-                        "errorMessage": "",
-                        "functionName": "weight",
-                        "line": 185
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 49,
-                        "durationMicroseconds": 18,
-                        "errorMessage": "",
-                        "functionName": "verticalCenter",
-                        "line": 188
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 32,
-                        "durationMicroseconds": 13,
-                        "errorMessage": "Type const QMetaObject does not have a property scanRadioStations for calling",
-                        "functionName": "onClicked",
-                        "line": 195
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 35,
-                        "durationMicroseconds": 10,
-                        "errorMessage": "",
-                        "functionName": "fill",
-                        "line": 194
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 24,
-                        "durationMicroseconds": 16,
-                        "errorMessage": "Cannot load property colors from const QMetaObject.",
-                        "functionName": "color",
-                        "line": 205
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 29,
-                        "durationMicroseconds": 42,
-                        "errorMessage": "",
-                        "functionName": "source",
-                        "line": 209
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 27,
-                        "durationMicroseconds": 16,
-                        "errorMessage": "",
-                        "functionName": "size",
-                        "line": 210
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 39,
                         "durationMicroseconds": 12,
-                        "errorMessage": "",
-                        "functionName": "centerIn",
-                        "line": 208
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 32,
-                        "durationMicroseconds": 13,
                         "errorMessage": "Type const QMetaObject does not have a property togglePlayPause for calling",
                         "functionName": "onClicked",
-                        "line": 217
+                        "line": 181
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 11,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 216
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 24,
-                        "durationMicroseconds": 15,
-                        "errorMessage": "Cannot load property colors from const QMetaObject.",
-                        "functionName": "color",
-                        "line": 227
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 31,
-                        "durationMicroseconds": 6,
-                        "errorMessage": "Cannot load property colors from const QMetaObject.",
-                        "functionName": "color",
-                        "line": 229
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 39,
-                        "durationMicroseconds": 12,
-                        "errorMessage": "",
-                        "functionName": "centerIn",
-                        "line": 232
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 31,
-                        "durationMicroseconds": 16,
-                        "errorMessage": "",
-                        "functionName": "size",
-                        "line": 237
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 32,
-                        "durationMicroseconds": 5,
-                        "errorMessage": "Cannot load property colors from const QMetaObject.",
-                        "functionName": "color",
-                        "line": 238
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 49,
-                        "durationMicroseconds": 20,
-                        "errorMessage": "",
-                        "functionName": "verticalCenter",
-                        "line": 239
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 32,
-                        "durationMicroseconds": 9,
-                        "errorMessage": "Cannot load property colors from const QMetaObject.",
-                        "functionName": "color",
-                        "line": 247
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 38,
-                        "durationMicroseconds": 15,
-                        "errorMessage": "",
-                        "functionName": "weight",
-                        "line": 245
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 49,
-                        "durationMicroseconds": 30,
-                        "errorMessage": "",
-                        "functionName": "verticalCenter",
-                        "line": 248
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 32,
-                        "durationMicroseconds": 9,
-                        "errorMessage": "",
-                        "functionName": "onClicked",
-                        "line": 255
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 35,
-                        "durationMicroseconds": 12,
-                        "errorMessage": "",
-                        "functionName": "fill",
-                        "line": 254
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 24,
-                        "durationMicroseconds": 5,
-                        "errorMessage": "Cannot load property colors from const QMetaObject.",
-                        "functionName": "color",
-                        "line": 272
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 30,
-                        "durationMicroseconds": 14,
-                        "errorMessage": "",
-                        "functionName": "weight",
-                        "line": 270
+                        "line": 180
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 8,
                         "errorMessage": "",
-                        "functionName": "model",
-                        "line": 282
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 32,
-                        "durationMicroseconds": 88,
-                        "errorMessage": "Cannot access value for name modelData",
-                        "functionName": "color",
-                        "line": 288
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 47,
-                        "durationMicroseconds": 13,
-                        "errorMessage": "",
-                        "functionName": "centerIn",
-                        "line": 292
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 39,
-                        "durationMicroseconds": 102,
-                        "errorMessage": "Cannot access value for name modelData",
-                        "functionName": "text",
-                        "line": 297
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 40,
-                        "durationMicroseconds": 92,
-                        "errorMessage": "Cannot access value for name modelData",
-                        "functionName": "color",
-                        "line": 301
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 59,
-                        "durationMicroseconds": 18,
-                        "errorMessage": "",
-                        "functionName": "horizontalCenter",
-                        "line": 296
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 46,
-                        "durationMicroseconds": 15,
-                        "errorMessage": "",
-                        "functionName": "weight",
-                        "line": 299
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 39,
-                        "durationMicroseconds": 77,
-                        "errorMessage": "Cannot access value for name modelData",
-                        "functionName": "text",
-                        "line": 306
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 40,
-                        "durationMicroseconds": 100,
-                        "errorMessage": "Cannot access value for name modelData",
-                        "functionName": "color",
-                        "line": 309
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 59,
-                        "durationMicroseconds": 20,
-                        "errorMessage": "",
-                        "functionName": "horizontalCenter",
-                        "line": 305
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 40,
-                        "durationMicroseconds": 84,
-                        "errorMessage": "Cannot access value for name modelData",
                         "functionName": "onClicked",
-                        "line": 316
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 43,
-                        "durationMicroseconds": 11,
-                        "errorMessage": "",
-                        "functionName": "fill",
-                        "line": 315
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 16,
-                        "durationMicroseconds": 30,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 338
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 17,
-                        "durationMicroseconds": 27,
-                        "errorMessage": "",
-                        "functionName": "height",
-                        "line": 339
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 17,
-                        "durationMicroseconds": 24,
-                        "errorMessage": "",
-                        "functionName": "radius",
-                        "line": 340
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 16,
-                        "durationMicroseconds": 13,
-                        "errorMessage": "Cannot load property colors from const QMetaObject.",
-                        "functionName": "color",
-                        "line": 341
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 31,
-                        "durationMicroseconds": 11,
-                        "errorMessage": "",
-                        "functionName": "centerIn",
-                        "line": 344
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 25,
-                        "durationMicroseconds": 6,
-                        "errorMessage": "Cannot access value for name icon",
-                        "functionName": "source",
-                        "line": 349
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 23,
-                        "durationMicroseconds": 15,
-                        "errorMessage": "",
-                        "functionName": "size",
-                        "line": 350
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 24,
-                        "durationMicroseconds": 6,
-                        "errorMessage": "Cannot load property colors from const QMetaObject.",
-                        "functionName": "color",
-                        "line": 351
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 26,
-                        "durationMicroseconds": 7,
-                        "errorMessage": "Cannot access value for name icon",
-                        "functionName": "visible",
-                        "line": 352
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 43,
-                        "durationMicroseconds": 19,
-                        "errorMessage": "",
-                        "functionName": "horizontalCenter",
-                        "line": 348
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 23,
-                        "durationMicroseconds": 6,
-                        "errorMessage": "Cannot access value for name label",
-                        "functionName": "text",
-                        "line": 357
+                        "line": 191
                     },
                     {
                         "codegenSuccessful": false,
@@ -705,47 +369,351 @@
                         "durationMicroseconds": 5,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
-                        "line": 361
+                        "line": 210
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 30,
+                        "durationMicroseconds": 16,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 208
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 16,
+                        "errorMessage": "",
+                        "functionName": "model",
+                        "line": 221
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 85,
+                        "errorMessage": "Cannot access value for name modelData",
+                        "functionName": "color",
+                        "line": 227
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 43,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 11,
                         "errorMessage": "",
-                        "functionName": "horizontalCenter",
-                        "line": 356
+                        "functionName": "fill",
+                        "line": 231
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 33,
-                        "durationMicroseconds": 10,
-                        "errorMessage": "Cannot access value for name icon",
-                        "functionName": "pixelSize",
-                        "line": 358
+                        "column": 43,
+                        "durationMicroseconds": 91,
+                        "errorMessage": "Cannot access value for name modelData",
+                        "functionName": "text",
+                        "line": 240
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 30,
-                        "durationMicroseconds": 14,
-                        "errorMessage": "Cannot access value for name icon",
+                        "column": 44,
+                        "durationMicroseconds": 84,
+                        "errorMessage": "Cannot access value for name modelData",
+                        "functionName": "color",
+                        "line": 244
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 50,
+                        "durationMicroseconds": 15,
+                        "errorMessage": "",
                         "functionName": "weight",
-                        "line": 359
+                        "line": 242
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 43,
+                        "durationMicroseconds": 72,
+                        "errorMessage": "Cannot access value for name modelData",
+                        "functionName": "text",
+                        "line": 248
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 44,
+                        "durationMicroseconds": 94,
+                        "errorMessage": "Cannot access value for name modelData",
+                        "functionName": "color",
+                        "line": 251
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 42,
+                        "durationMicroseconds": 49,
+                        "errorMessage": "Cannot access value for name modelData",
+                        "functionName": "visible",
+                        "line": 260
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 77,
+                        "errorMessage": "Cannot access value for name modelData",
+                        "functionName": "onClicked",
+                        "line": 267
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 12,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 266
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 22,
+                        "durationMicroseconds": 26,
+                        "errorMessage": "",
+                        "functionName": "onTriggered",
+                        "line": 281
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 16,
+                        "durationMicroseconds": 13,
+                        "errorMessage": "Cannot load property colors from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 296
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 31,
+                        "durationMicroseconds": 11,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 299
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 46,
+                        "errorMessage": "",
+                        "functionName": "text",
+                        "line": 304
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 30,
-                        "errorMessage": "Type (component in /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Pages/Media/RadioView.qml)::parent with type QQuickItem does not have a property clicked for calling",
-                        "functionName": "onClicked",
-                        "line": 368
+                        "durationMicroseconds": 5,
+                        "errorMessage": "Cannot load property colors from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 308
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 21,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 303
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 30,
+                        "durationMicroseconds": 17,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 306
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 88,
+                        "errorMessage": "",
+                        "functionName": "text",
+                        "line": 313
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 16,
+                        "errorMessage": "Cannot load property colors from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 317
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 28,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 312
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 30,
+                        "durationMicroseconds": 20,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 315
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 10,
+                        "errorMessage": "Cannot load property colors from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 325
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 22,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 321
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 42,
+                        "errorMessage": "",
+                        "functionName": "onPressed",
+                        "line": 335
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 25,
+                        "durationMicroseconds": 68,
+                        "errorMessage": "",
+                        "functionName": "onReleased",
+                        "line": 340
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 16,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 367
+                        "line": 331
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 30,
+                        "durationMicroseconds": 37,
+                        "errorMessage": "",
+                        "functionName": "onTriggered",
+                        "line": 350
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 16,
+                        "durationMicroseconds": 20,
+                        "errorMessage": "Cannot load property colors from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 369
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 23,
+                        "durationMicroseconds": 6,
+                        "errorMessage": "Cannot load property colors from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 371
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 31,
+                        "durationMicroseconds": 13,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 374
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 25,
+                        "durationMicroseconds": 7,
+                        "errorMessage": "Cannot access value for name icon",
+                        "functionName": "source",
+                        "line": 378
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 20,
+                        "errorMessage": "",
+                        "functionName": "size",
+                        "line": 379
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 6,
+                        "errorMessage": "Cannot load property colors from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 380
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 26,
+                        "durationMicroseconds": 8,
+                        "errorMessage": "Cannot access value for name icon",
+                        "functionName": "visible",
+                        "line": 382
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 41,
+                        "durationMicroseconds": 21,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 381
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 23,
+                        "durationMicroseconds": 22,
+                        "errorMessage": "Cannot load property text from QQuickItem::parent with type QQuickItem.",
+                        "functionName": "text",
+                        "line": 386
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 6,
+                        "errorMessage": "Cannot load property colors from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 390
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 30,
+                        "durationMicroseconds": 17,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 388
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 41,
+                        "durationMicroseconds": 20,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 391
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 31,
+                        "errorMessage": "Type (component in /Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Pages/Media/RadioView.qml)::parent with type QQuickItem does not have a property clicked for calling",
+                        "functionName": "onClicked",
+                        "line": 398
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 27,
+                        "durationMicroseconds": 11,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 397
                     }
                 ],
                 "filePath": "/Users/nicolaskheirallah/Documents/GitHub/Nordic-Headunit/qml/Pages/Media/RadioView.qml"

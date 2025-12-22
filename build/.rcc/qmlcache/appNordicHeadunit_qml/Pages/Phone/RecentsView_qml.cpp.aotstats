@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 14,
-                        "durationMicroseconds": 1235,
+                        "durationMicroseconds": 1195,
                         "errorMessage": "Cannot load property spacing from const QMetaObject.",
                         "functionName": "spacing",
                         "line": 7
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 9,
+                        "durationMicroseconds": 10,
                         "errorMessage": "Cannot load property spacing from const QMetaObject.",
                         "functionName": "spacing",
                         "line": 12
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 22,
-                        "durationMicroseconds": 1195,
+                        "durationMicroseconds": 1160,
                         "errorMessage": "Cannot load property recentsFilter from const QMetaObject.",
                         "functionName": "variant",
                         "line": 16
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 10,
                         "errorMessage": "Cannot load property spacing from const QMetaObject.",
                         "functionName": "spacing",
                         "line": 35
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 19,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 7,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "text",
                         "line": 40
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 10,
+                        "durationMicroseconds": 12,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "secondaryText",
                         "line": 41
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 24,
-                        "durationMicroseconds": 220,
+                        "durationMicroseconds": 193,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "color",
                         "line": 45
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 26,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 20,
                         "errorMessage": "Cannot access value for name NordicButton",
                         "functionName": "variant",
                         "line": 51
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 22,
-                        "durationMicroseconds": 63,
+                        "durationMicroseconds": 67,
                         "errorMessage": "",
                         "functionName": "visible",
                         "line": 60
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 20,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 61
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 20,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 7,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 62
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 19,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 58

@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 12,
-                        "durationMicroseconds": 1175,
+                        "durationMicroseconds": 1123,
                         "errorMessage": "Cannot load property colors from const QMetaObject.",
                         "functionName": "color",
                         "line": 7
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 47,
+                        "durationMicroseconds": 44,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 12
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 19,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 28
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 43,
                         "errorMessage": "Cannot access value for name active",
                         "functionName": "color",
                         "line": 33
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 15,
                         "errorMessage": "Cannot access value for name active",
                         "functionName": "width",
                         "line": 34
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 25,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 37
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 33,
-                        "durationMicroseconds": 33,
+                        "durationMicroseconds": 36,
                         "errorMessage": "",
                         "functionName": "source",
                         "line": 41
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 20,
                         "errorMessage": "",
                         "functionName": "size",
                         "line": 42
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 24,
                         "errorMessage": "Cannot access value for name active",
                         "functionName": "color",
                         "line": 43
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 43,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 23,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 44
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 19,
                         "errorMessage": "",
                         "functionName": "text",
                         "line": 48
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 17,
                         "errorMessage": "",
                         "functionName": "type",
                         "line": 49
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 23,
+                        "durationMicroseconds": 20,
                         "errorMessage": "Cannot access value for name active",
                         "functionName": "color",
                         "line": 50
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 11,
+                        "durationMicroseconds": 12,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 56
