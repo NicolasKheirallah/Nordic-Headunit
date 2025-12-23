@@ -60,7 +60,7 @@ SettingsSubPage {
             
             Rectangle {
                 anchors.fill: parent
-                color: parent.containsMouse ? NordicTheme.colors.bg.elevated : "transparent"
+                color: parent.containsMouse ? Theme.surfaceAlt : "transparent"
                 radius: NordicTheme.shapes.radius_md
             }
             
@@ -73,13 +73,13 @@ SettingsSubPage {
                 Rectangle {
                     width: 40; height: 40
                     radius: 20
-                    color: NordicTheme.colors.bg.elevated
+                    color: Theme.surfaceAlt
                     
                     NordicIcon {
                         anchors.centerIn: parent
                         source: model.type === "phone" ? "qrc:/qt/qml/NordicHeadunit/assets/icons/phone.svg" : "qrc:/qt/qml/NordicHeadunit/assets/icons/bluetooth.svg"
                         size: NordicIcon.Size.SM
-                        color: model.connected ? "white" : NordicTheme.colors.text.secondary
+                        color: model.connected ? "white" : Theme.textSecondary
                     }
                     
                     // Active indicator
@@ -87,7 +87,7 @@ SettingsSubPage {
                         visible: model.connected
                         anchors.fill: parent
                         radius: 20
-                        color: NordicTheme.colors.accent.primary
+                        color: Theme.accent
                         opacity: 0.2
                     }
                 }
@@ -100,13 +100,13 @@ SettingsSubPage {
                     NordicText {
                         text: model.name
                         type: NordicText.Type.BodyMedium
-                        color: model.connected ? NordicTheme.colors.accent.primary : NordicTheme.colors.text.primary
+                        color: model.connected ? Theme.accent : Theme.textPrimary
                     }
                     
                     NordicText {
                         text: model.connected ? "Connected for Audio & Calls" : "Not Connected"
                         type: NordicText.Type.Caption
-                        color: model.connected ? NordicTheme.colors.accent.primary : NordicTheme.colors.text.tertiary
+                        color: model.connected ? Theme.accent : Theme.textTertiary
                     }
                 }
                 
@@ -130,14 +130,14 @@ SettingsSubPage {
         NordicIcon {
             source: "qrc:/qt/qml/NordicHeadunit/assets/icons/bluetooth.svg"
             size: NordicIcon.Size.XL
-            color: NordicTheme.colors.text.tertiary
+            color: Theme.textTertiary
             Layout.alignment: Qt.AlignHCenter
         }
         
         NordicText {
             text: "Bluetooth is Off"
             type: NordicText.Type.BodyLarge
-            color: NordicTheme.colors.text.secondary
+            color: Theme.textSecondary
             Layout.alignment: Qt.AlignHCenter
         }
     }

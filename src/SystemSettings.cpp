@@ -58,6 +58,13 @@ void SystemSettings::loadSettings()
     // Display/UI
     m_bottomBarEnabled = m_settings.value("display/bottomBarEnabled", true).toBool();
     
+    // Theme System - load from string storage, convert to QColor
+    m_themeKey = m_settings.value("display/themeKey", "nordic").toString();
+    QString accentStr = m_settings.value("display/customAccentColor", "#8B5CF6").toString();
+    m_customAccentColor = QColor::isValidColorName(accentStr) ? QColor(accentStr) : QColor("#8B5CF6");
+    QString secondaryStr = m_settings.value("display/customSecondaryColor", "#38BDF8").toString();
+    m_customSecondaryColor = QColor::isValidColorName(secondaryStr) ? QColor(secondaryStr) : QColor("#38BDF8");
+    
     // Date & Time
     m_autoTime = m_settings.value("datetime/autoTime", true).toBool();
     m_use24HourFormat = m_settings.value("datetime/use24HourFormat", true).toBool();
@@ -93,8 +100,11 @@ void SystemSettings::saveSettings()
     m_settings.setValue("vehicle/autoFoldMirrors", m_autoFoldMirrors);
     m_settings.setValue("vehicle/rainSensingWipers", m_rainSensingWipers);
     
-    // Display/UI
+    // Display/UI + Theme
     m_settings.setValue("display/bottomBarEnabled", m_bottomBarEnabled);
+    m_settings.setValue("display/themeKey", m_themeKey);
+    m_settings.setValue("display/customAccentColor", m_customAccentColor.name(QColor::HexRgb));
+    m_settings.setValue("display/customSecondaryColor", m_customSecondaryColor.name(QColor::HexRgb));
     
     // Date & Time
     m_settings.setValue("datetime/autoTime", m_autoTime);
@@ -299,6 +309,46 @@ void SystemSettings::setBottomBarEnabled(bool bottomBarEnabled)
     m_bottomBarEnabled = bottomBarEnabled;
     saveSettings();
     emit bottomBarEnabledChanged(m_bottomBarEnabled);
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// THEME SYSTEM
+// ═══════════════════════════════════════════════════════════════════
+
+// Valid theme keys
+static const QStringList validThemeKeys = {"nordic", "ocean", "sunset", "forest", "custom"};
+
+// Theme Key: "nordic", "ocean", "sunset", "forest", "custom"
+QString SystemSettings::themeKey() const { return m_themeKey; }
+void SystemSettings::setThemeKey(const QString &themeKey)
+{
+    if (m_themeKey == themeKey) return;
+    // Validate theme key - fallback to "nordic" if invalid
+    m_themeKey = validThemeKeys.contains(themeKey) ? themeKey : "nordic";
+    saveSettings();
+    emit themeKeyChanged(m_themeKey);
+}
+
+// Custom Accent Color (QColor, stored as hex string)
+QColor SystemSettings::customAccentColor() const { return m_customAccentColor; }
+void SystemSettings::setCustomAccentColor(const QColor &customAccentColor)
+{
+    if (m_customAccentColor == customAccentColor) return;
+    // Validate color - fallback to default if invalid
+    m_customAccentColor = customAccentColor.isValid() ? customAccentColor : QColor("#8B5CF6");
+    saveSettings();
+    emit customAccentColorChanged(m_customAccentColor);
+}
+
+// Custom Secondary Color (QColor, stored as hex string)
+QColor SystemSettings::customSecondaryColor() const { return m_customSecondaryColor; }
+void SystemSettings::setCustomSecondaryColor(const QColor &customSecondaryColor)
+{
+    if (m_customSecondaryColor == customSecondaryColor) return;
+    // Validate color - fallback to default if invalid
+    m_customSecondaryColor = customSecondaryColor.isValid() ? customSecondaryColor : QColor("#38BDF8");
+    saveSettings();
+    emit customSecondaryColorChanged(m_customSecondaryColor);
 }
 
 // Map Style

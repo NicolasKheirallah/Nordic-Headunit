@@ -12,7 +12,7 @@ Item {
     readonly property string radioFrequency: MediaService?.radioFrequency ?? "102.5"
     readonly property string radioName: MediaService?.radioName ?? "Station"
     readonly property int currentRadioIndex: MediaService?.currentRadioIndex ?? 0
-    readonly property var radioStations: MediaService?.radioStations ?? []
+    // radioStations removed (using radioModel)
     readonly property bool playing: MediaService?.playing ?? false
     
     // Internal state
@@ -37,16 +37,14 @@ Item {
                 Rectangle {
                     width: 100; height: 48
                     radius: 24
-                    color: root.selectedBand === index ? NordicTheme.colors.accent.primary : 
-                           bandMouse.pressed ? NordicTheme.colors.bg.elevated : NordicTheme.colors.bg.surface
+                    color: root.selectedBand === index ? Theme.accent : 
+                           bandMouse.pressed ? Theme.surfaceAlt : NordicTheme.colors.bg.surface
                     
-                    Text {
+                    NordicText {
                         anchors.centerIn: parent
                         text: modelData
-                        font.pixelSize: 16
-                        font.weight: Font.Medium
-                        font.family: "Helvetica"
-                        color: root.selectedBand === index ? "white" : NordicTheme.colors.text.primary
+                        type: NordicText.Type.BodyLarge
+                        color: root.selectedBand === index ? "white" : Theme.textPrimary
                     }
                     
                     MouseArea {
@@ -98,31 +96,26 @@ Item {
                             anchors.horizontalCenter: parent.horizontalCenter
                             spacing: 8
                             
-                            Text {
+                            NordicText {
                                 text: root.radioFrequency
-                                font.pixelSize: 52
-                                font.weight: Font.Bold
-                                font.family: "Helvetica"
-                                color: NordicTheme.colors.accent.primary
+                                type: NordicText.Type.DisplayLarge
+                                color: Theme.accent
                             }
                             
-                            Text {
+                            NordicText {
                                 text: root.selectedBand === 0 ? "FM" : root.selectedBand === 1 ? "AM" : "DAB"
-                                font.pixelSize: 18
-                                font.weight: Font.Medium
-                                font.family: "Helvetica"
-                                color: NordicTheme.colors.text.secondary
+                                type: NordicText.Type.TitleMedium
+                                color: Theme.textSecondary
                                 anchors.bottom: parent.bottom
                                 anchors.bottomMargin: 8
                             }
                         }
                         
-                        Text {
+                        NordicText {
                             anchors.horizontalCenter: parent.horizontalCenter
                             text: root.radioName
-                            font.pixelSize: 16
-                            font.family: "Helvetica"
-                            color: NordicTheme.colors.text.secondary
+                            type: NordicText.Type.BodyLarge
+                            color: Theme.textSecondary
                         }
                     }
                 }
@@ -152,7 +145,7 @@ Item {
             // SCAN STATIONS
             ActionButton {
                 text: root.isScanning ? "Scanning..." : "Scan Stations"
-                icon: "qrc:/qt/qml/NordicHeadunit/assets/icons/search.svg"
+                icon: "qrc:/qt/qml/NordicHeadunit/assets/icons/radio-tower.svg"
                 onClicked: {
                     root.isScanning = true
                     if (MediaService) MediaService.scanRadioStations()
@@ -164,7 +157,7 @@ Item {
             Rectangle {
                 width: 64; height: 64
                 radius: 32
-                color: muteMouse.pressed ? NordicTheme.colors.bg.elevated : NordicTheme.colors.bg.surface
+                color: muteMouse.pressed ? Theme.surfaceAlt : NordicTheme.colors.bg.surface
                 border.width: 2
                 border.color: NordicTheme.colors.border.muted
                 
@@ -172,7 +165,7 @@ Item {
                     anchors.centerIn: parent
                     source: root.playing ? "qrc:/qt/qml/NordicHeadunit/assets/icons/volume_up.svg" : "qrc:/qt/qml/NordicHeadunit/assets/icons/volume_off.svg"
                     size: NordicIcon.Size.MD
-                    color: NordicTheme.colors.text.primary
+                    color: Theme.textPrimary
                 }
                 
                 MouseArea {
@@ -189,7 +182,9 @@ Item {
                 text: "Save"
                 icon: "qrc:/qt/qml/NordicHeadunit/assets/icons/heart.svg"
                 onClicked: {
-                    // TODO: Save current frequency to next available preset
+                    if (MediaService && MediaService.saveCurrentToPreset()) {
+                        ToastManager.show("Station saved to presets", "success")
+                    }
                 }
             }
         }
@@ -202,12 +197,10 @@ Item {
             Layout.fillHeight: true
             spacing: 12
             
-            Text {
+            NordicText {
                 text: "Presets"
-                font.pixelSize: 14
-                font.weight: Font.Medium
-                font.family: "Helvetica"
-                color: NordicTheme.colors.text.tertiary
+                type: NordicText.Type.BodyMedium
+                color: Theme.textTertiary
             }
             
             GridLayout {
@@ -218,14 +211,14 @@ Item {
                 columnSpacing: 12
                 
                 Repeater {
-                    model: root.radioStations
+                    model: MediaService.radioModel
                     
                     Rectangle {
                         Layout.fillWidth: true
                         Layout.preferredHeight: 72
                         radius: 16
-                        color: modelData.active ? NordicTheme.colors.accent.primary :
-                               presetMouse.pressed ? NordicTheme.colors.bg.elevated : NordicTheme.colors.bg.surface
+                        color: model.active ? Theme.accent :
+                               presetMouse.pressed ? Theme.surfaceAlt : NordicTheme.colors.bg.surface
                         
                         RowLayout {
                             anchors.fill: parent
@@ -236,19 +229,16 @@ Item {
                                 Layout.fillWidth: true
                                 spacing: 2
                                 
-                                Text {
-                                    text: modelData.frequency
-                                    font.pixelSize: 20
-                                    font.weight: Font.Bold
-                                    font.family: "Helvetica"
-                                    color: modelData.active ? "white" : NordicTheme.colors.text.primary
+                                NordicText {
+                                    text: model.frequency
+                                    type: NordicText.Type.TitleLarge
+                                    color: model.active ? "white" : Theme.textPrimary
                                 }
                                 
-                                Text {
-                                    text: modelData.name
-                                    font.pixelSize: 13
-                                    font.family: "Helvetica"
-                                    color: modelData.active ? Qt.rgba(1,1,1,0.7) : NordicTheme.colors.text.tertiary
+                                NordicText {
+                                    text: model.name ?? ("Preset " + index)
+                                    type: NordicText.Type.BodySmall
+                                    color: model.active ? Qt.rgba(1,1,1,0.7) : Theme.textTertiary
                                 }
                             }
                             
@@ -257,7 +247,7 @@ Item {
                                 width: 8; height: 8
                                 radius: 4
                                 color: "white"
-                                visible: modelData.active
+                                visible: model.active
                             }
                         }
                         
@@ -265,7 +255,7 @@ Item {
                             id: presetMouse
                             anchors.fill: parent
                             onClicked: {
-                                if (MediaService) MediaService.tuneRadioByIndex(modelData.index)
+                                if (MediaService) MediaService.tuneRadioByIndex(index)
                             }
                         }
                     }
@@ -293,36 +283,32 @@ Item {
         signal held()
         
         radius: 12
-        color: seekMouse.pressed ? NordicTheme.colors.bg.elevated : NordicTheme.colors.bg.primary
+        color: seekMouse.pressed ? Theme.surfaceAlt : NordicTheme.colors.bg.primary
         
         Column {
             anchors.centerIn: parent
             spacing: 4
             
-            Text {
+            NordicText {
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: seekBtn.direction === "forward" ? "SEEK" : "SEEK"
-                font.pixelSize: 12
+                type: NordicText.Type.Caption
                 font.weight: Font.Bold
-                font.family: "Helvetica"
-                color: NordicTheme.colors.text.primary
+                color: Theme.textPrimary
             }
             
-            Text {
+            NordicText {
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: seekBtn.direction === "forward" ? ">>" : "<<"
-                font.pixelSize: 28
-                font.weight: Font.Bold
-                font.family: "Helvetica"
-                color: NordicTheme.colors.accent.primary
+                type: NordicText.Type.DisplaySmall // Close enough to 28px
+                color: Theme.accent
             }
             
-            Text {
+            NordicText {
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: "hold to scan"
-                font.pixelSize: 9
-                font.family: "Helvetica"
-                color: NordicTheme.colors.text.tertiary
+                type: NordicText.Type.Caption
+                color: Theme.textTertiary
             }
         }
         
@@ -366,7 +352,7 @@ Item {
         
         width: 140; height: 48
         radius: 24
-        color: actionMouse.pressed ? NordicTheme.colors.bg.elevated : NordicTheme.colors.bg.surface
+        color: actionMouse.pressed ? Theme.surfaceAlt : NordicTheme.colors.bg.surface
         border.width: 1
         border.color: NordicTheme.colors.border.muted
         
@@ -377,17 +363,15 @@ Item {
             NordicIcon {
                 source: icon
                 size: NordicIcon.Size.SM
-                color: NordicTheme.colors.text.primary
+                color: Theme.textPrimary
                 anchors.verticalCenter: parent.verticalCenter
                 visible: icon !== ""
             }
             
-            Text {
+            NordicText {
                 text: parent.parent.text
-                font.pixelSize: 14
-                font.weight: Font.Medium
-                font.family: "Helvetica"
-                color: NordicTheme.colors.text.primary
+                type: NordicText.Type.BodyMedium
+                color: Theme.textPrimary
                 anchors.verticalCenter: parent.verticalCenter
             }
         }

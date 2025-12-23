@@ -22,7 +22,7 @@ Flickable {
     ColumnLayout {
         id: mainColumn
         width: parent.width
-        spacing: NordicTheme.spacing.space_2
+        spacing: Theme.spacingXs
         
         // Back header
         Rectangle {
@@ -33,9 +33,9 @@ Flickable {
             
             RowLayout {
                 anchors.fill: parent
-                anchors.leftMargin: NordicTheme.spacing.space_4
-                anchors.rightMargin: NordicTheme.spacing.space_4
-                spacing: NordicTheme.spacing.space_4
+                anchors.leftMargin: Theme.spacingSm
+                anchors.rightMargin: Theme.spacingSm
+                spacing: Theme.spacingSm
                 
                 NordicButton {
                     id: backButton
@@ -55,7 +55,7 @@ Flickable {
                 NordicText {
                     text: root.title
                     type: NordicText.Type.HeadlineSmall
-                    color: NordicTheme.colors.text.primary
+                    color: Theme.textPrimary
                     Layout.fillWidth: true
                 }
             }
@@ -64,17 +64,17 @@ Flickable {
         Rectangle {
             Layout.fillWidth: true
             Layout.preferredHeight: 1
-            color: NordicTheme.colors.border.muted
-            Layout.bottomMargin: NordicTheme.spacing.space_4
+            color: Theme.borderMuted
+            Layout.bottomMargin: Theme.spacingSm
         }
         
         // Content area - children go here
         ColumnLayout {
             id: contentArea
             Layout.fillWidth: true
-            Layout.leftMargin: NordicTheme.spacing.space_4
-            Layout.rightMargin: NordicTheme.spacing.space_4
-            spacing: NordicTheme.spacing.space_2
+            Layout.leftMargin: Theme.spacingSm
+            Layout.rightMargin: Theme.spacingSm
+            spacing: Theme.spacingXs
         }
     }
 }

@@ -7,7 +7,7 @@ import NordicHeadunit
 Rectangle {
     id: root
     
-    color: NordicTheme.colors.bg.secondary
+    color: Theme.surface
     implicitHeight: 64
     
     property int currentIndex: 0
@@ -43,7 +43,7 @@ Rectangle {
                 
                 Rectangle {
                     anchors.fill: parent
-                    color: navMouse.pressed ? NordicTheme.colors.bg.elevated : "transparent"
+                    color: navMouse.pressed ? Theme.surfaceAlt : "transparent"
                 }
                 
                 Rectangle {
@@ -52,7 +52,7 @@ Rectangle {
                     width: 32
                     height: 3
                     radius: 1.5
-                    color: NordicTheme.colors.accent.primary
+                    color: Theme.accent
                     visible: active
                 }
                 
@@ -64,7 +64,7 @@ Rectangle {
                         anchors.horizontalCenter: parent.horizontalCenter
                         source: navRoot.icon
                         size: NordicIcon.Size.MD
-                        color: active ? NordicTheme.colors.accent.primary : NordicTheme.colors.text.secondary
+                        color: active ? Theme.accent : Theme.textSecondary
                     }
                     
                     Text {
@@ -120,7 +120,7 @@ Rectangle {
                     Rectangle {
                         anchors.fill: parent; radius: 8
                         color: internal.leftSeatHeatLevel > 0 ? NordicTheme.colors.accent.warm : 
-                               leftSeatHeatMouse.pressed ? NordicTheme.colors.bg.elevated : NordicTheme.colors.bg.elevated
+                               leftSeatHeatMouse.pressed ? Theme.surfaceAlt : Theme.surfaceAlt
                     }
                     Column {
                         anchors.centerIn: parent; spacing: 2
@@ -128,7 +128,7 @@ Rectangle {
                             anchors.horizontalCenter: parent.horizontalCenter
                             source: "qrc:/qt/qml/NordicHeadunit/assets/icons/heated-front-seat.svg"
                             size: NordicIcon.Size.SM
-                            color: internal.leftSeatHeatLevel > 0 ? "white" : NordicTheme.colors.text.secondary
+                            color: internal.leftSeatHeatLevel > 0 ? "white" : Theme.textSecondary
                         }
                         Row {
                             anchors.horizontalCenter: parent.horizontalCenter; spacing: 2
@@ -155,8 +155,8 @@ Rectangle {
                     width: 48; height: 48
                     Rectangle {
                         anchors.fill: parent; radius: 8
-                        color: internal.leftSeatVentLevel > 0 ? NordicTheme.colors.accent.primary : 
-                               leftSeatVentMouse.pressed ? NordicTheme.colors.bg.elevated : NordicTheme.colors.bg.elevated
+                        color: internal.leftSeatVentLevel > 0 ? Theme.accent : 
+                               leftSeatVentMouse.pressed ? Theme.surfaceAlt : Theme.surfaceAlt
                     }
                     Column {
                         anchors.centerIn: parent; spacing: 2
@@ -164,7 +164,7 @@ Rectangle {
                             anchors.horizontalCenter: parent.horizontalCenter
                             source: "qrc:/qt/qml/NordicHeadunit/assets/icons/ventilated-front-seat.svg"
                             size: NordicIcon.Size.SM
-                            color: internal.leftSeatVentLevel > 0 ? "white" : NordicTheme.colors.text.secondary
+                            color: internal.leftSeatVentLevel > 0 ? "white" : Theme.textSecondary
                         }
                         Row {
                             anchors.horizontalCenter: parent.horizontalCenter; spacing: 2
@@ -193,8 +193,8 @@ Rectangle {
                     spacing: 4
                     Item {
                         width: 36; height: 44
-                        Rectangle { anchors.fill: parent; radius: 6; color: dMinus.pressed ? NordicTheme.colors.bg.elevated : "transparent" }
-                        Text { anchors.centerIn: parent; text: "−"; font.pixelSize: 22; font.family: "Helvetica"; color: NordicTheme.colors.text.secondary }
+                        Rectangle { anchors.fill: parent; radius: 6; color: dMinus.pressed ? Theme.surfaceAlt : "transparent" }
+                        Text { anchors.centerIn: parent; text: "−"; font.pixelSize: 22; font.family: "Helvetica"; color: Theme.textSecondary }
                         MouseArea { id: dMinus; anchors.fill: parent; onClicked: VehicleService.driverTemp = Math.max(16, VehicleService.driverTemp - 1) }
                     }
                     Text {
@@ -203,8 +203,8 @@ Rectangle {
                     }
                     Item {
                         width: 36; height: 44
-                        Rectangle { anchors.fill: parent; radius: 6; color: dPlus.pressed ? NordicTheme.colors.bg.elevated : "transparent" }
-                        Text { anchors.centerIn: parent; text: "+"; font.pixelSize: 22; font.family: "Helvetica"; color: NordicTheme.colors.text.secondary }
+                        Rectangle { anchors.fill: parent; radius: 6; color: dPlus.pressed ? Theme.surfaceAlt : "transparent" }
+                        Text { anchors.centerIn: parent; text: "+"; font.pixelSize: 22; font.family: "Helvetica"; color: Theme.textSecondary }
                         MouseArea { id: dPlus; anchors.fill: parent; onClicked: VehicleService.driverTemp = Math.min(28, VehicleService.driverTemp + 1) }
                     }
                 }
@@ -224,13 +224,13 @@ Rectangle {
                     Rectangle {
                         anchors.fill: parent; radius: 8
                         color: VehicleService.frontDefrostEnabled ? NordicTheme.colors.semantic.warning : 
-                               fDefrostMouse.pressed ? NordicTheme.colors.bg.elevated : NordicTheme.colors.bg.elevated
+                               fDefrostMouse.pressed ? Theme.surfaceAlt : Theme.surfaceAlt
                     }
                     NordicIcon {
                         anchors.centerIn: parent
                         source: "qrc:/qt/qml/NordicHeadunit/assets/icons/windscreen_defrost.svg"
                         size: NordicIcon.Size.SM
-                        color: VehicleService.frontDefrostEnabled ? "black" : NordicTheme.colors.text.secondary
+                        color: VehicleService.frontDefrostEnabled ? "black" : Theme.textSecondary
                     }
                     MouseArea {
                         id: fDefrostMouse; anchors.fill: parent
@@ -243,7 +243,7 @@ Rectangle {
                     width: 48; height: 48
                     Rectangle {
                         anchors.fill: parent; radius: 8
-                        color: VehicleService.autoClimate ? NordicTheme.colors.accent.primary : NordicTheme.colors.bg.elevated
+                        color: VehicleService.autoClimate ? Theme.accent : Theme.surfaceAlt
                     }
                     Column {
                         anchors.centerIn: parent; spacing: 2
@@ -251,7 +251,7 @@ Rectangle {
                             anchors.horizontalCenter: parent.horizontalCenter
                             source: "qrc:/qt/qml/NordicHeadunit/assets/icons/fan.svg"
                             size: NordicIcon.Size.SM
-                            color: VehicleService.autoClimate ? "white" : NordicTheme.colors.text.secondary
+                            color: VehicleService.autoClimate ? "white" : Theme.textSecondary
                         }
                         Row {
                             anchors.horizontalCenter: parent.horizontalCenter; spacing: 1
@@ -260,7 +260,7 @@ Rectangle {
                                 Rectangle {
                                     width: 4; height: 3 + index; radius: 1
                                     color: index < VehicleService.fanSpeed 
-                                        ? (VehicleService.autoClimate ? "white" : NordicTheme.colors.accent.primary)
+                                        ? (VehicleService.autoClimate ? "white" : Theme.accent)
                                         : (VehicleService.autoClimate ? Qt.rgba(1,1,1,0.3) : NordicTheme.colors.border.muted)
                                 }
                             }
@@ -278,13 +278,13 @@ Rectangle {
                     Rectangle {
                         anchors.fill: parent; radius: 8
                         color: VehicleService.rearDefrostEnabled ? NordicTheme.colors.semantic.warning : 
-                               rDefrostMouse.pressed ? NordicTheme.colors.bg.elevated : NordicTheme.colors.bg.elevated
+                               rDefrostMouse.pressed ? Theme.surfaceAlt : Theme.surfaceAlt
                     }
                     NordicIcon {
                         anchors.centerIn: parent
                         source: "qrc:/qt/qml/NordicHeadunit/assets/icons/rear-window-defrost.svg"
                         size: NordicIcon.Size.SM
-                        color: VehicleService.rearDefrostEnabled ? "black" : NordicTheme.colors.text.secondary
+                        color: VehicleService.rearDefrostEnabled ? "black" : Theme.textSecondary
                     }
                     MouseArea {
                         id: rDefrostMouse; anchors.fill: parent
@@ -306,8 +306,8 @@ Rectangle {
                     spacing: 4
                     Item {
                         width: 36; height: 44
-                        Rectangle { anchors.fill: parent; radius: 6; color: pMinus.pressed ? NordicTheme.colors.bg.elevated : "transparent" }
-                        Text { anchors.centerIn: parent; text: "−"; font.pixelSize: 22; font.family: "Helvetica"; color: NordicTheme.colors.text.secondary }
+                        Rectangle { anchors.fill: parent; radius: 6; color: pMinus.pressed ? Theme.surfaceAlt : "transparent" }
+                        Text { anchors.centerIn: parent; text: "−"; font.pixelSize: 22; font.family: "Helvetica"; color: Theme.textSecondary }
                         MouseArea { id: pMinus; anchors.fill: parent; onClicked: VehicleService.passengerTemp = Math.max(16, VehicleService.passengerTemp - 1) }
                     }
                     Text {
@@ -316,8 +316,8 @@ Rectangle {
                     }
                     Item {
                         width: 36; height: 44
-                        Rectangle { anchors.fill: parent; radius: 6; color: pPlus.pressed ? NordicTheme.colors.bg.elevated : "transparent" }
-                        Text { anchors.centerIn: parent; text: "+"; font.pixelSize: 22; font.family: "Helvetica"; color: NordicTheme.colors.text.secondary }
+                        Rectangle { anchors.fill: parent; radius: 6; color: pPlus.pressed ? Theme.surfaceAlt : "transparent" }
+                        Text { anchors.centerIn: parent; text: "+"; font.pixelSize: 22; font.family: "Helvetica"; color: Theme.textSecondary }
                         MouseArea { id: pPlus; anchors.fill: parent; onClicked: VehicleService.passengerTemp = Math.min(28, VehicleService.passengerTemp + 1) }
                     }
                 }
@@ -329,8 +329,8 @@ Rectangle {
                     width: 48; height: 48
                     Rectangle {
                         anchors.fill: parent; radius: 8
-                        color: internal.rightSeatVentLevel > 0 ? NordicTheme.colors.accent.primary : 
-                               rightSeatVentMouse.pressed ? NordicTheme.colors.bg.elevated : NordicTheme.colors.bg.elevated
+                        color: internal.rightSeatVentLevel > 0 ? Theme.accent : 
+                               rightSeatVentMouse.pressed ? Theme.surfaceAlt : Theme.surfaceAlt
                     }
                     Column {
                         anchors.centerIn: parent; spacing: 2
@@ -338,7 +338,7 @@ Rectangle {
                             anchors.horizontalCenter: parent.horizontalCenter
                             source: "qrc:/qt/qml/NordicHeadunit/assets/icons/ventilated-front-seat.svg"
                             size: NordicIcon.Size.SM
-                            color: internal.rightSeatVentLevel > 0 ? "white" : NordicTheme.colors.text.secondary
+                            color: internal.rightSeatVentLevel > 0 ? "white" : Theme.textSecondary
                         }
                         Row {
                             anchors.horizontalCenter: parent.horizontalCenter; spacing: 2
@@ -366,7 +366,7 @@ Rectangle {
                     Rectangle {
                         anchors.fill: parent; radius: 8
                         color: internal.rightSeatHeatLevel > 0 ? NordicTheme.colors.accent.warm : 
-                               rightSeatHeatMouse.pressed ? NordicTheme.colors.bg.elevated : NordicTheme.colors.bg.elevated
+                               rightSeatHeatMouse.pressed ? Theme.surfaceAlt : Theme.surfaceAlt
                     }
                     Column {
                         anchors.centerIn: parent; spacing: 2
@@ -374,7 +374,7 @@ Rectangle {
                             anchors.horizontalCenter: parent.horizontalCenter
                             source: "qrc:/qt/qml/NordicHeadunit/assets/icons/heated-front-seat.svg"
                             size: NordicIcon.Size.SM
-                            color: internal.rightSeatHeatLevel > 0 ? "white" : NordicTheme.colors.text.secondary
+                            color: internal.rightSeatHeatLevel > 0 ? "white" : Theme.textSecondary
                         }
                         Row {
                             anchors.horizontalCenter: parent.horizontalCenter; spacing: 2
@@ -426,14 +426,14 @@ Rectangle {
                 
                 Rectangle {
                     anchors.fill: parent
-                    color: rNavMouse.pressed ? NordicTheme.colors.bg.elevated : "transparent"
+                    color: rNavMouse.pressed ? Theme.surfaceAlt : "transparent"
                 }
                 
                 Rectangle {
                     anchors.top: parent.top
                     anchors.horizontalCenter: parent.horizontalCenter
                     width: 32; height: 3; radius: 1.5
-                    color: NordicTheme.colors.accent.primary
+                    color: Theme.accent
                     visible: active
                 }
                 
@@ -445,7 +445,7 @@ Rectangle {
                         anchors.horizontalCenter: parent.horizontalCenter
                         source: rNavRoot.icon
                         size: NordicIcon.Size.MD
-                        color: active ? NordicTheme.colors.accent.primary : NordicTheme.colors.text.secondary
+                        color: active ? Theme.accent : Theme.textSecondary
                     }
                     
                     Text {

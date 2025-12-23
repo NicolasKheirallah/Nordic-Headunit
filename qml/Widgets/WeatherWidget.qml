@@ -106,7 +106,7 @@ Item {
                         NordicText { 
                             text: modelData.temp + "°" 
                             type: NordicText.Type.BodySmall
-                            color: modelData.temp < 0 ? NordicTheme.colors.semantic.info : NordicTheme.colors.text.primary
+                            color: modelData.temp < 0 ? Theme.info : NordicTheme.colors.text.primary
                             Layout.alignment: Qt.AlignHCenter 
                         }
                     }
@@ -157,7 +157,7 @@ Item {
                 NordicIcon {
                     source: "qrc:/qt/qml/NordicHeadunit/assets/icons/" + root.conditionIcon + ".svg"
                     size: NordicIcon.Size.LG
-                    color: NordicTheme.colors.accent.primary
+                    color: Theme.accent
                 }
                 
                 ColumnLayout {
@@ -166,7 +166,7 @@ Item {
                     NordicText {
                         text: root.temperature + "°"
                         type: NordicText.Type.DisplaySmall
-                        color: root.temperature < 0 ? NordicTheme.colors.semantic.info : NordicTheme.colors.accent.primary
+                        color: root.temperature < 0 ? Theme.info : Theme.accent
                         fontSizeMode: Text.Fit; minimumPixelSize: 16
                     }
                     NordicText {
@@ -226,7 +226,7 @@ Item {
                 NordicText {
                     text: root.temperature + "°"
                     type: root.isCompact ? NordicText.Type.TitleMedium : NordicText.Type.HeadlineSmall
-                    color: root.temperature < 0 ? NordicTheme.colors.semantic.info : NordicTheme.colors.accent.primary
+                    color: root.temperature < 0 ? Theme.info : Theme.accent
                     fontSizeMode: Text.Fit; minimumPixelSize: 16
                 }
             }

@@ -8,8 +8,8 @@ import NordicHeadunit
 Item {
     id: root
     
-    property int radius: NordicTheme.shapes.radius_lg
-    property color color: NordicTheme.colors.bg.glass
+    property int radius: Theme.radiusLg
+    property color color: Theme.withAlpha(Theme.surface, 0.7)
     property bool borderEnabled: true
     property color borderColor: Qt.rgba(1, 1, 1, 0.1)
     
@@ -29,13 +29,13 @@ Item {
         layer.effect: MultiEffect {
             // PERFORMANCE FIX: Reduced shadow blur from 24 → 12 (50% GPU cost reduction)
             shadowEnabled: true
-            shadowColor: "#60000000"  // Slightly lighter shadow
-            shadowBlur: 12            // Reduced from 24
-            shadowVerticalOffset: 4   // Reduced from 8
+            shadowColor: Theme.shadowColor
+            shadowBlur: 12
+            shadowVerticalOffset: 4
             
             // Saturation boost simulating light refraction
-            saturation: 0.15          // Reduced from 0.2
-            brightness: 0.03          // Reduced from 0.05
+            saturation: 0.15
+            brightness: 0.03
         }
     }
     

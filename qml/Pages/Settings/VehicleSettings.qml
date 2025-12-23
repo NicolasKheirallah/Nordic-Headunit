@@ -31,12 +31,12 @@ SettingsSubPage {
                     model: ["Auto", "Park", "On", "Off"]
                     delegate: Rectangle {
                         Layout.fillWidth: true; Layout.fillHeight: true
-                        color: SystemSettings.lightsMode === index ? NordicTheme.colors.accent.primary : NordicTheme.colors.bg.elevated
+                        color: SystemSettings.lightsMode === index ? Theme.accent : Theme.surfaceAlt
                         radius: 8
                         NordicText {
                             anchors.centerIn: parent
                             text: modelData
-                            color: SystemSettings.lightsMode === index ? "white" : NordicTheme.colors.text.secondary
+                            color: SystemSettings.lightsMode === index ? "white" : Theme.textSecondary
                         }
                         MouseArea { anchors.fill: parent; onClicked: SystemSettings.lightsMode = index }
                     }

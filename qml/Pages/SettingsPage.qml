@@ -140,7 +140,13 @@ Page {
     // -------------------------------------------------------------------------
     
     Component { id: vehiclePage; VehicleSettings {} }
-    Component { id: displayPage; DisplaySettings {} }
+    Component { 
+        id: displayPage
+        DisplaySettings {
+            onThemePlaygroundClicked: root.openContent(themePlaygroundPage)
+        }
+    }
+    Component { id: themePlaygroundPage; ThemePlayground {} }
     Component { id: navigationPage; MapSettings {} }
     
     Component { 

@@ -16,8 +16,8 @@ TextField {
     property int variant: NordicTextField.Variant.Outlined
     
     // Styling
-    placeholderTextColor: NordicTheme.colors.text.tertiary
-    color: NordicTheme.colors.text.primary
+    placeholderTextColor: Theme.textTertiary
+    color: Theme.textPrimary
     font: NordicTheme.typography.body_large
     
     topPadding: label !== "" ? 24 : 16
@@ -29,20 +29,20 @@ TextField {
         implicitHeight: 56
         color: {
             if (variant === NordicTextField.Variant.Filled) {
-                return root.activeFocus ? NordicTheme.colors.bg.elevated : NordicTheme.colors.bg.surface
+                return root.activeFocus ? Theme.surfaceAlt : Theme.surface
             }
             return "transparent"
         }
         
         border.color: {
-             if (root.error) return NordicTheme.colors.semantic.error
-             if (root.activeFocus) return NordicTheme.colors.accent.primary
-             if (variant === NordicTextField.Variant.Outlined) return NordicTheme.colors.border.default_color
-             return variant === NordicTextField.Variant.Filled ? "transparent" : NordicTheme.colors.border.default_color
+             if (root.error) return Theme.danger
+             if (root.activeFocus) return Theme.accent
+             if (variant === NordicTextField.Variant.Outlined) return Theme.border
+             return variant === NordicTextField.Variant.Filled ? "transparent" : Theme.border
         }
         
         border.width: (variant === NordicTextField.Variant.Outlined || root.activeFocus || root.error) ? 2 : 0
-        radius: variant === NordicTextField.Variant.Filled ? NordicTheme.shapes.radius_sm : NordicTheme.shapes.radius_md 
+        radius: variant === NordicTextField.Variant.Filled ? Theme.radiusSm : Theme.radiusMd 
         // Spec: Filled often has top corners rounded only? "Border or filled background".
         // We'll stick to uniform radius for now as per shape tokens.
         
@@ -50,7 +50,7 @@ TextField {
         Text {
             text: root.label
             font: NordicTheme.typography.body_small
-            color: root.error ? NordicTheme.colors.semantic.error : (root.activeFocus ? NordicTheme.colors.accent.primary : NordicTheme.colors.text.secondary)
+            color: root.error ? Theme.danger : (root.activeFocus ? Theme.accent : Theme.textSecondary)
             visible: root.label !== ""
             
             x: 16

@@ -29,7 +29,7 @@ Item {
     NordicCard {
         id: panel
         variant: NordicCard.Variant.Glass
-        width: 320 // Wider for icons
+        width: 320
         height: 100
         
         anchors.bottom: parent.bottom
@@ -41,7 +41,7 @@ Item {
         // Interactive Content
         RowLayout {
             anchors.centerIn: parent
-            spacing: NordicTheme.spacing.space_4
+            spacing: Theme.spacingSm
             
             // Decrease Temp
             NordicButton {
@@ -57,8 +57,8 @@ Item {
             // Icon
             NordicIcon {
                 source: "qrc:/qt/qml/NordicHeadunit/assets/icons/car.svg"
-                size: NordicIcon.Size.MD // Slightly smaller
-                color: NordicTheme.colors.accent.primary
+                size: NordicIcon.Size.MD
+                color: Theme.accent
             }
             
             // Temperature Display
@@ -67,13 +67,13 @@ Item {
                 NordicText {
                     text: "Cabin Temp"
                     type: NordicText.Type.Caption
-                    color: NordicTheme.colors.text.secondary
+                    color: Theme.textSecondary
                     Layout.alignment: Qt.AlignHCenter
                 }
                 NordicText {
                     text: root.temperature + "°C"
                     type: NordicText.Type.DisplayMedium
-                    color: NordicTheme.colors.text.primary
+                    color: Theme.textPrimary
                     Layout.alignment: Qt.AlignHCenter
                 }
             }

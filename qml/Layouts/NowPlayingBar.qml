@@ -28,7 +28,7 @@ Rectangle {
     implicitHeight: 64
     
     // Style
-    color: NordicTheme.colors.bg.elevated
+    color: Theme.surfaceAlt
     radius: NordicTheme.shapes.radius_full // Pill shape
     border.color: NordicTheme.colors.border.muted
     border.width: 1
@@ -68,7 +68,7 @@ Rectangle {
                 source: "qrc:/qt/qml/NordicHeadunit/assets/icons/music.svg"
                 size: NordicIcon.Size.LG
                 anchors.centerIn: parent
-                color: NordicTheme.colors.accent.primary
+                color: Theme.accent
             }
         }
         
@@ -87,7 +87,7 @@ Rectangle {
             NordicText {
                 text: root.artist
                 type: NordicText.Type.BodySmall
-                color: NordicTheme.colors.text.secondary
+                color: Theme.textSecondary
                 Layout.fillWidth: true
                 autoScroll: true
             }
@@ -99,7 +99,7 @@ Rectangle {
             // Previous Track
             NordicButton {
                 variant: NordicButton.Variant.Icon
-                iconSource: "qrc:/qt/qml/NordicHeadunit/assets/icons/music.svg"
+                iconSource: "qrc:/qt/qml/NordicHeadunit/assets/icons/skip_previous.svg"
                 onClicked: {
                     MediaService.previous()
                     root.previousClicked()
@@ -112,7 +112,9 @@ Rectangle {
             NordicButton {
                 variant: NordicButton.Variant.Primary
                 round: true
-                iconSource: "qrc:/qt/qml/NordicHeadunit/assets/icons/music.svg"
+                iconSource: root.playing 
+                    ? "qrc:/qt/qml/NordicHeadunit/assets/icons/pause.svg"
+                    : "qrc:/qt/qml/NordicHeadunit/assets/icons/play.svg"
                 onClicked: {
                     MediaService.togglePlayPause()
                     root.playPauseClicked()
@@ -124,7 +126,7 @@ Rectangle {
             // Next Track
             NordicButton {
                 variant: NordicButton.Variant.Icon
-                iconSource: "qrc:/qt/qml/NordicHeadunit/assets/icons/music.svg"
+                iconSource: "qrc:/qt/qml/NordicHeadunit/assets/icons/skip_next.svg"
                 onClicked: {
                     MediaService.next()
                     root.nextClicked()
@@ -151,7 +153,7 @@ Rectangle {
             width: parent.width * root.progress
             height: parent.height
             radius: parent.radius
-            color: NordicTheme.colors.accent.primary
+            color: Theme.accent
         }
     }
 }

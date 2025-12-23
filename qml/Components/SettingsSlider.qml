@@ -16,16 +16,16 @@ Rectangle {
     
     Layout.fillWidth: true
     Layout.preferredHeight: 100 // Taller for touch
-    Layout.leftMargin: NordicTheme.spacing.space_4
-    Layout.rightMargin: NordicTheme.spacing.space_4
+    Layout.leftMargin: Theme.spacingSm
+    Layout.rightMargin: Theme.spacingSm
     
-    color: NordicTheme.colors.bg.surface
-    radius: NordicTheme.shapes.radius_md
+    color: Theme.surface
+    radius: Theme.radiusMd
     
     ColumnLayout {
         anchors.fill: parent
-        anchors.margins: NordicTheme.spacing.space_5
-        spacing: NordicTheme.spacing.space_2
+        anchors.margins: Theme.spacingMd
+        spacing: Theme.spacingXs
         
         RowLayout {
             Layout.fillWidth: true
@@ -33,13 +33,13 @@ Rectangle {
             NordicText {
                 text: title
                 type: NordicText.Type.TitleSmall
-                color: NordicTheme.colors.text.primary
+                color: Theme.textPrimary
                 Layout.fillWidth: true
             }
             NordicText {
                 text: Math.round(sliderControl.value) + unit
                 type: NordicText.Type.TitleSmall
-                color: NordicTheme.colors.accent.primary
+                color: Theme.accent
             }
         }
         
@@ -60,7 +60,7 @@ Rectangle {
             visible: locked
             text: lockedReason
             type: NordicText.Type.Caption
-            color: NordicTheme.colors.semantic.warning
+            color: Theme.warning
             Layout.alignment: Qt.AlignHCenter
         }
     }

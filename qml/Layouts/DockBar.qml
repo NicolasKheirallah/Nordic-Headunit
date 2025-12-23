@@ -4,7 +4,7 @@ import NordicHeadunit
 
 Rectangle {
     id: root
-    color: NordicTheme.colors.bg.secondary
+    color: Theme.surface
     
     property int currentIndex: 0
     
@@ -29,8 +29,8 @@ Rectangle {
                 width: 72
                 height: 56
                 radius: NordicTheme.shapes.radius_lg
-                color: active ? NordicTheme.colors.bg.elevated : "transparent"
-                border.color: active ? NordicTheme.colors.accent.primary : "transparent"
+                color: active ? Theme.surfaceAlt : "transparent"
+                border.color: active ? Theme.accent : "transparent"
                 border.width: active ? 1 : 0
                 
                 ColumnLayout {
@@ -40,14 +40,14 @@ Rectangle {
                     NordicIcon {
                         source: itemRoot.icon
                         size: NordicIcon.Size.MD
-                        color: active ? NordicTheme.colors.accent.primary : NordicTheme.colors.text.secondary
+                        color: active ? Theme.accent : Theme.textSecondary
                         Layout.alignment: Qt.AlignHCenter
                     }
                     
                     NordicText {
                         text: itemRoot.label
                         type: NordicText.Type.BodySmall
-                        color: active ? NordicTheme.colors.text.primary : NordicTheme.colors.text.secondary
+                        color: active ? NordicTheme.colors.text.primary : Theme.textSecondary
                         Layout.alignment: Qt.AlignHCenter
                     }
                 }

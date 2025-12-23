@@ -13,32 +13,32 @@ Rectangle {
     
     Layout.fillWidth: true
     Layout.preferredHeight: 80
-    Layout.leftMargin: NordicTheme.spacing.space_4
-    Layout.rightMargin: NordicTheme.spacing.space_4
+    Layout.leftMargin: Theme.spacingSm
+    Layout.rightMargin: Theme.spacingSm
     
-    color: NordicTheme.colors.bg.surface
-    radius: NordicTheme.shapes.radius_md
+    color: Theme.surface
+    radius: Theme.radiusMd
     
     RowLayout {
         anchors.fill: parent
-        anchors.leftMargin: NordicTheme.spacing.space_5
-        anchors.rightMargin: NordicTheme.spacing.space_5
-        spacing: NordicTheme.spacing.space_4
+        anchors.leftMargin: Theme.spacingMd
+        anchors.rightMargin: Theme.spacingMd
+        spacing: Theme.spacingSm
         
         ColumnLayout {
             Layout.fillWidth: true
             Layout.alignment: Qt.AlignVCenter
-            spacing: NordicTheme.spacing.space_1
+            spacing: Theme.spacingXs
             
             NordicText {
                 text: title
                 type: NordicText.Type.TitleSmall
-                color: NordicTheme.colors.text.primary
+                color: Theme.textPrimary
             }
             NordicText {
                 text: subtitle
                 type: NordicText.Type.BodySmall
-                color: NordicTheme.colors.text.tertiary
+                color: Theme.textTertiary
                 visible: subtitle !== ""
                 Layout.fillWidth: true
                 elide: Text.ElideRight
@@ -67,7 +67,7 @@ Rectangle {
             anchors.centerIn: parent
             text: lockedReason
             type: NordicText.Type.Caption
-            color: NordicTheme.colors.text.secondary
+            color: Theme.textSecondary
         }
     }
 }

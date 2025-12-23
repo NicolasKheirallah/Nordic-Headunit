@@ -20,7 +20,7 @@ Page {
         Rectangle {
             id: bgArt
             anchors.fill: parent
-            color: NordicTheme.colors.bg.secondary
+            color: Theme.surface
             visible: false
         }
         
@@ -171,8 +171,8 @@ Page {
         
         height: 70
         radius: 12
-        color: active ? NordicTheme.colors.accent.primary :
-               railMouse.pressed ? NordicTheme.colors.bg.elevated : "transparent"
+        color: active ? Theme.accent :
+               railMouse.pressed ? Theme.surfaceAlt : "transparent"
         
         Column {
             anchors.centerIn: parent
@@ -182,7 +182,7 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 source: railItem.icon
                 size: NordicIcon.Size.MD
-                color: railItem.active ? "white" : NordicTheme.colors.text.secondary
+                color: railItem.active ? "white" : Theme.textSecondary
             }
             
             Text {
@@ -191,7 +191,7 @@ Page {
                 font.pixelSize: 11
                 font.weight: Font.Medium
                 font.family: "Helvetica"
-                color: railItem.active ? "white" : NordicTheme.colors.text.secondary
+                color: railItem.active ? "white" : Theme.textSecondary
             }
         }
         

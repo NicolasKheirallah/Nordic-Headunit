@@ -18,13 +18,13 @@ Rectangle {
     implicitWidth: Math.min(row.implicitWidth + 32, 600)
     implicitHeight: 48
     
-    radius: NordicTheme.shapes.radius_full
+    radius: Theme.radiusFull
     color: {
         switch (type) {
-            case NordicToast.Type.Error: return NordicTheme.colors.semantic.error
-            case NordicToast.Type.Success: return NordicTheme.colors.semantic.success
-            case NordicToast.Type.Warning: return NordicTheme.colors.semantic.warning
-            default: return NordicTheme.colors.bg.inverse // Dark/Light inverse
+            case NordicToast.Type.Error: return Theme.danger
+            case NordicToast.Type.Success: return Theme.success
+            case NordicToast.Type.Warning: return Theme.warning
+            default: return Theme.isDark ? Theme.surface : Theme.surfaceAlt
         }
     }
     
@@ -33,20 +33,20 @@ Rectangle {
     layer.enabled: root.opacity > 0 && root.visible
     layer.effect: MultiEffect {
         shadowEnabled: true
-        shadowColor: NordicTheme.elevation.shadow_color_lg
-        shadowBlur: 12  // Reduced from 16
+        shadowColor: Theme.shadowColor
+        shadowBlur: 12
         shadowVerticalOffset: 4
     }
     
     RowLayout {
         id: row
         anchors.centerIn: parent
-        spacing: NordicTheme.spacing.space_2
+        spacing: Theme.spacingXs
         
         NordicText {
             text: root.message
             type: NordicText.Type.BodyMedium
-            color: NordicTheme.colors.text.inverse
+            color: Theme.textInverse
         }
     }
     

@@ -27,18 +27,19 @@ Item {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: parent.top
         anchors.margins: 20
-        anchors.topMargin: root.open ? 20 : -height - 20 // Slide from top
+        anchors.topMargin: root.open ? 20 : -height - 20
         
-        color: NordicTheme.colors.bg.elevated
-        radius: NordicTheme.shapes.radius_xl
+        color: Theme.surfaceAlt
+        radius: Theme.radiusXl
         
         // PERFORMANCE: Only enable shadow effect when panel is open
         layer.enabled: root.open
         layer.effect: MultiEffect {
             shadowEnabled: true
-            shadowVerticalOffset: 6  // Reduced from 10
+            shadowColor: Theme.shadowColor
+            shadowVerticalOffset: 6
             shadowHorizontalOffset: 0
-            shadowBlur: 1.0  // Reduced from 1.5
+            shadowBlur: 1.0
             shadowOpacity: 0.2
         }
         
@@ -46,8 +47,8 @@ Item {
         
         ColumnLayout {
             anchors.fill: parent
-            anchors.margins: NordicTheme.spacing.space_6
-            spacing: NordicTheme.spacing.space_4
+            anchors.margins: Theme.spacingLg
+            spacing: Theme.spacingSm
             
             // Header
             RowLayout {
@@ -68,7 +69,7 @@ Item {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 clip: true
-                spacing: NordicTheme.spacing.space_2
+                spacing: Theme.spacingXs
                 
                 model: (root.historyModel && root.historyModel.count > 0) ? root.historyModel : defaultModel
                 
@@ -90,8 +91,8 @@ Item {
                     
                     RowLayout {
                         anchors.fill: parent
-                        anchors.margins: NordicTheme.spacing.space_3
-                        spacing: NordicTheme.spacing.space_3
+                        anchors.margins: Theme.spacingSm
+                        spacing: Theme.spacingSm
                         
                         NordicIcon {
                             source: "qrc:/qt/qml/NordicHeadunit/assets/icons/" + notificationCard.dIcon
@@ -102,7 +103,7 @@ Item {
                             Layout.fillWidth: true
                             spacing: 0
                             NordicText { text: notificationCard.dTitle; type: NordicText.Type.TitleSmall }
-                            NordicText { text: notificationCard.dBody; type: NordicText.Type.BodySmall; color: NordicTheme.colors.text.secondary }
+                            NordicText { text: notificationCard.dBody; type: NordicText.Type.BodySmall; color: Theme.textSecondary }
                         }
                         
                          NordicButton {

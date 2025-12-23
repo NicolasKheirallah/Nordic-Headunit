@@ -93,7 +93,7 @@ Item {
         radius: NordicTheme.shapes.radius_md
         opacity: 0.9
         z: 1000
-        border.color: isValidSize ? NordicTheme.colors.accent.primary : NordicTheme.colors.semantic.error
+        border.color: isValidSize ? Theme.accent : Theme.danger
         border.width: 2
         
         property bool isValidSize: true
@@ -114,7 +114,7 @@ Item {
         width: 28
         height: 28
         radius: 14
-        color: NordicTheme.colors.semantic.error
+        color: Theme.danger
         anchors.right: parent.right
         anchors.top: parent.top
         anchors.margins: -8

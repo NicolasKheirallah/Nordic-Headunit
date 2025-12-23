@@ -8,13 +8,13 @@ Row {
     
     property string iconSource: ""
     property string text: ""
-    property color color: NordicTheme.colors.text.primary
+    property color color: Theme.textPrimary
     property color iconColor: root.color
     property bool active: true
     property int size: NordicIcon.Size.SM
     property bool showPulse: false
     
-    spacing: NordicTheme.spacing.space_1
+    spacing: Theme.spacingXs
     visible: active // Simple visibility toggle, but we animate opacity below
     
     // Animate appearance

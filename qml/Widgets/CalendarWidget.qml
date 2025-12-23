@@ -38,7 +38,7 @@ Item {
                 NordicIcon {
                     source: "qrc:/qt/qml/NordicHeadunit/assets/icons/settings.svg"
                     size: NordicIcon.Size.SM
-                    color: NordicTheme.colors.accent.primary
+                    color: Theme.accent
                 }
                 
                 NordicText {
@@ -52,7 +52,7 @@ Item {
                 Rectangle {
                     width: 20; height: 20
                     radius: 10
-                    color: NordicTheme.colors.accent.primary
+                    color: Theme.accent
                     
                     NordicText {
                         anchors.centerIn: parent

@@ -23,7 +23,7 @@ SettingsSubPage {
             trailing: Component {
                 NordicIcon {
                     source: "qrc:/qt/qml/NordicHeadunit/assets/icons/focus.svg" 
-                    color: NordicTheme.colors.accent.primary
+                    color: Theme.accent
                     visible: modelData === TranslationService.currentLanguage
                     size: NordicIcon.Size.MD
                 }

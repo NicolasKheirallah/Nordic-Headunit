@@ -6,7 +6,7 @@ Item {
     id: root
     
     property int size: 48
-    property color color: NordicTheme.colors.accent.primary
+    property color color: Theme.accent
     property bool running: true
     
     implicitWidth: size

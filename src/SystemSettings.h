@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QSettings>
 #include <QDateTime>
+#include <QColor>
 #include "HAL/IAudioHAL.h"
 
 class SystemSettings : public QObject
@@ -34,6 +35,12 @@ class SystemSettings : public QObject
     
     // Display/UI Settings
     Q_PROPERTY(bool bottomBarEnabled READ bottomBarEnabled WRITE setBottomBarEnabled NOTIFY bottomBarEnabledChanged)
+    
+    // Theme System
+    // Theme key: "nordic", "ocean", "sunset", "forest", "custom"
+    Q_PROPERTY(QString themeKey READ themeKey WRITE setThemeKey NOTIFY themeKeyChanged)
+    Q_PROPERTY(QColor customAccentColor READ customAccentColor WRITE setCustomAccentColor NOTIFY customAccentColorChanged)
+    Q_PROPERTY(QColor customSecondaryColor READ customSecondaryColor WRITE setCustomSecondaryColor NOTIFY customSecondaryColorChanged)
 
     // Date & Time
     Q_PROPERTY(bool autoTime READ autoTime WRITE setAutoTime NOTIFY autoTimeChanged)
@@ -117,6 +124,16 @@ public:
     
     bool bottomBarEnabled() const;
     void setBottomBarEnabled(bool bottomBarEnabled);
+    
+    // Theme System
+    QString themeKey() const;
+    void setThemeKey(const QString &themeKey);
+    
+    QColor customAccentColor() const;
+    void setCustomAccentColor(const QColor &customAccentColor);
+    
+    QColor customSecondaryColor() const;
+    void setCustomSecondaryColor(const QColor &customSecondaryColor);
 
     // Date & Time
     bool autoTime() const;
@@ -162,6 +179,12 @@ signals:
     void autoFoldMirrorsChanged(bool autoFoldMirrors);
     void rainSensingWipersChanged(bool rainSensingWipers);
     void bottomBarEnabledChanged(bool bottomBarEnabled);
+    
+    // Theme Signals
+    void themeKeyChanged(const QString &themeKey);
+    void customAccentColorChanged(const QColor &customAccentColor);
+    void customSecondaryColorChanged(const QColor &customSecondaryColor);
+    
     // Date & Time Signals
     void autoTimeChanged(bool autoTime);
     void use24HourFormatChanged(bool use24HourFormat);
@@ -195,6 +218,11 @@ private:
     bool m_autoFoldMirrors;
     bool m_rainSensingWipers;
     bool m_bottomBarEnabled = true;  // Default enabled per HMI spec
+    
+    // Theme State
+    QString m_themeKey = "nordic";  // Default theme
+    QColor m_customAccentColor = QColor("#8B5CF6");  // Default purple
+    QColor m_customSecondaryColor = QColor("#38BDF8");  // Default blue
     
     // Date & Time State
     bool m_autoTime;

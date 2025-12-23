@@ -28,14 +28,14 @@ Item {
         id: panel
         width: 300
         height: 80
-        radius: NordicTheme.shapes.radius_xl
-        color: NordicTheme.colors.bg.overlay
-        border.color: NordicTheme.colors.border.muted
+        radius: Theme.radiusXl
+        color: Theme.withAlpha(Theme.background, 0.9)
+        border.color: Theme.borderMuted
         border.width: 1
         
         anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter
-        anchors.topMargin: visibleState ? NordicTheme.spacing.space_6 : -height - 20 // Slide in/out
+        anchors.topMargin: visibleState ? Theme.spacingLg : -height - 20
         
         Behavior on anchors.topMargin { NumberAnimation { duration: 250; easing.type: Easing.OutCubic } }
         
@@ -44,11 +44,11 @@ Item {
         
         RowLayout {
             anchors.fill: parent
-            anchors.margins: NordicTheme.spacing.space_4
-            spacing: NordicTheme.spacing.space_4
+            anchors.margins: Theme.spacingSm
+            spacing: Theme.spacingSm
             
             NordicIcon {
-                source: "qrc:/qt/qml/NordicHeadunit/assets/icons/music.svg" // Speaker icon?
+                source: "qrc:/qt/qml/NordicHeadunit/assets/icons/music.svg"
                 size: NordicIcon.Size.MD
             }
             
@@ -57,13 +57,13 @@ Item {
                 Layout.fillWidth: true
                 Layout.preferredHeight: 8
                 radius: 4
-                color: NordicTheme.colors.bg.surface
+                color: Theme.surface
                 
                 Rectangle {
                     width: parent.width * (root.volume / 100)
                     height: parent.height
                     radius: 4
-                    color: NordicTheme.colors.accent.primary
+                    color: Theme.accent
                 }
             }
             

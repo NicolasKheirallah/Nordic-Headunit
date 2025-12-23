@@ -85,7 +85,7 @@ Item {
                 NordicText {
                     text: root.currentRange.toString()
                     type: NordicText.Type.TitleMedium
-                    color: NordicTheme.colors.accent.primary
+                    color: Theme.accent
                 }
                 NordicText {
                     text: "km"

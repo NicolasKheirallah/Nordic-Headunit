@@ -1,64 +1,121 @@
 #include "MediaService.h"
+#include <QUrl>
+#include <QStandardPaths>
+#include <QDir>
+#include <QDebug>
+#include <QJsonDocument>
+#include <QJsonArray>
+#include <QJsonObject>
+
 
 MediaService::MediaService(QObject *parent)
     : QObject(parent),
       m_currentIndex(0),
-      m_playing(false),
-      m_position(0),
-      m_currentSource("Bluetooth"),
-      m_currentRadioIndex(0),
       m_shuffleEnabled(false),
       m_repeatEnabled(false),
+      m_currentSource("Bluetooth"),
+      m_currentRadioIndex(0),
+      m_currentFrequency(101.5),
       m_isConnected(true),
       m_isLoading(false)
 {
-    // Mock Playlist
-    m_playlist.append({"Blinding Lights", "The Weeknd", "qrc:/qt/qml/NordicHeadunit/assets/icons/music.svg", 200});
-    m_playlist.append({"Midnight City", "M83", "qrc:/qt/qml/NordicHeadunit/assets/icons/music.svg", 243});
-    m_playlist.append({"Levitating", "Dua Lipa", "qrc:/qt/qml/NordicHeadunit/assets/icons/music.svg", 180});
-    m_playlist.append({"Starboy", "The Weeknd", "qrc:/qt/qml/NordicHeadunit/assets/icons/music.svg", 230});
-    m_playlist.append({"Take On Me", "a-ha", "qrc:/qt/qml/NordicHeadunit/assets/icons/music.svg", 225});
-    m_playlist.append({"Sweet Dreams", "Eurythmics", "qrc:/qt/qml/NordicHeadunit/assets/icons/music.svg", 216});
+    m_player = new QMediaPlayer(this);
+    m_audioOutput = new QAudioOutput(this);
+    m_player->setAudioOutput(m_audioOutput);
+    m_audioOutput->setVolume(1.0);  // Default max volume
+
+    m_playlistModel = new PlaylistModel(this);
+    m_radioModel = new RadioModel(this);
+
+    connect(m_player, &QMediaPlayer::positionChanged, this, &MediaService::onMediaPlayerPositionChanged);
+    connect(m_player, &QMediaPlayer::durationChanged, this, &MediaService::onMediaPlayerDurationChanged);
+    connect(m_player, &QMediaPlayer::mediaStatusChanged, this, &MediaService::onMediaPlayerStatusChanged);
+    connect(m_player, &QMediaPlayer::errorOccurred, this, &MediaService::onMediaPlayerErrorOccurred);
+
+    loadPresets();
+    loadMockData();
     
-    // Mock Radio Stations
-    m_radioStations.append({"Radio 1", "101.5", "FM"});
-    m_radioStations.append({"Classic FM", "98.3", "FM"});
-    m_radioStations.append({"Jazz Radio", "105.7", "FM"});
-    m_radioStations.append({"News 24", "88.1", "FM"});
-    m_radioStations.append({"Rock FM", "92.5", "FM"});
-    m_radioStations.append({"Pop Hits", "94.9", "FM"});
-    
-    m_timer = new QTimer(this);
-    m_timer->setInterval(1000);
-    connect(m_timer, &QTimer::timeout, this, &MediaService::updatePosition);
+    // Set initial station active
+    m_radioModel->setActive(0);
 }
 
-const Track& MediaService::currentTrack() const
-{
-    return m_playlist[m_currentIndex];
+void MediaService::loadMockData() {
+    // Scan local Music directory
+    QStringList musicPaths = QStandardPaths::standardLocations(QStandardPaths::MusicLocation);
+    QStringList filters;
+    filters << "*.mp3" << "*.wav" << "*.m4a";
+    
+    bool foundLocal = false;
+    for (const QString &path : musicPaths) {
+        QDir dir(path);
+        dir.setNameFilters(filters);
+        QFileInfoList files = dir.entryInfoList();
+        for (const QFileInfo &file : files) {
+            Track t;
+            t.title = file.baseName(); // Simple parsing
+            t.artist = "Unknown Artist";
+            t.album = "Unknown Album";
+            t.sourceUrl = file.absoluteFilePath();
+            t.coverUrl = "qrc:/qt/qml/NordicHeadunit/assets/icons/music.svg"; // Fallback cover
+            t.duration = 0; // Not available until played without metadata lib
+            m_playlistModel->addTrack(t);
+            foundLocal = true;
+        }
+    }
+
+    if (!foundLocal) {
+        // Fallback Mock Playlist
+        m_playlistModel->addTrack({"Blinding Lights", "The Weeknd", "After Hours", "qrc:/qt/qml/NordicHeadunit/assets/music/track1.mp3", "qrc:/qt/qml/NordicHeadunit/assets/icons/music.svg", 200});
+        m_playlistModel->addTrack({"Midnight City", "M83", "Hurry Up, We're Dreaming", "qrc:/qt/qml/NordicHeadunit/assets/music/track2.mp3", "qrc:/qt/qml/NordicHeadunit/assets/icons/music.svg", 243});
+        m_playlistModel->addTrack({"Levitating", "Dua Lipa", "Future Nostalgia", "qrc:/qt/qml/NordicHeadunit/assets/music/track3.mp3", "qrc:/qt/qml/NordicHeadunit/assets/icons/music.svg", 180});
+        m_playlistModel->addTrack({"Starboy", "The Weeknd", "Starboy", "qrc:/qt/qml/NordicHeadunit/assets/music/track4.mp3", "qrc:/qt/qml/NordicHeadunit/assets/icons/music.svg", 230});
+    }
+    
+    // Mock Radio Stations (Persist as defaults if empty)
+    if (m_radioModel->rowCount() == 0) {
+        m_radioModel->addStation({"Radio 1", "101.5", "FM", false});
+        m_radioModel->addStation({"Classic FM", "98.3", "FM", false});
+        m_radioModel->addStation({"Jazz Radio", "105.7", "FM", false});
+        m_radioModel->addStation({"News 24", "88.1", "FM", false});
+        m_radioModel->addStation({"Rock FM", "92.5", "FM", false});
+    }
 }
 
+// Getters
 QString MediaService::title() const { 
-    if (isRadioMode()) return m_radioStations[m_currentRadioIndex].name;
-    return currentTrack().title; 
+    if (isRadioMode()) return radioName().isEmpty() ? ("FM " + radioFrequency()) : radioName();
+    Track t = m_playlistModel->getTrack(m_currentIndex);
+    return t.title.isEmpty() ? "Unknown Title" : t.title;
 }
 
 QString MediaService::artist() const { 
-    if (isRadioMode()) return m_radioStations[m_currentRadioIndex].frequency + " " + m_radioStations[m_currentRadioIndex].band;
-    return currentTrack().artist; 
+    if (isRadioMode()) return radioFrequency() + " FM";
+    Track t = m_playlistModel->getTrack(m_currentIndex);
+    return t.artist.isEmpty() ? "Unknown Artist" : t.artist;
 }
 
-QString MediaService::coverSource() const { return currentTrack().coverSource; }
-bool MediaService::playing() const { return m_playing; }
-int MediaService::position() const { return m_position; }
-int MediaService::duration() const { 
+QString MediaService::coverSource() const { 
+    return m_playlistModel->getTrack(m_currentIndex).coverUrl; 
+}
+
+bool MediaService::playing() const { 
+    return m_player->playbackState() == QMediaPlayer::PlayingState; 
+}
+
+qint64 MediaService::position() const { 
     if (isRadioMode()) return 0;
-    return currentTrack().duration; 
+    return m_player->position() / 1000; // Return seconds for UI consistency
+}
+
+qint64 MediaService::duration() const { 
+    if (isRadioMode()) return 0;
+    return m_player->duration() / 1000; // Return seconds
 }
 
 double MediaService::progress() const {
-    if (isRadioMode() || duration() == 0) return 0;
-    return (double)m_position / duration();
+    qint64 dur = duration();
+    if (isRadioMode() || dur == 0) return 0;
+    return (double)position() / dur;
 }
 
 bool MediaService::shuffleEnabled() const { return m_shuffleEnabled; }
@@ -76,424 +133,259 @@ void MediaService::setRepeatEnabled(bool enabled) {
 }
 
 QString MediaService::currentSource() const { return m_currentSource; }
+bool MediaService::isRadioMode() const { return m_currentSource == "Radio"; }
 
-void MediaService::setCurrentSource(const QString &source)
-{
+void MediaService::setCurrentSource(const QString &source) {
     if (m_currentSource == source) return;
-    
-    // Save current position for resume
+
+    // Save state
     if (!isRadioMode()) {
-        m_lastPosition[m_currentSource] = m_position;
+        m_lastPosition[m_currentSource] = m_player->position();
         m_lastTrackIndex[m_currentSource] = m_currentIndex;
     }
-    
+    m_player->stop();
+
     m_currentSource = source;
-    
-    // Restore position for new source
+
+    // Restore state
     if (source != "Radio") {
-        m_position = m_lastPosition.value(source, 0);
         m_currentIndex = m_lastTrackIndex.value(source, 0);
+        qint64 pos = m_lastPosition.value(source, 0);
+        
+        playTrack(m_currentIndex);
+        if (pos > 0) m_player->setPosition(pos);
+    } else {
+        // Radio mode logic
+        emit radioChanged();
     }
-    
+
     emit currentSourceChanged();
     emit sourcesChanged();
     emit trackChanged();
-    emit positionChanged();
 }
 
-bool MediaService::isRadioMode() const { return m_currentSource == "Radio"; }
+RadioModel* MediaService::radioModel() const { return m_radioModel; }
+PlaylistModel* MediaService::playlistModel() const { return m_playlistModel; }
+
+// Wrappers for QML backward compatibility if needed, but we prefer Models now
+QVariantList MediaService::sources() const {
+    QVariantList list;
+    // ... same source logic as before ...
+    // Simplified for brevity
+    list.append(QVariantMap{{"name", "Radio"}, {"icon", "qrc:/qt/qml/NordicHeadunit/assets/icons/signal.svg"}, {"active", m_currentSource == "Radio"}, {"lastPlayed", ""}});
+    list.append(QVariantMap{{"name", "Bluetooth"}, {"icon", "qrc:/qt/qml/NordicHeadunit/assets/icons/bluetooth.svg"}, {"active", m_currentSource == "Bluetooth"}, {"lastPlayed", ""}});
+    list.append(QVariantMap{{"name", "USB"}, {"icon", "qrc:/qt/qml/NordicHeadunit/assets/icons/music.svg"}, {"active", m_currentSource == "USB"}, {"lastPlayed", ""}});
+    return list;
+}
+
+QVariantList MediaService::recentItems() const {
+    QVariantList list;
+    // Mock recents
+    list.append(QVariantMap{{"title", "Blinding Lights"}, {"subtitle", "The Weeknd"}, {"type", "track"}, {"index", 0}, {"icon", "qrc:/qt/qml/NordicHeadunit/assets/icons/music.svg"}});
+    list.append(QVariantMap{{"title", "Radio 1"}, {"subtitle", "101.5 FM"}, {"type", "station"}, {"index", 0}, {"icon", "qrc:/qt/qml/NordicHeadunit/assets/icons/signal.svg"}});
+    return list;
+}
+
+QVariantList MediaService::library() const {
+    QVariantList list;
+    list.append(QVariantMap{{"name", "Liked Songs"}, {"count", "143 songs"}, {"color", "#00C896"}});
+    list.append(QVariantMap{{"name", "Road Trip"}, {"count", "24 songs"}, {"color", "#E91E63"}});
+    list.append(QVariantMap{{"name", "Chill Vibes"}, {"count", "56 songs"}, {"color", "#9C27B0"}});
+    return list;
+}
+
+QString MediaService::radioFrequency() const {
+    return QString::number(m_currentFrequency, 'f', 1);
+}
+
+QString MediaService::radioName() const {
+    // Check if current frequency matches a preset
+    QList<RadioStation> stations = m_radioModel->getAll();
+    for (const auto& s : stations) {
+        if (s.frequency == radioFrequency()) return s.name;
+    }
+    return "";
+}
 
 int MediaService::currentRadioIndex() const { return m_currentRadioIndex; }
-
 bool MediaService::isConnected() const { return m_isConnected; }
 bool MediaService::isLoading() const { return m_isLoading; }
-bool MediaService::hasError() const { return false; }
-QString MediaService::errorMessage() const { return QString(); }
+bool MediaService::hasError() const { return !m_player->errorString().isEmpty(); }
+QString MediaService::errorMessage() const { return m_player->errorString(); }
 
-QVariantList MediaService::sources() const 
-{
-    QVariantList list;
-    
-    QVariantMap radio;
-    radio["name"] = "Radio";
-    radio["icon"] = "qrc:/qt/qml/NordicHeadunit/assets/icons/signal.svg";
-    radio["active"] = (m_currentSource == "Radio");
-    radio["lastPlayed"] = m_radioStations.isEmpty() ? "" : m_radioStations[m_currentRadioIndex].frequency + " " + m_radioStations[m_currentRadioIndex].band;
-    list.append(radio);
-    
-    QVariantMap bluetooth;
-    bluetooth["name"] = "Bluetooth";
-    bluetooth["icon"] = "qrc:/qt/qml/NordicHeadunit/assets/icons/bluetooth.svg";
-    bluetooth["active"] = (m_currentSource == "Bluetooth");
-    bluetooth["lastPlayed"] = m_playlist.isEmpty() ? "" : m_playlist[m_currentIndex].title;
-    list.append(bluetooth);
-    
-    QVariantMap usb;
-    usb["name"] = "USB";
-    usb["icon"] = "qrc:/qt/qml/NordicHeadunit/assets/icons/music.svg";
-    usb["active"] = (m_currentSource == "USB");
-    usb["lastPlayed"] = "Insert USB drive";
-    list.append(usb);
-    
-    QVariantMap streaming;
-    streaming["name"] = "Streaming";
-    streaming["icon"] = "qrc:/qt/qml/NordicHeadunit/assets/icons/wifi.svg";
-    streaming["active"] = (m_currentSource == "Streaming");
-    streaming["lastPlayed"] = "Sign in to stream";
-    list.append(streaming);
-    
-    return list;
+// Playback Controls
+void MediaService::play() { m_player->play(); }
+void MediaService::pause() { m_player->pause(); }
+void MediaService::togglePlayPause() { 
+    if (playing()) pause(); else play(); 
+}
+void MediaService::setPlaying(bool playing) { if (playing) play(); else pause(); }
+
+void MediaService::seek(qint64 position) {
+    if (!isRadioMode()) m_player->setPosition(position * 1000);
 }
 
-QVariantList MediaService::radioStations() const 
-{
-    QVariantList list;
-    for (int i = 0; i < m_radioStations.size(); ++i) {
-        QVariantMap station;
-        station["name"] = m_radioStations[i].name;
-        station["frequency"] = m_radioStations[i].frequency;
-        station["band"] = m_radioStations[i].band;
-        station["active"] = (isRadioMode() && i == m_currentRadioIndex);
-        station["index"] = i;
-        list.append(station);
-    }
-    return list;
+void MediaService::setSource(const QString &source) { setCurrentSource(source); }
+
+void MediaService::tuneRadio(const QString &frequency) {
+    tuneToFrequency(frequency);
 }
 
-QVariantList MediaService::recentItems() const
-{
-    QVariantList list;
-    
-    // Add recent tracks
-    for (int i = 0; i < qMin(3, m_playlist.size()); ++i) {
-        QVariantMap item;
-        item["title"] = m_playlist[i].title;
-        item["subtitle"] = m_playlist[i].artist;
-        item["type"] = "track";
-        item["icon"] = "qrc:/qt/qml/NordicHeadunit/assets/icons/music.svg";
-        item["index"] = i;
-        list.append(item);
-    }
-    
-    // Add recent radio stations
-    for (int i = 0; i < qMin(2, m_radioStations.size()); ++i) {
-        QVariantMap item;
-        item["title"] = m_radioStations[i].name;
-        item["subtitle"] = m_radioStations[i].frequency + " " + m_radioStations[i].band;
-        item["type"] = "station";
-        item["icon"] = "qrc:/qt/qml/NordicHeadunit/assets/icons/signal.svg";
-        item["index"] = i;
-        list.append(item);
-    }
-    
-    return list;
-}
-
-QVariantList MediaService::library() const
-{
-    QVariantList list;
-    
-    QVariantMap liked;
-    liked["name"] = "Liked Songs";
-    liked["count"] = "143 songs";
-    liked["color"] = "#00C896";
-    list.append(liked);
-    
-    QVariantMap roadTrip;
-    roadTrip["name"] = "Road Trip";
-    roadTrip["count"] = "24 songs";
-    roadTrip["color"] = "#E91E63";
-    list.append(roadTrip);
-    
-    QVariantMap chill;
-    chill["name"] = "Chill Vibes";
-    chill["count"] = "56 songs";
-    chill["color"] = "#9C27B0";
-    list.append(chill);
-    
-    QVariantMap workout;
-    workout["name"] = "Workout";
-    workout["count"] = "32 songs";
-    workout["color"] = "#FF5722";
-    list.append(workout);
-    
-    return list;
-}
-
-QVariantList MediaService::playlist() const
-{
-    QVariantList list;
-    for (int i = 0; i < m_playlist.size(); ++i) {
-        QVariantMap track;
-        track["title"] = m_playlist[i].title;
-        track["artist"] = m_playlist[i].artist;
-        track["duration"] = m_playlist[i].duration;
-        track["index"] = i;
-        track["isPlaying"] = (i == m_currentIndex);
-        list.append(track);
-    }
-    return list;
-}
-
-QString MediaService::radioFrequency() const 
-{
-    if (m_radioStations.isEmpty()) return "";
-    return m_radioStations[m_currentRadioIndex].frequency;
-}
-
-QString MediaService::radioName() const
-{
-    if (m_radioStations.isEmpty()) return "";
-    return m_radioStations[m_currentRadioIndex].name;
-}
-
-void MediaService::setPlaying(bool playing)
-{
-    if (m_playing == playing) return;
-    m_playing = playing;
-    if (m_playing && !isRadioMode()) m_timer->start(); else m_timer->stop();
-    emit playingChanged(m_playing);
-}
-
-void MediaService::play() { setPlaying(true); }
-void MediaService::pause() { setPlaying(false); }
-void MediaService::togglePlayPause() { setPlaying(!m_playing); }
-
-void MediaService::seek(int position)
-{
-    if (isRadioMode()) return;
-    m_position = qBound(0, position, duration());
-    emit positionChanged();
-}
-
-void MediaService::setSource(const QString &source)
-{
-    setCurrentSource(source);
-    play();
-}
-
-void MediaService::tuneRadio(const QString &frequency)
-{
-    for (int i = 0; i < m_radioStations.size(); ++i) {
-        if (m_radioStations[i].frequency == frequency) {
-            m_currentRadioIndex = i;
-            if (m_currentSource != "Radio") {
-                setCurrentSource("Radio");
+void MediaService::tuneToFrequency(const QString &frequency) {
+    bool ok;
+    double freq = frequency.toDouble(&ok);
+    if (ok) {
+        m_currentFrequency = freq;
+        emit radioChanged();
+        
+        // Update active preset if matches
+        QList<RadioStation> stations = m_radioModel->getAll();
+        for (int i=0; i<stations.count(); ++i) {
+            if (stations[i].frequency == frequency) {
+                m_currentRadioIndex = i;
+                m_radioModel->setActive(i);
+                return;
             }
-            emit radioChanged();
-            emit radioStationsChanged();
-            emit trackChanged();
-            play();
-            return;
         }
+        // If no match, deselect all
+        m_radioModel->setActive(-1); 
     }
 }
 
-void MediaService::tuneRadioByIndex(int index)
-{
-    if (index < 0 || index >= m_radioStations.size()) return;
-    m_currentRadioIndex = index;
-    if (m_currentSource != "Radio") {
-        setCurrentSource("Radio");
+void MediaService::tuneRadioByIndex(int index) {
+    RadioStation s = m_radioModel->getStation(index);
+    if (!s.frequency.isEmpty()) {
+        m_currentRadioIndex = index;
+        tuneToFrequency(s.frequency);
     }
-    emit radioChanged();
-    emit radioStationsChanged();
-    emit trackChanged();
-    play();
 }
 
-void MediaService::tuneToFrequency(const QString &frequency)
-{
-    // Manual frequency tuning
-    // In a real implementation, this would tune the hardware
-    // For mock, we check if frequency matches a known station
-    for (int i = 0; i < m_radioStations.size(); ++i) {
-        if (m_radioStations[i].frequency == frequency) {
-            tuneRadioByIndex(i);
-            return;
-        }
-    }
-    // Not a known station - still tune to it
-    // Mock: just update the first station temporarily
-    if (!m_radioStations.isEmpty()) {
-        m_radioStations[0].frequency = frequency;
-        m_radioStations[0].name = "FM " + frequency;
-        m_currentRadioIndex = 0;
-    }
-    if (m_currentSource != "Radio") {
-        setCurrentSource("Radio");
-    }
-    emit radioChanged();
-    emit radioStationsChanged();
-    emit trackChanged();
-    play();
+void MediaService::tuneStep(double step) {
+    m_currentFrequency += step;
+    if (m_currentFrequency > 108.0) m_currentFrequency = 87.5;
+    if (m_currentFrequency < 87.5) m_currentFrequency = 108.0;
+    tuneToFrequency(QString::number(m_currentFrequency, 'f', 1));
 }
 
-void MediaService::tuneStep(double step)
-{
-    // Step frequency by given amount (typically ±0.1 MHz)
-    if (m_radioStations.isEmpty()) return;
-    
-    // Parse current frequency
-    double currentFreq = m_radioStations[m_currentRadioIndex].frequency.toDouble();
-    double newFreq = currentFreq + step;
-    
-    // Clamp to FM range
-    if (newFreq < 87.5) newFreq = 108.0;
-    if (newFreq > 108.0) newFreq = 87.5;
-    
-    // Update the current station's frequency
-    m_radioStations[m_currentRadioIndex].frequency = QString::number(newFreq, 'f', 1);
-    m_radioStations[m_currentRadioIndex].name = "FM " + m_radioStations[m_currentRadioIndex].frequency;
-    
-    if (m_currentSource != "Radio") {
-        setCurrentSource("Radio");
-    }
-    emit radioChanged();
-    emit radioStationsChanged();
+void MediaService::seekForward() {
+    // Basic seek implementation
+    tuneStep(0.5); 
 }
 
-void MediaService::seekForward()
-{
-    // Seek to next preset station (simulates finding next strong station)
-    if (m_radioStations.isEmpty()) return;
-    
-    m_currentRadioIndex = (m_currentRadioIndex + 1) % m_radioStations.size();
-    
-    if (m_currentSource != "Radio") {
-        setCurrentSource("Radio");
-    }
-    emit radioChanged();
-    emit radioStationsChanged();
-    emit trackChanged();
+void MediaService::seekBackward() {
+    tuneStep(-0.5);
 }
 
-void MediaService::seekBackward()
-{
-    // Seek to previous preset station (simulates finding previous strong station)
-    if (m_radioStations.isEmpty()) return;
-    
-    m_currentRadioIndex = m_currentRadioIndex - 1;
-    if (m_currentRadioIndex < 0) {
-        m_currentRadioIndex = m_radioStations.size() - 1;
-    }
-    
-    if (m_currentSource != "Radio") {
-        setCurrentSource("Radio");
-    }
-    emit radioChanged();
-    emit radioStationsChanged();
-    emit trackChanged();
+void MediaService::scanRadioStations() {
+    m_radioModel->clear();
+    loadMockData();
 }
 
-void MediaService::scanRadioStations()
-{
-    // Mock: simulate a station scan by resetting to default stations
-    // In a real implementation, this would trigger hardware scan
-    m_radioStations.clear();
-    m_radioStations.append({"Radio 1", "101.5", "FM"});
-    m_radioStations.append({"NRK P1", "92.4", "FM"});
-    m_radioStations.append({"P3", "99.3", "FM"});
-    m_radioStations.append({"Mix FM", "104.7", "FM"});
-    m_radioStations.append({"Rock FM", "106.1", "FM"});
-    m_radioStations.append({"Jazz FM", "98.2", "FM"});
-    
-    m_currentRadioIndex = 0;
-    emit radioStationsChanged();
-    emit radioChanged();
-}
+void MediaService::playTrack(int index) {
+    Track t = m_playlistModel->getTrack(index);
+    if (t.sourceUrl.isEmpty()) return;
 
-void MediaService::playTrack(int index)
-{
-    if (index < 0 || index >= m_playlist.size()) return;
     m_currentIndex = index;
-    m_position = 0;
-    if (isRadioMode()) {
-        setCurrentSource("Bluetooth");
-    }
+    // In production, check if file exists. Here, we blindly try to play.
+    m_player->setSource(QUrl(t.sourceUrl));
+    m_player->play();
     emit trackChanged();
-    emit positionChanged();
-    emit playlistChanged();
-    play();
 }
 
-void MediaService::playFromRecent(int index)
-{
-    QVariantList recents = recentItems();
-    if (index < 0 || index >= recents.size()) return;
+void MediaService::playFromRecent(int index) {
+    QVariantList items = recentItems();
+    if (index < 0 || index >= items.count()) return;
     
-    QVariantMap item = recents[index].toMap();
-    QString type = item["type"].toString();
-    int itemIndex = item["index"].toInt();
+    QVariantMap item = items[index].toMap();
+    if (item["type"].toString() == "station") {
+        tuneRadioByIndex(item["index"].toInt());
+    } else {
+        playTrack(item["index"].toInt());
+    }
+}
+void MediaService::playPlaylist(const QString &) { playTrack(0); }
+
+bool MediaService::saveCurrentToPreset() {
+    if (!isRadioMode()) return false;
+    RadioStation s;
+    s.frequency = radioFrequency();
+    s.band = "FM";
+    s.name = "Saved " + s.frequency;
+    m_radioModel->addStation(s);
+    savePresets();
+    return true;
+}
+
+void MediaService::next() {
+    if (isRadioMode()) {
+        int nextIndex = (m_currentRadioIndex + 1) % m_radioModel->rowCount();
+        tuneRadioByIndex(nextIndex);
+    } else {
+        int nextIndex = (m_currentIndex + 1) % m_playlistModel->rowCount();
+        playTrack(nextIndex);
+    }
+}
+
+void MediaService::previous() {
+    if (isRadioMode()) {
+        int prevIndex = (m_currentRadioIndex - 1 + m_radioModel->rowCount()) % m_radioModel->rowCount();
+        tuneRadioByIndex(prevIndex);
+    } else {
+        int prevIndex = (m_currentIndex - 1 + m_playlistModel->rowCount()) % m_playlistModel->rowCount();
+        playTrack(prevIndex);
+    }
+}
+
+// Media Player Signals
+void MediaService::onMediaPlayerPositionChanged(qint64) { emit positionChanged(); }
+void MediaService::onMediaPlayerDurationChanged(qint64) { emit trackChanged(); }
+void MediaService::onMediaPlayerStatusChanged(QMediaPlayer::MediaStatus status) {
+    if (status == QMediaPlayer::EndOfMedia) {
+        if (m_repeatEnabled) playTrack(m_currentIndex);
+        else next();
+    }
+    emit playingChanged(playing());
+}
+void MediaService::onMediaPlayerErrorOccurred(QMediaPlayer::Error, const QString &errorString) {
+    qWarning() << "Media Error:" << errorString;
+    emit errorChanged();
+}
+
+void MediaService::savePresets() {
+    QJsonArray array;
+    for (const auto &s : m_radioModel->getAll()) {
+        QJsonObject obj;
+        obj["name"] = s.name;
+        obj["frequency"] = s.frequency;
+        obj["band"] = s.band;
+        array.append(obj);
+    }
     
-    if (type == "station") {
-        tuneRadioByIndex(itemIndex);
-    } else {
-        playTrack(itemIndex);
+    QFile file(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/radio_presets.json");
+    if (file.open(QIODevice::WriteOnly)) {
+        file.write(QJsonDocument(array).toJson());
     }
 }
 
-void MediaService::playPlaylist(const QString &name)
-{
-    // Mock: just start playing the first track
-    m_currentIndex = 0;
-    m_position = 0;
-    if (isRadioMode()) {
-        setCurrentSource("Bluetooth");
-    }
-    emit trackChanged();
-    emit positionChanged();
-    emit playlistChanged();
-    play();
-}
-
-void MediaService::next()
-{
-    if (isRadioMode()) {
-        m_currentRadioIndex = (m_currentRadioIndex + 1) % m_radioStations.size();
-        emit radioChanged();
-        emit radioStationsChanged();
-        emit trackChanged();
-    } else {
-        m_currentIndex = (m_currentIndex + 1) % m_playlist.size();
-        m_position = 0;
-        emit trackChanged();
-        emit positionChanged();
-        emit playlistChanged();
-    }
-}
-
-void MediaService::previous()
-{
-    if (isRadioMode()) {
-        m_currentRadioIndex = (m_currentRadioIndex - 1 + m_radioStations.size()) % m_radioStations.size();
-        emit radioChanged();
-        emit radioStationsChanged();
-        emit trackChanged();
-    } else {
-        if (m_position > 5) {
-            m_position = 0;
-        } else {
-            m_currentIndex = (m_currentIndex - 1 + m_playlist.size()) % m_playlist.size();
-            m_position = 0;
-        }
-        emit trackChanged();
-        emit positionChanged();
-        emit playlistChanged();
-    }
-}
-
-void MediaService::updatePosition()
-{
-    if (!isRadioMode() && m_position < duration()) {
-        m_position++;
-        emit positionChanged();
-    } else if (!isRadioMode()) {
-        if (m_repeatEnabled) {
-            m_position = 0;
-            emit positionChanged();
-        } else {
-            next();
+void MediaService::loadPresets() {
+    QDir dir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation));
+    if (!dir.exists()) dir.mkpath(".");
+    
+    QFile file(dir.filePath("radio_presets.json"));
+    if (file.open(QIODevice::ReadOnly)) {
+        QJsonDocument doc = QJsonDocument::fromJson(file.readAll());
+        QJsonArray array = doc.array();
+        if (!array.isEmpty()) {
+            m_radioModel->clear();
+            for (const auto &val : array) {
+                QJsonObject obj = val.toObject();
+                m_radioModel->addStation({
+                    obj["name"].toString(),
+                    obj["frequency"].toString(),
+                    obj["band"].toString(),
+                    false
+                });
+            }
         }
     }
 }

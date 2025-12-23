@@ -24,7 +24,7 @@ SettingsSubPage {
             NordicText {
                 text: "Balance & Fader"
                 type: NordicText.Type.TitleSmall
-                color: NordicTheme.colors.text.secondary
+                color: Theme.textSecondary
             }
             
             BalanceFader {
@@ -59,7 +59,7 @@ SettingsSubPage {
             NordicText {
                 text: "Equalizer"
                 type: NordicText.Type.TitleSmall
-                color: NordicTheme.colors.text.secondary
+                color: Theme.textSecondary
             }
             
             Equalizer {

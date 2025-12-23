@@ -17,19 +17,16 @@ Item {
         spacing: 16
         
         // Header
-        Text {
+        NordicText {
             text: "Audio Sources"
-            font.pixelSize: 20
-            font.weight: Font.Bold
-            font.family: "Helvetica"
-            color: NordicTheme.colors.text.primary
+            type: NordicText.Type.TitleLarge
+            color: Theme.textPrimary
         }
         
-        Text {
+        NordicText {
             text: "Tap to switch source and resume playback"
-            font.pixelSize: 14
-            font.family: "Helvetica"
-            color: NordicTheme.colors.text.tertiary
+            type: NordicText.Type.BodyMedium
+            color: Theme.textTertiary
         }
         
         // Source List
@@ -46,8 +43,8 @@ Item {
                 width: sourceList.width
                 height: 80
                 radius: 16
-                color: modelData.active ? NordicTheme.colors.accent.primary : 
-                       sourceMouse.pressed ? NordicTheme.colors.bg.elevated : NordicTheme.colors.bg.surface
+                color: modelData.active ? Theme.accent : 
+                       sourceMouse.pressed ? Theme.surfaceAlt : NordicTheme.colors.bg.surface
                 
                 RowLayout {
                     anchors.fill: parent
@@ -58,13 +55,13 @@ Item {
                     Rectangle {
                         width: 48; height: 48
                         radius: 12
-                        color: modelData.active ? Qt.rgba(1,1,1,0.2) : NordicTheme.colors.bg.elevated
+                        color: modelData.active ? Qt.rgba(1,1,1,0.2) : Theme.surfaceAlt
                         
                         NordicIcon {
                             anchors.centerIn: parent
                             source: modelData.icon
                             size: NordicIcon.Size.MD
-                            color: modelData.active ? "white" : NordicTheme.colors.text.primary
+                            color: modelData.active ? "white" : Theme.textPrimary
                         }
                     }
                     
@@ -73,19 +70,16 @@ Item {
                         Layout.fillWidth: true
                         spacing: 4
                         
-                        Text {
+                        NordicText {
                             text: modelData.name
-                            font.pixelSize: 18
-                            font.weight: Font.Medium
-                            font.family: "Helvetica"
-                            color: modelData.active ? "white" : NordicTheme.colors.text.primary
+                            type: NordicText.Type.TitleMedium
+                            color: modelData.active ? "white" : Theme.textPrimary
                         }
                         
-                        Text {
+                        NordicText {
                             text: modelData.lastPlayed
-                            font.pixelSize: 14
-                            font.family: "Helvetica"
-                            color: modelData.active ? Qt.rgba(1,1,1,0.7) : NordicTheme.colors.text.tertiary
+                            type: NordicText.Type.BodyMedium
+                            color: modelData.active ? Qt.rgba(1,1,1,0.7) : Theme.textTertiary
                         }
                     }
                     
@@ -100,7 +94,7 @@ Item {
                     NordicIcon {
                         source: "qrc:/qt/qml/NordicHeadunit/assets/icons/play_arrow.svg"
                         size: NordicIcon.Size.SM
-                        color: NordicTheme.colors.text.tertiary
+                        color: Theme.textTertiary
                         visible: !modelData.active
                     }
                 }

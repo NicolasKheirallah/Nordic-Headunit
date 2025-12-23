@@ -25,24 +25,26 @@ ColumnLayout {
         
         delegate: NordicListItem {
             width: ListView.view.width
-            text: model.name
-            secondaryText: model.number
+            text: modelData.name
+            secondaryText: modelData.number
             
             // Avatar Placeholder
-            leading: Rectangle {
-                width: 40
-                height: 40
-                radius: 20
-                color: NordicTheme.colors.accent.secondary
-                NordicText {
-                    anchors.centerIn: parent
-                    text: model.name.charAt(0)
-                    type: NordicText.Type.TitleMedium
-                    color: NordicTheme.colors.text.primary
+            leading: Component {
+                Rectangle {
+                    width: 40
+                    height: 40
+                    radius: 20
+                    color: Theme.accentSecondary
+                    NordicText {
+                        anchors.centerIn: parent
+                        text: (modelData.name && modelData.name.length > 0) ? modelData.name.charAt(0) : "?"
+                        type: NordicText.Type.TitleMedium
+                        color: Theme.textPrimary
+                    }
                 }
             }
             
-            onClicked: PhoneService.dial(model.number)
+            onClicked: PhoneService.dial(modelData.number)
         }
         
         NordicText {
@@ -50,7 +52,7 @@ ColumnLayout {
             text: qsTr("No contacts found")
             visible: contactsList.count === 0
             type: NordicText.Type.BodyLarge
-            color: NordicTheme.colors.text.secondary
+            color: Theme.textSecondary
         }
     }
 }

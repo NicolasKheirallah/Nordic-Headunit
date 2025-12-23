@@ -15,15 +15,15 @@ Rectangle {
     signal midModified(int val)
     signal trebleModified(int val)
     
-    color: NordicTheme.colors.bg.surface
-    radius: NordicTheme.shapes.radius_lg
-    border.color: NordicTheme.colors.border.muted
+    color: Theme.surface
+    radius: Theme.radiusLg
+    border.color: Theme.borderMuted
     border.width: 1
     
     RowLayout {
         anchors.fill: parent
-        anchors.margins: NordicTheme.spacing.space_5
-        spacing: NordicTheme.spacing.space_4
+        anchors.margins: Theme.spacingMd
+        spacing: Theme.spacingSm
         
         // Bass
         EQBand {
@@ -54,14 +54,14 @@ Rectangle {
         
         Layout.fillHeight: true
         Layout.fillWidth: true
-        spacing: NordicTheme.spacing.space_2
+        spacing: Theme.spacingXs
         
         // Value Text
         NordicText {
             Layout.alignment: Qt.AlignHCenter
             text: (value > 0 ? "+" : "") + value + " dB"
             type: NordicText.Type.Caption
-            color: NordicTheme.colors.accent.primary
+            color: Theme.accent
         }
         
         // Slider (Vertical)
@@ -84,7 +84,7 @@ Rectangle {
                 width: implicitWidth
                 height: parent.availableHeight
                 radius: 3
-                color: NordicTheme.colors.bg.elevated
+                color: Theme.surfaceAlt
                 
                 Rectangle {
                     width: parent.width
@@ -99,8 +99,8 @@ Rectangle {
                 implicitWidth: 24
                 implicitHeight: 24
                 radius: 12
-                color: parent.pressed ? NordicTheme.colors.accent.primary : NordicTheme.colors.text.primary
-                border.color: NordicTheme.colors.bg.primary
+                color: parent.pressed ? Theme.accent : Theme.textPrimary
+                border.color: Theme.background
                 border.width: 2
             }
         }
@@ -110,7 +110,7 @@ Rectangle {
             Layout.alignment: Qt.AlignHCenter
             text: label
             type: NordicText.Type.BodySmall
-            color: NordicTheme.colors.text.secondary
+            color: Theme.textSecondary
         }
     }
 }

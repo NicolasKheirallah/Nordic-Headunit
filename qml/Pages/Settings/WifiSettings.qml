@@ -41,7 +41,7 @@ SettingsSubPage {
         NordicText {
             text: "Searching for networks..."
             type: NordicText.Type.Caption
-            color: NordicTheme.colors.text.tertiary
+            color: Theme.textTertiary
         }
     }
     
@@ -63,7 +63,7 @@ SettingsSubPage {
             // Hover effect
             Rectangle {
                 anchors.fill: parent
-                color: parent.containsMouse ? NordicTheme.colors.bg.elevated : "transparent"
+                color: parent.containsMouse ? Theme.surfaceAlt : "transparent"
                 radius: NordicTheme.shapes.radius_md
             }
             
@@ -76,7 +76,7 @@ SettingsSubPage {
                 NordicIcon {
                     source: "qrc:/qt/qml/NordicHeadunit/assets/icons/wifi.svg"
                     size: NordicIcon.Size.MD
-                    color: model.connected ? NordicTheme.colors.accent.primary : NordicTheme.colors.text.secondary
+                    color: model.connected ? Theme.accent : Theme.textSecondary
                     opacity: model.signal / 4.0
                 }
                 
@@ -88,13 +88,13 @@ SettingsSubPage {
                     NordicText {
                         text: model.ssid
                         type: NordicText.Type.BodyMedium
-                        color: model.connected ? NordicTheme.colors.accent.primary : NordicTheme.colors.text.primary
+                        color: model.connected ? Theme.accent : Theme.textPrimary
                     }
                     
                     NordicText {
                         text: model.connected ? "Connected" : (model.secured ? "Secured" : "Open")
                         type: NordicText.Type.Caption
-                        color: model.connected ? NordicTheme.colors.accent.primary : NordicTheme.colors.text.tertiary
+                        color: model.connected ? Theme.accent : Theme.textTertiary
                     }
                 }
                 
@@ -103,7 +103,7 @@ SettingsSubPage {
                     visible: model.secured && !model.connected
                     source: model.connected ? "qrc:/qt/qml/NordicHeadunit/assets/icons/settings.svg" : "qrc:/qt/qml/NordicHeadunit/assets/icons/lock.svg"
                     size: NordicIcon.Size.SM
-                    color: NordicTheme.colors.text.tertiary
+                    color: Theme.textTertiary
                 }
             }
             
@@ -128,21 +128,21 @@ SettingsSubPage {
         NordicIcon {
             source: "qrc:/qt/qml/NordicHeadunit/assets/icons/wifi.svg"
             size: NordicIcon.Size.XL
-            color: NordicTheme.colors.text.tertiary
+            color: Theme.textTertiary
             Layout.alignment: Qt.AlignHCenter
         }
         
         NordicText {
             text: "WiFi is Off"
             type: NordicText.Type.BodyLarge
-            color: NordicTheme.colors.text.secondary
+            color: Theme.textSecondary
             Layout.alignment: Qt.AlignHCenter
         }
         
         NordicText {
             text: "Turn on WiFi to see available networks"
             type: NordicText.Type.Caption
-            color: NordicTheme.colors.text.tertiary
+            color: Theme.textTertiary
             Layout.alignment: Qt.AlignHCenter
         }
     }

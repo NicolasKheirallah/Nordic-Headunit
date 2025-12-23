@@ -15,11 +15,11 @@ Rectangle {
     
     Layout.fillWidth: true
     Layout.preferredHeight: 80
-    Layout.leftMargin: NordicTheme.spacing.space_4
-    Layout.rightMargin: NordicTheme.spacing.space_4
+    Layout.leftMargin: Theme.spacingSm
+    Layout.rightMargin: Theme.spacingSm
     
-    color: itemMa.containsMouse ? NordicTheme.colors.bg.elevated : NordicTheme.colors.bg.surface
-    radius: NordicTheme.shapes.radius_md
+    color: itemMa.containsMouse ? Theme.surfaceAlt : Theme.surface
+    radius: Theme.radiusMd
     
     MouseArea {
         id: itemMa
@@ -32,24 +32,24 @@ Rectangle {
     
     RowLayout {
         anchors.fill: parent
-        anchors.leftMargin: NordicTheme.spacing.space_5
-        anchors.rightMargin: NordicTheme.spacing.space_5
-        spacing: NordicTheme.spacing.space_4
+        anchors.leftMargin: Theme.spacingMd
+        anchors.rightMargin: Theme.spacingMd
+        spacing: Theme.spacingSm
         
         ColumnLayout {
             Layout.fillWidth: true
             Layout.alignment: Qt.AlignVCenter
-            spacing: NordicTheme.spacing.space_1
+            spacing: Theme.spacingXs
             
             NordicText {
                 text: title
                 type: NordicText.Type.TitleSmall
-                color: NordicTheme.colors.text.primary
+                color: Theme.textPrimary
             }
             NordicText {
                 text: subtitle
                 type: NordicText.Type.BodySmall
-                color: NordicTheme.colors.text.tertiary
+                color: Theme.textTertiary
                 visible: subtitle !== ""
                 Layout.fillWidth: true
                 elide: Text.ElideRight
@@ -67,7 +67,7 @@ Rectangle {
             visible: showChevron
             text: "›"
             type: NordicText.Type.HeadlineMedium
-            color: NordicTheme.colors.text.tertiary
+            color: Theme.textTertiary
         }
     }
 }

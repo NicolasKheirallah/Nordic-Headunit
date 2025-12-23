@@ -73,37 +73,37 @@ AbstractButton {
     }
     
     // -------------------------------------------------------------------------
-    // Styling Logic
+    // Styling Logic - Uses Theme tokens for dynamic theming
     // -------------------------------------------------------------------------
     
     readonly property color bgColor: {
-        if (!enabled || loading) return variant === NordicButton.Variant.Tertiary ? "transparent" : Qt.rgba(NordicTheme.colors.text.tertiary.r, NordicTheme.colors.text.tertiary.g, NordicTheme.colors.text.tertiary.b, 0.2)
+        if (!enabled || loading) return variant === NordicButton.Variant.Tertiary ? "transparent" : Theme.withAlpha(Theme.textTertiary, 0.2)
         
         switch (variant) {
             case NordicButton.Variant.Primary:
-                // Aurora teal with subtle brightness changes
-                return root.down ? Qt.darker(NordicTheme.colors.accent.primary, 1.15) : 
-                       root.hovered ? Qt.lighter(NordicTheme.colors.accent.primary, 1.08) : 
-                       NordicTheme.colors.accent.primary
+                // Dynamic accent from Theme
+                return root.down ? Theme.accentPressed : 
+                       root.hovered ? Theme.accentHover : 
+                       Theme.accent
             case NordicButton.Variant.Secondary:
                 // Glass-like surface
-                return root.hovered ? NordicTheme.colors.bg.elevated : NordicTheme.colors.bg.surface
+                return root.hovered ? Theme.surfaceAlt : Theme.surface
             case NordicButton.Variant.Tertiary:
-                return root.hovered ? Qt.rgba(NordicTheme.colors.accent.primary.r, NordicTheme.colors.accent.primary.g, NordicTheme.colors.accent.primary.b, 0.12) : "transparent"
+                return root.hovered ? Theme.accentMuted : "transparent"
             case NordicButton.Variant.Danger:
-                return root.down ? Qt.darker(NordicTheme.colors.semantic.error, 1.15) : 
-                       root.hovered ? Qt.lighter(NordicTheme.colors.semantic.error, 1.08) : 
-                       NordicTheme.colors.semantic.error
+                return root.down ? Qt.darker(Theme.danger, 1.15) : 
+                       root.hovered ? Qt.lighter(Theme.danger, 1.08) : 
+                       Theme.danger
             case NordicButton.Variant.Icon:
                  return "transparent"
             case NordicButton.Variant.Glass:
                 // Frosted glass effect - subtle translucent bg
                 return root.hovered ? Qt.rgba(1, 1, 1, 0.2) : Qt.rgba(1, 1, 1, 0.1)
             case NordicButton.Variant.Success:
-                return root.down ? Qt.darker(NordicTheme.colors.semantic.success, 1.15) : 
-                       root.hovered ? Qt.lighter(NordicTheme.colors.semantic.success, 1.08) : 
-                       NordicTheme.colors.semantic.success
-            default: return NordicTheme.colors.accent.primary
+                return root.down ? Qt.darker(Theme.success, 1.15) : 
+                       root.hovered ? Qt.lighter(Theme.success, 1.08) : 
+                       Theme.success
+            default: return Theme.accent
         }
     }
     
@@ -111,7 +111,7 @@ AbstractButton {
     property color color: "transparent"
 
     readonly property color contentColor: {
-        if (!enabled) return NordicTheme.colors.text.tertiary
+        if (!enabled) return Theme.textTertiary
         
         // Check if custom color is set (has non-zero alpha)
         if (root.color.a > 0) return root.color
@@ -121,23 +121,23 @@ AbstractButton {
             case NordicButton.Variant.Primary:
             case NordicButton.Variant.Danger:
             case NordicButton.Variant.Success:
-                return NordicTheme.colors.text.inverse
+                return Theme.textInverse
             case NordicButton.Variant.Secondary:
-                return NordicTheme.colors.text.primary
+                return Theme.textPrimary
             case NordicButton.Variant.Tertiary:
-                return NordicTheme.colors.accent.primary
+                return Theme.accent
             case NordicButton.Variant.Icon:
-                return NordicTheme.colors.text.primary
+                return Theme.textPrimary
             case NordicButton.Variant.Glass:
                 return "white"  // White text on translucent glass
             default:
-                return NordicTheme.colors.text.inverse
+                return Theme.textInverse
         }
     }
     
     readonly property color borderColor: {
         if (variant === NordicButton.Variant.Secondary) {
-             return root.hovered ? NordicTheme.colors.border.emphasis : NordicTheme.colors.border.default_color
+             return root.hovered ? Theme.borderEmphasis : Theme.border
         }
         return "transparent"
     }
@@ -173,7 +173,7 @@ AbstractButton {
             anchors.fill: parent
             anchors.margins: -2
             color: "transparent"
-            border.color: NordicTheme.colors.accent.primary
+            border.color: Theme.accent
             border.width: 2
             radius: parent.radius + 2
             visible: root.activeFocus

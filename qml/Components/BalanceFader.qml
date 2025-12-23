@@ -15,9 +15,9 @@ Rectangle {
     signal positionChanged(real x, real y)
     
     // Props
-    color: NordicTheme.colors.bg.surface
-    radius: NordicTheme.shapes.radius_lg
-    border.color: NordicTheme.colors.border.muted
+    color: Theme.surface
+    radius: Theme.radiusLg
+    border.color: Theme.borderMuted
     border.width: 1
     
     // The "Car" or "Seat Map" Visualization
@@ -31,7 +31,7 @@ Rectangle {
         Rectangle {
             anchors.fill: parent
             radius: width * 0.2
-            color: NordicTheme.colors.text.tertiary
+            color: Theme.textTertiary
         }
         
         // Seats
@@ -48,7 +48,7 @@ Rectangle {
                 width: parent.width * 0.3
                 height: width
                 radius: 4
-                color: NordicTheme.colors.bg.primary
+                color: Theme.background
             }
         }
     }
@@ -58,14 +58,14 @@ Rectangle {
         anchors.centerIn: parent
         width: parent.width - 32
         height: 1
-        color: NordicTheme.colors.border.muted
+        color: Theme.borderMuted
         opacity: 0.5
     }
     Rectangle {
         anchors.centerIn: parent
         height: parent.height - 32
         width: 1
-        color: NordicTheme.colors.border.muted
+        color: Theme.borderMuted
         opacity: 0.5
     }
     
@@ -75,7 +75,7 @@ Rectangle {
         width: 48
         height: 48
         radius: 24
-        color: NordicTheme.colors.accent.primary
+        color: Theme.accent
         border.color: "white"
         border.width: 3
         
@@ -83,7 +83,7 @@ Rectangle {
         layer.enabled: true
         layer.effect: MultiEffect {
             shadowEnabled: true
-            shadowColor: "#80000000"
+            shadowColor: Theme.shadowColor
             shadowBlur: 1
             shadowVerticalOffset: 2
         }
@@ -135,9 +135,9 @@ Rectangle {
     NordicText {
         anchors.bottom: parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter
-        anchors.bottomMargin: NordicTheme.spacing.space_4
+        anchors.bottomMargin: Theme.spacingSm
         text: "Drag to adjust focus"
         type: NordicText.Type.Caption
-        color: NordicTheme.colors.text.tertiary
+        color: Theme.textTertiary
     }
 }

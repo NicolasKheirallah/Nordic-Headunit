@@ -72,7 +72,7 @@ Item {
                     Layout.alignment: Qt.AlignHCenter
                     width: 48; height: 48
                     radius: 24
-                    color: root.acOn ? NordicTheme.colors.accent.primary : NordicTheme.colors.bg.elevated
+                    color: root.acOn ? Theme.accent : Theme.surfaceAlt
                     
                     NordicText {
                         anchors.centerIn: parent
@@ -99,7 +99,7 @@ Item {
                             width: 8
                             height: 8 + index * 4
                             radius: 2
-                            color: index < root.fanSpeed ? NordicTheme.colors.accent.primary : NordicTheme.colors.bg.elevated
+                            color: index < root.fanSpeed ? Theme.accent : Theme.surfaceAlt
                             
                             MouseArea {
                                 anchors.fill: parent

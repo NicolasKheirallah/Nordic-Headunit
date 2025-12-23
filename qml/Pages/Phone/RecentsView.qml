@@ -37,20 +37,24 @@ ColumnLayout {
         
         delegate: NordicListItem {
             width: ListView.view.width
-            text: model.name
-            secondaryText: model.number + " • " + model.time
+            text: modelData.name
+            secondaryText: modelData.number + " • " + modelData.time
             
-            leading: NordicIcon {
-                source: "qrc:/qt/qml/NordicHeadunit/assets/icons/phone.svg" // Could define specific arrow icons for in/out/missed
-                color: model.callType === "missed" ? NordicTheme.colors.semantic.error : 
-                       model.callType === "incoming" ? NordicTheme.colors.semantic.success :
-                       NordicTheme.colors.text.secondary
+            leading: Component {
+                NordicIcon {
+                    source: "qrc:/qt/qml/NordicHeadunit/assets/icons/phone.svg"
+                    color: modelData.callType === "missed" ? Theme.danger : 
+                           modelData.callType === "incoming" ? Theme.success :
+                           Theme.textSecondary
+                }
             }
             
-            trailing: NordicButton {
-                variant: NordicButton.Variant.Icon
-                iconSource: "qrc:/qt/qml/NordicHeadunit/assets/icons/phone.svg"
-                onClicked: PhoneService.dial(model.number)
+            trailing: Component {
+                NordicButton {
+                    variant: NordicButton.Variant.Icon
+                    iconSource: "qrc:/qt/qml/NordicHeadunit/assets/icons/phone.svg"
+                    onClicked: PhoneService.dial(modelData.number)
+                }
             }
         }
         
@@ -59,7 +63,7 @@ ColumnLayout {
             text: qsTr("No calls found")
             visible: recentsList.count === 0
             type: NordicText.Type.BodyLarge
-            color: NordicTheme.colors.text.secondary
+            color: Theme.textSecondary
         }
     }
 }

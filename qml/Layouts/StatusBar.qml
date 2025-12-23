@@ -200,7 +200,7 @@ Rectangle {
             StatusIndicator {
                 active: root.isNavigating
                 iconSource: "qrc:/qt/qml/NordicHeadunit/assets/icons/map.svg"
-                color: NordicTheme.colors.accent.primary
+                color: Theme.accent
                 Accessible.name: qsTr("Navigation active")
             }
             
@@ -215,7 +215,7 @@ Rectangle {
             NordicText {
                 text: root.title
                 type: NordicText.Type.BodyMedium
-                color: NordicTheme.colors.text.secondary
+                color: Theme.textSecondary
                 anchors.verticalCenter: parent.verticalCenter
             }
             
@@ -223,7 +223,7 @@ Rectangle {
             StatusIndicator {
                 active: root.isPlaying
                 iconSource: "qrc:/qt/qml/NordicHeadunit/assets/icons/music.svg"
-                color: NordicTheme.colors.accent.primary
+                color: Theme.accent
                 Accessible.name: qsTr("Media playing")
             }
         }
@@ -327,7 +327,7 @@ Rectangle {
                 id: focusModeButton
                 width: 44; height: 44
                 radius: 22
-                color: root.drivingMode ? NordicTheme.colors.accent.primary : "transparent"
+                color: root.drivingMode ? Theme.accent : "transparent"
                 Layout.alignment: Qt.AlignVCenter
                 opacity: focusModeEnabled ? 1.0 : 0.5
                 
@@ -340,15 +340,15 @@ Rectangle {
                     anchors.centerIn: parent
                     width: 32; height: 32
                     radius: 16
-                    color: root.drivingMode ? NordicTheme.colors.accent.primary : NordicTheme.colors.bg.elevated
-                    border.color: root.drivingMode ? NordicTheme.colors.accent.primary : NordicTheme.colors.border.muted
+                    color: root.drivingMode ? Theme.accent : Theme.surfaceAlt
+                    border.color: root.drivingMode ? Theme.accent : NordicTheme.colors.border.muted
                     border.width: 1
                     
                     NordicIcon {
                         anchors.centerIn: parent
                         source: "qrc:/qt/qml/NordicHeadunit/assets/icons/focus.svg"
                         size: NordicIcon.Size.SM
-                        color: root.drivingMode ? NordicTheme.colors.text.inverse : NordicTheme.colors.text.secondary
+                        color: root.drivingMode ? NordicTheme.colors.text.inverse : Theme.textSecondary
                     }
                 }
                 

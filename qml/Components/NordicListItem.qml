@@ -33,13 +33,13 @@ Control {
 
     background: Rectangle {
         color: root.color !== "transparent" ? root.color :
-               root.down ? NordicTheme.colors.bg.elevated : 
-               root.hovered ? NordicTheme.colors.bg.surface : "transparent"
-        Behavior on color { ColorAnimation { duration: NordicTheme.motion.duration_fast } }
+               root.down ? Theme.surfaceAlt : 
+               root.hovered ? Theme.surface : "transparent"
+        Behavior on color { ColorAnimation { duration: Theme.durationFast } }
     }
     
     contentItem: RowLayout {
-        spacing: NordicTheme.spacing.space_4
+        spacing: Theme.spacingSm
         
         // Leading Slot
         Loader {
@@ -52,7 +52,7 @@ Control {
         ColumnLayout {
             Layout.fillWidth: true
             Layout.alignment: Qt.AlignVCenter
-            spacing: NordicTheme.spacing.space_1
+            spacing: Theme.spacingXs
             
             NordicText {
                 text: root.text
@@ -65,7 +65,7 @@ Control {
                 visible: root.secondaryText !== "" && root.size !== NordicListItem.Size.Compact
                 text: root.secondaryText
                 type: NordicText.Type.BodySmall
-                color: NordicTheme.colors.text.secondary
+                color: Theme.textSecondary
                 Layout.fillWidth: true
                 elide: Text.ElideRight
             }
@@ -83,9 +83,9 @@ Control {
         anchors.bottom: parent.bottom
         anchors.left: parent.left
         anchors.right: parent.right
-        anchors.leftMargin: root.leading ? 64 : NordicTheme.spacing.space_4 // Approx inset
+        anchors.leftMargin: root.leading ? 64 : Theme.spacingSm
         height: 1
-        color: NordicTheme.colors.border.muted
+        color: Theme.borderMuted
         visible: true // Or property to control
     }
     

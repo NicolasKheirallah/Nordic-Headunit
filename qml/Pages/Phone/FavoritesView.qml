@@ -16,45 +16,45 @@ GridView {
         
         NordicCard {
             anchors.fill: parent
-            anchors.margins: NordicTheme.spacing.space_4
+            anchors.margins: Theme.spacingSm
             variant: NordicCard.Variant.Elevated
             
             ColumnLayout {
                 anchors.centerIn: parent
-                spacing: NordicTheme.spacing.space_4
+                spacing: Theme.spacingSm
                 
                 Rectangle {
                     width: 60
                     height: 60
                     radius: 30
-                    color: NordicTheme.colors.accent.primary
+                    color: Theme.accent
                     Layout.alignment: Qt.AlignHCenter
                     
                     NordicText {
                         anchors.centerIn: parent
-                        text: model.name.charAt(0)
+                        text: (modelData.name && modelData.name.length > 0) ? modelData.name.charAt(0) : "?"
                         type: NordicText.Type.DisplaySmall
-                        color: NordicTheme.colors.text.primary
+                        color: Theme.textInverse
                     }
                 }
                 
                 NordicText {
-                    text: model.name
+                    text: modelData.name
                     type: NordicText.Type.TitleMedium
                     Layout.alignment: Qt.AlignHCenter
                 }
                 
                 NordicText {
-                    text: model.number
+                    text: modelData.number
                     type: NordicText.Type.BodySmall
-                    color: NordicTheme.colors.text.secondary
+                    color: Theme.textSecondary
                     Layout.alignment: Qt.AlignHCenter
                 }
             }
             
             MouseArea {
                 anchors.fill: parent
-                onClicked: PhoneService.dial(model.number)
+                onClicked: PhoneService.dial(modelData.number)
             }
         }
     }

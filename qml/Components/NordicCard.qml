@@ -42,17 +42,17 @@ Item {
         }
         
         if (variant === NordicCard.Variant.Filled || variant === NordicCard.Variant.Media) {
-            return NordicTheme.colors.bg.elevated
+            return Theme.surfaceAlt
         }
         
-        if (NordicTheme.darkMode) {
+        if (Theme.isDark) {
             // Dark mode: Elevation via surface lightness
             // Base: Surface. Interactive hover: Elevated.
-            if (clickable && (hovered || pressed)) return NordicTheme.colors.bg.elevated
-            return NordicTheme.colors.bg.surface
+            if (clickable && (hovered || pressed)) return Theme.surfaceAlt
+            return Theme.surface
         } else {
             // Light mode: Unified surface, shadows do the work
-            return NordicTheme.colors.bg.surface
+            return Theme.surface
         }
     }
     
@@ -63,11 +63,11 @@ Item {
         }
         
         if (variant === NordicCard.Variant.Outlined) {
-            return (clickable && hovered) ? NordicTheme.colors.border.emphasis : NordicTheme.colors.border.default_color
+            return (clickable && hovered) ? Theme.borderEmphasis : Theme.border
         }
         // Subtle border for Filled cards in Dark Mode
-        if (NordicTheme.darkMode && (variant === NordicCard.Variant.Filled || variant === NordicCard.Variant.Media)) {
-            return NordicTheme.colors.border.muted
+        if (Theme.isDark && (variant === NordicCard.Variant.Filled || variant === NordicCard.Variant.Media)) {
+            return Theme.borderMuted
         }
         return "transparent"
     }
@@ -75,11 +75,11 @@ Item {
     // Shadow Logic (Light mode or specific Dark mode requirement)
     // V2.0 Spec: Light mode uses shadows. Dark mode uses surface colors (mostly).
     // Elevated/Interactive/Media get shadow in Light mode.
-    readonly property bool showShadow: !NordicTheme.darkMode && (variant === NordicCard.Variant.Elevated || variant === NordicCard.Variant.Interactive || variant === NordicCard.Variant.Media)
+    readonly property bool showShadow: !Theme.isDark && (variant === NordicCard.Variant.Elevated || variant === NordicCard.Variant.Interactive || variant === NordicCard.Variant.Media)
     
     // Scale Logic
     scale: pressed ? 0.99 : (hovered && clickable ? 1.01 : 1.0)
-    Behavior on scale { NumberAnimation { duration: NordicTheme.motion.duration_fastest; easing.type: Easing.OutCubic } }
+    Behavior on scale { NumberAnimation { duration: Theme.durationFast; easing.type: Easing.OutCubic } }
 
     // -------------------------------------------------------------------------
     // Implementation
@@ -91,9 +91,9 @@ Item {
         anchors.fill: parent
         radius: bgRect.radius
         // Pass the standard glass color
-        color: Qt.rgba(NordicTheme.colors.bg.surface.r, NordicTheme.colors.bg.surface.g, NordicTheme.colors.bg.surface.b, 0.7)
+        color: Theme.withAlpha(Theme.surface, 0.7)
         // Pass the standard glass border
-        borderColor: Qt.rgba(NordicTheme.colors.accent.primary.r, NordicTheme.colors.accent.primary.g, NordicTheme.colors.accent.primary.b, 0.3)
+        borderColor: Theme.withAlpha(Theme.accent, 0.3)
         
         visible: variant === NordicCard.Variant.Glass
     }
@@ -110,7 +110,7 @@ Item {
         layer.effect: MultiEffect {
             shadowEnabled: true
             // Modern Swedish shadows - softer and larger
-            shadowColor: NordicTheme.elevation.shadow_color_lg
+            shadowColor: Theme.shadowColor
             shadowBlur: hovered ? 32 : 16
             shadowVerticalOffset: hovered ? 8 : 4
             shadowHorizontalOffset: 0
@@ -122,7 +122,7 @@ Item {
         id: bgRect
         anchors.fill: parent
         color: root.bgColor
-        radius: NordicTheme.shapes.radius_xl
+        radius: Theme.radiusXl
         
         border.width: (variant === NordicCard.Variant.Outlined || variant === NordicCard.Variant.Glass) ? 1 : 0
         // Use 'root.borderColor' unless overridden
@@ -130,7 +130,7 @@ Item {
         
         clip: true // Click effects and media clipped to radius
         
-        Behavior on color { ColorAnimation { duration: NordicTheme.motion.duration_fast } }
+        Behavior on color { ColorAnimation { duration: Theme.durationFast } }
         
         // Media Image (For Media Variant)
         // Uses top half or cover? Spec says "Note: Media area (image, video, map)... Image fills top with top corners rounded"
@@ -160,7 +160,7 @@ Item {
             anchors.fill: parent
             anchors.margins: -2
             color: "transparent"
-            border.color: NordicTheme.colors.accent.primary
+            border.color: Theme.accent
             border.width: 2
             radius: parent.radius + 2
             visible: root.activeFocus
@@ -168,7 +168,7 @@ Item {
     }
     
     // Layout
-    property int padding: NordicTheme.spacing.space_4
+    property int padding: Theme.spacingSm
 
 
     

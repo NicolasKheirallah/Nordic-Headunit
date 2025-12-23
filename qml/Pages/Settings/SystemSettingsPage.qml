@@ -46,13 +46,13 @@ SettingsSubPage {
                 NordicText { 
                     text: qsTr("Storage")
                     type: NordicText.Type.BodyMedium 
-                    color: NordicTheme.colors.text.primary
+                    color: Theme.textPrimary
                 }
                 Item { Layout.fillWidth: true }
                 NordicText { 
                     text: "32 GB " + qsTr("used") + " / 64 GB " + qsTr("total")
                     type: NordicText.Type.Caption 
-                    color: NordicTheme.colors.text.tertiary
+                    color: Theme.textTertiary
                 }
             }
             
@@ -61,17 +61,17 @@ SettingsSubPage {
                 Layout.fillWidth: true
                 Layout.preferredHeight: 12
                 radius: 6
-                color: NordicTheme.colors.bg.elevated
+                color: Theme.surfaceAlt
                 clip: true
                 
                 Row {
                     anchors.fill: parent
                     // Music (50%)
-                    Rectangle { width: parent.width * 0.5; height: parent.height; color: NordicTheme.colors.accent.primary }
+                    Rectangle { width: parent.width * 0.5; height: parent.height; color: Theme.accent }
                     // Maps (25%)
                     Rectangle { width: parent.width * 0.25; height: parent.height; color: NordicTheme.colors.semantic.info }
                     // System (15%)
-                    Rectangle { width: parent.width * 0.15; height: parent.height; color: NordicTheme.colors.text.tertiary }
+                    Rectangle { width: parent.width * 0.15; height: parent.height; color: Theme.textTertiary }
                 }
             }
             
@@ -80,14 +80,14 @@ SettingsSubPage {
                 spacing: 16
                 Repeater {
                     model: [ 
-                        {l: qsTr("Music"), c: NordicTheme.colors.accent.primary},
+                        {l: qsTr("Music"), c: Theme.accent},
                         {l: qsTr("Maps"), c: NordicTheme.colors.semantic.info},
-                        {l: qsTr("System"), c: NordicTheme.colors.text.tertiary}
+                        {l: qsTr("System"), c: Theme.textTertiary}
                     ]
                     delegate: Row {
                         spacing: 6
                         Rectangle { width: 8; height: 8; radius: 4; color: modelData.c; anchors.verticalCenter: parent.verticalCenter }
-                        NordicText { text: modelData.l; type: NordicText.Type.Caption; color: NordicTheme.colors.text.tertiary }
+                        NordicText { text: modelData.l; type: NordicText.Type.Caption; color: Theme.textTertiary }
                     }
                 }
             }

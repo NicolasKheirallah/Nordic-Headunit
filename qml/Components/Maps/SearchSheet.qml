@@ -39,7 +39,7 @@ NordicCard {
         Rectangle {
             Layout.alignment: Qt.AlignHCenter
             width: 40; height: 4
-            color: NordicTheme.colors.bg.secondary
+            color: Theme.surface
             radius: 2
         }
         
@@ -61,7 +61,7 @@ NordicCard {
                 NordicIcon { 
                     source: "qrc:/qt/qml/NordicHeadunit/assets/icons/search.svg" 
                     size: NordicIcon.Size.MD
-                    color: NordicTheme.colors.text.secondary
+                    color: Theme.textSecondary
                 }
                 
                 NordicTextField {
@@ -127,7 +127,7 @@ NordicCard {
                         radius: 16
                         // Dark glassmorphic look
                         color: mouse.containsMouse 
-                            ? Qt.rgba(NordicTheme.colors.accent.primary.r, NordicTheme.colors.accent.primary.g, NordicTheme.colors.accent.primary.b, 0.2)
+                            ? Qt.rgba(Theme.accent.r, Theme.accent.g, Theme.accent.b, 0.2)
                             : Qt.rgba(0, 0, 0, 0.25)
                         border.color: Qt.rgba(255, 255, 255, 0.1)
                         border.width: 1
@@ -138,7 +138,7 @@ NordicCard {
                             NordicIcon { 
                                 source: icon; 
                                 size: NordicIcon.Size.MD; 
-                                color: NordicTheme.colors.accent.primary 
+                                color: Theme.accent 
                                 Layout.alignment: Qt.AlignHCenter
                             }
                             NordicText { 
@@ -155,10 +155,10 @@ NordicCard {
                         }
                     }
                     
-                    CategoryChip { label: "Gas"; icon: "qrc:/qt/qml/NordicHeadunit/assets/icons/car.svg"; onClicked: NavigationService.searchCategory("Gas Station") }
-                    CategoryChip { label: "Food"; icon: "qrc:/qt/qml/NordicHeadunit/assets/icons/heart.svg"; onClicked: NavigationService.searchCategory("Restaurant") }
-                    CategoryChip { label: "Parking"; icon: "qrc:/qt/qml/NordicHeadunit/assets/icons/map.svg"; onClicked: NavigationService.searchCategory("Parking") }
-                    CategoryChip { label: "Coffee"; icon: "qrc:/qt/qml/NordicHeadunit/assets/icons/compass.svg"; onClicked: NavigationService.searchCategory("Coffee Shop") }
+                    CategoryChip { label: "Gas"; icon: "qrc:/qt/qml/NordicHeadunit/assets/icons/gas-station.svg"; onClicked: NavigationService.searchCategory("Gas Station") }
+                    CategoryChip { label: "Food"; icon: "qrc:/qt/qml/NordicHeadunit/assets/icons/food-dinner.svg"; onClicked: NavigationService.searchCategory("Restaurant") }
+                    CategoryChip { label: "Parking"; icon: "qrc:/qt/qml/NordicHeadunit/assets/icons/parking-location.svg"; onClicked: NavigationService.searchCategory("Parking") }
+                    CategoryChip { label: "Coffee"; icon: "qrc:/qt/qml/NordicHeadunit/assets/icons/cup-of-coffee.svg"; onClicked: NavigationService.searchCategory("Coffee Shop") }
                 }
                 
                 // 2. Recent Searches
@@ -169,7 +169,7 @@ NordicCard {
                     NordicText {
                         text: "Recent Searches"
                         type: NordicText.Type.TitleSmall
-                        color: NordicTheme.colors.text.secondary
+                        color: Theme.textSecondary
                     }
                     
                     Repeater {
@@ -190,7 +190,7 @@ NordicCard {
                         visible: NavigationService.recentSearches.length === 0
                         text: "No recent searches"
                         type: NordicText.Type.BodySmall
-                        color: NordicTheme.colors.text.tertiary
+                        color: Theme.textTertiary
                         Layout.topMargin: 8
                     }
                 }

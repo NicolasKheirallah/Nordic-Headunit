@@ -574,7 +574,7 @@ Item {
             anchors.right: parent.right; anchors.top: parent.top; anchors.margins: root.margin
             width: 36; height: 36; radius: 18
             color: hintMouse.containsMouse ? NordicTheme.colors.bg.elevated : NordicTheme.colors.bg.surface
-            border.color: NordicTheme.colors.border.muted
+            border.color: Theme.border
             border.width: 1
             opacity: hintMouse.containsMouse ? 1.0 : 0.7
             z: 100
@@ -624,7 +624,7 @@ Item {
             visible: root.editMode  // Only show in edit mode
             anchors.right: parent.right; anchors.top: parent.top; anchors.margins: root.margin
             width: editBtn.width + 24; height: 36; radius: 18
-            color: NordicTheme.colors.accent.primary
+            color: Theme.accent
             z: 100
             MouseArea { anchors.fill: parent; cursorShape: Qt.PointingHandCursor; onClicked: root.editMode = false }
             NordicText { id: editBtn; anchors.centerIn: parent; text: qsTr("Done"); type: NordicText.Type.BodySmall; color: "white" }
@@ -681,8 +681,8 @@ Item {
                 y: calcY(gridRow)
                 width: root.cellWidth
                 height: root.cellHeight
-                color: cellMouse.containsMouse ? Qt.rgba(NordicTheme.colors.accent.primary.r, NordicTheme.colors.accent.primary.g, NordicTheme.colors.accent.primary.b, 0.1) : "transparent"
-                border.color: cellMouse.containsMouse ? NordicTheme.colors.accent.primary : NordicTheme.colors.border.muted
+                color: cellMouse.containsMouse ? Qt.rgba(Theme.accent.r, Theme.accent.g, Theme.accent.b, 0.1) : "transparent"
+                border.color: cellMouse.containsMouse ? Theme.accent : Theme.border
                 border.width: cellMouse.containsMouse ? 2 : 1
                 radius: NordicTheme.shapes.radius_md
                 opacity: 0.5
@@ -779,7 +779,7 @@ Item {
                         anchors.fill: parent
                         visible: wLoader.status === Loader.Error
                         color: NordicTheme.colors.bg.secondary
-                        border.color: NordicTheme.colors.semantic.error
+                        border.color: Theme.danger
                         border.width: 1
                         radius: NordicTheme.shapes.radius_md
                         
@@ -789,7 +789,7 @@ Item {
                             
                             NordicIcon { 
                                 source: "qrc:/qt/qml/NordicHeadunit/assets/icons/signal.svg"
-                                color: NordicTheme.colors.semantic.error
+                                color: Theme.danger
                                 size: NordicIcon.Size.MD
                                 Layout.alignment: Qt.AlignHCenter
                             }
@@ -824,7 +824,7 @@ Item {
     Rectangle {
         visible: root.editMode
         anchors.bottom: parent.bottom; anchors.horizontalCenter: parent.horizontalCenter; anchors.bottomMargin: 100
-        width: 170; height: 48; radius: 24; color: NordicTheme.colors.accent.primary; z: 50
+        width: 170; height: 48; radius: 24; color: Theme.accent; z: 50
         MouseArea { anchors.fill: parent; cursorShape: Qt.PointingHandCursor; onClicked: widgetPicker.open() }
         Row {
             anchors.centerIn: parent; spacing: 8
@@ -845,7 +845,7 @@ Item {
         background: Rectangle {
             color: NordicTheme.colors.bg.elevated
             radius: NordicTheme.shapes.radius_xl
-            border.color: NordicTheme.colors.border.muted
+            border.color: Theme.border
             border.width: 1
             
             layer.enabled: true
@@ -903,7 +903,7 @@ Item {
                             Layout.preferredHeight: 72
                             radius: NordicTheme.shapes.radius_md
                             color: pickerMA.containsMouse ? NordicTheme.colors.bg.surface : NordicTheme.colors.bg.secondary
-                            border.color: pickerMA.containsMouse ? NordicTheme.colors.accent.primary : "transparent"
+                            border.color: pickerMA.containsMouse ? Theme.accent : "transparent"
                             border.width: 1
                             
                             property var reg: widgetRegistry[modelData] || {}
@@ -932,7 +932,7 @@ Item {
                                     NordicIcon { 
                                         anchors.centerIn: parent
                                         source: "qrc:/qt/qml/NordicHeadunit/assets/icons/" + (parent.parent.parent.reg.icon||"settings") + ".svg"
-                                        color: NordicTheme.colors.accent.primary
+                                        color: Theme.accent
                                         size: NordicIcon.Size.MD 
                                     }
                                 }
@@ -996,7 +996,7 @@ Item {
                 anchors.top: parent.top
                 anchors.margins: 16
                 width: 40; height: 40; radius: 20
-                color: closeMa.containsMouse ? NordicTheme.colors.semantic.error : NordicTheme.colors.bg.elevated
+                color: closeMa.containsMouse ? Theme.danger : NordicTheme.colors.bg.elevated
                 z: 10
                 
                 Behavior on color { ColorAnimation { duration: 150 } }

@@ -17,12 +17,12 @@ Item {
     // Large: Full Player view (Progress bar, timestamps)
     readonly property bool isLarge: width >= 300 && height >= 150
     
-    // Media Bindings
-    readonly property bool isPlaying: MediaService?.isPlaying ?? false
+    // Media Bindings - Use actual MediaService property names
+    readonly property bool isPlaying: MediaService?.playing ?? false
     readonly property real position: MediaService?.position ?? 0
     readonly property real duration: MediaService?.duration ?? 1
-    readonly property string currentTrack: MediaService?.currentTrack ?? "Blinding Lights"
-    readonly property string currentArtist: MediaService?.currentArtist ?? "The Weeknd"
+    readonly property string currentTrack: MediaService?.title ?? "No Track"
+    readonly property string currentArtist: MediaService?.artist ?? "Unknown Artist"
     
     NordicCard {
         anchors.fill: parent
@@ -47,7 +47,7 @@ Item {
                     Layout.minimumWidth: Layout.preferredHeight // Prevent shrinking
                     
                     radius: NordicTheme.shapes.radius_md
-                    color: NordicTheme.colors.accent.primary
+                    color: Theme.accent
                     
                     // Pulse Animation
                     SequentialAnimation on scale {
@@ -144,7 +144,7 @@ Item {
                         width: parent.width * (root.position / Math.max(1, root.duration))
                         height: parent.height
                         radius: 2
-                        color: NordicTheme.colors.accent.primary
+                        color: Theme.accent
                         
                         Behavior on width { NumberAnimation { duration: 200 } }
                     }
@@ -153,13 +153,13 @@ Item {
                 RowLayout {
                     Layout.fillWidth: true
                     NordicText {
-                        text: formatTime(root.position)
+                        text: Theme.formatTime(root.position)
                         type: NordicText.Type.Caption
                         color: NordicTheme.colors.text.tertiary
                     }
                     Item { Layout.fillWidth: true }
                     NordicText {
-                        text: formatTime(root.duration)
+                        text: Theme.formatTime(root.duration)
                         type: NordicText.Type.Caption
                         color: NordicTheme.colors.text.tertiary
                     }
@@ -168,10 +168,5 @@ Item {
         }
     }
     
-    function formatTime(ms) {
-        var secs = Math.floor(ms / 1000)
-        var mins = Math.floor(secs / 60)
-        secs = secs % 60
-        return mins + ":" + (secs < 10 ? "0" : "") + secs
-    }
+    // formatTime removed, using Theme.formatTime
 }

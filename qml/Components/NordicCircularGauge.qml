@@ -13,7 +13,7 @@ Item {
     property string label: ""
     
     // Colors
-    property color accentColor: NordicTheme.colors.accent.primary
+    property color accentColor: Theme.accent
     
     implicitWidth: 200
     implicitHeight: 200
@@ -32,7 +32,7 @@ Item {
         layer.samples: 4
         
         ShapePath {
-            strokeColor: NordicTheme.colors.bg.elevated
+            strokeColor: Theme.surfaceAlt
             strokeWidth: 16
             fillColor: "transparent"
             capStyle: ShapePath.RoundCap
@@ -73,22 +73,22 @@ Item {
         NordicText {
             anchors.horizontalCenter: parent.horizontalCenter
             text: Math.round(root.value)
-            type: NordicText.Type.HeadlineLarge // Reduced from DisplayMedium for better fit
-            color: NordicTheme.colors.text.primary
+            type: NordicText.Type.HeadlineLarge
+            color: Theme.textPrimary
         }
         
         NordicText {
             anchors.horizontalCenter: parent.horizontalCenter
             text: root.unit
             type: NordicText.Type.BodyMedium
-            color: NordicTheme.colors.text.secondary
+            color: Theme.textSecondary
         }
         
         NordicText {
             anchors.horizontalCenter: parent.horizontalCenter
             text: root.label
             type: NordicText.Type.BodySmall
-            color: NordicTheme.colors.text.tertiary
+            color: Theme.textTertiary
             visible: root.label !== ""
         }
     }

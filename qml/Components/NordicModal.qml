@@ -35,19 +35,19 @@ Popup {
     closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
     
     Overlay.modal: Rectangle {
-        color: NordicTheme.colors.bg.overlay
+        color: Theme.withAlpha(Theme.background, 0.7)
     }
     
     enter: Transition {
         NumberAnimation { 
             property: "opacity"; from: 0.0; to: 1.0; 
-            duration: NordicTheme.motion.duration_fast 
+            duration: Theme.durationFast 
         }
         NumberAnimation { 
             property: variant === NordicModal.Variant.BottomSheet ? "y" : "scale"
             from: variant === NordicModal.Variant.BottomSheet ? parent.height : 0.95
             to: variant === NordicModal.Variant.BottomSheet ? parent.height - root.height : 1.0
-            duration: NordicTheme.motion.duration_fast
+            duration: Theme.durationFast
             easing.type: Easing.OutCubic 
         }
     }
@@ -55,26 +55,19 @@ Popup {
     exit: Transition {
         NumberAnimation { 
             property: "opacity"; from: 1.0; to: 0.0; 
-            duration: NordicTheme.motion.duration_fastest 
+            duration: Theme.durationFast 
         }
         NumberAnimation { 
             property: variant === NordicModal.Variant.BottomSheet ? "y" : "scale"
             from: variant === NordicModal.Variant.BottomSheet ? parent.height - root.height : 1.0
             to: variant === NordicModal.Variant.BottomSheet ? parent.height : 0.95
-            duration: NordicTheme.motion.duration_fastest 
+            duration: Theme.durationFast 
         }
     }
     
     background: Rectangle {
-        color: NordicTheme.colors.bg.elevated
-        // Bottom Sheet: Only top corners
-        radius: NordicTheme.shapes.radius_xl
-        
-        // Mask bottom corners if BottomSheet? 
-        // Rectangle radius applies to all. To do top-only, need a clipping item or Shape.
-        // For now, consistent radius is fine, but bottom sheet usually sits flush.
-        // Let's keep full radius but push it down slightly if we wanted flush?
-        // Typically BottomSheet has 0 bottom radius.
+        color: Theme.surfaceAlt
+        radius: Theme.radiusXl
         
         Rectangle {
             // Mask bottom corners for BottomSheet 
@@ -86,21 +79,21 @@ Popup {
             visible: root.variant === NordicModal.Variant.BottomSheet
         }
         
-        border.color: NordicTheme.colors.border.default_color
+        border.color: Theme.border
         border.width: 1
         
         // PERFORMANCE: Only enable layer when popup is visible
         layer.enabled: root.visible && root.opened
         layer.effect: MultiEffect {
             shadowEnabled: true
-            shadowColor: NordicTheme.elevation.shadow_color_xl
-            shadowBlur: 24  // Reduced from 48
+            shadowColor: Theme.shadowColor
+            shadowBlur: 24
         }
     }
     
     contentItem: ColumnLayout {
         id: layout
-        spacing: NordicTheme.spacing.space_4
+        spacing: Theme.spacingSm
         
         // Handle (for BottomSheet)
         Item {
@@ -112,7 +105,7 @@ Popup {
             visible: root.variant === NordicModal.Variant.BottomSheet
             Rectangle {
                 anchors.fill: parent
-                color: NordicTheme.colors.border.emphasis
+                color: Theme.borderEmphasis
                 radius: 2
             }
         }
@@ -139,7 +132,7 @@ Popup {
         NordicText {
             text: root.message
             type: NordicText.Type.BodyLarge
-            color: NordicTheme.colors.text.secondary
+            color: Theme.textSecondary
             Layout.alignment: Qt.AlignHCenter
             Layout.fillWidth: true
             Layout.maximumWidth: 600
@@ -155,9 +148,9 @@ Popup {
         
         RowLayout {
             id: actionLayout
-            Layout.topMargin: NordicTheme.spacing.space_4
+            Layout.topMargin: Theme.spacingSm
             Layout.alignment: Qt.AlignHCenter
-            spacing: NordicTheme.spacing.space_4
+            spacing: Theme.spacingSm
         }
     }
 }

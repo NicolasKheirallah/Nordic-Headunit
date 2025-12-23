@@ -37,14 +37,14 @@ Rectangle {
             Rectangle {
                 width: 44; height: 44
                 radius: 8
-                color: tempMinusDriver.pressed ? NordicTheme.colors.bg.elevated : "transparent"
+                color: tempMinusDriver.pressed ? Theme.surfaceAlt : "transparent"
                 Layout.alignment: Qt.AlignVCenter
                 
                 NordicText {
                     anchors.centerIn: parent
                     text: "−"
                     type: NordicText.Type.TitleLarge
-                    color: NordicTheme.colors.text.secondary
+                    color: Theme.textSecondary
                 }
                 
                 MouseArea {
@@ -77,14 +77,14 @@ Rectangle {
             Rectangle {
                 width: 44; height: 44
                 radius: 8
-                color: tempPlusDriver.pressed ? NordicTheme.colors.bg.elevated : "transparent"
+                color: tempPlusDriver.pressed ? Theme.surfaceAlt : "transparent"
                 Layout.alignment: Qt.AlignVCenter
                 
                 NordicText {
                     anchors.centerIn: parent
                     text: "+"
                     type: NordicText.Type.TitleLarge
-                    color: NordicTheme.colors.text.secondary
+                    color: Theme.textSecondary
                 }
                 
                 MouseArea {
@@ -113,14 +113,14 @@ Rectangle {
             Rectangle {
                 width: 44; height: 44
                 radius: 8
-                color: tempMinusPass.pressed ? NordicTheme.colors.bg.elevated : "transparent"
+                color: tempMinusPass.pressed ? Theme.surfaceAlt : "transparent"
                 Layout.alignment: Qt.AlignVCenter
                 
                 NordicText {
                     anchors.centerIn: parent
                     text: "−"
                     type: NordicText.Type.TitleLarge
-                    color: NordicTheme.colors.text.secondary
+                    color: Theme.textSecondary
                 }
                 
                 MouseArea {
@@ -153,14 +153,14 @@ Rectangle {
             Rectangle {
                 width: 44; height: 44
                 radius: 8
-                color: tempPlusPass.pressed ? NordicTheme.colors.bg.elevated : "transparent"
+                color: tempPlusPass.pressed ? Theme.surfaceAlt : "transparent"
                 Layout.alignment: Qt.AlignVCenter
                 
                 NordicText {
                     anchors.centerIn: parent
                     text: "+"
                     type: NordicText.Type.TitleLarge
-                    color: NordicTheme.colors.text.secondary
+                    color: Theme.textSecondary
                 }
                 
                 MouseArea {
@@ -190,8 +190,8 @@ Rectangle {
                 width: 48; height: 48
                 radius: 8
                 color: VehicleService.leftSeatHeat 
-                    ? NordicTheme.colors.accent.primary 
-                    : NordicTheme.colors.bg.elevated
+                    ? Theme.accent 
+                    : Theme.surfaceAlt
                 
                 ColumnLayout {
                     anchors.centerIn: parent
@@ -221,8 +221,8 @@ Rectangle {
                 width: 48; height: 48
                 radius: 8
                 color: VehicleService.rightSeatHeat 
-                    ? NordicTheme.colors.accent.primary 
-                    : NordicTheme.colors.bg.elevated
+                    ? Theme.accent 
+                    : Theme.surfaceAlt
                 
                 ColumnLayout {
                     anchors.centerIn: parent
@@ -258,15 +258,15 @@ Rectangle {
             width: 64; height: 48
             radius: 8
             color: VehicleService.autoClimate 
-                ? NordicTheme.colors.accent.primary 
-                : NordicTheme.colors.bg.elevated
+                ? Theme.accent 
+                : Theme.surfaceAlt
             Layout.alignment: Qt.AlignVCenter
             
             NordicText {
                 anchors.centerIn: parent
                 text: "AUTO"
                 type: NordicText.Type.TitleSmall
-                color: VehicleService.autoClimate ? "white" : NordicTheme.colors.text.secondary
+                color: VehicleService.autoClimate ? "white" : Theme.textSecondary
             }
             
             MouseArea {
@@ -283,14 +283,14 @@ Rectangle {
             radius: 8
             color: VehicleService.defrostEnabled 
                 ? NordicTheme.colors.semantic.info 
-                : NordicTheme.colors.bg.elevated
+                : Theme.surfaceAlt
             Layout.alignment: Qt.AlignVCenter
             
             NordicIcon {
                 anchors.centerIn: parent
                 source: "qrc:/qt/qml/NordicHeadunit/assets/icons/weather_snow.svg"
                 size: NordicIcon.Size.MD
-                color: VehicleService.defrostEnabled ? "white" : NordicTheme.colors.text.secondary
+                color: VehicleService.defrostEnabled ? "white" : Theme.textSecondary
             }
             
             MouseArea {

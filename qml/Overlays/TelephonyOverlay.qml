@@ -8,9 +8,6 @@ Item {
     id: root
     
     // Visibility controlled by OverlayManager or Bindings
-    // But we also self-manage based on call state?
-    // Better to let OverlayManager/Bindings manage 'visible' property if possible,
-    // OR we bind visible to PhoneService state directly for robustness.
     visible: PhoneService.callState !== "Idle"
     
     // State: "Full" or "Mini"
@@ -30,32 +27,32 @@ Item {
     Rectangle {
         id: fullView
         anchors.fill: parent
-        color: NordicTheme.colors.bg.primary
+        color: Theme.background
         visible: root.viewMode === "Full"
         
         // Minimize Button (Top Right)
         NordicButton {
             anchors.right: parent.right
             anchors.top: parent.top
-            anchors.margins: NordicTheme.spacing.space_4
+            anchors.margins: Theme.spacingSm
             text: "Minimize"
             variant: NordicButton.Variant.Tertiary
             onClicked: root.viewMode = "Mini"
             z: 10
-            visible: PhoneService.callState === "Connected" // Only minimize connected calls
+            visible: PhoneService.callState === "Connected"
         }
         
         ColumnLayout {
             anchors.centerIn: parent
-            spacing: NordicTheme.spacing.space_8
+            spacing: Theme.spacingXl
             
             // Avatar / Icon
             Rectangle {
                 width: 160
                 height: 160
                 radius: 80
-                color: NordicTheme.colors.bg.elevated
-                border.color: NordicTheme.colors.accent.primary
+                color: Theme.surfaceAlt
+                border.color: Theme.accent
                 border.width: 3
                 Layout.alignment: Qt.AlignHCenter
                 
@@ -63,7 +60,7 @@ Item {
                     source: "qrc:/qt/qml/NordicHeadunit/assets/icons/phone.svg"
                     size: NordicIcon.Size.XXL
                     anchors.centerIn: parent
-                    color: NordicTheme.colors.accent.primary
+                    color: Theme.accent
                     scale: 1.5
                 }
                 
@@ -71,18 +68,18 @@ Item {
                 SequentialAnimation on border.color {
                     running: PhoneService.callState === "Incoming Call"
                     loops: Animation.Infinite
-                    ColorAnimation { to: NordicTheme.colors.semantic.success; duration: 800 }
-                    ColorAnimation { to: NordicTheme.colors.accent.primary; duration: 800 }
+                    ColorAnimation { to: Theme.success; duration: 800 }
+                    ColorAnimation { to: Theme.accent; duration: 800 }
                 }
             }
             
             // Info
             ColumnLayout {
                 Layout.alignment: Qt.AlignHCenter
-                spacing: NordicTheme.spacing.space_2
+                spacing: Theme.spacingXs
                 
                 NordicText {
-                    text: (PhoneService.activeContactName ?? "") !== "" ? PhoneService.activeContactName : (PhoneService.activeNumber ?? "Unknown")
+                    text: (PhoneService.callerName ?? "") !== "" ? PhoneService.callerName : (PhoneService.callerNumber ?? "Unknown")
                     type: NordicText.Type.DisplayMedium
                     Layout.alignment: Qt.AlignHCenter
                 }
@@ -90,7 +87,7 @@ Item {
                 NordicText {
                     text: PhoneService.callState === "Connected" ? qsTr("Connected") + " • " + PhoneService.callDuration : PhoneService.callState
                     type: NordicText.Type.HeadlineMedium
-                    color: PhoneService.callState === "Connected" ? NordicTheme.colors.semantic.success : NordicTheme.colors.text.secondary
+                    color: PhoneService.callState === "Connected" ? Theme.success : Theme.textSecondary
                     Layout.alignment: Qt.AlignHCenter
                 }
             }
@@ -98,13 +95,13 @@ Item {
             // Controls Container
             ColumnLayout {
                 Layout.alignment: Qt.AlignHCenter
-                spacing: NordicTheme.spacing.space_6
+                spacing: Theme.spacingLg
                 
                 // Secondary Controls (Grid)
                 GridLayout {
                     columns: 4
-                    columnSpacing: NordicTheme.spacing.space_6
-                    rowSpacing: NordicTheme.spacing.space_4
+                    columnSpacing: Theme.spacingLg
+                    rowSpacing: Theme.spacingSm
                     visible: PhoneService.callState === "Connected"
                     
                     // Keypad
@@ -114,12 +111,12 @@ Item {
                         variant: NordicButton.Variant.Secondary
                         size: NordicButton.Size.Lg
                         round: true
-                        onClicked: root.showKeypad = !root.showKeypad // Toggle keypad
+                        onClicked: root.showKeypad = !root.showKeypad
                     }
                     
                     // Audio Route
                     NordicButton {
-                        property int route: 0 // 0=Car, 1=Phone, 2=BT
+                        property int route: 0
                         iconSource: route === 0 ? "qrc:/qt/qml/NordicHeadunit/assets/icons/car.svg" : 
                                   route === 1 ? "qrc:/qt/qml/NordicHeadunit/assets/icons/phone.svg" : 
                                   "qrc:/qt/qml/NordicHeadunit/assets/icons/speaker.svg"
@@ -129,7 +126,6 @@ Item {
                         round: true
                         onClicked: {
                             route = (route + 1) % 3
-                            // Mock toast or logic here
                         }
                     }
                     
@@ -143,21 +139,22 @@ Item {
                         onClicked: { /* Mock Add Call */ }
                     }
                     
-                    // Mute
+                    // Mute (placeholder - PhoneService doesn't have mute property yet)
                     NordicButton {
-                        iconSource: PhoneService.muted ? "qrc:/qt/qml/NordicHeadunit/assets/icons/volume_off.svg" : "qrc:/qt/qml/NordicHeadunit/assets/icons/volume_up.svg"
-                        text: PhoneService.muted ? "Unmute" : "Mute"
-                        variant: PhoneService.muted ? NordicButton.Variant.Accent : NordicButton.Variant.Secondary
+                        property bool isMuted: false
+                        iconSource: isMuted ? "qrc:/qt/qml/NordicHeadunit/assets/icons/volume_off.svg" : "qrc:/qt/qml/NordicHeadunit/assets/icons/volume_up.svg"
+                        text: isMuted ? "Unmute" : "Mute"
+                        variant: isMuted ? NordicButton.Variant.Accent : NordicButton.Variant.Secondary
                         size: NordicButton.Size.Lg
                         round: true
-                        onClicked: PhoneService.muted = !PhoneService.muted
+                        onClicked: isMuted = !isMuted
                     }
                 }
                 
                 // Primary Action: Answer / End
                 RowLayout {
                     Layout.alignment: Qt.AlignHCenter
-                    spacing: NordicTheme.spacing.space_6
+                    spacing: Theme.spacingLg
                     
                     // Answer (Incoming Only)
                     NordicButton {
@@ -192,25 +189,17 @@ Item {
         width: 500
         height: 80
         radius: 40
-        color: NordicTheme.colors.bg.elevated
+        color: Theme.surfaceAlt
         border.width: 1
-        border.color: NordicTheme.colors.border.emphasis
+        border.color: Theme.borderEmphasis
         
         // Position: Bottom center, above Dock
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: 100 // Leave space for Dock
+        anchors.bottomMargin: 100
         anchors.horizontalCenter: parent.horizontalCenter
         
         // Shadow
         layer.enabled: true
-        /*
-        layer.effect: MultiEffect {
-            shadowEnabled: true
-            shadowBlur: 16
-            shadowOpacity: 0.4
-            shadowVerticalOffset: 4
-        }
-        */
         
         RowLayout {
             anchors.fill: parent
@@ -231,7 +220,7 @@ Item {
                     // Pulse Icon
                     Rectangle {
                         width: 12; height: 12; radius: 6
-                        color: NordicTheme.colors.semantic.success
+                        color: Theme.success
                         SequentialAnimation on opacity {
                             loops: Animation.Infinite
                             NumberAnimation { from: 1; to: 0.3; duration: 1000 }
@@ -242,14 +231,14 @@ Item {
                     ColumnLayout {
                         spacing: 0
                         NordicText {
-                            text: (PhoneService?.activeContactName || PhoneService?.activeNumber || "Unknown Object")
+                            text: (PhoneService.callerName ?? "") !== "" ? PhoneService.callerName : (PhoneService.callerNumber ?? "Unknown")
                             type: NordicText.Type.BodyLarge
                             font.weight: Font.Bold
                         }
                         NordicText {
                             text: PhoneService.callDuration
                             type: NordicText.Type.Caption
-                            color: NordicTheme.colors.semantic.success
+                            color: Theme.success
                         }
                     }
                 }
@@ -257,11 +246,12 @@ Item {
             
             // Mini Controls
             NordicButton {
-                variant: PhoneService.muted ? NordicButton.Variant.Primary : NordicButton.Variant.Secondary
-                text: PhoneService.muted ? "🔇" : "🔊"
+                property bool isMuted: false
+                variant: isMuted ? NordicButton.Variant.Primary : NordicButton.Variant.Secondary
+                text: isMuted ? "🔇" : "🔊"
                 size: NordicButton.Size.Sm
                 round: true
-                onClicked: PhoneService.muted = !PhoneService.muted
+                onClicked: isMuted = !isMuted
             }
             
             NordicButton {

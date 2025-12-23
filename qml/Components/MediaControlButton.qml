@@ -28,29 +28,29 @@ Rectangle {
     // Colors based on state - improved dark mode visibility
     color: {
         if (isPrimary) {
-            return mouseArea.pressed ? Qt.darker(NordicTheme.colors.accent.primary, 1.2) :
-                   mouseArea.containsMouse ? Qt.lighter(NordicTheme.colors.accent.primary, 1.1) :
-                   NordicTheme.colors.accent.primary
+            return mouseArea.pressed ? Theme.accentPressed :
+                   mouseArea.containsMouse ? Theme.accentHover :
+                   Theme.accent
         }
         if (isActive) {
-            return NordicTheme.colors.accent.primary
+            return Theme.accent
         }
         if (mouseArea.pressed) {
-            return NordicTheme.colors.bg.elevated
+            return Theme.surfaceAlt
         }
         if (mouseArea.containsMouse) {
-            return NordicTheme.colors.bg.surface
+            return Theme.surface
         }
         // Semi-transparent background for better visibility in dark mode
         return Qt.rgba(255, 255, 255, 0.08)
     }
     
     border.width: isPrimary || isActive ? 0 : 1
-    border.color: mouseArea.containsMouse ? NordicTheme.colors.accent.primary : 
+    border.color: mouseArea.containsMouse ? Theme.accent : 
                   Qt.rgba(255, 255, 255, 0.15)
     
     // Press animation for primary button
-    Behavior on scale { NumberAnimation { duration: 100 } }
+    Behavior on scale { NumberAnimation { duration: Theme.durationFast } }
     scale: isPrimary && mouseArea.pressed ? 0.95 : 1.0
     
     // Icon
@@ -59,9 +59,9 @@ Rectangle {
         source: root.iconSource
         size: root.iconSize
         color: {
-            if (isPrimary) return NordicTheme.colors.text.inverse
-            if (isActive) return NordicTheme.colors.text.inverse
-            return NordicTheme.colors.text.primary
+            if (isPrimary) return Theme.textInverse
+            if (isActive) return Theme.textInverse
+            return Theme.textPrimary
         }
     }
     

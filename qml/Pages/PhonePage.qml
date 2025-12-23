@@ -172,7 +172,7 @@ Page {
         Layout.fillWidth: true
         Layout.preferredHeight: 56
         radius: NordicTheme.shapes.radius_md
-        color: isActive ? NordicTheme.colors.accent.primary : 
+        color: isActive ? Theme.accent : 
                mouse.containsMouse ? NordicTheme.colors.bg.elevated : "transparent"
                
         RowLayout {
@@ -182,14 +182,14 @@ Page {
             
             NordicIcon {
                 source: icon
-                color: isActive ? NordicTheme.colors.text.inverse : NordicTheme.colors.text.secondary
+                color: isActive ? NordicTheme.colors.text.inverse : Theme.textSecondary
                 size: NordicIcon.Size.SM
             }
             
             NordicText {
                 text: parent.parent.text // Access outer text
                 type: NordicText.Type.BodyLarge
-                color: isActive ? NordicTheme.colors.text.inverse : NordicTheme.colors.text.secondary
+                color: isActive ? NordicTheme.colors.text.inverse : Theme.textSecondary
                 Layout.fillWidth: true
             }
         }
@@ -219,7 +219,7 @@ Page {
             NordicIcon {
                 Layout.alignment: Qt.AlignHCenter
                 source: icon
-                color: isActive ? NordicTheme.colors.accent.primary : NordicTheme.colors.text.secondary
+                color: isActive ? Theme.accent : Theme.textSecondary
                 size: NordicIcon.Size.SM
             }
             
@@ -227,7 +227,7 @@ Page {
                 Layout.alignment: Qt.AlignHCenter
                 text: parent.parent.text
                 type: NordicText.Type.Caption
-                color: isActive ? NordicTheme.colors.accent.primary : NordicTheme.colors.text.secondary
+                color: isActive ? Theme.accent : Theme.textSecondary
             }
         }
         

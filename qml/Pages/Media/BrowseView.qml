@@ -12,7 +12,7 @@ Item {
     
     // Safe property access
     readonly property var recentItems: MediaService?.recentItems ?? []
-    readonly property var radioStations: MediaService?.radioStations ?? []
+    // radioStations removed (using radioModel)
     readonly property var library: MediaService?.library ?? []
     
     ColumnLayout {
@@ -28,7 +28,7 @@ Item {
             NordicText {
                 text: qsTr("Recently Played")
                 type: NordicText.Type.TitleMedium
-                color: NordicTheme.colors.text.secondary
+                color: Theme.textSecondary
             }
             
             ListView {
@@ -45,7 +45,7 @@ Item {
                     width: 200
                     height: 88
                     radius: 12
-                    color: recentMouse.pressed ? NordicTheme.colors.bg.elevated : NordicTheme.colors.bg.surface
+                    color: recentMouse.pressed ? Theme.surfaceAlt : NordicTheme.colors.bg.surface
                     
                     RowLayout {
                         anchors.fill: parent
@@ -56,7 +56,7 @@ Item {
                         Rectangle {
                             width: 56; height: 56
                             radius: 10
-                            color: modelData.type === "station" ? NordicTheme.colors.semantic.info : NordicTheme.colors.accent.primary
+                            color: modelData.type === "station" ? Theme.info : Theme.accent
                             
                             NordicIcon {
                                 anchors.centerIn: parent
@@ -70,21 +70,18 @@ Item {
                             Layout.fillWidth: true
                             spacing: 2
                             
-                            Text {
+                            NordicText {
                                 text: modelData.title
-                                font.pixelSize: 14
-                                font.weight: Font.Medium
-                                font.family: "Helvetica"
-                                color: NordicTheme.colors.text.primary
+                                type: NordicText.Type.BodyMedium
+                                color: Theme.textPrimary
                                 Layout.fillWidth: true
                                 elide: Text.ElideRight
                             }
                             
-                            Text {
+                            NordicText {
                                 text: modelData.subtitle
-                                font.pixelSize: 12
-                                font.family: "Helvetica"
-                                color: NordicTheme.colors.text.tertiary
+                                type: NordicText.Type.Caption
+                                color: Theme.textTertiary
                                 Layout.fillWidth: true
                                 elide: Text.ElideRight
                             }
@@ -93,17 +90,16 @@ Item {
                             Rectangle {
                                 width: typeBadge.width + 8; height: 16
                                 radius: 4
-                                color: modelData.type === "station" ? Qt.rgba(NordicTheme.colors.semantic.info.r, NordicTheme.colors.semantic.info.g, NordicTheme.colors.semantic.info.b, 0.2) 
-                                     : Qt.rgba(NordicTheme.colors.accent.primary.r, NordicTheme.colors.accent.primary.g, NordicTheme.colors.accent.primary.b, 0.2)
+                                color: modelData.type === "station" ? Qt.rgba(Theme.info.r, Theme.info.g, Theme.info.b, 0.2) 
+                                     : Qt.rgba(Theme.accent.r, Theme.accent.g, Theme.accent.b, 0.2)
                                 
-                                Text {
+                                NordicText {
                                     id: typeBadge
                                     anchors.centerIn: parent
                                     text: modelData.type === "station" ? "Radio" : "Music"
-                                    font.pixelSize: 9
+                                    type: NordicText.Type.Caption
                                     font.weight: Font.Medium
-                                    font.family: "Helvetica"
-                                    color: modelData.type === "station" ? NordicTheme.colors.semantic.info : NordicTheme.colors.accent.primary
+                                    color: modelData.type === "station" ? Theme.info : Theme.accent
                                 }
                             }
                         }
@@ -129,7 +125,7 @@ Item {
                 NordicText {
                     text: qsTr("Radio Stations")
                     type: NordicText.Type.TitleMedium
-                    color: NordicTheme.colors.text.secondary
+                    color: Theme.textSecondary
                     Layout.fillWidth: true
                 }
                 
@@ -137,15 +133,14 @@ Item {
                     width: seeAllText.width + 16
                     height: 24
                     radius: 12
-                    color: seeAllMouse.pressed ? NordicTheme.colors.bg.elevated : "transparent"
+                    color: seeAllMouse.pressed ? Theme.surfaceAlt : "transparent"
                     
-                    Text {
+                    NordicText {
                         id: seeAllText
                         anchors.centerIn: parent
                         text: qsTr("See All")
-                        font.pixelSize: 13
-                        font.family: "Helvetica"
-                        color: NordicTheme.colors.accent.primary
+                        type: NordicText.Type.BodySmall
+                        color: Theme.accent
                     }
                     
                     MouseArea {
@@ -164,41 +159,38 @@ Item {
                 spacing: 12
                 clip: true
                 
-                model: root.radioStations
+                model: MediaService.radioModel
                 
                 delegate: Rectangle {
                     width: 140
                     height: 64
                     radius: 10
-                    color: modelData.active ? NordicTheme.colors.accent.primary :
-                           stationMouse.pressed ? NordicTheme.colors.bg.elevated : NordicTheme.colors.bg.surface
+                    color: model.active ? Theme.accent :
+                           stationMouse.pressed ? Theme.surfaceAlt : NordicTheme.colors.bg.surface
                     
                     Column {
                         anchors.centerIn: parent
                         spacing: 4
                         
-                        Text {
+                        NordicText {
                             anchors.horizontalCenter: parent.horizontalCenter
-                            text: modelData.frequency + " " + modelData.band
-                            font.pixelSize: 16
-                            font.weight: Font.Medium
-                            font.family: "Helvetica"
-                            color: modelData.active ? "white" : NordicTheme.colors.text.primary
+                            text: model.frequency + " " + model.band
+                            type: NordicText.Type.TitleMedium
+                            color: model.active ? "white" : Theme.textPrimary
                         }
                         
-                        Text {
+                        NordicText {
                             anchors.horizontalCenter: parent.horizontalCenter
-                            text: modelData.name
-                            font.pixelSize: 12
-                            font.family: "Helvetica"
-                            color: modelData.active ? Qt.rgba(1,1,1,0.7) : NordicTheme.colors.text.tertiary
+                            text: model.name
+                            type: NordicText.Type.Caption
+                            color: model.active ? Qt.rgba(1,1,1,0.7) : Theme.textTertiary
                         }
                     }
                     
                     MouseArea {
                         id: stationMouse
                         anchors.fill: parent
-                        onClicked: MediaService.tuneRadioByIndex(modelData.index)
+                        onClicked: MediaService.tuneRadioByIndex(index)
                     }
                 }
             }
@@ -213,7 +205,7 @@ Item {
             NordicText {
                 text: qsTr("Your Music")
                 type: NordicText.Type.TitleMedium
-                color: NordicTheme.colors.text.secondary
+                color: Theme.textSecondary
             }
             
             GridView {
@@ -234,7 +226,7 @@ Item {
                         anchors.fill: parent
                         anchors.margins: 6
                         radius: 10
-                        color: libMouse.pressed ? NordicTheme.colors.bg.elevated : NordicTheme.colors.bg.surface
+                        color: libMouse.pressed ? Theme.surfaceAlt : NordicTheme.colors.bg.surface
                         
                         RowLayout {
                             anchors.fill: parent
@@ -258,21 +250,18 @@ Item {
                                 Layout.fillWidth: true
                                 spacing: 2
                                 
-                                Text {
+                                NordicText {
                                     text: modelData.name
-                                    font.pixelSize: 14
-                                    font.weight: Font.Medium
-                                    font.family: "Helvetica"
-                                    color: NordicTheme.colors.text.primary
+                                    type: NordicText.Type.BodyMedium
+                                    color: Theme.textPrimary
                                     Layout.fillWidth: true
                                     elide: Text.ElideRight
                                 }
                                 
-                                Text {
+                                NordicText {
                                     text: modelData.count
-                                    font.pixelSize: 11
-                                    font.family: "Helvetica"
-                                    color: NordicTheme.colors.text.tertiary
+                                    type: NordicText.Type.Caption
+                                    color: Theme.textTertiary
                                 }
                             }
                         }

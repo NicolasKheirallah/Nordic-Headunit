@@ -30,7 +30,7 @@ Item {
                 Layout.preferredWidth: 48
                 Layout.preferredHeight: 48
                 radius: 24
-                color: NordicTheme.colors.accent.primary
+                color: Theme.accent
                 
                 NordicIcon {
                     anchors.centerIn: parent

@@ -17,13 +17,13 @@ Slider {
         width: control.availableWidth
         height: implicitHeight
         radius: 4
-        color: Qt.rgba(NordicTheme.colors.text.primary.r, NordicTheme.colors.text.primary.g, NordicTheme.colors.text.primary.b, 0.2)
+        color: Theme.withAlpha(Theme.textPrimary, 0.2)
         
         // Filled/Active portion
         Rectangle {
             width: control.visualPosition * parent.width
             height: parent.height
-            color: NordicTheme.colors.accent.primary
+            color: Theme.accent
             radius: 4
         }
     }
@@ -35,8 +35,8 @@ Slider {
         implicitWidth: 24
         implicitHeight: 24
         radius: 12
-        color: NordicTheme.colors.accent.primary // Specs say accent.primary
-        border.color: NordicTheme.colors.bg.primary // Small border to separate
+        color: Theme.accent
+        border.color: Theme.background
         border.width: 2
         
         // Shadow for thumb
@@ -56,7 +56,7 @@ Slider {
         
         Behavior on x { 
             enabled: !control.pressed
-            NumberAnimation { duration: NordicTheme.motion.duration_fast } 
+            NumberAnimation { duration: Theme.durationFast } 
         }
     }
 }

@@ -60,7 +60,7 @@ Item {
                     width: 4
                     height: parent.height * 0.35
                     radius: 2
-                    color: NordicTheme.colors.accent.primary
+                    color: Theme.accent
                     transformOrigin: Item.Bottom
                     rotation: -root.heading
                     y: parent.height / 2 - height
@@ -77,7 +77,7 @@ Item {
                     anchors.topMargin: 4
                     text: "N"
                     type: NordicText.Type.Caption
-                    color: NordicTheme.colors.accent.primary
+                    color: Theme.accent
                 }
             }
             

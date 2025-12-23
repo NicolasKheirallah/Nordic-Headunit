@@ -32,7 +32,7 @@ Item {
             anchors.fill: parent
             radius: NordicTheme.shapes.radius_xl
             gradient: Gradient {
-                GradientStop { position: 0.0; color: Qt.rgba(NordicTheme.colors.accent.primary.r, NordicTheme.colors.accent.primary.g, NordicTheme.colors.accent.primary.b, 0.15) }
+                GradientStop { position: 0.0; color: Qt.rgba(Theme.accent.r, Theme.accent.g, Theme.accent.b, 0.15) }
                 GradientStop { position: 1.0; color: "transparent" }
             }
         }
@@ -44,13 +44,13 @@ Item {
             NordicIcon { 
                 source: "qrc:/qt/qml/NordicHeadunit/assets/icons/map.svg"
                 size: NordicIcon.Size.XXL
-                color: NordicTheme.colors.accent.primary
+                color: Theme.accent
                 Layout.alignment: Qt.AlignHCenter
             }
             NordicText { 
                 text: qsTr("Navigation")
                 type: NordicText.Type.HeadlineMedium
-                color: NordicTheme.colors.accent.primary
+                color: Theme.accent
                 Layout.alignment: Qt.AlignHCenter
             }
             NordicText { 

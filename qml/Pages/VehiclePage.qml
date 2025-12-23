@@ -84,7 +84,7 @@ Page {
                                 text: root.connectionState + " · Ignition " + root.ignitionState
                                 font.pixelSize: 14
                                 font.family: "Helvetica"
-                                color: NordicTheme.colors.text.secondary
+                                color: Theme.textSecondary
                             }
                         }
                     }
@@ -269,7 +269,7 @@ Page {
                         font.pixelSize: 14
                         font.weight: Font.Medium
                         font.family: "Helvetica"
-                        color: NordicTheme.colors.text.secondary
+                        color: Theme.textSecondary
                     }
                     
                     RowLayout {
@@ -314,7 +314,7 @@ Page {
                         font.pixelSize: 14
                         font.weight: Font.Medium
                         font.family: "Helvetica"
-                        color: NordicTheme.colors.text.secondary
+                        color: Theme.textSecondary
                     }
                     
                     RowLayout {
@@ -333,14 +333,14 @@ Page {
                             text: Math.floor(root.tripTime / 60) + "h " + (root.tripTime % 60) + "m"
                             font.pixelSize: 14
                             font.family: "Helvetica"
-                            color: NordicTheme.colors.text.secondary
+                            color: Theme.textSecondary
                         }
                         
                         Text {
                             text: "Avg " + root.avgSpeed + " km/h"
                             font.pixelSize: 14
                             font.family: "Helvetica"
-                            color: NordicTheme.colors.text.secondary
+                            color: Theme.textSecondary
                         }
                         
                         Item { Layout.fillWidth: true }
@@ -349,7 +349,7 @@ Page {
                             text: root.fuelConsumption.toFixed(1) + " kWh/100km"
                             font.pixelSize: 14
                             font.family: "Helvetica"
-                            color: NordicTheme.colors.accent.primary
+                            color: Theme.accent
                         }
                     }
                 }

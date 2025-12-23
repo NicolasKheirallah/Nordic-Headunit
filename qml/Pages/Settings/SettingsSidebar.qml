@@ -16,7 +16,7 @@ Item {
     // Background (Glassmorphism Sidebar)
     Rectangle {
         anchors.fill: parent
-        color: NordicTheme.colors.bg.elevated
+        color: Theme.surfaceAlt
         // opacity: 0.8 // Can be tuned for glass effect
     }
     
@@ -41,12 +41,12 @@ Item {
                 id: itemDelegate
                 width: navList.width
                 height: 64
-                color: (index === root.selectedIndex) ? Qt.rgba(NordicTheme.colors.accent.primary.r, NordicTheme.colors.accent.primary.g, NordicTheme.colors.accent.primary.b, 0.15) : "transparent"
+                color: (index === root.selectedIndex) ? Qt.rgba(Theme.accent.r, Theme.accent.g, Theme.accent.b, 0.15) : "transparent"
                 
                 // Hover effect
                 Rectangle {
                     anchors.fill: parent
-                    color: Qt.rgba(NordicTheme.colors.text.primary.r, NordicTheme.colors.text.primary.g, NordicTheme.colors.text.primary.b, 0.1)
+                    color: Qt.rgba(Theme.textPrimary.r, Theme.textPrimary.g, Theme.textPrimary.b, 0.1)
                     visible: mouseArea.containsMouse && index !== root.selectedIndex
                 }
                 
@@ -55,7 +55,7 @@ Item {
                     width: 4; height: 32
                     anchors.left: parent.left
                     anchors.verticalCenter: parent.verticalCenter
-                    color: NordicTheme.colors.accent.primary
+                    color: Theme.accent
                     visible: index === root.selectedIndex
                     radius: 2
                 }
@@ -69,13 +69,13 @@ Item {
                     NordicIcon {
                         source: modelData.icon // Access via modelData for JS array
                         size: NordicIcon.Size.MD
-                        color: (index === root.selectedIndex) ? NordicTheme.colors.accent.primary : NordicTheme.colors.text.secondary
+                        color: (index === root.selectedIndex) ? Theme.accent : Theme.textSecondary
                     }
                     
                     NordicText {
                         text: modelData.title // Access via modelData for JS array
                         Layout.fillWidth: true
-                        color: (index === root.selectedIndex) ? NordicTheme.colors.text.primary : NordicTheme.colors.text.secondary
+                        color: (index === root.selectedIndex) ? Theme.textPrimary : Theme.textSecondary
                         type: NordicText.Type.BodyLarge
                     }
                 }

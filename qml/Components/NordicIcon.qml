@@ -11,7 +11,7 @@ Item {
     property int size: NordicIcon.Size.MD
     
     // Color property - applied via MultiEffect colorization
-    property color color: NordicTheme.colors.text.primary
+    property color color: Theme.textPrimary
     
     readonly property int iconSizePx: {
         switch (size) {

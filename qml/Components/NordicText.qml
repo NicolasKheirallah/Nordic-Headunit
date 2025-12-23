@@ -8,7 +8,7 @@ Item {
     // API
     property string text: ""
     property int type: NordicText.Type.BodyLarge
-    property color color: NordicTheme.colors.text.primary
+    property color color: Theme.textPrimary
     property int elide: Text.ElideRight
     property alias font: textItem.font
     property alias fontSizeMode: textItem.fontSizeMode

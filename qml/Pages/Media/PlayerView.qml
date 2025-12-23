@@ -110,7 +110,7 @@ Item {
                     width: parent.width * 0.9
                     height: parent.height * 0.9
                     radius: parent.width / 2 // Circular glow
-                    color: NordicTheme.colors.accent.primary
+                    color: Theme.accent
                     opacity: root.isPlaying ? 0.6 : 0 // Glow only when playing
                     
                     Behavior on opacity { NumberAnimation { duration: 600 } }
@@ -131,9 +131,9 @@ Item {
                     
                     // Gradient background
                     gradient: Gradient {
-                        GradientStop { position: 0.0; color: NordicTheme.colors.accent.primary }
-                        GradientStop { position: 0.5; color: Qt.darker(NordicTheme.colors.accent.primary, 1.3) }
-                        GradientStop { position: 1.0; color: NordicTheme.colors.accent.secondary }
+                        GradientStop { position: 0.0; color: Theme.accent }
+                        GradientStop { position: 0.5; color: Qt.darker(Theme.accent, 1.3) }
+                        GradientStop { position: 1.0; color: Theme.accentSecondary }
                     }
                     
                     // Music icon (default state)
@@ -173,7 +173,7 @@ Item {
                             // Arc effect via clip
                             Rectangle {
                                 width: 24; height: 48
-                                color: root.gradient ? NordicTheme.colors.accent.primary : "transparent"
+                                color: root.gradient ? Theme.accent : "transparent"
                                 anchors.right: parent.right
                             }
                             
@@ -275,7 +275,7 @@ Item {
                         Layout.preferredHeight: 24
                         Layout.preferredWidth: sourceRow.width + 16
                         radius: 12
-                        color: NordicTheme.colors.bg.elevated
+                        color: Theme.surfaceAlt
                         
                         Row {
                             id: sourceRow
@@ -292,14 +292,14 @@ Item {
                                     }
                                 }
                                 size: NordicIcon.Size.SM
-                                color: NordicTheme.colors.text.secondary
+                                color: Theme.textSecondary
                                 anchors.verticalCenter: parent.verticalCenter
                             }
                             
                             NordicText {
                                 text: root.currentSource
                                 type: NordicText.Type.Caption
-                                color: NordicTheme.colors.text.secondary
+                                color: Theme.textSecondary
                                 anchors.verticalCenter: parent.verticalCenter
                             }
                         }
@@ -308,14 +308,14 @@ Item {
                     NordicText {
                         text: root.trackTitle
                         type: NordicText.Type.DisplayMedium
-                        color: NordicTheme.colors.text.primary
+                        color: Theme.textPrimary
                         Layout.fillWidth: true
                     }
                     
                     NordicText {
                         text: root.trackArtist
                         type: NordicText.Type.TitleMedium
-                        color: NordicTheme.colors.accent.primary
+                        color: Theme.accent
                         Layout.fillWidth: true
                     }
                 }
@@ -351,7 +351,7 @@ Item {
                         anchors.centerIn: parent
                         width: 20; height: 20
                         radius: 10
-                        color: NordicTheme.colors.semantic.error
+                        color: Theme.danger
                         visible: parent.isLiked
                         opacity: 0.2 // Glow
                     }
@@ -366,12 +366,7 @@ Item {
                 spacing: NordicTheme.spacing.space_1
                 visible: !root.isRadioMode  // Hide for Radio
                 
-                function formatTime(seconds) {
-                    if (!seconds || isNaN(seconds)) return "0:00"
-                    var mins = Math.floor(seconds / 60)
-                    var secs = Math.floor(seconds % 60)
-                    return mins + ":" + (secs < 10 ? "0" : "") + secs
-                }
+                // Progress Timer function moved to Theme.formatTime
                 
                 NordicSlider {
                     id: progressSlider
@@ -387,15 +382,15 @@ Item {
                 RowLayout {
                     Layout.fillWidth: true
                     NordicText {
-                        text: parent.parent.formatTime(root.trackPosition)
+                        text: Theme.formatTime(root.trackPosition)
                         type: NordicText.Type.Caption
-                        color: NordicTheme.colors.text.tertiary
+                        color: Theme.textTertiary
                     }
                     Item { Layout.fillWidth: true }
                     NordicText {
-                        text: parent.parent.formatTime(root.trackDuration)
+                        text: Theme.formatTime(root.trackDuration)
                         type: NordicText.Type.Caption
-                        color: NordicTheme.colors.text.tertiary
+                        color: Theme.textTertiary
                     }
                 }
             }
@@ -455,6 +450,16 @@ Item {
                         onClicked: if (MediaService) MediaService.repeatEnabled = !MediaService.repeatEnabled
                         visible: !root.isRadioMode
                     }
+                    
+                    // Queue Button (Visible in compact/portrait when Up Next is hidden)
+                    MediaControlButton {
+                        size: root.controlSize * 0.75
+                        iconSource: "qrc:/qt/qml/NordicHeadunit/assets/icons/list.svg"
+                        iconSize: NordicIcon.Size.SM
+                        accessibleName: qsTr("Open Queue")
+                        onClicked: queueDrawer.open()
+                        visible: !root.isRadioMode && (!isLandscape || NordicTheme.layout.widthClass !== 2)
+                    }
                 }
             
             Item { Layout.fillHeight: true }
@@ -472,7 +477,7 @@ Item {
                 Layout.fillWidth: true
                 spacing: NordicTheme.spacing.space_2
                 
-                Rectangle { width: 3; height: 20; color: NordicTheme.colors.accent.primary; radius: 1 }
+                Rectangle { width: 3; height: 20; color: Theme.accent; radius: 1 }
                 NordicText { text: qsTr("Up Next"); type: NordicText.Type.TitleMedium }
                 Item { Layout.fillWidth: true }
             }
@@ -483,13 +488,13 @@ Item {
                 Layout.fillHeight: true
                 clip: true
                 spacing: NordicTheme.spacing.space_2
-                model: MediaService.playlist
+                model: MediaService.playlistModel
                 
                 delegate: Rectangle {
                     width: upNextList.width
                     height: 64
                     radius: NordicTheme.shapes.radius_md
-                    color: index === 0 ? NordicTheme.colors.bg.elevated :
+                    color: index === 0 ? Theme.surfaceAlt :
                            trackMouse.containsMouse ? NordicTheme.colors.bg.surface : "transparent"
                     
                     RowLayout {
@@ -507,7 +512,7 @@ Item {
                                 anchors.centerIn: parent
                                 source: "qrc:/qt/qml/NordicHeadunit/assets/icons/music.svg"
                                 size: NordicIcon.Size.SM
-                                color: index === 0 ? NordicTheme.colors.accent.primary : NordicTheme.colors.text.tertiary
+                                color: index === 0 ? Theme.accent : Theme.textTertiary
                             }
                         }
                         
@@ -518,7 +523,7 @@ Item {
                             NordicText {
                                 text: model.title ?? "Unknown"
                                 type: NordicText.Type.BodyMedium
-                                color: index === 0 ? NordicTheme.colors.accent.primary : NordicTheme.colors.text.primary
+                                color: index === 0 ? Theme.accent : Theme.textPrimary
                                 elide: Text.ElideRight
                                 Layout.fillWidth: true
                             }
@@ -526,16 +531,16 @@ Item {
                             NordicText {
                                 text: model.artist ?? ""
                                 type: NordicText.Type.Caption
-                                color: NordicTheme.colors.text.tertiary
+                                color: Theme.textTertiary
                                 elide: Text.ElideRight
                                 Layout.fillWidth: true
                             }
                         }
                         
                         NordicText {
-                            text: "3:45"
+                            text: Theme.formatTime(model.duration ?? 0)
                             type: NordicText.Type.Caption
-                            color: NordicTheme.colors.text.tertiary
+                            color: Theme.textTertiary
                         }
                     }
                     
@@ -560,7 +565,7 @@ Item {
         interactive: true
         
         background: Rectangle {
-            color: NordicTheme.colors.bg.elevated
+            color: Theme.surfaceAlt
             radius: NordicTheme.shapes.radius_xl
             
             // Glass effect
@@ -597,17 +602,27 @@ Item {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 clip: true
-                model: 10 // Mock queue
-                spacing: NordicTheme.spacing.space_2
+                model: MediaService.playlistModel
+                spacing: Theme.spacingXs
                 
                 delegate: NordicListItem {
                     width: ListView.view.width
-                    text: "Track Title " + (index + 1)
-                    secondaryText: "Artist Name"
-                    leading: Rectangle {
-                        width: 40; height: 40
-                        radius: 4
-                        color: NordicTheme.colors.accent.secondary
+                    text: model.title ?? ("Track " + (index + 1))
+                    secondaryText: model.artist ?? "Unknown Artist"
+                    
+                    leading: Component {
+                        Rectangle {
+                            width: 44; height: 44
+                            radius: Theme.radiusSm
+                            color: Theme.surfaceAlt
+                            
+                            NordicIcon {
+                                anchors.centerIn: parent
+                                source: "qrc:/qt/qml/NordicHeadunit/assets/icons/music.svg"
+                                size: NordicIcon.Size.SM
+                                color: Theme.accent
+                            }
+                        }
                     }
                 }
             }

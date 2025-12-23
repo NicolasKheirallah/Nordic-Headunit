@@ -124,7 +124,7 @@ Item {
             MapPolyline {
                 id: routeOutline
                 line.width: 14
-                line.color: Qt.darker(NordicTheme.colors.accent.primary, 1.6)
+                line.color: Qt.darker(Theme.accent, 1.6)
                 path: root.routePath
             }
             
@@ -132,7 +132,7 @@ Item {
             MapPolyline {
                 id: routeLine
                 line.width: 10
-                line.color: NordicTheme.colors.accent.primary
+                line.color: Theme.accent
                 path: root.routePath
             }
 
@@ -152,8 +152,8 @@ Item {
             MapPolygon {
                 id: rangeRing
                 visible: root.showRange
-                color: Qt.rgba(NordicTheme.colors.accent.primary.r, NordicTheme.colors.accent.primary.g, NordicTheme.colors.accent.primary.b, 0.15)
-                border.color: NordicTheme.colors.accent.primary
+                color: Qt.rgba(Theme.accent.r, Theme.accent.g, Theme.accent.b, 0.15)
+                border.color: Theme.accent
                 border.width: 2
                 path: root.generateRangeCircle(root.userLocation, 15000) // 15km Range Mock
             }
@@ -163,8 +163,8 @@ Item {
                 id: accuracyCircle
                 center: NavigationService.vehiclePosition
                 radius: 50 // Meters - would be dynamic from GPS accuracy
-                color: Qt.rgba(NordicTheme.colors.accent.primary.r, NordicTheme.colors.accent.primary.g, NordicTheme.colors.accent.primary.b, 0.1)
-                border.color: Qt.rgba(NordicTheme.colors.accent.primary.r, NordicTheme.colors.accent.primary.g, NordicTheme.colors.accent.primary.b, 0.3)
+                color: Qt.rgba(Theme.accent.r, Theme.accent.g, Theme.accent.b, 0.1)
+                border.color: Qt.rgba(Theme.accent.r, Theme.accent.g, Theme.accent.b, 0.3)
                 border.width: 2
                 
                 // Breathing animation
@@ -195,7 +195,7 @@ Item {
                         anchors.centerIn: parent
                         width: 60; height: 60
                         radius: 30
-                        color: NordicTheme.colors.accent.primary
+                        color: Theme.accent
                         opacity: 0.6
                     }
                     
@@ -221,7 +221,7 @@ Item {
                         id: pinIcon
                         source: "qrc:/qt/qml/NordicHeadunit/assets/icons/map.svg"
                         size: NordicIcon.Size.XL
-                        color: NordicTheme.colors.semantic.error // Red pin
+                        color: Theme.danger // Red pin
                         
                         // Valid name label
                         Rectangle {
@@ -229,7 +229,7 @@ Item {
                             anchors.horizontalCenter: parent.horizontalCenter
                             width: pinText.implicitWidth + 16
                             height: 24
-                            color: NordicTheme.colors.bg.elevated
+                            color: Theme.surfaceAlt
                             radius: 4
                             
                             NordicText {

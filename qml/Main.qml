@@ -172,7 +172,7 @@ ApplicationWindow {
                 source: "qrc:/qt/qml/NordicHeadunit/assets/icons/car.svg" // Logo placeholder
                 size: NordicIcon.Size.XL
                 Layout.alignment: Qt.AlignHCenter
-                color: NordicTheme.colors.accent.primary
+                color: Theme.accent
                 
                 // Pulse Animation
                 SequentialAnimation on opacity {

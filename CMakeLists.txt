@@ -5,7 +5,7 @@ project(NordicHeadunit VERSION 0.1 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 6.4 REQUIRED COMPONENTS Quick QuickControls2 QuickEffects LinguistTools Network Location Positioning)
+find_package(Qt6 6.4 REQUIRED COMPONENTS Quick QuickControls2 QuickEffects LinguistTools Network Location Positioning Multimedia)
 
 qt_standard_project_setup()
 
@@ -34,14 +34,26 @@ qt_add_executable(appNordicHeadunit
     src/HAL/SimulatedAudioHAL.cpp
     src/TranslationService.cpp
     src/TranslationService.h
+    src/Models/RadioModel.h
+    src/Models/RadioModel.cpp
+    src/Models/PlaylistModel.h
+    src/Models/PlaylistModel.cpp
 )
+
+# Declare singletons BEFORE qt_add_qml_module
+set_source_files_properties(qml/NordicTheme.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
+set_source_files_properties(qml/Theme/Theme.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
+set_source_files_properties(qml/Services/ConnectivityService.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
+
 
 qt_add_qml_module(appNordicHeadunit
     URI "NordicHeadunit"
     VERSION 1.0
+    # Singleton sources must be declared separately
     QML_FILES
         qml/Main.qml
         qml/NordicTheme.qml
+        qml/Theme/Theme.qml
         qml/Layouts/AppLayout.qml
         qml/Layouts/DockBar.qml
         qml/Layouts/StatusBar.qml
@@ -72,8 +84,7 @@ qt_add_qml_module(appNordicHeadunit
     qml/Overlays/VoiceOverlay.qml
     qml/Overlays/TelephonyOverlay.qml
     qml/Services/ConnectivityService.qml
-    qml/Services/PhoneService.qml
-    qml/Services/MediaService.qml
+
     qml/Services/AudioPolicy.qml
     qml/Overlays/OverlayManager.qml
     qml/Components/NordicButton.qml
@@ -135,6 +146,7 @@ qt_add_qml_module(appNordicHeadunit
     qml/Pages/Settings/PrivacySettings.qml
     qml/Pages/Settings/DateTimeSettings.qml
     qml/Pages/Settings/LanguageSettings.qml
+    qml/Pages/Settings/ThemePlayground.qml
     RESOURCES
         assets/icons/car.svg
         assets/icons/home.svg
@@ -185,6 +197,12 @@ qt_add_qml_module(appNordicHeadunit
         assets/icons/rear-window-defrost.svg
         assets/icons/navigation-arrow.svg
         assets/icons/check.svg
+        assets/icons/radio-tower.svg
+        assets/icons/cup-of-coffee.svg
+        assets/icons/food-dinner.svg
+        assets/icons/parking-location.svg
+        assets/icons/gas-station.svg
+        assets/icons/charging-station.svg
 )
 
 if(COMMAND qt6_add_translations)
@@ -209,14 +227,11 @@ else()
     )
 endif()
 
-# Add the Theme module as a singleton
-set_source_files_properties(qml/NordicTheme.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
-set_source_files_properties(qml/Services/ConnectivityService.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
-set_source_files_properties(qml/Services/PhoneService.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
+# Note: Singleton declarations are now before qt_add_qml_module above
 
 # Link against Qt modules
 target_link_libraries(appNordicHeadunit
-    PRIVATE Qt6::Quick Qt6::QuickControls2 Qt6::QuickEffects Qt6::Network Qt6::Location Qt6::Positioning
+    PRIVATE Qt6::Quick Qt6::QuickControls2 Qt6::QuickEffects Qt6::Network Qt6::Location Qt6::Positioning Qt6::Multimedia
 )
 
 # Resources

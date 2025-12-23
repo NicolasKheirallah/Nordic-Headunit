@@ -25,7 +25,7 @@ SettingsSubPage {
             ColumnLayout {
                 Layout.fillWidth: true
                 NordicText { text: "Data Sharing Control"; type: NordicText.Type.BodyLarge }
-                NordicText { text: "You are in control of what you share."; type: NordicText.Type.Caption; color: NordicTheme.colors.text.secondary }
+                NordicText { text: "You are in control of what you share."; type: NordicText.Type.Caption; color: Theme.textSecondary }
             }
         }
     }

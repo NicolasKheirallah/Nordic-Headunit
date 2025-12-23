@@ -3,72 +3,49 @@ import QtQuick.Layouts
 import QtQuick.Controls
 import NordicHeadunit
 
-Rectangle {
+// Settings Category - A titled section that groups related settings
+// Usage:
+//   SettingsCategory {
+//       title: "Theme"
+//       SettingsItem { ... }
+//       SettingsToggle { ... }
+//   }
+
+ColumnLayout {
+    id: root
+    
     property string title: ""
-    property string icon: "settings"
-    property string description: ""
-    signal clicked()
+    default property alias content: contentColumn.data
     
     Layout.fillWidth: true
-    Layout.preferredHeight: 90 // Touch friendly
-    Layout.leftMargin: NordicTheme.spacing.space_4
-    Layout.rightMargin: NordicTheme.spacing.space_4
-    Layout.topMargin: NordicTheme.spacing.space_2
+    spacing: Theme.spacingXs
+    Layout.bottomMargin: Theme.spacingMd
     
-    color: ma.containsMouse ? NordicTheme.colors.bg.elevated : NordicTheme.colors.bg.surface
-    radius: NordicTheme.shapes.radius_lg
-    
-    MouseArea {
-        id: ma
-        anchors.fill: parent
-        hoverEnabled: true
-        cursorShape: Qt.PointingHandCursor
-        onClicked: parent.clicked()
-    }
-    
+    // Section Header
     RowLayout {
-        anchors.fill: parent
-        anchors.margins: NordicTheme.spacing.space_4
-        spacing: NordicTheme.spacing.space_4
+        Layout.fillWidth: true
+        Layout.leftMargin: Theme.spacingSm
+        spacing: Theme.spacingXs
         
         Rectangle {
-            Layout.preferredWidth: 56
-            Layout.preferredHeight: 56
-            radius: NordicTheme.shapes.radius_md
-            color: NordicTheme.colors.accent.primary
-            opacity: 0.15
-            
-            NordicIcon {
-                anchors.centerIn: parent
-                source: "qrc:/qt/qml/NordicHeadunit/assets/icons/" + icon + ".svg"
-                color: NordicTheme.colors.accent.primary
-                size: NordicIcon.Size.LG
-            }
-        }
-        
-        ColumnLayout {
-            Layout.fillWidth: true
-            Layout.alignment: Qt.AlignVCenter
-            spacing: NordicTheme.spacing.space_1
-            
-            NordicText {
-                text: title
-                type: NordicText.Type.TitleMedium
-                color: NordicTheme.colors.text.primary
-            }
-            NordicText {
-                text: description
-                type: NordicText.Type.BodySmall
-                color: NordicTheme.colors.text.tertiary
-                elide: Text.ElideRight
-                Layout.fillWidth: true
-            }
+            width: 4
+            height: 20
+            radius: 2
+            color: Theme.accent
         }
         
         NordicText {
-            text: "›"
-            type: NordicText.Type.HeadlineMedium
-            color: NordicTheme.colors.text.tertiary
+            text: root.title
+            type: NordicText.Type.TitleSmall
+            color: Theme.textSecondary
+            Layout.fillWidth: true
         }
+    }
+    
+    // Content area for child items
+    ColumnLayout {
+        id: contentColumn
+        Layout.fillWidth: true
+        spacing: Theme.spacingXs
     }
 }

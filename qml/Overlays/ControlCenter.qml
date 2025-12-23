@@ -39,15 +39,16 @@ Item {
         anchors.top: parent.top
         anchors.topMargin: open ? 8 : -height
         
-        property int contentHeight: 280  // Capped height
+        property int contentHeight: 280
         
-        color: NordicTheme.colors.bg.surface
+        color: Theme.surface
         radius: 16
         
         // PERFORMANCE: Only enable layer effect when panel is open
         layer.enabled: root.open && root.visible
         layer.effect: MultiEffect {
             shadowEnabled: true
+            shadowColor: Theme.shadowColor
             shadowVerticalOffset: 4
             shadowBlur: 0.8
             shadowOpacity: 0.15
@@ -89,9 +90,9 @@ Item {
                     Layout.fillWidth: true
                     Layout.preferredHeight: 56
                     radius: 10
-                    color: !available ? NordicTheme.colors.bg.elevated :
-                           active ? NordicTheme.colors.accent.primary : 
-                           toggleMouse.pressed ? NordicTheme.colors.bg.elevated : NordicTheme.colors.bg.secondary
+                    color: !available ? Theme.surfaceAlt :
+                           active ? Theme.accent : 
+                           toggleMouse.pressed ? Theme.surfaceAlt : Theme.surface
                     opacity: available ? 1 : 0.5
                     
                     Column {
@@ -102,7 +103,7 @@ Item {
                             anchors.horizontalCenter: parent.horizontalCenter
                             source: toggleRoot.icon
                             size: NordicIcon.Size.SM
-                            color: toggleRoot.active ? "white" : NordicTheme.colors.text.secondary
+                            color: toggleRoot.active ? "white" : Theme.textSecondary
                         }
                         
                         Text {
@@ -110,7 +111,7 @@ Item {
                             text: toggleRoot.label
                             font.pixelSize: 11
                             font.family: "Helvetica"
-                            color: toggleRoot.active ? "white" : NordicTheme.colors.text.tertiary
+                            color: toggleRoot.active ? "white" : Theme.textTertiary
                         }
                     }
                     
@@ -176,7 +177,7 @@ Item {
                         ? "qrc:/qt/qml/NordicHeadunit/assets/icons/volume_off.svg" 
                         : "qrc:/qt/qml/NordicHeadunit/assets/icons/volume_up.svg"
                     size: NordicIcon.Size.MD
-                    color: NordicTheme.colors.text.secondary
+                    color: Theme.textSecondary
                 }
                 
                 NordicSlider {
@@ -191,7 +192,7 @@ Item {
                     text: SystemSettings.masterVolume + "%"
                     font.pixelSize: 14
                     font.family: "Helvetica"
-                    color: NordicTheme.colors.text.primary
+                    color: Theme.textPrimary
                     Layout.preferredWidth: 35
                 }
             }
@@ -201,7 +202,7 @@ Item {
             Rectangle {
                 Layout.fillWidth: true
                 height: 1
-                color: NordicTheme.colors.border.muted
+                color: Theme.borderMuted
             }
             
             // ═══════════════════════════════════════════════════════════════
@@ -229,21 +230,21 @@ Item {
                         text: stepRoot.label
                         font.pixelSize: 12
                         font.family: "Helvetica"
-                        color: NordicTheme.colors.text.secondary
+                        color: Theme.textSecondary
                         Layout.preferredWidth: 70
                     }
                     
                     Rectangle {
                         width: 28; height: 28
                         radius: 6
-                        color: stepMinus.pressed ? NordicTheme.colors.bg.elevated : NordicTheme.colors.bg.secondary
+                        color: stepMinus.pressed ? Theme.surfaceAlt : Theme.surface
                         
                         Text {
                             anchors.centerIn: parent
                             text: "−"
                             font.pixelSize: 16
                             font.family: "Helvetica"
-                            color: NordicTheme.colors.text.secondary
+                            color: Theme.textSecondary
                         }
                         
                         MouseArea {
@@ -258,13 +259,13 @@ Item {
                         Layout.fillWidth: true
                         Layout.preferredHeight: 6
                         radius: 3
-                        color: NordicTheme.colors.bg.elevated
+                        color: Theme.surfaceAlt
                         
                         Rectangle {
                             width: parent.width * (stepRoot.value / stepRoot.maxValue)
                             height: parent.height
                             radius: 3
-                            color: NordicTheme.colors.accent.primary
+                            color: Theme.accent
                         }
                     }
                     
@@ -272,21 +273,21 @@ Item {
                         text: stepRoot.value + "%"
                         font.pixelSize: 11
                         font.family: "Helvetica"
-                        color: NordicTheme.colors.text.tertiary
+                        color: Theme.textTertiary
                         Layout.preferredWidth: 32
                     }
                     
                     Rectangle {
                         width: 28; height: 28
                         radius: 6
-                        color: stepPlus.pressed ? NordicTheme.colors.bg.elevated : NordicTheme.colors.bg.secondary
+                        color: stepPlus.pressed ? Theme.surfaceAlt : Theme.surface
                         
                         Text {
                             anchors.centerIn: parent
                             text: "+"
                             font.pixelSize: 16
                             font.family: "Helvetica"
-                            color: NordicTheme.colors.text.secondary
+                            color: Theme.textSecondary
                         }
                         
                         MouseArea {
@@ -310,7 +311,7 @@ Item {
             Rectangle {
                 Layout.fillWidth: true
                 height: 1
-                color: NordicTheme.colors.border.muted
+                color: Theme.borderMuted
             }
             
             // ═══════════════════════════════════════════════════════════════
@@ -325,7 +326,7 @@ Item {
                     Layout.fillWidth: true
                     height: 44
                     radius: 8
-                    color: settingsMouse.pressed ? NordicTheme.colors.bg.elevated : NordicTheme.colors.bg.secondary
+                    color: settingsMouse.pressed ? Theme.surfaceAlt : Theme.surface
                     
                     RowLayout {
                         anchors.centerIn: parent
@@ -334,7 +335,7 @@ Item {
                         NordicIcon {
                             source: "qrc:/qt/qml/NordicHeadunit/assets/icons/settings.svg"
                             size: NordicIcon.Size.SM
-                            color: NordicTheme.colors.text.secondary
+                            color: Theme.textSecondary
                         }
                         
                         Text {
@@ -342,7 +343,7 @@ Item {
                             font.pixelSize: 13
                             font.weight: Font.Medium
                             font.family: "Helvetica"
-                            color: NordicTheme.colors.text.primary
+                            color: Theme.textPrimary
                         }
                     }
                     

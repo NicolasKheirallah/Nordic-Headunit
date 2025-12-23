@@ -21,7 +21,7 @@ SettingsSubPage {
         // Small indicator if off
         rightComponent: StatusIndicator {
             active: SystemSettings.wifiEnabled
-            color: active ? NordicTheme.colors.semantic.success : NordicTheme.colors.text.tertiary
+            color: active ? NordicTheme.colors.semantic.success : Theme.textTertiary
             iconSource: "qrc:/qt/qml/NordicHeadunit/assets/icons/wifi.svg"
             width: 24; height: 24
         }
@@ -36,7 +36,7 @@ SettingsSubPage {
         
         rightComponent: StatusIndicator {
             active: SystemSettings.bluetoothEnabled
-            color: active ? NordicTheme.colors.accent.primary : NordicTheme.colors.text.tertiary
+            color: active ? Theme.accent : Theme.textTertiary
             iconSource: "qrc:/qt/qml/NordicHeadunit/assets/icons/bluetooth.svg"
             width: 24; height: 24
         }

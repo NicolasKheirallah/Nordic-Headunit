@@ -22,7 +22,7 @@ SettingsSubPage {
             NordicText {
                 text: "Map Appearance"
                 type: NordicText.Type.TitleMedium
-                color: NordicTheme.colors.text.secondary
+                color: Theme.textSecondary
                 Layout.leftMargin: 8
             }
             
@@ -43,7 +43,7 @@ SettingsSubPage {
                     onClicked: SystemSettings.mapStyle = styleIndex
                     
                     // Highlight border if selected
-                    border.color: isSelected ? NordicTheme.colors.accent.primary : "transparent"
+                    border.color: isSelected ? Theme.accent : "transparent"
                     border.width: 2
                     
                     // Preview Rect
@@ -69,7 +69,7 @@ SettingsSubPage {
                             anchors.margins: 8
                             width: 24; height: 24
                             radius: 12
-                            color: NordicTheme.colors.accent.primary
+                            color: Theme.accent
                             visible: isSelected
                             
                             NordicIcon {
@@ -107,7 +107,7 @@ SettingsSubPage {
             NordicText {
                 text: "Guidance & Routing"
                 type: NordicText.Type.TitleMedium
-                color: NordicTheme.colors.text.secondary
+                color: Theme.textSecondary
                 Layout.leftMargin: 8
                 Layout.bottomMargin: 8
             }
@@ -147,7 +147,7 @@ SettingsSubPage {
             NordicText {
                 text: "Display"
                 type: NordicText.Type.TitleMedium
-                color: NordicTheme.colors.text.secondary
+                color: Theme.textSecondary
                 Layout.leftMargin: 8
                 Layout.bottomMargin: 8
             }
@@ -172,7 +172,7 @@ SettingsSubPage {
             NordicText {
                 text: "Cache"
                 type: NordicText.Type.TitleMedium
-                color: NordicTheme.colors.text.secondary
+                color: Theme.textSecondary
                 Layout.leftMargin: 8
                 Layout.bottomMargin: 8
             }
@@ -184,7 +184,7 @@ SettingsSubPage {
                 NordicText {
                     text: "Map tiles are cached for offline use"
                     type: NordicText.Type.BodyMedium
-                    color: NordicTheme.colors.text.secondary
+                    color: Theme.textSecondary
                     Layout.fillWidth: true
                 }
                 

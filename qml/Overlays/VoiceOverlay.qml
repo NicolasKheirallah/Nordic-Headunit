@@ -15,7 +15,7 @@ Item {
         width: parent.width
         height: 200
         anchors.bottom: parent.bottom
-        color: NordicTheme.colors.bg.elevated
+        color: Theme.surfaceAlt
         
         // Visualizer
         RowLayout {
@@ -25,9 +25,9 @@ Item {
                 model: 5
                 Rectangle {
                     width: 8
-                    height: 40 + Math.random() * 40 // Mock waveform
+                    height: 40 + Math.random() * 40
                     radius: 4
-                    color: NordicTheme.colors.accent.primary
+                    color: Theme.accent
                     
                     SequentialAnimation on height {
                         loops: Animation.Infinite

@@ -12,7 +12,7 @@
 #include "src/MediaService.h"
 #include "src/NavigationService.h"
 #include "src/PhoneService.h"
-#include "src/PhoneService.h"
+
 #include "src/LayoutService.h"
 #include "src/TranslationService.h"
 #include <QQmlContext>
@@ -76,7 +76,7 @@ int main(int argc, char *argv[])
     qmlRegisterSingletonInstance("NordicHeadunit", 1, 0, "MediaService", media);
     qmlRegisterSingletonInstance("NordicHeadunit", 1, 0, "NavigationService", nav);
     qmlRegisterSingletonInstance("NordicHeadunit", 1, 0, "PhoneService", phone);
-    qmlRegisterSingletonInstance("NordicHeadunit", 1, 0, "PhoneService", phone);
+
     qmlRegisterSingletonInstance("NordicHeadunit", 1, 0, "LayoutService", layoutService);
     qmlRegisterSingletonInstance("NordicHeadunit", 1, 0, "TranslationService", translationService);
 

@@ -79,7 +79,7 @@ SettingsSubPage {
                     anchors.centerIn: parent
                     text: modelData
                     type: NordicText.Type.BodyLarge
-                    color: isSelected ? NordicTheme.colors.accent.primary : NordicTheme.colors.text.primary
+                    color: isSelected ? Theme.accent : Theme.textPrimary
                 }
                 
                 MouseArea {
@@ -125,7 +125,7 @@ SettingsSubPage {
                 id: tumblerDelegate
                 Text {
                     text: modelData
-                    color: Tumbler.displacement === 0 ? NordicTheme.colors.accent.primary : NordicTheme.colors.text.secondary
+                    color: Tumbler.displacement === 0 ? Theme.accent : Theme.textSecondary
                     font.pixelSize: 24
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
