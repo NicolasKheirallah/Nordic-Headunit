@@ -22,10 +22,17 @@ qt_add_executable(appNordicHeadunit
     src/VehicleService.h
     src/MediaService.cpp
     src/MediaService.h
+    src/RadioTuner.cpp
+    src/RadioTuner.h
+    src/MediaLibrary.cpp
+    src/MediaLibrary.h
     src/NavigationService.cpp
     src/NavigationService.h
     src/PhoneService.cpp
+    src/PhoneService.cpp
     src/PhoneService.h
+    src/ContactsModel.cpp
+    src/ContactsModel.h
     src/HAL/IVehicleHAL.h
     src/HAL/SimulatedVehicleHAL.h
     src/HAL/SimulatedVehicleHAL.cpp
@@ -70,6 +77,7 @@ qt_add_qml_module(appNordicHeadunit
     qml/Pages/Phone/KeypadView.qml
     qml/Pages/Phone/ContactsView.qml
     qml/Pages/Phone/FavoritesView.qml
+    qml/Pages/Phone/ActiveCallView.qml
     qml/Pages/Phone/RecentsView.qml
     qml/Pages/Media/PlayerView.qml
     qml/Pages/Media/BrowseView.qml
@@ -190,6 +198,8 @@ qt_add_qml_module(appNordicHeadunit
         assets/icons/search.svg
         assets/icons/mic.svg
         assets/icons/turn_right.svg
+        assets/icons/turn_left.svg
+        assets/icons/u_turn.svg
         assets/icons/fan.svg
         assets/icons/windscreen_defrost.svg
         assets/icons/heated-front-seat.svg
@@ -203,6 +213,7 @@ qt_add_qml_module(appNordicHeadunit
         assets/icons/parking-location.svg
         assets/icons/gas-station.svg
         assets/icons/charging-station.svg
+        assets/icons/chevron_down.svg
 )
 
 if(COMMAND qt6_add_translations)
@@ -231,7 +242,29 @@ endif()
 
 # Link against Qt modules
 target_link_libraries(appNordicHeadunit
-    PRIVATE Qt6::Quick Qt6::QuickControls2 Qt6::QuickEffects Qt6::Network Qt6::Location Qt6::Positioning Qt6::Multimedia
+    PRIVATE Qt6::Quick
+    PRIVATE Qt6::QuickControls2
+    PRIVATE Qt6::QuickEffects
+    PRIVATE Qt6::Network
+    PRIVATE Qt6::Location
+    PRIVATE Qt6::Positioning
+    PRIVATE Qt6::Multimedia
+    PRIVATE Qt6::Concurrent
+)
+
+# Test Target
+add_executable(test_media
+    src/tests/MediaTest.cpp
+    src/RadioTuner.cpp
+    src/Models/RadioModel.cpp
+    src/MediaLibrary.cpp
+    src/Models/PlaylistModel.cpp
+)
+target_include_directories(test_media PRIVATE src)
+target_link_libraries(test_media
+    PRIVATE Qt6::Core
+    PRIVATE Qt6::Multimedia
+    PRIVATE Qt6::Concurrent
 )
 
 # Resources

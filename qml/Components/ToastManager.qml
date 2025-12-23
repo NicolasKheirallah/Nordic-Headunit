@@ -44,13 +44,20 @@ Item {
             height: toastLoader.height
             
             // Animation for insert
-            ListView.onAdd: SequentialAnimation {
+            // Animation for insert
+            ListView.onAdd: addAnim.start()
+            
+            SequentialAnimation {
+                id: addAnim
                 NumberAnimation { target: toastLoader; property: "opacity"; from: 0; to: 1; duration: NordicTheme.motion.duration_fast }
                 NumberAnimation { target: toastLoader; property: "y"; from: 20; to: 0; duration: NordicTheme.motion.duration_fast; easing.type: Easing.OutCubic }
             }
             
             // Animation for remove
-            ListView.onRemove: SequentialAnimation {
+            ListView.onRemove: removeAnim.start()
+            
+            SequentialAnimation {
+                id: removeAnim
                 NumberAnimation { target: toastLoader; property: "opacity"; to: 0; duration: NordicTheme.motion.duration_fastest }
                 ScriptAction { script: toastLoader.destroy() } // Optional cleanup if we manual
             }

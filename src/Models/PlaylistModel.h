@@ -30,6 +30,7 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
     void addTrack(const Track &track);
+    void setTracks(const QList<Track> &tracks);
     void clear();
     Track getTrack(int index) const;
 

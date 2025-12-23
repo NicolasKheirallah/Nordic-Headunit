@@ -92,7 +92,7 @@ Page {
         y: isActive ? 24 : -height - 20
         Behavior on y { NumberAnimation { duration: 600; easing.type: Easing.OutExpo } }
 
-        maneuverIcon: "qrc:/qt/qml/NordicHeadunit/assets/icons/turn_right.svg" // Bound to Service later
+        maneuverIcon: NavigationService.maneuverIcon || "qrc:/qt/qml/NordicHeadunit/assets/icons/turn_right.svg"
         distance: NavigationService.distanceToManeuver
         instruction: NavigationService.nextManeuver
         roadName: NavigationService.currentRoadName || "Unknown Road"

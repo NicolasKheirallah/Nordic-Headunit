@@ -3,44 +3,46 @@
 
 #include <QtMultimedia/QMediaPlayer>
 #include <QtMultimedia/QAudioOutput>
-#include "Models/RadioModel.h"
-#include "Models/PlaylistModel.h"
+#include <QTimer>
+#include "RadioTuner.h"
+#include "MediaLibrary.h"
 
 class MediaService : public QObject
 {
     Q_OBJECT
     
-    // Current playback
+    // Core Playback Properties
     Q_PROPERTY(QString title READ title NOTIFY trackChanged)
     Q_PROPERTY(QString artist READ artist NOTIFY trackChanged)
-    Q_PROPERTY(QString coverSource READ coverSource NOTIFY trackChanged)
+    Q_PROPERTY(QString coverSource READ coverSource NOTIFY trackChanged) 
     Q_PROPERTY(bool playing READ playing WRITE setPlaying NOTIFY playingChanged)
     Q_PROPERTY(qint64 position READ position NOTIFY positionChanged)
     Q_PROPERTY(qint64 duration READ duration NOTIFY trackChanged)
     Q_PROPERTY(double progress READ progress NOTIFY positionChanged)
-    
-    // Playback controls state
+     
+    // Controls
     Q_PROPERTY(bool shuffleEnabled READ shuffleEnabled WRITE setShuffleEnabled NOTIFY shuffleEnabledChanged)
     Q_PROPERTY(bool repeatEnabled READ repeatEnabled WRITE setRepeatEnabled NOTIFY repeatEnabledChanged)
-    
-    // Source management
     Q_PROPERTY(QString currentSource READ currentSource WRITE setCurrentSource NOTIFY currentSourceChanged)
     Q_PROPERTY(bool isRadioMode READ isRadioMode NOTIFY currentSourceChanged)
     Q_PROPERTY(QVariantList sources READ sources NOTIFY sourcesChanged)
     
-    // Models (Production)
-    Q_PROPERTY(RadioModel* radioModel READ radioModel CONSTANT)
-    Q_PROPERTY(PlaylistModel* playlistModel READ playlistModel CONSTANT)
-    Q_PROPERTY(QVariantList recentItems READ recentItems NOTIFY recentItemsChanged)
-    Q_PROPERTY(QVariantList library READ library CONSTANT)
+    // Sub-components (Exposed to QML)
+    Q_PROPERTY(RadioTuner* radio READ radio CONSTANT)
+    Q_PROPERTY(MediaLibrary* library READ library CONSTANT)
     
-    // Radio-specific
-    Q_PROPERTY(QString radioFrequency READ radioFrequency NOTIFY radioChanged)
-    Q_PROPERTY(QString radioName READ radioName NOTIFY radioChanged)
+    // Legacy/Convenience properties for Radio View compatibility
+    Q_PROPERTY(QString radioFrequency READ radioFrequency NOTIFY radioChanged) // Proxy
+    Q_PROPERTY(QString radioName READ radioName NOTIFY radioChanged) // Proxy
     Q_PROPERTY(int currentRadioIndex READ currentRadioIndex NOTIFY radioChanged)
-    
-    // Connection state
-    Q_PROPERTY(bool isConnected READ isConnected NOTIFY connectionChanged)
+    Q_PROPERTY(int currentBand READ currentBand WRITE setBand NOTIFY radioChanged) // int for simple QML bind
+
+    // Convenience properties for Browse View compatibility
+    Q_PROPERTY(QVariantList recentItems READ recentItems NOTIFY recentItemsChanged)
+    Q_PROPERTY(QVariantList libraryCategories READ libraryCategories CONSTANT)
+
+    // Connection
+    Q_PROPERTY(bool isConnected READ isConnected CONSTANT) 
     Q_PROPERTY(bool isLoading READ isLoading NOTIFY loadingChanged)
     Q_PROPERTY(bool hasError READ hasError NOTIFY errorChanged)
     Q_PROPERTY(QString errorMessage READ errorMessage NOTIFY errorChanged)
@@ -48,7 +50,7 @@ class MediaService : public QObject
 public:
     explicit MediaService(QObject *parent = nullptr);
 
-    // Track info
+    // Getters
     QString title() const;
     QString artist() const;
     QString coverSource() const;
@@ -57,105 +59,115 @@ public:
     qint64 duration() const;
     double progress() const;
     
-    // Playback controls state
     bool shuffleEnabled() const;
     void setShuffleEnabled(bool enabled);
     bool repeatEnabled() const;
     void setRepeatEnabled(bool enabled);
     
-    // Source management
     QString currentSource() const;
     void setCurrentSource(const QString &source);
     bool isRadioMode() const;
     QVariantList sources() const;
-    RadioModel* radioModel() const;
-    PlaylistModel* playlistModel() const;
-    QVariantList recentItems() const;
-    QVariantList library() const;
-    
-    // Radio
+
+    RadioTuner* radio() const;
+    MediaLibrary* library() const;
+
+    // Proxy Radio Getters
     QString radioFrequency() const;
     QString radioName() const;
     int currentRadioIndex() const;
-    
-    // Connection state
+    int currentBand() const;
+    Q_INVOKABLE void setBand(int band);
+
+    // Proxy Library Getters
+    QVariantList recentItems() const;
+    QVariantList libraryCategories() const;
+
     bool isConnected() const;
     bool isLoading() const;
     bool hasError() const;
     QString errorMessage() const;
 
-    // Playback controls
+    // Invokables
     Q_INVOKABLE void play();
     Q_INVOKABLE void pause();
+    Q_INVOKABLE void togglePlayPause();
     Q_INVOKABLE void next();
     Q_INVOKABLE void previous();
-    Q_INVOKABLE void togglePlayPause();
     Q_INVOKABLE void seek(qint64 position);
     Q_INVOKABLE void setSource(const QString &source);
-    Q_INVOKABLE void tuneRadio(const QString &frequency);
+    
+    Q_INVOKABLE void playTrack(int index);
+    Q_INVOKABLE void playFromRecent(int index);
+    
+    // Radio specific proxies (to minimize QML rewrite, but redirect to Tuner)
     Q_INVOKABLE void tuneRadioByIndex(int index);
-    Q_INVOKABLE void tuneToFrequency(const QString &frequency);
     Q_INVOKABLE void tuneStep(double step);
     Q_INVOKABLE void seekForward();
     Q_INVOKABLE void seekBackward();
     Q_INVOKABLE void scanRadioStations();
-    Q_INVOKABLE void playTrack(int index);
-    Q_INVOKABLE void playFromRecent(int index);
-    Q_INVOKABLE void playPlaylist(const QString &name);
     Q_INVOKABLE bool saveCurrentToPreset();
     
+    // Library specific
+    Q_INVOKABLE void toggleLike(); // Uses current track
+    Q_INVOKABLE bool isLiked() const;
+
     void setPlaying(bool playing);
 
 signals:
     void trackChanged();
     void playingChanged(bool playing);
     void positionChanged();
-    void currentSourceChanged();
-    void radioChanged();
-    void recentItemsChanged();
-    void sourcesChanged();
-    void radioStationsChanged(); // Keep for compatibility if needed, but model handles changes
     void shuffleEnabledChanged();
     void repeatEnabledChanged();
-    void playlistChanged();
-    void connectionChanged();
+    void currentSourceChanged();
+    void sourcesChanged();
+    void radioChanged();
+    void recentItemsChanged();
     void loadingChanged();
     void errorChanged();
 
 private slots:
-    void onMediaPlayerPositionChanged(qint64 position);
-    void onMediaPlayerDurationChanged(qint64 duration);
-    void onMediaPlayerStatusChanged(QMediaPlayer::MediaStatus status);
-    void onMediaPlayerErrorOccurred(QMediaPlayer::Error error, const QString &errorString);
+    void onMPlayerPositionChanged(qint64 position);
+    void onMPlayerDurationChanged(qint64 duration);
+    void onMPlayerStatusChanged(QMediaPlayer::MediaStatus status);
+    
+    // Handle sub-component signals
+    void onRadioFrequencyChanged();
+    void onLibraryUpdated();
 
 private:
-    // Production components
     QMediaPlayer *m_player;
     QAudioOutput *m_audioOutput;
-    PlaylistModel *m_playlistModel;
-    RadioModel *m_radioModel;
+    
+    RadioTuner *m_radioTuner;
+    MediaLibrary *m_mediaLibrary;
 
     // State
+    QString m_currentSource;
     int m_currentIndex;
     bool m_shuffleEnabled;
     bool m_repeatEnabled;
+    bool m_isSimulating; // Still need sim for files?
     
-    // Source state
-    QString m_currentSource;
-    int m_currentRadioIndex;
-    double m_currentFrequency; // Actual tuner frequency
-    
-    // Connection state
+    // Simulation
+    QTimer *m_simTimer;
+    qint64 m_simPos;
+    qint64 m_simDur;
+    void startSimulation(qint64 dur);
+    void stopSimulation();
+    void updateSimulation();
+
+    // Source Memory
+    QMap<QString, qint64> m_lastPos;
+    QMap<QString, int> m_lastIndex;
+
     bool m_isConnected;
     bool m_isLoading;
-    
-    // Per-source resume positions
-    QMap<QString, qint64> m_lastPosition;
-    QMap<QString, int> m_lastTrackIndex;
-    
-    void loadMockData(); // Helper to populate models
-    void savePresets();
-    void loadPresets();
+
+    void playRadio();
+    void stopRadio();
+    void playFile(const QString &url);
 };
 
 #endif // MEDIASERVICE_H

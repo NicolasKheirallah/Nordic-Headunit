@@ -213,7 +213,7 @@ Item {
                     Row {
                         anchors.centerIn: parent
                         spacing: NordicTheme.spacing.space_1
-                        visible: root.isPlaying
+                        visible: root.isPlaying && !root.isRadioMode
                         Repeater {
                             model: 5
                             Rectangle {
@@ -224,7 +224,7 @@ Item {
                                 anchors.verticalCenter: parent.verticalCenter
                                 SequentialAnimation on height {
                                     loops: Animation.Infinite
-                                    running: root.isPlaying
+                                    running: parent.visible // Only run if parent row is visible
                                     NumberAnimation { 
                                         to: root.artSize * root.vizAnimMaxHeightRatio + (index + 1) * root.artSize * root.vizAnimStepRatio
                                         duration: root.vizAnimBaseDuration + index * root.vizAnimStepDuration
@@ -322,38 +322,30 @@ Item {
                 
                 // Like Button
                 NordicButton {
-                    property bool isLiked: false
-                    variant: NordicButton.Variant.Icon
-                    iconSource: isLiked ? "qrc:/qt/qml/NordicHeadunit/assets/icons/heart_filled.svg" : "qrc:/qt/qml/NordicHeadunit/assets/icons/heart.svg"
-                    // If heart_filled.svg doesn't exist, we color the heart red.
-                    // Assuming we use the same icon but change color/fill.
-                    // Let's use color tint for now if SVG is outline.
+                    id: likeBtn
                     
-                    // Actually, let's just use color.
+                    // Direct binding updates automatically when MediaService emits relevant change signals
+                    // But isLiked() is a function, not a property. 
+                    // So we must listen to signal.
+                    property bool likedState: false
 
+                    Connections {
+                        target: MediaService
+                        function onTrackChanged() { likeBtn.likedState = MediaService.isLiked() }
+                    }
+                    Component.onCompleted: likedState = MediaService.isLiked()
+
+                    variant: NordicButton.Variant.Icon
+                    iconSource: "qrc:/qt/qml/NordicHeadunit/assets/icons/heart.svg"
                     
-                    // Custom tint for the icon inside button? NordicButton doesn't expose iconColor directly easily without looking at implementation details (it uses styling).
-                    // But we can overwrite contentItem or just use transparency/variant.
-                    // Let's assume standard behavior:
+                    color: likedState ? Theme.accent : "transparent"
                     
                     onClicked: {
-                        isLiked = !isLiked
-                        // Haptic feedback would go here
-                    }
-                    
-                    // Animate color manually if needed, or rely on state.
-                    // Let's overlay a colored icon if liked? 
-                    // Simpler: Just toggle opacity or color if possible. 
-                    // Let's using the ScaleAnimator which is built-in now!
-                    
-                    // Visual hack for "Filled" state if no filled icon:
-                    Rectangle {
-                        anchors.centerIn: parent
-                        width: 20; height: 20
-                        radius: 10
-                        color: Theme.danger
-                        visible: parent.isLiked
-                        opacity: 0.2 // Glow
+                        if (MediaService) { 
+                            MediaService.toggleLike()
+                            // Optimistic update
+                            likedState = !likedState 
+                        }
                     }
                 }
             }

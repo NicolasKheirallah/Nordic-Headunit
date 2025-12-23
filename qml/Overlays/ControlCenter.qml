@@ -39,7 +39,7 @@ Item {
         anchors.top: parent.top
         anchors.topMargin: open ? 8 : -height
         
-        property int contentHeight: 280
+        property int contentHeight: column.implicitHeight + 32
         
         color: Theme.surface
         radius: 16
@@ -63,6 +63,7 @@ Item {
         }
         
         ColumnLayout {
+            id: column
             anchors.fill: parent
             anchors.margins: 16
             spacing: 12

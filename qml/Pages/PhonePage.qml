@@ -90,14 +90,24 @@ Page {
                 Layout.fillHeight: true
                 variant: NordicCard.Variant.Elevated
                 
+                // Normal Content
                 StackLayout {
                     anchors.fill: parent
                     currentIndex: currentTab
+                    visible: !inCall // Hide normal tabs during call
                     
                     KeypadView { }
                     RecentsView { }
                     ContactsView { }
                     FavoritesView { }
+                }
+                
+                // Active Call View (Replaces content)
+                Loader {
+                    anchors.fill: parent
+                    active: inCall
+                    visible: inCall
+                    source: "Phone/ActiveCallView.qml"
                 }
             }
         }

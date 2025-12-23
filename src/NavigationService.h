@@ -22,6 +22,9 @@ class NavigationService : public QObject
     Q_PROPERTY(QString currentRoadName READ currentRoadName NOTIFY guidanceChanged)
     Q_PROPERTY(int speedLimit READ speedLimit NOTIFY guidanceChanged)
     Q_PROPERTY(QVariantList trafficSegments READ trafficSegments NOTIFY routeCalculated)
+    Q_PROPERTY(QString distanceToDestination READ distanceToDestination NOTIFY guidanceChanged)
+    Q_PROPERTY(QString maneuverIcon READ maneuverIcon NOTIFY guidanceChanged)
+    Q_PROPERTY(QVariantList routeSteps READ routeSteps NOTIFY routeCalculated)
 
 public:
     explicit NavigationService(QObject *parent = nullptr);
@@ -33,6 +36,9 @@ public:
     QString currentRoadName() const;
     int speedLimit() const;
     QVariantList trafficSegments() const;
+    QString distanceToDestination() const;
+    QString maneuverIcon() const;
+    QVariantList routeSteps() const;
     int distanceMeters() const;
     
     QGeoCoordinate vehiclePosition() const;
@@ -73,6 +79,7 @@ private:
     bool m_isNavigating;
     QString m_destination;
     QString m_nextManeuver;
+    QString m_maneuverIcon;
     int m_distanceMeters;
     QString m_currentRoadName;
 

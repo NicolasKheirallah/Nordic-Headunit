@@ -8,7 +8,7 @@ Item {
     id: root
     
     // Visibility controlled by OverlayManager or Bindings
-    visible: PhoneService.callState !== "Idle"
+    visible: PhoneService.callState === "Incoming Call"
     
     // State: "Full" or "Mini"
     property string viewMode: "Full"
@@ -35,7 +35,7 @@ Item {
             anchors.right: parent.right
             anchors.top: parent.top
             anchors.margins: Theme.spacingSm
-            text: "Minimize"
+            iconSource: "qrc:/qt/qml/NordicHeadunit/assets/icons/chevron_down.svg" // Better than text
             variant: NordicButton.Variant.Tertiary
             onClicked: root.viewMode = "Mini"
             z: 10
@@ -79,7 +79,7 @@ Item {
                 spacing: Theme.spacingXs
                 
                 NordicText {
-                    text: (PhoneService.callerName ?? "") !== "" ? PhoneService.callerName : (PhoneService.callerNumber ?? "Unknown")
+                    text: (PhoneService.callerName ?? "") !== "" ? PhoneService.callerName : PhoneService.formatNumber(PhoneService.callerNumber ?? "Unknown")
                     type: NordicText.Type.DisplayMedium
                     Layout.alignment: Qt.AlignHCenter
                 }
@@ -107,7 +107,7 @@ Item {
                     // Keypad
                     NordicButton {
                         iconSource: "qrc:/qt/qml/NordicHeadunit/assets/icons/keypad.svg"
-                        text: "Keypad"
+                        text: qsTr("Keypad")
                         variant: NordicButton.Variant.Secondary
                         size: NordicButton.Size.Lg
                         round: true
@@ -116,38 +116,39 @@ Item {
                     
                     // Audio Route
                     NordicButton {
-                        property int route: 0
-                        iconSource: route === 0 ? "qrc:/qt/qml/NordicHeadunit/assets/icons/car.svg" : 
-                                  route === 1 ? "qrc:/qt/qml/NordicHeadunit/assets/icons/phone.svg" : 
+                        property int route: PhoneService.audioRoute
+                        iconSource: route === PhoneService.RouteVehicle ? "qrc:/qt/qml/NordicHeadunit/assets/icons/car.svg" : 
+                                  route === PhoneService.RouteHandset ? "qrc:/qt/qml/NordicHeadunit/assets/icons/phone.svg" : 
                                   "qrc:/qt/qml/NordicHeadunit/assets/icons/speaker.svg"
-                        text: route === 0 ? "Vehicle" : route === 1 ? "Handset" : "Speaker"
-                        variant: route === 0 ? NordicButton.Variant.Primary : NordicButton.Variant.Secondary
+                        text: route === PhoneService.RouteVehicle ? qsTr("Vehicle") : route === PhoneService.RouteHandset ? qsTr("Handset") : qsTr("Speaker")
+                        variant: route === PhoneService.RouteVehicle ? NordicButton.Variant.Primary : NordicButton.Variant.Secondary
                         size: NordicButton.Size.Lg
                         round: true
                         onClicked: {
-                            route = (route + 1) % 3
+                            var nextRoute = (route + 1) % 3
+                            PhoneService.setAudioRoute(nextRoute)
                         }
                     }
                     
                     // Add Call
                     NordicButton {
                         iconSource: "qrc:/qt/qml/NordicHeadunit/assets/icons/add_call.svg"
-                        text: "Add Call"
+                        text: qsTr("Add Call")
                         variant: NordicButton.Variant.Secondary
                         size: NordicButton.Size.Lg
                         round: true
                         onClicked: { /* Mock Add Call */ }
                     }
                     
-                    // Mute (placeholder - PhoneService doesn't have mute property yet)
+                    // Mute
                     NordicButton {
-                        property bool isMuted: false
+                        property bool isMuted: PhoneService.muted
                         iconSource: isMuted ? "qrc:/qt/qml/NordicHeadunit/assets/icons/volume_off.svg" : "qrc:/qt/qml/NordicHeadunit/assets/icons/volume_up.svg"
-                        text: isMuted ? "Unmute" : "Mute"
-                        variant: isMuted ? NordicButton.Variant.Accent : NordicButton.Variant.Secondary
+                        text: isMuted ? qsTr("Unmute") : qsTr("Mute")
+                        variant: isMuted ? NordicButton.Variant.Primary : NordicButton.Variant.Secondary
                         size: NordicButton.Size.Lg
                         round: true
-                        onClicked: isMuted = !isMuted
+                        onClicked: PhoneService.muted = !isMuted
                     }
                 }
                 
@@ -231,7 +232,7 @@ Item {
                     ColumnLayout {
                         spacing: 0
                         NordicText {
-                            text: (PhoneService.callerName ?? "") !== "" ? PhoneService.callerName : (PhoneService.callerNumber ?? "Unknown")
+                            text: (PhoneService.callerName ?? "") !== "" ? PhoneService.callerName : PhoneService.formatNumber(PhoneService.callerNumber ?? "Unknown")
                             type: NordicText.Type.BodyLarge
                             font.weight: Font.Bold
                         }
@@ -246,12 +247,12 @@ Item {
             
             // Mini Controls
             NordicButton {
-                property bool isMuted: false
+                property bool isMuted: PhoneService.muted
                 variant: isMuted ? NordicButton.Variant.Primary : NordicButton.Variant.Secondary
                 text: isMuted ? "🔇" : "🔊"
                 size: NordicButton.Size.Sm
                 round: true
-                onClicked: isMuted = !isMuted
+                onClicked: PhoneService.muted = !isMuted
             }
             
             NordicButton {

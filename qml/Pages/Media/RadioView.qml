@@ -16,7 +16,8 @@ Item {
     readonly property bool playing: MediaService?.playing ?? false
     
     // Internal state
-    property int selectedBand: 0  // 0=FM, 1=AM, 2=DAB
+    // Internal state linked to MediaService
+    property int selectedBand: MediaService ? MediaService.currentBand : 0  // 0=FM, 1=AM, 2=DAB
     property bool isScanning: false
     
     ColumnLayout {
@@ -50,7 +51,9 @@ Item {
                     MouseArea {
                         id: bandMouse
                         anchors.fill: parent
-                        onClicked: root.selectedBand = index
+                        onClicked: {
+                            if (MediaService) MediaService.setBand(index)
+                        }
                     }
                 }
             }
@@ -183,7 +186,13 @@ Item {
                 icon: "qrc:/qt/qml/NordicHeadunit/assets/icons/heart.svg"
                 onClicked: {
                     if (MediaService && MediaService.saveCurrentToPreset()) {
-                        ToastManager.show("Station saved to presets", "success")
+                        var win = Window.window
+                        if (win && win.showToast) {
+                            win.showToast("Station saved to presets", NordicToast.Type.Success)
+                        } else {
+                            // Fallback if window not reachable
+                            console.log("Station saved to presets")
+                        }
                     }
                 }
             }
@@ -315,28 +324,16 @@ Item {
         MouseArea {
             id: seekMouse
             anchors.fill: parent
+            pressAndHoldInterval: 400 // Quicker than 500
             
-            property bool wasHeld: false
-            
-            onPressed: {
-                wasHeld = false
-                holdTimer.start()
+            onClicked: {
+                // If we held, don't click
+                // MouseArea handles this separation well if simply clicked
+                seekBtn.tapped() 
             }
             
-            onReleased: {
-                holdTimer.stop()
-                if (!wasHeld) {
-                    seekBtn.tapped()
-                }
-            }
-            
-            Timer {
-                id: holdTimer
-                interval: 500
-                onTriggered: {
-                    seekMouse.wasHeld = true
-                    seekBtn.held()
-                }
+            onPressAndHold: {
+                seekBtn.held()
             }
         }
     }

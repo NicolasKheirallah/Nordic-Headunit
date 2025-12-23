@@ -8,6 +8,7 @@ NavigationService::NavigationService(QObject *parent)
       m_isNavigating(false),
       m_destination(""),
       m_nextManeuver("Turn Right"),
+      m_maneuverIcon("turn_right.svg"),
       m_distanceMeters(200)
 {
     m_networkManager = new QNetworkAccessManager(this);
@@ -48,6 +49,7 @@ NavigationService::NavigationService(QObject *parent)
 bool NavigationService::isNavigating() const { return m_isNavigating; }
 QString NavigationService::destination() const { return m_destination; }
 QString NavigationService::nextManeuver() const { return m_nextManeuver; }
+QString NavigationService::maneuverIcon() const { return "qrc:/qt/qml/NordicHeadunit/assets/icons/" + m_maneuverIcon; }
 int NavigationService::distanceMeters() const { return m_distanceMeters; }
 
 QGeoCoordinate NavigationService::vehiclePosition() const { return m_vehiclePosition; }
@@ -56,6 +58,30 @@ qreal NavigationService::vehicleBearing() const { return m_vehicleBearing; }
 QString NavigationService::distanceToManeuver() const {
     if (m_distanceMeters >= 1000) return QString::number(m_distanceMeters / 1000.0, 'f', 1) + " km";
     return QString::number(m_distanceMeters) + " m";
+}
+
+QString NavigationService::distanceToDestination() const {
+    if (m_distanceMeters >= 1000) return QString::number(m_distanceMeters / 1000.0, 'f', 1) + " km";
+    return QString::number(m_distanceMeters) + " m";
+}
+
+QVariantList NavigationService::routeSteps() const {
+    QVariantList list;
+    for (const auto &step : m_routeSteps) {
+        QVariantMap map;
+        map["instruction"] = step.instruction;
+        map["distance"] = step.distance;
+        // Map Icon logic
+        QString mod = step.modifier;
+        QString icon = "navigation-arrow.svg";
+        if (mod.contains("left")) icon = "turn_left.svg";
+        else if (mod.contains("right")) icon = "turn_right.svg";
+        else if (mod.contains("u-turn")) icon = "u_turn.svg"; 
+        map["icon"] = "qrc:/qt/qml/NordicHeadunit/assets/icons/" + icon;
+        
+        list.append(map);
+    }
+    return list;
 }
 
 QString NavigationService::currentRoadName() const {
@@ -143,6 +169,12 @@ void NavigationService::startNavigation(const QString &dest)
     // Initial Maneuver Display
     if (!m_routeSteps.isEmpty()) {
         m_nextManeuver = m_routeSteps[0].instruction;
+        QString mod = m_routeSteps[0].modifier;
+        if (mod.contains("left")) m_maneuverIcon = "turn_left.svg";
+        else if (mod.contains("right")) m_maneuverIcon = "turn_right.svg";
+        else if (mod.contains("u-turn")) m_maneuverIcon = "u_turn.svg"; // Placeholder
+        else m_maneuverIcon = "navigation-arrow.svg"; // Straight/Head-to
+        
         emit voiceInstruction("Starting route. " + m_nextManeuver);
     }
     
@@ -314,6 +346,8 @@ void NavigationService::onRouteFinished()
                         QString modifier = maneuver["modifier"].toString(); // e.g., "left"
                         QString name = stepObj["name"].toString();
                         
+                        step.modifier = modifier;
+                        
                         // Human Readable Construction
                         if (type == "depart") step.instruction = "Head to " + name;
                         else if (type == "arrive") step.instruction = "Arrive at destination";
@@ -385,6 +419,12 @@ void NavigationService::checkManeuvers() {
         m_currentStepIndex++;
         if (m_currentStepIndex < m_routeSteps.size()) {
              m_nextManeuver = m_routeSteps[m_currentStepIndex].instruction;
+             QString mod = m_routeSteps[m_currentStepIndex].modifier;
+             if (mod.contains("left")) m_maneuverIcon = "turn_left.svg";
+             else if (mod.contains("right")) m_maneuverIcon = "turn_right.svg";
+             else if (mod.contains("u-turn")) m_maneuverIcon = "u_turn.svg"; 
+             else m_maneuverIcon = "navigation-arrow.svg";
+             
              emit voiceInstruction(m_nextManeuver + " in " + QString::number(m_routeSteps[m_currentStepIndex].distance) + " meters");
         }
     }

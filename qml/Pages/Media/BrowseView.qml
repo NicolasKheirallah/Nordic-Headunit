@@ -13,15 +13,47 @@ Item {
     // Safe property access
     readonly property var recentItems: MediaService?.recentItems ?? []
     // radioStations removed (using radioModel)
-    readonly property var library: MediaService?.library ?? []
+    readonly property var library: MediaService?.libraryCategories ?? []
     
     ColumnLayout {
         anchors.fill: parent
         anchors.margins: 16
         spacing: 16
         
+        // Search Bar (New Feature)
+        NordicTextField {
+            Layout.fillWidth: true
+            placeholderText: qsTr("Search Library...")
+            onTextChanged: {
+                if (MediaService && MediaService.library) {
+                    MediaService.library.search(text)
+                    // Logic to swap view to search results if text > 0
+                    root.state = text.length > 0 ? "SEARCH" : "BROWSE"
+                }
+            }
+        }
+
+        // Search Results View (Conditionally visible)
+        ListView {
+            visible: root.state === "SEARCH"
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            model: MediaService.library.searchResultsModel
+            clip: true
+            delegate: NordicListItem {
+                text: model.title
+                secondaryText: model.artist
+                onClicked: {
+                     // Need way to play from search result index... 
+                     // For now, limitation: Search just filters
+                     console.log("Playing from search result pending implementation")
+                }
+            }
+        }
+
         // Recently Played Section (Combined Music + Radio)
         ColumnLayout {
+            visible: root.state !== "SEARCH"
             Layout.fillWidth: true
             spacing: 8
             

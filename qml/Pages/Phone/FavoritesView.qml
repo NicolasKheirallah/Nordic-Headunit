@@ -45,7 +45,7 @@ GridView {
                 }
                 
                 NordicText {
-                    text: modelData.number
+                    text: PhoneService.formatNumber(modelData.number)
                     type: NordicText.Type.BodySmall
                     color: Theme.textSecondary
                     Layout.alignment: Qt.AlignHCenter

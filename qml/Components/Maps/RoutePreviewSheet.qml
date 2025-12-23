@@ -12,10 +12,11 @@ NordicCard {
     
     property string timeText: "--"
     property string distText: "--"
+    property string destinationName: "Destination"
     
     // Sheet Props
     width: 360
-    height: 200
+    height: 600 // Increased for list
     variant: NordicCard.Variant.Elevated
     
     ColumnLayout {
@@ -32,12 +33,47 @@ NordicCard {
         }
         
         NordicText { 
-            text: "Via Fastest Route"
+            text: "To " + root.destinationName
             type: NordicText.Type.BodyMedium
             color: NordicTheme.colors.text.secondary
         }
         
-        Item { Layout.fillHeight: true } // Spacer
+        // Scrollable Directions List
+        ListView {
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            clip: true
+            model: NavigationService.routeSteps
+            spacing: 12
+            
+            delegate: RowLayout {
+                width: parent.width
+                spacing: 12
+                
+                NordicIcon {
+                    source: modelData.icon
+                    size: NordicIcon.Size.Md
+                    color: NordicTheme.colors.text.primary
+                }
+                
+                ColumnLayout {
+                    Layout.fillWidth: true
+                    spacing: 2
+                    
+                    NordicText { 
+                        text: modelData.instruction
+                        type: NordicText.Type.BodyMedium
+                        elide: Text.ElideRight
+                        Layout.fillWidth: true
+                    }
+                    NordicText { 
+                        text: modelData.distance + " m"
+                        type: NordicText.Type.Caption
+                        color: NordicTheme.colors.text.secondary
+                    }
+                }
+            }
+        }
         
         // Actions
         RowLayout {

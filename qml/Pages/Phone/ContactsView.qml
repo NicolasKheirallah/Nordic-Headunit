@@ -11,7 +11,7 @@ ColumnLayout {
         Layout.fillWidth: true
         placeholderText: qsTr("Search Contacts")
         // icon: "search" (if supported)
-        onTextChanged: PhoneService.searchQuery = text
+        onTextChanged: PhoneService.contactsModel.setFilter(text)
     }
     
     // Contacts List
@@ -20,13 +20,13 @@ ColumnLayout {
         Layout.fillWidth: true
         Layout.fillHeight: true
         clip: true
-        spacing: 1 // Separator line style or minimal spacing
-        model: PhoneService.filteredContacts
+        spacing: 1 
+        model: PhoneService.contactsModel
         
         delegate: NordicListItem {
             width: ListView.view.width
-            text: modelData.name
-            secondaryText: modelData.number
+            text: model.name // ContactsModel roles are set: name, number, avatar
+            secondaryText: PhoneService.formatNumber(model.number)
             
             // Avatar Placeholder
             leading: Component {
@@ -37,14 +37,14 @@ ColumnLayout {
                     color: Theme.accentSecondary
                     NordicText {
                         anchors.centerIn: parent
-                        text: (modelData.name && modelData.name.length > 0) ? modelData.name.charAt(0) : "?"
+                        text: (model.name && model.name.length > 0) ? model.name.charAt(0) : "?"
                         type: NordicText.Type.TitleMedium
                         color: Theme.textPrimary
                     }
                 }
             }
             
-            onClicked: PhoneService.dial(modelData.number)
+            onClicked: PhoneService.dial(model.number)
         }
         
         NordicText {

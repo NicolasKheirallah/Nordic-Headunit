@@ -38,7 +38,7 @@ ColumnLayout {
         delegate: NordicListItem {
             width: ListView.view.width
             text: modelData.name
-            secondaryText: modelData.number + " • " + modelData.time
+            secondaryText: PhoneService.formatNumber(modelData.number) + " • " + modelData.time
             
             leading: Component {
                 NordicIcon {

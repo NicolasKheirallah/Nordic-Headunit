@@ -16,6 +16,7 @@ Item {
              PhoneService.activeNumber = currentNumber
         } else if (PhoneService.callState === "Connected") {
              console.log("DTMF: " + digit)
+             PhoneService.sendDtmf(digit)
         }
     }
     
@@ -40,7 +41,7 @@ Item {
                 spacing: NordicTheme.spacing.space_4
                 
                 Text {
-                    text: currentNumber || qsTr("Enter Number")
+                    text: PhoneService.formatNumber(currentNumber) || qsTr("Enter Number")
                     font.pixelSize: Math.min(48, root.height * 0.1)
                     font.weight: Font.Medium
                     color: currentNumber ? NordicTheme.colors.text.primary : NordicTheme.colors.text.tertiary

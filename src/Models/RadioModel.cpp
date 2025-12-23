@@ -61,6 +61,13 @@ RadioStation RadioModel::getStation(int index) const {
     return m_stations[index];
 }
 
+int RadioModel::activeStationIndex() const {
+    for (int i = 0; i < m_stations.count(); ++i) {
+        if (m_stations[i].active) return i;
+    }
+    return -1;
+}
+
 QList<RadioStation> RadioModel::getAll() const {
     return m_stations;
 }

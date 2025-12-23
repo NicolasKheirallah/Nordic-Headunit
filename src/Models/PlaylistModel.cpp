@@ -39,6 +39,12 @@ void PlaylistModel::addTrack(const Track &track) {
     endInsertRows();
 }
 
+void PlaylistModel::setTracks(const QList<Track> &tracks) {
+    beginResetModel();
+    m_tracks = tracks;
+    endResetModel();
+}
+
 void PlaylistModel::clear() {
     beginResetModel();
     m_tracks.clear();

@@ -29,6 +29,7 @@ public:
     void clear();
     void setActive(int index);
     RadioStation getStation(int index) const;
+    int activeStationIndex() const;
     QList<RadioStation> getAll() const;
 
 private:
