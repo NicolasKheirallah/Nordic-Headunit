@@ -39,11 +39,8 @@ Item {
         
         Behavior on anchors.topMargin { NumberAnimation { duration: 250; easing.type: Easing.OutCubic } }
         
-        // Blur Effect
-        layer.enabled: true
-         // Custom blur shader/effect not available directly without QtGraphicalEffects in old versions, 
-         // but we have MultiEffect or NordicModal blur logic. 
-         // For now, simple semi-transparent.
+        // PERFORMANCE: Only enable layer when visible
+        layer.enabled: root.visibleState
         
         RowLayout {
             anchors.fill: parent

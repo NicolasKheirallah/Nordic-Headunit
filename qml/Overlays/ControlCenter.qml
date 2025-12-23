@@ -44,8 +44,8 @@ Item {
         color: NordicTheme.colors.bg.surface
         radius: 16
         
-        // Subtle shadow
-        layer.enabled: true
+        // PERFORMANCE: Only enable layer effect when panel is open
+        layer.enabled: root.open && root.visible
         layer.effect: MultiEffect {
             shadowEnabled: true
             shadowVerticalOffset: 4

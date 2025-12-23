@@ -89,11 +89,12 @@ Popup {
         border.color: NordicTheme.colors.border.default_color
         border.width: 1
         
-        layer.enabled: true
+        // PERFORMANCE: Only enable layer when popup is visible
+        layer.enabled: root.visible && root.opened
         layer.effect: MultiEffect {
             shadowEnabled: true
             shadowColor: NordicTheme.elevation.shadow_color_xl
-            shadowBlur: 48
+            shadowBlur: 24  // Reduced from 48
         }
     }
     

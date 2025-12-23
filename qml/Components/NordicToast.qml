@@ -28,12 +28,13 @@ Rectangle {
         }
     }
     
-    // Shadow
-    layer.enabled: true
+    
+    // PERFORMANCE: Only enable shadow when toast is visible
+    layer.enabled: root.opacity > 0 && root.visible
     layer.effect: MultiEffect {
         shadowEnabled: true
         shadowColor: NordicTheme.elevation.shadow_color_lg
-        shadowBlur: 16
+        shadowBlur: 12  // Reduced from 16
         shadowVerticalOffset: 4
     }
     

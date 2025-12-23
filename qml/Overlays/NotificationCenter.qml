@@ -32,13 +32,13 @@ Item {
         color: NordicTheme.colors.bg.elevated
         radius: NordicTheme.shapes.radius_xl
         
-        // Shadow Effect
-        layer.enabled: true
+        // PERFORMANCE: Only enable shadow effect when panel is open
+        layer.enabled: root.open
         layer.effect: MultiEffect {
             shadowEnabled: true
-            shadowVerticalOffset: 10
+            shadowVerticalOffset: 6  // Reduced from 10
             shadowHorizontalOffset: 0
-            shadowBlur: 1.5
+            shadowBlur: 1.0  // Reduced from 1.5
             shadowOpacity: 0.2
         }
         
