@@ -148,3 +148,36 @@ void MediaLibrary::saveLikes() {
         file.write(QJsonDocument(array).toJson());
     }
 }
+
+void MediaLibrary::playFromSearchResult(int index) {
+    if (index < 0 || index >= m_searchModel->rowCount()) return;
+    
+    Track t = m_searchModel->getTrack(index);
+    
+    // Find index in main model to sync
+    for (int i = 0; i < m_mainModel->rowCount(); ++i) {
+        if (m_mainModel->getTrack(i).sourceUrl == t.sourceUrl) {
+            // Found matching track in main model
+            emit libraryUpdated();  // Signal that track should be played via index i
+            // The MediaService needs to handle this - we'll emit a signal
+            return;
+        }
+    }
+}
+
+bool MediaLibrary::hasSearchResults() const {
+    return m_searchModel && m_searchModel->rowCount() > 0;
+}
+
+int MediaLibrary::searchResultsCount() const {
+    return m_searchModel ? m_searchModel->rowCount() : 0;
+}
+
+void MediaLibrary::clearSearch() {
+    if (m_searchModel) {
+        m_searchModel->setTracks({});
+    }
+    m_isSearching = false;
+    emit isSearchingChanged();
+    emit searchResultsUpdated();
+}

@@ -28,6 +28,12 @@ Page {
     // Responsive
     readonly property bool isCompact: NordicTheme.layout.isCompact
     
+    // Accessibility
+    readonly property bool reducedMotion: SystemSettings.reducedMotion ?? false
+    
+    // Error state
+    property string errorMessage: ""
+    
     // -------------------------------------------------------------------------
     // 2. Map Surface (Engine)
     // -------------------------------------------------------------------------
@@ -90,7 +96,7 @@ Page {
         
         // Slide Down Animation
         y: isActive ? 24 : -height - 20
-        Behavior on y { NumberAnimation { duration: 600; easing.type: Easing.OutExpo } }
+        Behavior on y { enabled: !root.reducedMotion; NumberAnimation { duration: 600; easing.type: Easing.OutExpo } }
 
         maneuverIcon: NavigationService.maneuverIcon || "qrc:/qt/qml/NordicHeadunit/assets/icons/turn_right.svg"
         distance: NavigationService.distanceToManeuver
@@ -146,7 +152,7 @@ Page {
         onIsOpenChanged: console.log("SearchSheet isOpen changed: " + isOpen + " (NavState: " + navState + ")")
         Component.onCompleted: console.log("SearchSheet Init. NavState: " + navState)
         
-        Behavior on y { NumberAnimation { duration: 500; easing.type: Easing.OutQuint } }
+        Behavior on y { enabled: !root.reducedMotion; NumberAnimation { duration: 500; easing.type: Easing.OutQuint } }
         
         resultsModel: ListModel { id: searchResultsModel }
         
@@ -161,8 +167,8 @@ Page {
             var destCoord = QtPositioning.coordinate(result.lat, result.lon)
             NavigationService.calculateRoute(mapSurface.userLocation, destCoord)
             routePreview.destinationName = result.name
-            routePreview.travelTime = "12 min" // Mock
-            routePreview.distance = "4.2 km" // Mock
+            routePreview.timeText = "12 min" // Mock
+            routePreview.distText = "4.2 km" // Mock
         }
         
         onClosed: {
@@ -235,7 +241,80 @@ Page {
         
         function onErrorOccurred(msg) {
             console.error(msg)
-            // Show error toast
+            root.errorMessage = msg
+            root.navState = MapPage.NavState.Error
+        }
+    }
+    
+    // F. Error State Overlay
+    Rectangle {
+        id: errorOverlay
+        anchors.fill: parent
+        visible: navState === MapPage.NavState.Error
+        color: Qt.rgba(0, 0, 0, 0.7)
+        z: 1000
+        
+        // Fade in
+        opacity: visible ? 1.0 : 0.0
+        Behavior on opacity { enabled: !root.reducedMotion; NumberAnimation { duration: 300 } }
+        
+        Column {
+            anchors.centerIn: parent
+            spacing: NordicTheme.spacing.space_4
+            
+            NordicIcon {
+                anchors.horizontalCenter: parent.horizontalCenter
+                source: "qrc:/qt/qml/NordicHeadunit/assets/icons/warning.svg"
+                size: NordicIcon.Size.XL
+                color: NordicTheme.colors.semantic.warning
+            }
+            
+            NordicText {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: qsTr("Navigation Error")
+                type: NordicText.Type.HeadlineSmall
+                color: NordicTheme.colors.text.primary
+            }
+            
+            NordicText {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: root.errorMessage || qsTr("Unable to connect to navigation services")
+                type: NordicText.Type.BodyMedium
+                color: NordicTheme.colors.text.secondary
+                horizontalAlignment: Text.AlignHCenter
+                width: Math.min(400, parent.parent.width - 48)
+                wrapMode: Text.WordWrap
+            }
+            
+            Row {
+                anchors.horizontalCenter: parent.horizontalCenter
+                spacing: NordicTheme.spacing.space_3
+                topPadding: NordicTheme.spacing.space_4
+                
+                NordicButton {
+                    text: qsTr("Retry")
+                    variant: NordicButton.Variant.Primary
+                    size: NordicButton.Size.Lg
+                    activeFocusOnTab: true
+                    Keys.onReturnPressed: clicked()
+                    onClicked: {
+                        root.errorMessage = ""
+                        root.navState = MapPage.NavState.Idle
+                    }
+                }
+                
+                NordicButton {
+                    text: qsTr("Dismiss")
+                    variant: NordicButton.Variant.Secondary
+                    size: NordicButton.Size.Lg
+                    activeFocusOnTab: true
+                    Keys.onReturnPressed: clicked()
+                    onClicked: {
+                        root.errorMessage = ""
+                        root.navState = MapPage.NavState.Idle
+                    }
+                }
+            }
         }
     }
 }

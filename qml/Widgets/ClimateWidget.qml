@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import NordicHeadunit
+import "../Components"
 
 // Climate Widget - Size-aware HVAC controls
 Item {
@@ -24,54 +25,65 @@ Item {
         RowLayout {
             anchors.fill: parent
             anchors.margins: NordicTheme.spacing.space_3
-            spacing: NordicTheme.spacing.space_4
+            spacing: NordicTheme.spacing.space_2
             
-            // Driver side
+            // Driver side (Always visible)
             ColumnLayout {
                 Layout.fillHeight: true
+                Layout.fillWidth: true
                 spacing: 4
                 
                 NordicText {
                     text: qsTr("Driver")
                     type: NordicText.Type.Caption
                     color: NordicTheme.colors.text.tertiary
+                    visible: root.height > 140 // Hide label if very short
                 }
                 
                 NordicText {
                     text: root.driverTemp.toFixed(1) + "°"
-                    type: NordicText.Type.TitleLarge
+                    type: NordicText.Type.DisplayMedium
                     color: NordicTheme.colors.text.primary
+                    Layout.alignment: Qt.AlignHCenter
+                    fontSizeMode: Text.Fit
+                    minimumPixelSize: 20
                 }
                 
                 RowLayout {
+                    Layout.alignment: Qt.AlignHCenter
                     spacing: 4
+                    visible: root.height > 120
                     
                     NordicButton {
                         variant: NordicButton.Variant.Tertiary
-                        size: NordicButton.Size.Sm
+                        size: root.isCompact ? NordicButton.Size.Sm : NordicButton.Size.Md
                         text: "−"
                         onClicked: root.driverTemp = Math.max(16, root.driverTemp - 0.5)
+                        Layout.preferredWidth: root.isCompact ? 32 : 40
                     }
                     NordicButton {
                         variant: NordicButton.Variant.Tertiary
-                        size: NordicButton.Size.Sm
+                        size: root.isCompact ? NordicButton.Size.Sm : NordicButton.Size.Md
                         text: "+"
                         onClicked: root.driverTemp = Math.min(28, root.driverTemp + 0.5)
+                        Layout.preferredWidth: root.isCompact ? 32 : 40
                     }
                 }
             }
             
-            // Center controls
+            // Center controls (Hide if very compact width < 250)
             ColumnLayout {
                 Layout.fillHeight: true
                 Layout.fillWidth: true
+                visible: root.width > 260
                 spacing: NordicTheme.spacing.space_2
                 
                 // AC button
                 Rectangle {
                     Layout.alignment: Qt.AlignHCenter
-                    width: 48; height: 48
-                    radius: 24
+                    width: Math.min(parent.width * 0.8, 48)
+                    height: width
+                    radius: width / 2
                     color: root.acOn ? Theme.accent : Theme.surfaceAlt
                     
                     NordicText {
@@ -79,6 +91,7 @@ Item {
                         text: "A/C"
                         type: NordicText.Type.TitleSmall
                         color: root.acOn ? NordicTheme.colors.text.inverse : NordicTheme.colors.text.secondary
+                        font.pixelSize: parent.height * 0.35
                     }
                     
                     MouseArea {
@@ -96,8 +109,8 @@ Item {
                     Repeater {
                         model: 5
                         Rectangle {
-                            width: 8
-                            height: 8 + index * 4
+                            width: 6
+                            height: 6 + index * 3
                             radius: 2
                             color: index < root.fanSpeed ? Theme.accent : Theme.surfaceAlt
                             
@@ -109,37 +122,35 @@ Item {
                         }
                     }
                 }
-                
-                // Sync button
-                NordicButton {
-                    Layout.alignment: Qt.AlignHCenter
-                    variant: root.syncEnabled ? NordicButton.Variant.Primary : NordicButton.Variant.Tertiary
-                    size: NordicButton.Size.Sm
-                    text: qsTr("SYNC")
-                    onClicked: root.syncEnabled = !root.syncEnabled
-                }
             }
             
-            // Passenger side
+            // Passenger side (Hide if width < 300 or sync enabled)
             ColumnLayout {
                 Layout.fillHeight: true
+                Layout.fillWidth: true
                 spacing: 4
-                visible: !root.syncEnabled
+                visible: !root.syncEnabled && root.width > 340
                 
                 NordicText {
-                    text: qsTr("Passenger")
+                    text: qsTr("Pass.")
                     type: NordicText.Type.Caption
                     color: NordicTheme.colors.text.tertiary
+                    visible: root.height > 140
                 }
                 
                 NordicText {
                     text: root.passengerTemp.toFixed(1) + "°"
-                    type: NordicText.Type.TitleLarge
+                    type: NordicText.Type.DisplayMedium
                     color: NordicTheme.colors.text.primary
+                    Layout.alignment: Qt.AlignHCenter
+                    fontSizeMode: Text.Fit
+                    minimumPixelSize: 20
                 }
                 
                 RowLayout {
+                    Layout.alignment: Qt.AlignHCenter
                     spacing: 4
+                    visible: root.height > 120
                     
                     NordicButton {
                         variant: NordicButton.Variant.Tertiary

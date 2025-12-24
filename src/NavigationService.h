@@ -56,6 +56,14 @@ public:
     Q_INVOKABLE void searchCategory(const QString &category); // "Gas", "Food"
     Q_INVOKABLE void clearMapPins();
     Q_INVOKABLE void calculateRoute(const QGeoCoordinate &start, const QGeoCoordinate &end);
+    
+    // Route Data Type
+    struct RouteStep {
+        QString instruction;
+        QString modifier; // left, right, slight right
+        int distance; // meters
+        QGeoCoordinate maneuverCoordinate;
+    };
 
     QVariantList recentSearches() const;
     QVariantList mapPins() const;
@@ -89,12 +97,6 @@ private:
     QString m_pendingSearchQuery;
     
     // Route Data
-    struct RouteStep {
-        QString instruction;
-        QString modifier; // left, right, slight right
-        int distance; // meters
-        QGeoCoordinate maneuverCoordinate;
-    };
     QList<RouteStep> m_routeSteps;
     int m_currentStepIndex;
     

@@ -10,7 +10,7 @@ Item {
     // -------------------------------------------------------------------------
     // Size Detection
     // -------------------------------------------------------------------------
-    readonly property bool isCompact: width < 220 || height < 120
+    readonly property bool isCompact: width < 210 || height < 120
     readonly property bool isWide: width > height * 1.5
     readonly property bool isLarge: width >= 300 && height >= 250 // Supports forecast
     

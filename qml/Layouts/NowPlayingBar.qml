@@ -7,13 +7,15 @@ import NordicHeadunit
 Rectangle {
     id: root
     
-    // Properties
-    // Binding to C++
-    property string title: MediaService.title
-    property string artist: MediaService.artist
-    property string coverSource: MediaService.coverSource
-    property bool playing: MediaService.playing
-    property real progress: MediaService.progress
+    // Accessibility
+    readonly property bool reducedMotion: SystemSettings.reducedMotion
+    
+    // Properties with safe fallbacks
+    property string title: MediaService?.title ?? "Not Playing"
+    property string artist: MediaService?.artist ?? ""
+    property string coverSource: MediaService?.coverSource ?? ""
+    property bool playing: MediaService?.playing ?? false
+    property real progress: MediaService?.progress ?? 0
     property real duckingVolume: 1.0
     
     // Mock volume effect

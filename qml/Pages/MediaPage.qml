@@ -185,12 +185,11 @@ Page {
                 color: railItem.active ? "white" : Theme.textSecondary
             }
             
-            Text {
+            NordicText {
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: railItem.label
-                font.pixelSize: 11
+                type: NordicText.Type.Caption
                 font.weight: Font.Medium
-                font.family: "Helvetica"
                 color: railItem.active ? "white" : Theme.textSecondary
             }
         }

@@ -8,17 +8,21 @@ import NordicHeadunit
 Item {
     id: root
     
+    // Accessibility
+    readonly property bool reducedMotion: SystemSettings.reducedMotion
+    
     // Safe properties
     readonly property string radioFrequency: MediaService?.radioFrequency ?? "102.5"
     readonly property string radioName: MediaService?.radioName ?? "Station"
     readonly property int currentRadioIndex: MediaService?.currentRadioIndex ?? 0
-    // radioStations removed (using radioModel)
     readonly property bool playing: MediaService?.playing ?? false
+    readonly property int signalStrength: MediaService?.radioTuner?.signalStrength ?? 75
+    readonly property bool hasError: MediaService?.radioTuner?.hasError ?? false
+    readonly property string errorMessage: MediaService?.radioTuner?.errorMessage ?? ""
     
-    // Internal state
     // Internal state linked to MediaService
     property int selectedBand: MediaService ? MediaService.currentBand : 0  // 0=FM, 1=AM, 2=DAB
-    property bool isScanning: false
+    property bool isScanning: MediaService?.radioTuner?.isScanning ?? false
     
     ColumnLayout {
         anchors.fill: parent
@@ -119,6 +123,32 @@ Item {
                             text: root.radioName
                             type: NordicText.Type.BodyLarge
                             color: Theme.textSecondary
+                        }
+                        
+                        // Signal Strength Indicator
+                        Row {
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            spacing: 2
+                            
+                            Repeater {
+                                model: 5
+                                Rectangle {
+                                    width: 4
+                                    height: 8 + index * 3
+                                    radius: 2
+                                    color: (index + 1) * 20 <= root.signalStrength 
+                                        ? Theme.accent 
+                                        : NordicTheme.colors.border.muted
+                                    anchors.bottom: parent.bottom
+                                }
+                            }
+                            
+                            NordicText {
+                                text: root.signalStrength + "%"
+                                type: NordicText.Type.Caption
+                                color: Theme.textTertiary
+                                anchors.verticalCenter: parent.verticalCenter
+                            }
                         }
                     }
                 }
@@ -258,13 +288,45 @@ Item {
                                 color: "white"
                                 visible: model.active
                             }
+                            
+                            // Delete button
+                            Rectangle {
+                                width: 28; height: 28
+                                radius: 14
+                                color: deleteMouse.pressed ? Theme.surfaceAlt : "transparent"
+                                visible: presetMouse.containsMouse
+                                
+                                NordicIcon {
+                                    anchors.centerIn: parent
+                                    source: "qrc:/qt/qml/NordicHeadunit/assets/icons/close.svg"
+                                    size: NordicIcon.Size.SM
+                                    color: Theme.textSecondary
+                                }
+                                
+                                MouseArea {
+                                    id: deleteMouse
+                                    anchors.fill: parent
+                                    onClicked: {
+                                        if (MediaService && MediaService.radioTuner) {
+                                            MediaService.radioTuner.removePreset(index)
+                                        }
+                                    }
+                                }
+                            }
                         }
                         
                         MouseArea {
                             id: presetMouse
                             anchors.fill: parent
+                            hoverEnabled: true
                             onClicked: {
                                 if (MediaService) MediaService.tuneRadioByIndex(index)
+                            }
+                            onPressAndHold: {
+                                // Long press to delete
+                                if (MediaService && MediaService.radioTuner) {
+                                    MediaService.radioTuner.removePreset(index)
+                                }
                             }
                         }
                     }

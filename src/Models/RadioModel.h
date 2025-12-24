@@ -26,6 +26,7 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
     void addStation(const RadioStation &station);
+    void removeStation(int index);
     void clear();
     void setActive(int index);
     RadioStation getStation(int index) const;

@@ -23,7 +23,7 @@ Item {
     signal notificationRequested()
     
     // Page titles for status bar
-    readonly property var pageTitles: ["Home", "Map", "Media", "Phone", "Vehicle", "Settings"]
+    readonly property var pageTitles: ["Home", "Map", "Media", "Phone", "Apps", "Vehicle", "Settings"]
     
     ColumnLayout {
         anchors.fill: parent

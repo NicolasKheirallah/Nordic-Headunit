@@ -25,39 +25,45 @@ Item {
             spacing: NordicTheme.spacing.space_2
             
             // Battery/Fuel icon with level
-            Rectangle {
+            Item {
                 Layout.alignment: Qt.AlignHCenter
-                width: 60; height: 28
-                radius: 4
-                color: "transparent"
-                border.width: 2
-                border.color: root.batteryPercent < 20 ? NordicTheme.colors.semantic.warning : NordicTheme.colors.text.secondary
+                // Scale battery icon with widget size
+                Layout.preferredWidth: Math.min(root.width * 0.4, 80)
+                Layout.preferredHeight: Layout.preferredWidth * 0.45
                 
-                // Battery tip
                 Rectangle {
-                    anchors.left: parent.right
-                    anchors.verticalCenter: parent.verticalCenter
-                    width: 4; height: 12
-                    radius: 2
-                    color: parent.border.color
-                }
-                
-                // Fill level
-                Rectangle {
-                    anchors.left: parent.left
-                    anchors.top: parent.top
-                    anchors.bottom: parent.bottom
-                    anchors.margins: 3
-                    width: (parent.width - 6) * (root.batteryPercent / 100)
-                    radius: 2
-                    color: {
-                        if (root.batteryPercent < 20) return NordicTheme.colors.semantic.error
-                        if (root.batteryPercent < 40) return NordicTheme.colors.semantic.warning
-                        return NordicTheme.colors.semantic.success
+                    anchors.fill: parent
+                    radius: 4
+                    color: "transparent"
+                    border.width: 2
+                    border.color: root.batteryPercent < 20 ? NordicTheme.colors.semantic.warning : NordicTheme.colors.text.secondary
+                    
+                    // Battery tip
+                    Rectangle {
+                        anchors.left: parent.right
+                        anchors.verticalCenter: parent.verticalCenter
+                        width: parent.height * 0.15; height: parent.height * 0.5
+                        radius: 2
+                        color: parent.border.color
                     }
                     
-                    Behavior on width { NumberAnimation { duration: 500 } }
-                    Behavior on color { ColorAnimation { duration: 300 } }
+                    // Fill level
+                    Rectangle {
+                        anchors.left: parent.left
+                        anchors.top: parent.top
+                        anchors.bottom: parent.bottom
+                        anchors.margins: 3
+                        width: (parent.width - 6) * (root.batteryPercent / 100)
+                        radius: 2
+                        color: {
+                            if (root.batteryPercent < 20) return NordicTheme.colors.semantic.error
+                            if (root.batteryPercent < 40) return NordicTheme.colors.semantic.warning
+                            return NordicTheme.colors.semantic.success
+                        }
+                        
+                        Behavior on width { NumberAnimation { duration: 500 } }
+                        Behavior on color { ColorAnimation { duration: 300 } }
+                    }
                 }
                 
                 // Charging indicator
@@ -65,7 +71,7 @@ Item {
                     anchors.centerIn: parent
                     text: "⚡"
                     visible: root.isCharging
-                    font.pixelSize: 14
+                    font.pixelSize: parent.height * 0.8
                 }
             }
             

@@ -5,6 +5,7 @@
 #include <QJsonArray>
 #include <QJsonObject>
 #include <QDebug>
+#include <QRandomGenerator>
 
 RadioTuner::RadioTuner(QObject *parent)
     : QObject(parent),
@@ -22,6 +23,19 @@ RadioTuner::RadioTuner(QObject *parent)
         if (m_frequency % 50 == 0) { // e.g. 90.0, 95.0
              m_isScanning = false;
              m_scanTimer->stop();
+             emit scanningChanged();
+        }
+    });
+    
+    // Seek down timer
+    m_seekDownTimer = new QTimer(this);
+    m_seekDownTimer->setInterval(200);
+    connect(m_seekDownTimer, &QTimer::timeout, this, [this]() {
+        stepDown();
+        // Simulate finding a station randomly
+        if (m_frequency % 50 == 0) {
+             m_isScanning = false;
+             m_seekDownTimer->stop();
              emit scanningChanged();
         }
     });
@@ -67,6 +81,9 @@ void RadioTuner::tuneTo(int frequency) {
     int newFreq = clampFrequency(frequency);
     if (m_frequency != newFreq) {
         m_frequency = newFreq;
+        // Simulate signal strength (random 50-100 for stations on .5, lower for others)
+        m_signalStrength = (m_frequency % 50 == 0) ? (75 + QRandomGenerator::global()->bounded(25)) : (30 + QRandomGenerator::global()->bounded(40));
+        emit signalStrengthChanged();
         emit frequencyChanged();
         emit stationNameChanged();
         updateStationName();
@@ -101,8 +118,10 @@ void RadioTuner::seekUp() {
 }
 
 void RadioTuner::seekDown() {
-    // Basic implementation for now
-    stepDown();
+    // Proper seek down implementation
+    m_isScanning = true;
+    emit scanningChanged();
+    m_seekDownTimer->start();
 }
 
 void RadioTuner::scan() {
@@ -223,5 +242,26 @@ void RadioTuner::loadPresets() {
         m_model->addStation({"Radio 1", "101.5", "FM", false});
         m_model->addStation({"Classic FM", "98.3", "FM", false});
         m_model->addStation({"Jazz Radio", "105.7", "FM", false});
+    }
+}
+
+void RadioTuner::removePreset(int index) {
+    if (index < 0 || index >= m_model->rowCount()) return;
+    
+    m_model->removeStation(index);
+    emit presetRemoved(index);
+    
+    // Persist updated list
+    QJsonArray array;
+    for (const auto &st : m_model->getAll()) {
+        QJsonObject obj;
+        obj["name"] = st.name;
+        obj["frequency"] = st.frequency;
+        obj["band"] = st.band;
+        array.append(obj);
+    }
+    QFile file(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/radio_presets.json");
+    if (file.open(QIODevice::WriteOnly)) {
+        file.write(QJsonDocument(array).toJson());
     }
 }

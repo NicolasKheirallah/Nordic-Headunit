@@ -242,12 +242,11 @@ Item {
                     }
                 }
             }
-            
             // Behaviors
-            Behavior on zoomLevel { NumberAnimation { duration: 800; easing.type: Easing.OutCubic } }
-            Behavior on center { CoordinateAnimation { duration: 800; easing.type: Easing.OutCubic } }
-            Behavior on tilt { NumberAnimation { duration: 1000; easing.type: Easing.OutQuint } }
-            Behavior on bearing { NumberAnimation { duration: 1000; easing.type: Easing.OutQuint } }
+            Behavior on zoomLevel { enabled: !SystemSettings.reducedMotion; NumberAnimation { duration: 800; easing.type: Easing.OutCubic } }
+            Behavior on center { enabled: !SystemSettings.reducedMotion; CoordinateAnimation { duration: 800; easing.type: Easing.OutCubic } }
+            Behavior on tilt { enabled: !SystemSettings.reducedMotion; NumberAnimation { duration: 1000; easing.type: Easing.OutQuint } }
+            Behavior on bearing { enabled: !SystemSettings.reducedMotion; NumberAnimation { duration: 1000; easing.type: Easing.OutQuint } }
         }
     }
 }

@@ -23,8 +23,8 @@ Page {
     // Page Registry
     // -------------------------------------------------------------------------
     property var pageComponents: [
-        displayPage,        // 0 - Display
-        connectivityPage,   // 1 - Connectivity (NEW)
+        displayPage,        // 0 - Display (includes Bottom Bar settings)
+        connectivityPage,   // 1 - Connectivity
         vehiclePage,        // 2 - Vehicle
         navigationPage,     // 3 - Navigation
         privacyPage,        // 4 - Privacy
@@ -50,6 +50,9 @@ Page {
     // Layouts
     // -------------------------------------------------------------------------
     
+    // Accessibility
+    readonly property bool reducedMotion: SystemSettings.reducedMotion ?? false
+
     // MODE A: Split View (Regular & Expanded)
     RowLayout {
         anchors.fill: parent
@@ -67,6 +70,9 @@ Page {
             // Sync State
             selectedIndex: root.currentCategoryIndex
             onCategorySelected: (index) => root.openCategory(index)
+            
+            // Initial Focus
+            Component.onCompleted: splitSidebar.forceActiveFocus()
         }
         
         // Vertical Divider
@@ -94,7 +100,8 @@ Page {
                     running: false
                 }
                 onSourceComponentChanged: {
-                    fadeIn.running = true
+                    if (!root.reducedMotion) fadeIn.running = true
+                    else contentLoader.opacity = 1
                 }
             }
         }
@@ -122,15 +129,19 @@ Page {
         
         // Transitions
         pushEnter: Transition {
+            enabled: !root.reducedMotion
             PropertyAnimation { property: "x"; from: stackView.width; to: 0; duration: 300; easing.type: Easing.OutQuart }
         }
         pushExit: Transition {
+            enabled: !root.reducedMotion
             PropertyAnimation { property: "x"; from: 0; to: -stackView.width * 0.3; duration: 300; easing.type: Easing.OutQuart }
         }
         popEnter: Transition {
+            enabled: !root.reducedMotion
             PropertyAnimation { property: "x"; from: -stackView.width * 0.3; to: 0; duration: 300; easing.type: Easing.OutQuart }
         }
         popExit: Transition {
+            enabled: !root.reducedMotion
             PropertyAnimation { property: "x"; from: 0; to: stackView.width; duration: 300; easing.type: Easing.OutQuart }
         }
     }
@@ -176,6 +187,7 @@ Page {
     }
     
     Component { id: audioSettingsPage; AudioSettings {} }
+    // BottomBarSettings integrated into DisplaySettings
     
     Component { 
         id: connectivityPage

@@ -27,6 +27,9 @@ ColumnLayout {
         variant: NordicButton.Variant.Glass
         size: NordicButton.Size.Md
         round: true
+        activeFocusOnTab: true
+        Keys.onReturnPressed: clicked()
+        Keys.onSpacePressed: clicked()
         onClicked: root.recenter()
     }
     
@@ -39,6 +42,9 @@ ColumnLayout {
         variant: root.isGuidanceMuted ? NordicButton.Variant.Primary : NordicButton.Variant.Glass
         size: NordicButton.Size.Md
         round: true
+        activeFocusOnTab: true
+        Keys.onReturnPressed: clicked()
+        Keys.onSpacePressed: clicked()
         onClicked: root.toggleMute()
     }
     
@@ -48,6 +54,9 @@ ColumnLayout {
         variant: root.showTraffic ? NordicButton.Variant.Primary : NordicButton.Variant.Glass
         size: NordicButton.Size.Md
         round: true
+        activeFocusOnTab: true
+        Keys.onReturnPressed: clicked()
+        Keys.onSpacePressed: clicked()
         onClicked: root.toggleTraffic()
     }
     
@@ -57,6 +66,9 @@ ColumnLayout {
         variant: root.showRange ? NordicButton.Variant.Primary : NordicButton.Variant.Glass
         size: NordicButton.Size.Md
         round: true
+        activeFocusOnTab: true
+        Keys.onReturnPressed: clicked()
+        Keys.onSpacePressed: clicked()
         onClicked: root.toggleRange()
     }
     
@@ -67,6 +79,9 @@ ColumnLayout {
         variant: NordicButton.Variant.Glass
         size: NordicButton.Size.Md
         round: true
+        activeFocusOnTab: true
+        Keys.onReturnPressed: clicked()
+        Keys.onSpacePressed: clicked()
         onClicked: root.zoomIn()
     }
     
@@ -76,6 +91,9 @@ ColumnLayout {
         variant: NordicButton.Variant.Glass
         size: NordicButton.Size.Md
         round: true
+        activeFocusOnTab: true
+        Keys.onReturnPressed: clicked()
+        Keys.onSpacePressed: clicked()
         onClicked: root.zoomOut()
     }
 }

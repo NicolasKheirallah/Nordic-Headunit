@@ -5,6 +5,7 @@ QtObject {
     id: theme
     
     property bool darkMode: SystemSettings.darkMode
+    property bool reducedMotion: SystemSettings?.reducedMotion ?? false
     
     // -------------------------------------------------------------------------
     // Responsive Layout System

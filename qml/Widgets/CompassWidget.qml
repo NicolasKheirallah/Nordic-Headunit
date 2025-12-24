@@ -2,14 +2,18 @@ import QtQuick
 import QtQuick.Layouts
 import NordicHeadunit
 
-// Compass Widget - Shows heading direction
+// Compass Widget - Shows heading direction with responsive design
 Item {
     id: root
     
     signal clicked()
     
+    // Responsive size detection
+    readonly property bool isCompact: width < 160 || height < 130
+    readonly property bool isLarge: width >= 280 && height >= 250
+    
     // Heading in degrees (would come from GPS/sensor)
-    property real heading: 45
+    property real heading: VehicleService?.heading ?? 45
     property string headingText: {
         var h = heading % 360
         if (h < 0) h += 360
@@ -23,10 +27,10 @@ Item {
         return "NW"
     }
     
-    // Simulate heading change for demo
+    // Simulate heading change for demo (only if no VehicleService)
     Timer {
         interval: 3000
-        running: true
+        running: typeof VehicleService === "undefined"
         repeat: true
         onTriggered: {
             root.heading = (root.heading + Math.random() * 20 - 10) % 360
@@ -41,24 +45,24 @@ Item {
         
         ColumnLayout {
             anchors.centerIn: parent
-            spacing: NordicTheme.spacing.space_2
+            spacing: root.isCompact ? NordicTheme.spacing.space_1 : NordicTheme.spacing.space_2
             
-            // Compass circle
+            // Compass circle - scales with widget size
             Rectangle {
                 Layout.alignment: Qt.AlignHCenter
-                width: Math.min(parent.parent.width, parent.parent.height) * 0.5
+                width: Math.min(root.width * 0.6, root.height * 0.55, 100)
                 height: width
                 radius: width / 2
                 color: "transparent"
-                border.width: 2
+                border.width: root.isCompact ? 1.5 : 2
                 border.color: NordicTheme.colors.border.default_color
                 
                 // Compass needle
                 Rectangle {
                     id: needle
                     anchors.centerIn: parent
-                    width: 4
-                    height: parent.height * 0.35
+                    width: root.isCompact ? 3 : 4
+                    height: parent.height * 0.42
                     radius: 2
                     color: Theme.accent
                     transformOrigin: Item.Bottom
@@ -70,21 +74,23 @@ Item {
                     }
                 }
                 
-                // North indicator
+                // N indicator - hide in very compact mode
                 NordicText {
                     anchors.horizontalCenter: parent.horizontalCenter
                     anchors.top: parent.top
-                    anchors.topMargin: 4
+                    anchors.topMargin: root.isCompact ? 2 : 4
                     text: "N"
-                    type: NordicText.Type.Caption
+                    type: root.isCompact ? NordicText.Type.Caption : NordicText.Type.BodySmall
                     color: Theme.accent
+                    font.bold: true
                 }
             }
             
-            // Heading text
+            // Heading text - hide in compact mode
             RowLayout {
                 Layout.alignment: Qt.AlignHCenter
-                spacing: NordicTheme.spacing.space_2
+                spacing: root.isCompact ? 4 : NordicTheme.spacing.space_2
+                visible: !root.isCompact
                 
                 NordicText {
                     text: root.headingText

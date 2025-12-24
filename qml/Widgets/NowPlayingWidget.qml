@@ -13,7 +13,8 @@ Item {
     
     // Size detection
     // Compact: Minimalist view (Play button only, small text)
-    readonly property bool isCompact: width < 220 || height < 120
+    // Threshold increased to 210 to ensure 1x1 grid cells (~180px) use compact mode
+    readonly property bool isCompact: width < 210 || height < 120
     // Large: Full Player view (Progress bar, timestamps)
     readonly property bool isLarge: width >= 300 && height >= 150
     
@@ -39,12 +40,12 @@ Item {
                 Layout.fillHeight: true // Fill remaining height if Progress Bar is hidden
                 spacing: NordicTheme.spacing.space_3
                 
-                // 1. Album Art (Fixed/Ratio)
+                // 1. Album Art (Dynamic Size)
                 Rectangle {
                     id: albumArt
-                    Layout.preferredHeight: root.isCompact ? 40 : 56
+                    // Scale with widget height, but clamp to width (for 1x2 tall widgets)
+                    Layout.preferredHeight: Math.min(root.height * 0.7, root.width * 0.4)
                     Layout.preferredWidth: Layout.preferredHeight
-                    Layout.minimumWidth: Layout.preferredHeight // Prevent shrinking
                     
                     radius: NordicTheme.shapes.radius_md
                     color: Theme.accent

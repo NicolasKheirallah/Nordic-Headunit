@@ -122,7 +122,9 @@ SettingsSubPage {
     // Empty State (Off)
     ColumnLayout {
         visible: !SystemSettings.wifiEnabled
-        anchors.centerIn: parent
+        Layout.fillWidth: true
+        Layout.fillHeight: true
+        Layout.alignment: Qt.AlignCenter
         spacing: NordicTheme.spacing.space_4
         
         NordicIcon {

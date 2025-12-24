@@ -34,6 +34,7 @@ Item {
             // Header
             RowLayout {
                 Layout.fillWidth: true
+                spacing: 8
                 
                 NordicIcon {
                     source: "qrc:/qt/qml/NordicHeadunit/assets/icons/settings.svg"
@@ -45,6 +46,7 @@ Item {
                     text: qsTr("Next Event")
                     type: NordicText.Type.Caption
                     color: NordicTheme.colors.text.secondary
+                    visible: root.width > 160
                 }
                 
                 Item { Layout.fillWidth: true }
@@ -53,6 +55,7 @@ Item {
                     width: 20; height: 20
                     radius: 10
                     color: Theme.accent
+                    visible: root.width > 200
                     
                     NordicText {
                         anchors.centerIn: parent
@@ -69,6 +72,9 @@ Item {
                 text: root.nextEvent.time
                 type: NordicText.Type.DisplaySmall
                 color: NordicTheme.colors.text.primary
+                fontSizeMode: Text.Fit
+                minimumPixelSize: 24
+                Layout.fillWidth: true
             }
             
             // Event title
@@ -78,11 +84,13 @@ Item {
                 color: NordicTheme.colors.text.primary
                 elide: Text.ElideRight
                 Layout.fillWidth: true
+                maximumLineCount: root.height < 150 ? 1 : 2
             }
             
             // Location
             RowLayout {
                 spacing: 4
+                visible: root.height > 180 // Hide if short
                 
                 NordicIcon {
                     source: "qrc:/qt/qml/NordicHeadunit/assets/icons/map.svg"
@@ -108,6 +116,7 @@ Item {
                 size: NordicButton.Size.Sm
                 text: qsTr("Navigate")
                 onClicked: root.clicked()
+                visible: root.height > 140
             }
         }
     }

@@ -40,6 +40,7 @@ NordicCard {
         
         // Scrollable Directions List
         ListView {
+            id: routesList
             Layout.fillWidth: true
             Layout.fillHeight: true
             clip: true
@@ -47,12 +48,12 @@ NordicCard {
             spacing: 12
             
             delegate: RowLayout {
-                width: parent.width
+                width: routesList.width
                 spacing: 12
                 
                 NordicIcon {
                     source: modelData.icon
-                    size: NordicIcon.Size.Md
+                    size: 2 // NordicIcon.Size.MD
                     color: NordicTheme.colors.text.primary
                 }
                 

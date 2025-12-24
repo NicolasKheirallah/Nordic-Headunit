@@ -7,7 +7,7 @@ Item {
     id: root
     
     // Size detection for adaptive content
-    readonly property bool isCompact: width < 150 || height < 120
+    readonly property bool isCompact: width < 210 || height < 120
     readonly property bool isLarge: width >= 250 && height >= 200
     
     // Live speed data (would come from VehicleService)
@@ -25,34 +25,44 @@ Item {
             spacing: NordicTheme.spacing.space_1
             
             // Large speed display
-            RowLayout {
-                Layout.alignment: Qt.AlignHCenter
-                spacing: 4
+            ColumnLayout {
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                spacing: 0
                 
-                NordicText {
-                    text: root.currentSpeed.toString()
-                    type: NordicText.Type.DisplayLarge
-                    color: root.isOverLimit ? NordicTheme.colors.semantic.warning : NordicTheme.colors.text.primary
-                    font.pixelSize: Math.min(parent.parent.parent.width * 0.3, 72)
-                    // Tech Font Features
-                    font.letterSpacing: 2
-                    font.family: "Helvetica" // Fallback to a mono/technical font if available, or system default
-                    
-                    Behavior on color { ColorAnimation { duration: 300 } }
-                }
-                
-                ColumnLayout {
-                    spacing: 0
-                    Layout.alignment: Qt.AlignBottom
-                    Layout.bottomMargin: 8
+                // Centered Speed
+                Item {
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
                     
                     NordicText {
-                        text: root.speedUnit.toUpperCase()
-                        type: NordicText.Type.BodySmall
-                        color: NordicTheme.colors.text.secondary
-                        font.letterSpacing: 1.5
-                        font.bold: true
+                        anchors.centerIn: parent
+                        text: root.currentSpeed.toString()
+                        type: NordicText.Type.DisplayLarge
+                        color: root.isOverLimit ? NordicTheme.colors.semantic.warning : NordicTheme.colors.text.primary
+                        
+                        // Dynamic font size: 35% of width or 50% of height, whichever is smaller
+                        // This ensures it fits in 2x1 (wide) and 1x2 (tall) and 2x2 (square)
+                        font.pixelSize: Math.min(root.width * 0.4, root.height * 0.6)
+                        fontSizeMode: Text.Fit
+                        
+                        // Tech Font Features
+                        font.letterSpacing: 2
+                        font.family: "Helvetica" 
+                        
+                        Behavior on color { ColorAnimation { duration: 300 } }
                     }
+                }
+                
+                // Unit Label (pushed to bottom of speed text area)
+                NordicText {
+                    text: root.speedUnit.toUpperCase()
+                    type: NordicText.Type.BodySmall
+                    color: NordicTheme.colors.text.secondary
+                    font.letterSpacing: 1.5
+                    font.bold: true
+                    Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
+                    Layout.bottomMargin: root.height * 0.05
                 }
             }
             

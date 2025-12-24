@@ -4,6 +4,8 @@ import QtQuick.Controls
 import QtQuick.Effects
 import NordicHeadunit
 
+import "../Services"
+
 // WidgetGrid - Customizable widget dashboard
 Item {
     id: root
@@ -16,14 +18,26 @@ Item {
     
     // Driving Mode - simplified UI at speed
     property bool drivingMode: false
+    // Safety: Force exit edit mode when driving starts
+    onDrivingModeChanged: if (drivingMode) editMode = false
+    
+    // Accessibility
+    readonly property bool reducedMotion: SystemSettings.reducedMotion ?? false
     
     // Edit mode
     property bool editMode: false
-    onEditModeChanged: updateContentHeight()
+    onEditModeChanged: { /* Layout updates automatically */ }
     
-    // Undo support
-    property var lastDeletedWidget: null
-    property bool canUndo: lastDeletedWidget !== null
+    // Undo support - multi-step history
+    property var undoHistory: []
+    readonly property int maxUndoHistory: 5
+    property bool canUndo: undoHistory.length > 0
+    readonly property var lastDeletedWidget: undoHistory.length > 0 ? undoHistory[undoHistory.length - 1] : null
+    
+    // Configuration constants (avoid magic numbers)
+    readonly property int maxReflowRows: 100
+    readonly property int maxSlotSearchRows: 20
+    readonly property int maxDisplacementDepth: 2
     
     // Grid configuration - follows CSS Grid best practices
     // Column count: responsive based on WidthClass
@@ -31,11 +45,10 @@ Item {
     // Regular (1) -> 3 columns
     // Expanded (2) -> 4 columns
     readonly property int columns: {
-        switch(NordicTheme.layout.widthClass) {
-            case 0: return 2
-            case 2: return 4
-            default: return 3
-        }
+        if (width >= 800) return 4
+        if (width >= 550) return 3
+        if (width >= 300) return 2
+        return 1
     }
     
     // Spacing and margins: proportional to width with sensible minimums
@@ -50,225 +63,126 @@ Item {
     // Cell height: maintain 16:10 aspect ratio with minimum height for content
     readonly property real cellHeight: Math.max(140, Math.round(cellWidth * 0.625))
     
+    // Paging (Disabled - Vertical Scroll)
+    property int pageCount: 1
+    property int currentPage: 0
+    
     // Auto-reflow layout when columns change (Fix #28 - comprehensive)
     onColumnsChanged: reflowLayout()
     
-    // Comprehensive reflow: repositions ALL widgets to prevent overlaps
+    // Comprehensive reflow: Masonry Packing (Sort & Fill)
     function reflowLayout() {
         if (widgetModel.count === 0) return
         
-        // Build occupancy grid
-        var occupancy = []
-        for (var r = 0; r < maxRows; r++) {
-            occupancy[r] = []
-            for (var c = 0; c < columns; c++) {
-                occupancy[r][c] = false
-            }
-        }
-        
-        // Mark cell as occupied
-        function markOccupied(x, y, w, h) {
-            for (var r = y; r < y + h && r < maxRows; r++) {
-                for (var c = x; c < x + w && c < columns; c++) {
-                    occupancy[r][c] = true
-                }
-            }
-        }
-        
-        // Check if position is available
-        function isAvailable(x, y, w, h) {
-            if (x + w > columns || y + h > maxRows) return false
-            for (var r = y; r < y + h; r++) {
-                for (var c = x; c < x + w; c++) {
-                    if (occupancy[r][c]) return false
-                }
-            }
-            return true
-        }
-        
-        // Find next available slot for widget
-        function findSlot(w, h) {
-            for (var r = 0; r < maxRows; r++) {
-                for (var c = 0; c <= columns - w; c++) {
-                    if (isAvailable(c, r, w, h)) {
-                        return { x: c, y: r }
-                    }
-                }
-            }
-            return { x: 0, y: maxRows }
-        }
-        
-        // Reflow each widget in order
+        // 1. Snapshot current positions
+        var items = []
         for (var i = 0; i < widgetModel.count; i++) {
             var item = widgetModel.get(i)
-            var w = Math.min(item.sizeX, columns)  // Clamp width to columns
-            var h = item.sizeY
-            
-            // Update width if needed
-            if (w !== item.sizeX) {
-                widgetModel.setProperty(i, "sizeX", w)
-            }
-            
-            // Find next available position
-            var slot = findSlot(w, h)
-            widgetModel.setProperty(i, "gridX", slot.x)
-            widgetModel.setProperty(i, "gridY", slot.y)
-            
-            // Mark as occupied
-            markOccupied(slot.x, slot.y, w, h)
+            items.push({
+                index: i,
+                type: item.widgetType, // Debugging
+                x: item.gridX,
+                y: item.gridY,
+                w: Math.min(item.sizeX, columns), // Clamp width immediately
+                h: item.sizeY
+            })
         }
         
-        updateContentHeight()
+        // 2. Sort by visual position (Row-major: Top-to-bottom, Left-to-right)
+        // This preserves the relative order the user intended
+        items.sort(function(a, b) {
+            if (a.y !== b.y) return a.y - b.y
+            return a.x - b.x
+        })
+        
+        // 3. Occupancy Grid
+        var occupancy = []
+        function check(x, y) {
+            if (!occupancy[y]) return false
+            return occupancy[y][x] === true
+        }
+        function mark(x, y, w, h) {
+            for(var r=y; r<y+h; r++) {
+                if(!occupancy[r]) occupancy[r] = []
+                for(var c=x; c<x+w; c++) occupancy[r][c] = true
+            }
+        }
+        function isAreaFree(x, y, w, h) {
+             if (x + w > columns) return false
+             for(var r=y; r<y+h; r++) {
+                 for(var c=x; c<x+w; c++) {
+                     if (check(c, r)) return false
+                 }
+             }
+             return true
+        }
+        
+        // 4. Repack
+        for (var i = 0; i < items.length; i++) {
+            var item = items[i]
+            var placed = false
+            
+            // Find first available slot
+            // Scan rows indefinitely until fit (usually fits within current bounds + height)
+            var scanRow = 0
+            while (!placed && scanRow < maxReflowRows) { // Use constant for safety bound
+                for (var c = 0; c <= columns - item.w; c++) {
+                    if (isAreaFree(c, scanRow, item.w, item.h)) {
+                        
+                        // Apply new position
+                        widgetModel.setProperty(item.index, "gridX", c)
+                        widgetModel.setProperty(item.index, "gridY", scanRow)
+                        widgetModel.setProperty(item.index, "sizeX", item.w) // Apply clamped width
+                        widgetModel.setProperty(item.index, "page", 0)
+                        
+                        // Mark occupied
+                        mark(c, scanRow, item.w, item.h)
+                        placed = true
+                        break
+                    }
+                }
+                scanRow++
+            }
+        }
+        
         saveLayout()
     }
     
     // Constants - dynamic based on screen
     readonly property int maxRows: Math.max(6, Math.ceil(height / cellHeight) + 2)
     
-    // Centralized Widget Registry with flexible sizing
-    // allowedSizes: array of [width, height] pairs that widget supports
-    readonly property var widgetRegistry: ({
-        // Large feature widgets
-        "navigation": { 
-            label: qsTr("Navigation"), 
-            icon: "map", 
-            defaultW: 2, defaultH: 2, 
-            allowedSizes: [[2,2], [3,2], [2,1], [3,1]],
-            canDelete: true 
-        },
-        "nowPlaying": { 
-            label: qsTr("Now Playing"), 
-            icon: "music", 
-            defaultW: 2, defaultH: 1, 
-            allowedSizes: [[2,1], [3,1], [2,2], [1,1]],
-            canDelete: true 
-        },
-        
-        // Medium widgets
-        "weather": { 
-            label: qsTr("Weather"), 
-            icon: "weather_cloudy", 
-            defaultW: 1, defaultH: 1, 
-            allowedSizes: [[1,1], [2,1], [1,2]],
-            canDelete: true 
-        },
-        "systems": { 
-            label: qsTr("Systems"), 
-            icon: "car", 
-            defaultW: 1, defaultH: 1, 
-            allowedSizes: [[1,1], [2,1]],
-            canDelete: true 
-        },
-        "clock": { 
-            label: qsTr("Clock"), 
-            icon: "clock", 
-            defaultW: 1, defaultH: 1, 
-            allowedSizes: [[1,1], [2,1]],
-            canDelete: true 
-        },
-        
-        // Quick action widgets
-        "quickCall": { label: qsTr("Call"), icon: "phone", defaultW: 1, defaultH: 1, allowedSizes: [[1,1]], canDelete: true },
-        "quickMedia": { label: qsTr("Media"), icon: "music", defaultW: 1, defaultH: 1, allowedSizes: [[1,1]], canDelete: true },
-        "quickVehicle": { label: qsTr("Vehicle"), icon: "car", defaultW: 1, defaultH: 1, allowedSizes: [[1,1]], canDelete: true },
-        "quickSettings": { label: qsTr("Settings"), icon: "settings", defaultW: 1, defaultH: 1, allowedSizes: [[1,1]], canDelete: true },
-        
-        // New widgets
-        "compass": { 
-            label: qsTr("Compass"), 
-            icon: "compass", 
-            defaultW: 1, defaultH: 1, 
-            allowedSizes: [[1,1], [2,1]],
-            canDelete: true 
-        },
-        "tripInfo": { 
-            label: qsTr("Trip Info"), 
-            icon: "car_info", 
-            defaultW: 2, defaultH: 1, 
-            allowedSizes: [[2,1], [3,1], [1,1]],
-            canDelete: true 
-        },
-        
-        // Competitor-style widgets
-        "speed": { 
-            label: qsTr("Speed"), 
-            icon: "speed", 
-            defaultW: 1, defaultH: 1, 
-            allowedSizes: [[1,1], [2,1], [2,2]],
-            canDelete: true 
-        },
-        "range": { 
-            label: qsTr("Range"), 
-            icon: "battery", 
-            defaultW: 1, defaultH: 1, 
-            allowedSizes: [[1,1], [2,1]],
-            canDelete: true 
-        },
-        "parking": { 
-            label: qsTr("Parking"), 
-            icon: "car", 
-            defaultW: 2, defaultH: 2, 
-            allowedSizes: [[2,2], [2,1]],
-            canDelete: true 
-        },
-        "calendar": { 
-            label: qsTr("Calendar"), 
-            icon: "settings", 
-            defaultW: 1, defaultH: 2, 
-            allowedSizes: [[1,2], [2,2], [1,1]],
-            canDelete: true 
-        },
-        "favorites": { 
-            label: qsTr("Favorites"), 
-            icon: "heart", 
-            defaultW: 2, defaultH: 2, 
-            allowedSizes: [[2,2], [2,1], [1,2]],
-            canDelete: true 
-        },
-        "climate": { 
-            label: qsTr("Climate"), 
-            icon: "settings", 
-            defaultW: 2, defaultH: 1, 
-            allowedSizes: [[2,1], [3,1], [2,2]],
-            canDelete: true 
-        }
-    })
-    
     // Widget model
     property ListModel widgetModel: ListModel { id: internalModel }
     
-    // Cached content height
-    property real cachedContentHeight: 400
+    // Cached content height (not really used for Flickable width calc but good to keep)
+    // Cached content height removed (Paging uses fixed height)
     
     // Navigation helper
     signal navigateTo(int tabIndex)
     
-    // Helper functions
-    function calcX(gridX) { return margin + gridX * (cellWidth + spacing) }
+    // Helper functions (Updated for Vertical Scroll)
+    function calcX(gridX, page) { 
+        return margin + gridX * (cellWidth + spacing) 
+    }
     function calcY(gridY) { return margin + gridY * (cellHeight + spacing) }
     function calcWidth(sizeX) { return sizeX * cellWidth + (sizeX - 1) * spacing }
     function calcHeight(sizeY) { return sizeY * cellHeight + (sizeY - 1) * spacing }
     
-    function pixelToGridX(px) { return Math.round((px - margin) / (cellWidth + spacing)) }
+    function pixelToGridX(px) { 
+        var localPx = Math.max(0, px)
+        return Math.floor((localPx - margin) / (cellWidth + spacing)) 
+    }
+    function pixelToPage(px) { return 0 } // No pages
+    
     function pixelToGridY(py) { return Math.round((py - margin) / (cellHeight + spacing)) }
     
-    function updateContentHeight() {
-        var maxY = 0
-        for (var i = 0; i < widgetModel.count; i++) {
-            var item = widgetModel.get(i)
-            var bottom = calcY(item.gridY) + calcHeight(item.sizeY)
-            if (bottom > maxY) maxY = bottom
-        }
-        // In edit mode, allow extra space at bottom to add new widgets
-        // Otherwise, fit exactly to last widget
-        cachedContentHeight = maxY + margin + (editMode ? (cellHeight + spacing) : 0)
-    }
-    
     // Check occupancy
-    function isOccupied(gridX, gridY, sizeX, sizeY, excludeIndex) {
+    function isOccupied(page, gridX, gridY, sizeX, sizeY, excludeIndex) {
+        // Ignore page
         for (var i = 0; i < widgetModel.count; i++) {
             if (i === excludeIndex) continue
             var item = widgetModel.get(i)
+            
             var overlapX = gridX < (item.gridX + item.sizeX) && (gridX + sizeX) > item.gridX
             var overlapY = gridY < (item.gridY + item.sizeY) && (gridY + sizeY) > item.gridY
             if (overlapX && overlapY) return true
@@ -276,95 +190,87 @@ Item {
         return false
     }
     
-    // Find slot
+    // Find slot (Vertical)
     function findAvailableSlot(sizeX, sizeY, excludeIndex) {
-        for (var y = 0; y < maxRows; y++) {
+        for (var y = 0; y < maxSlotSearchRows; y++) {
             for (var x = 0; x <= columns - sizeX; x++) {
-                if (!isOccupied(x, y, sizeX, sizeY, excludeIndex)) {
-                    return { x: x, y: y }
+                if (!isOccupied(0, x, y, sizeX, sizeY, excludeIndex)) {
+                    return { x: x, y: y, page: 0 }
                 }
             }
         }
-        return { x: 0, y: maxRows } // Should be far bottom
+        return { x: 0, y: maxSlotSearchRows, page: 0 }
     }
 
     // DISPLACEMENT LOGIC (Fix #21 & #3) + RECURSION LIMIT (Fix #26)
-    function moveWidget(index, newGridX, newGridY, depth) {
+    function moveWidget(index, newGridX, newGridY, newPage, depth) {
         if (depth === undefined) depth = 0
-        if (depth > 2) { 
-            // Halt recursion - reject logic could be here, but for now we just stop displacing
-            console.log("Max displacement depth reached. Aborting further moves.")
-            return 
-        }
+        if (depth > maxDisplacementDepth) return
         
         var item = widgetModel.get(index)
         
         // Clamp bounds
         newGridX = Math.max(0, Math.min(columns - item.sizeX, newGridX))
         newGridY = Math.max(0, newGridY)
+        if (newPage === undefined) newPage = 0
+        newPage = Math.max(0, Math.min(pageCount - 1, newPage))
         
         // Check for collision
         var collidingIndex = -1
         for (var i = 0; i < widgetModel.count; i++) {
             if (i === index) continue
             var other = widgetModel.get(i)
+            if (other.page !== newPage) continue // Ignore other pages
+            
             var overlapX = newGridX < (other.gridX + other.sizeX) && (newGridX + item.sizeX) > other.gridX
             var overlapY = newGridY < (other.gridY + other.sizeY) && (newGridY + item.sizeY) > other.gridY
             
             if (overlapX && overlapY) {
                 collidingIndex = i
-                break // Handle one collision at a time
+                break 
             }
         }
         
         if (collidingIndex !== -1) {
-            // Collision detected! Try to move the OTHER widget
+            // Collision: Move OTHER widget
             var other = widgetModel.get(collidingIndex)
-            
-            // Tentatively unset colliding widget pos (mentally) or just find next slot that works
-            // We use findAvailableSlot BUT we need to exclude 'index' (occupying new spot) AND 'collidingIndex' (moving)
-            // Actually 'isOccupied' logic will fail if we don't update 'index' first.
             
             // 1. Move 'index' to new pos
             widgetModel.setProperty(index, "gridX", newGridX)
             widgetModel.setProperty(index, "gridY", newGridY)
+            widgetModel.setProperty(index, "page", newPage)
             
             // 2. Find slot for 'collidingIndex'
-            // We pass -1 as excludeIndex because we want to respect ALL other widgets including the one we just moved.
-            // Wait, isOccupied wants to exclude 'collidingIndex' itself so it doesn't collide with old self.
             var newSlot = findAvailableSlot(other.sizeX, other.sizeY, collidingIndex)
             
-            // 3. Move colliding widget (Recursively? Or just move?)
-            // If we just move, it's safe. If we call moveWidget recursively, we get chain reaction.
-            // Chain reaction is good for "Push", but needs limit.
-            moveWidget(collidingIndex, newSlot.x, newSlot.y, depth + 1)
+            // 3. Move colliding widget
+            moveWidget(collidingIndex, newSlot.x, newSlot.y, newSlot.page, depth + 1)
             
         } else {
-            // No collision, just move
+            // No collision
             widgetModel.setProperty(index, "gridX", newGridX)
             widgetModel.setProperty(index, "gridY", newGridY)
+            widgetModel.setProperty(index, "page", newPage)
         }
         
         if (depth === 0) {
-            updateContentHeight()
             saveLayout()
-            root.userAction("move", { index: index, x: newGridX, y: newGridY })
+            root.userAction("move", { index: index, x: newGridX, y: newGridY, p: newPage })
         }
     }
     
     function updateWidgetSize(index, newSizeX, newSizeY) {
         var item = widgetModel.get(index)
-        
         // Clamp (Fix #22)
         newSizeX = Math.max(1, Math.min(columns, newSizeX))
-        newSizeY = Math.max(1, Math.min(2, newSizeY))
+        newSizeY = Math.max(1, Math.min(3, newSizeY))
         
         if (item.gridX + newSizeX > columns) newSizeX = columns - item.gridX
         
-        if (!isOccupied(item.gridX, item.gridY, newSizeX, newSizeY, index)) {
+        if (!isOccupied(item.page, item.gridX, item.gridY, newSizeX, newSizeY, index)) {
             widgetModel.setProperty(index, "sizeX", newSizeX)
             widgetModel.setProperty(index, "sizeY", newSizeY)
-            updateContentHeight()
+            // updateContentHeight() // No longer needed as we use fixed height pages?
             saveLayout()
             root.userAction("resize", { index: index, w: newSizeX, h: newSizeY })
         }
@@ -375,13 +281,15 @@ Item {
         var layout = []
         for (var i = 0; i < widgetModel.count; i++) {
              var item = widgetModel.get(i)
-             layout.push({ type: item.widgetType, x: item.gridX, y: item.gridY, w: item.sizeX, h: item.sizeY })
+             layout.push({ type: item.widgetType, x: item.gridX, y: item.gridY, w: item.sizeX, h: item.sizeY, p: item.page !== undefined ? item.page : 0 })
         }
-        // Safety check
         if (typeof SystemSettings !== "undefined") {
             try {
                 SystemSettings.widgetLayout = JSON.stringify(layout)
-            } catch (e) { console.error("Error saving layout: " + e) }
+            } catch (e) {
+                console.error("Error saving layout: " + e)
+                root.showToast(qsTr("Failed to save layout"), 2) // 2 = Error
+            }
         }
     }
     
@@ -390,10 +298,20 @@ Item {
             try {
                 var layout = JSON.parse(SystemSettings.widgetLayout)
                 widgetModel.clear()
-                for (var i=0; i<layout.length; i++) widgetModel.append({ widgetType: layout[i].type, gridX: layout[i].x, gridY: layout[i].y, sizeX: layout[i].w, sizeY: layout[i].h })
+                for (var i=0; i<layout.length; i++) {
+                    widgetModel.append({ 
+                        widgetType: layout[i].type, 
+                        gridX: layout[i].x, 
+                        gridY: layout[i].y, 
+                        sizeX: layout[i].w, 
+                        sizeY: layout[i].h,
+                        page: layout[i].p !== undefined ? layout[i].p : 0
+                    })
+                }
                 return
             } catch(e) {
                 console.error("Error loading layout: " + e)
+                root.showToast(qsTr("Failed to load layout, using defaults"), 2)
             }
         }
         loadDefaultLayout()
@@ -401,40 +319,57 @@ Item {
     
     function loadDefaultLayout() {
         widgetModel.clear()
-        // Stack Layout (2 columns wide)
-        // Row 0: Media (Hero of the stack)
-        widgetModel.append({ widgetType: "nowPlaying", gridX: 0, gridY: 0, sizeX: 2, sizeY: 1 })
+        // Standard Widgets (Top)
+        widgetModel.append({ widgetType: "nowPlaying", gridX: 0, gridY: 0, sizeX: 2, sizeY: 1, page: 0 })
+        widgetModel.append({ widgetType: "weather", gridX: 0, gridY: 1, sizeX: 2, sizeY: 1, page: 0 })
         
-        // Row 1: Driving Stats
-        widgetModel.append({ widgetType: "speed", gridX: 0, gridY: 1, sizeX: 1, sizeY: 1 })
-        widgetModel.append({ widgetType: "range", gridX: 1, gridY: 1, sizeX: 1, sizeY: 1 })
-        
-        // Row 2: Secondary Info
-        widgetModel.append({ widgetType: "weather", gridX: 0, gridY: 2, sizeX: 2, sizeY: 1 })
-        
-        // Row 3: Quick Controls
-        widgetModel.append({ widgetType: "quickCall", gridX: 0, gridY: 3, sizeX: 1, sizeY: 1 })
-        widgetModel.append({ widgetType: "quickSettings", gridX: 1, gridY: 3, sizeX: 1, sizeY: 1 })
+        // Driving Widgets (Below)
+        widgetModel.append({ widgetType: "speed", gridX: 0, gridY: 2, sizeX: 1, sizeY: 1, page: 0 })
+        widgetModel.append({ widgetType: "range", gridX: 1, gridY: 2, sizeX: 1, sizeY: 1, page: 0 })
+        widgetModel.append({ widgetType: "tripInfo", gridX: 0, gridY: 3, sizeX: 2, sizeY: 1, page: 0 })
     }
     
+    Timer {
+        id: undoTimer
+        interval: 8000  // Extended from 5s to 8s for better UX
+        repeat: false
+        onTriggered: {
+            undoHistory = []  // Clear all undo history
+        }
+    }
+
     function deleteWidget(index) {
         var item = widgetModel.get(index)
-        var widgetLabel = widgetRegistry[item.widgetType]?.label ?? item.widgetType
-        lastDeletedWidget = { widgetType: item.widgetType, gridX: item.gridX, gridY: item.gridY, sizeX: item.sizeX, sizeY: item.sizeY }
+        var widgetData = WidgetRegistry.get(item.widgetType)
+        var widgetLabel = widgetData?.label ?? item.widgetType
+        
+        // Push to undo history (multi-step)
+        var historyItem = { widgetType: item.widgetType, gridX: item.gridX, gridY: item.gridY, sizeX: item.sizeX, sizeY: item.sizeY, page: item.page || 0 }
+        var newHistory = undoHistory.slice()  // Clone to trigger binding update
+        newHistory.push(historyItem)
+        if (newHistory.length > maxUndoHistory) newHistory.shift()
+        undoHistory = newHistory
+        
         widgetModel.remove(index)
-        updateContentHeight()
         saveLayout()
         root.userAction("delete", { type: item.widgetType })
-        root.showToast(qsTr("%1 removed").arg(widgetLabel), 0)  // 0 = Info
+        undoTimer.restart()
     }
     
     function undoDelete() {
-        if(lastDeletedWidget) {
-            widgetModel.append(lastDeletedWidget)
-            root.userAction("undo", { type: lastDeletedWidget.widgetType })
-            lastDeletedWidget = null
-            updateContentHeight()
-            saveLayout()
+        if (undoHistory.length > 0) {
+            var newHistory = undoHistory.slice()
+            var widget = newHistory.pop()
+            undoHistory = newHistory
+            
+            widgetModel.append(widget)
+            reflowLayout()  // Ensure no collisions
+            root.userAction("undo", { type: widget.widgetType })
+            root.showToast(qsTr("Widget restored"), 1)  // 1 = Success
+            
+            if (undoHistory.length > 0) {
+                undoTimer.restart()  // Keep timer running if more undo available
+            }
         }
     }
     
@@ -466,7 +401,6 @@ Item {
         for (var i = 0; i < layout.length; i++) {
             widgetModel.append(layout[i])
         }
-        updateContentHeight()
         saveLayout()
         root.userAction("loadPreset", { name: name })
         return true
@@ -485,10 +419,8 @@ Item {
         }
     }
     
-    // Load presets from storage on init
     Component.onCompleted: {
         loadLayout()
-        updateContentHeight()
         
         // Load saved presets
         if (typeof SystemSettings !== "undefined" && SystemSettings.widgetPresets) {
@@ -501,22 +433,24 @@ Item {
     // Target position for adding new widget (used by empty cell click)
     property int addTargetX: -1
     property int addTargetY: -1
+    property int addTargetPage: -1
     
     function addWidget(type) {
-        var reg = widgetRegistry[type]
+        var reg = WidgetRegistry.get(type)
         if(!reg) return
         
         // Use target position if set, otherwise find available slot
         var slot
         if (addTargetX >= 0 && addTargetY >= 0) {
-            slot = { x: addTargetX, y: addTargetY }
+            slot = { x: addTargetX, y: addTargetY, page: (addTargetPage >= 0 ? addTargetPage : currentPage) }
             addTargetX = -1
             addTargetY = -1
+            addTargetPage = -1
         } else {
             slot = findAvailableSlot(reg.defaultW, reg.defaultH, -1)
         }
         
-        widgetModel.append({ widgetType: type, gridX: slot.x, gridY: slot.y, sizeX: reg.defaultW, sizeY: reg.defaultH })
+        widgetModel.append({ widgetType: type, gridX: slot.x, gridY: slot.y, sizeX: reg.defaultW, sizeY: reg.defaultH, page: slot.page })
         
         // Reflow to handle any overlaps caused by adding at specific position
         reflowLayout()
@@ -525,119 +459,32 @@ Item {
     }
     
     function getWidgetSource(type) {
-        switch(type) {
-            case "navigation": return "../Widgets/NavigationWidget.qml"
-            case "weather": return "../Widgets/WeatherWidget.qml"
-            case "nowPlaying": return "../Widgets/NowPlayingWidget.qml"
-            case "systems": return "../Widgets/SystemsWidget.qml"
-            case "clock": return "../Widgets/ClockWidget.qml"
-            case "compass": return "../Widgets/CompassWidget.qml"
-            case "tripInfo": return "../Widgets/TripInfoWidget.qml"
-            case "speed": return "../Widgets/SpeedWidget.qml"
-            case "range": return "../Widgets/RangeWidget.qml"
-            case "parking": return "../Widgets/ParkingWidget.qml"
-            case "calendar": return "../Widgets/CalendarWidget.qml"
-            case "favorites": return "../Widgets/FavoritesWidget.qml"
-            case "climate": return "../Widgets/ClimateWidget.qml"
-            default: return "../Widgets/QuickActionWidget.qml"
-        }
+        var reg = WidgetRegistry.get(type)
+        return reg ? reg.source : ""
     }
     
     function getWidgetTab(type) {
-        switch(type) {
-            case "navigation": return 1
-            case "nowPlaying": case "quickMedia": return 2
-            case "quickCall": return 3
-            case "systems": case "quickVehicle": return 4
-            case "quickSettings": return 5
-            default: return 0
+        var reg = WidgetRegistry.get(type)
+        return reg ? (reg.tabIndex !== undefined ? reg.tabIndex : 0) : 0
+    }
+    
+    TapHandler { 
+        onLongPressed: {
+            if (!root.drivingMode) root.editMode = true 
+            else root.showToast(qsTr("Cannot customize while driving"), 0)
         }
     }
     
-    TapHandler { onLongPressed: root.editMode = true }
-    
-    Flickable {
-        id: flickable
+    // Main Content Area (Clipped to preventing bleeding over map)
+    Item {
+        id: container
         anchors.fill: parent
-        contentWidth: width
-        // Only allow scrolling if content exceeds visible area
-        // If content fits in view, set contentHeight = height (no scroll)
-        contentHeight: Math.max(height, root.cachedContentHeight)
         clip: true
-        boundsBehavior: Flickable.StopAtBounds
+
         
-        // Edit Mode Hint - visible when NOT in edit mode (improves discoverability)
-        // Hidden in driving mode for simplified UI
-        Rectangle {
-            id: editHint
-            visible: !root.editMode && !root.drivingMode && widgetModel.count > 0
-            anchors.right: parent.right; anchors.top: parent.top; anchors.margins: root.margin
-            width: 36; height: 36; radius: 18
-            color: hintMouse.containsMouse ? NordicTheme.colors.bg.elevated : NordicTheme.colors.bg.surface
-            border.color: Theme.border
-            border.width: 1
-            opacity: hintMouse.containsMouse ? 1.0 : 0.7
-            z: 100
-            
-            Behavior on opacity { NumberAnimation { duration: 150 } }
-            Behavior on color { ColorAnimation { duration: 150 } }
-            
-            NordicIcon {
-                anchors.centerIn: parent
-                source: "qrc:/qt/qml/NordicHeadunit/assets/icons/edit.svg"
-                size: NordicIcon.Size.SM
-                color: NordicTheme.colors.text.secondary
-            }
-            
-            MouseArea { 
-                id: hintMouse
-                anchors.fill: parent
-                hoverEnabled: true
-                cursorShape: Qt.PointingHandCursor
-                onClicked: root.editMode = true
-            }
-            
-            // Tooltip on hover
-            Rectangle {
-                visible: hintMouse.containsMouse
-                anchors.right: parent.left
-                anchors.verticalCenter: parent.verticalCenter
-                anchors.rightMargin: 8
-                width: tooltipText.width + 16
-                height: 28
-                radius: 6
-                color: NordicTheme.colors.bg.elevated
-                
-                NordicText {
-                    id: tooltipText
-                    anchors.centerIn: parent
-                    text: qsTr("Customize")
-                    type: NordicText.Type.Caption
-                    color: NordicTheme.colors.text.primary
-                }
-            }
-        }
+
         
-        // Done Button - only visible in edit mode (enter edit via long-press)
-        Rectangle {
-            id: editButton
-            visible: root.editMode  // Only show in edit mode
-            anchors.right: parent.right; anchors.top: parent.top; anchors.margins: root.margin
-            width: editBtn.width + 24; height: 36; radius: 18
-            color: Theme.accent
-            z: 100
-            MouseArea { anchors.fill: parent; cursorShape: Qt.PointingHandCursor; onClicked: root.editMode = false }
-            NordicText { id: editBtn; anchors.centerIn: parent; text: qsTr("Done"); type: NordicText.Type.BodySmall; color: "white" }
-        }
-        
-        // Undo Button (Fix #31 i18n)
-        Rectangle {
-            visible: root.editMode && root.canUndo
-            anchors.right: editButton.left; anchors.top: parent.top; anchors.margins: root.margin; anchors.rightMargin: 8
-            width: 60; height: 36; radius: 18; color: NordicTheme.colors.bg.elevated; z: 100
-            MouseArea { anchors.fill: parent; cursorShape: Qt.PointingHandCursor; onClicked: root.undoDelete() }
-            NordicText { anchors.centerIn: parent; text: qsTr("Undo"); type: NordicText.Type.BodySmall; color: NordicTheme.colors.text.primary }
-        }
+        // Undo handled by global overlay now
         
         // Empty State (Fix #31 i18n)
         Item {
@@ -669,157 +516,299 @@ Item {
             }
         }
         
-        // Drop Grid - clickable empty cells to add widgets
-        Repeater {
-            model: root.editMode ? columns * 6 : 0
-            Rectangle {
-                id: dropCell
-                property int gridCol: index % root.columns
-                property int gridRow: Math.floor(index / root.columns)
-                
-                x: calcX(gridCol)
-                y: calcY(gridRow)
-                width: root.cellWidth
-                height: root.cellHeight
-                color: cellMouse.containsMouse ? Qt.rgba(Theme.accent.r, Theme.accent.g, Theme.accent.b, 0.1) : "transparent"
-                border.color: cellMouse.containsMouse ? Theme.accent : Theme.border
-                border.width: cellMouse.containsMouse ? 2 : 1
-                radius: NordicTheme.shapes.radius_md
-                opacity: 0.5
-                z: -1
-                
-                // Plus icon
-                Text {
-                    anchors.centerIn: parent
-                    text: "+"
-                    font.pixelSize: 32
-                    font.weight: Font.Light
-                    color: NordicTheme.colors.text.tertiary
-                    opacity: cellMouse.containsMouse ? 1.0 : 0.3
-                    
-                    Behavior on opacity { NumberAnimation { duration: 150 } }
+        // Vertical Scroll Container
+        Flickable {
+            id: pager
+            anchors.fill: parent
+            contentWidth: width
+            contentHeight: Math.max(height, (getMaxRow() + 2) * (root.cellHeight + root.spacing))
+            flickableDirection: Flickable.VerticalFlick
+            boundsBehavior: Flickable.StopAtBounds
+            flickDeceleration: 3000
+            clip: true
+            
+            // Function to find the lowest occupied row to determine content height
+            function getMaxRow() {
+                var maxR = 4 // Minimum height
+                for (var i = 0; i < widgetModel.count; i++) {
+                    var item = widgetModel.get(i)
+                    if (item.gridY + item.sizeY > maxR) maxR = item.gridY + item.sizeY
                 }
-                
-                MouseArea {
-                    id: cellMouse
-                    anchors.fill: parent
-                    hoverEnabled: true
-                    cursorShape: Qt.PointingHandCursor
-                    onClicked: {
-                        root.addTargetX = dropCell.gridCol
-                        root.addTargetY = dropCell.gridRow
-                        widgetPicker.open()
-                    }
-                }
+                return maxR
             }
-        }
-        
-        // Widgets
-        Repeater {
-            model: widgetModel
-            DraggableWidget {
-                id: widgetWrapper
-                widgetId: model.widgetType
-                gridWidth: model.sizeX; gridHeight: model.sizeY
-                editMode: root.editMode
-                modelIndex: index
-                
-                // Fix #22 pass columns
-                maxGridWidth: root.columns
-                maxGridHeight: 2
-                cellWidth: root.cellWidth; cellHeight: root.cellHeight; spacing: root.spacing
-                
-                x: calcX(model.gridX)
-                y: calcY(model.gridY)
-                width: calcWidth(model.sizeX)
-                height: calcHeight(model.sizeY)
-                
-                // Fix #19 Disable behavior during edit to prevent fighting
-                Behavior on x { enabled: !editMode; NumberAnimation { duration: 200; easing.type: Easing.OutCubic } }
-                Behavior on y { enabled: !editMode; NumberAnimation { duration: 200; easing.type: Easing.OutCubic } }
-                Behavior on width { enabled: !editMode; NumberAnimation { duration: 200; easing.type: Easing.OutCubic } }
-                Behavior on height { enabled: !editMode; NumberAnimation { duration: 200; easing.type: Easing.OutCubic } }
-                
-                onDeleteRequested: root.deleteWidget(index)
-                onDragEnded: function(newX, newY) { root.moveWidget(index, pixelToGridX(newX), pixelToGridY(newY)) }
-                onResizeRequested: function(newW, newH) { root.updateWidgetSize(index, newW, newH) }
-                
-                // Fix #27 Loader Error Handling
-                Loader {
-                    id: wLoader
-                    anchors.fill: parent
-                    source: getWidgetSource(model.widgetType)
-                    
-                    onStatusChanged: {
-                        if (status === Loader.Error) {
-                            console.error("Failed to load widget: " + model.widgetType)
-                        }
-                    }
-                    
-                    onLoaded: {
-                        var reg = widgetRegistry[model.widgetType]
-                        if(reg && item.icon !== undefined) { item.icon = reg.icon; item.label = reg.label }
-                        if(item.clicked) item.clicked.connect(function() { if(!root.editMode) { var t = getWidgetTab(model.widgetType); if(t>0) root.navigateTo(t) } })
-                    }
-                    
-                    // Loading State UI
-                    Rectangle {
-                        anchors.fill: parent
-                        visible: wLoader.status === Loader.Loading
-                        color: NordicTheme.colors.bg.surface
-                        radius: NordicTheme.shapes.radius_md
+            
+            // Content
+            Item {
+                 width: pager.contentWidth
+                 height: pager.height
+                 
+                 // 1. DROP TARGETS (Per Page)
+                 Repeater {
+                     model: root.pageCount
+                     Item {
+                         property int pageIndex: index
+                         width: root.width
+                         height: pager.height
+                         x: index * root.width
+                         y: 0
+                         visible: Math.abs(root.currentPage - index) <= 1 // Optimization
+                         
+                         Repeater {
+                             model: root.editMode ? root.columns * root.maxRows : 0
+                             Rectangle {
+                                 id: dropCell
+                                 property int gridCol: index % root.columns
+                                 property int gridRow: Math.floor(index / root.columns)
+                                 
+                                 x: root.margin + gridCol * (root.cellWidth + root.spacing)
+                                 y: root.margin + gridRow * (root.cellHeight + root.spacing)
+                                 width: root.cellWidth
+                                 height: root.cellHeight
+                                 
+                                 color: cellMouse.containsMouse ? Qt.rgba(Theme.accent.r, Theme.accent.g, Theme.accent.b, 0.1) : "transparent"
+                                 border.color: cellMouse.containsMouse ? Theme.accent : Theme.border
+                                 border.width: cellMouse.containsMouse ? 2 : 1
+                                 radius: NordicTheme.shapes.radius_md
+                                 opacity: 0.5
+                                 z: -1
+                                 
+                                 Text {
+                                     anchors.centerIn: parent
+                                     text: "+"
+                                     font.pixelSize: 32
+                                     font.weight: Font.Light
+                                     color: NordicTheme.colors.text.tertiary
+                                     opacity: cellMouse.containsMouse ? 1.0 : 0.3
+                                     Behavior on opacity { enabled: !root.reducedMotion; NumberAnimation { duration: 150 } }
+                                 }
+                                 
+                                 MouseArea {
+                                     id: cellMouse
+                                     anchors.fill: parent
+                                     hoverEnabled: true
+                                     cursorShape: Qt.PointingHandCursor
+                                     onClicked: {
+                                         root.addTargetX = dropCell.gridCol
+                                         root.addTargetY = dropCell.gridRow
+                                         root.addTargetPage = pageIndex
+                                         widgetPicker.open()
+                                     }
+                                 }
+                             }
+                         }
+                     }
+                 }
+    
+                 // 2. WIDGETS
+                 Repeater {
+                    model: widgetModel
+                    DraggableWidget {
+                        id: widgetWrapper
+                        widgetId: model.widgetType
+                        gridWidth: model.sizeX; gridHeight: model.sizeY
+                        editMode: root.editMode
+                        modelIndex: index
                         
-                        NordicSpinner {
-                            anchors.centerIn: parent
-                        }
-                    }
-                    
-                    // Error Fallback UI with Retry
-                    Rectangle {
-                        anchors.fill: parent
-                        visible: wLoader.status === Loader.Error
-                        color: NordicTheme.colors.bg.secondary
-                        border.color: Theme.danger
-                        border.width: 1
-                        radius: NordicTheme.shapes.radius_md
+                        maxGridWidth: root.columns
+                        maxGridHeight: 3
+                        cellWidth: root.cellWidth; cellHeight: root.cellHeight; spacing: root.spacing
                         
-                        ColumnLayout {
-                            anchors.centerIn: parent
-                            spacing: NordicTheme.spacing.space_2
+                        // Safety
+                        isComplex: WidgetRegistry.get(model.widgetType)?.isComplex || false
+                        
+                        x: calcX(model.gridX, model.page)
+                        y: calcY(model.gridY)
+                        width: calcWidth(model.sizeX)
+                        height: calcHeight(model.sizeY)
+                        
+                        Behavior on x { enabled: !editMode && !root.reducedMotion; NumberAnimation { duration: 200; easing.type: Easing.OutCubic } }
+                        Behavior on y { enabled: !editMode && !root.reducedMotion; NumberAnimation { duration: 200; easing.type: Easing.OutCubic } }
+                        Behavior on width { enabled: !editMode && !root.reducedMotion; NumberAnimation { duration: 200; easing.type: Easing.OutCubic } }
+                        Behavior on height { enabled: !editMode && !root.reducedMotion; NumberAnimation { duration: 200; easing.type: Easing.OutCubic } }
+                        
+                        onDeleteRequested: root.deleteWidget(index)
+                        onDragEnded: function(newX, newY) { root.moveWidget(index, pixelToGridX(newX), pixelToGridY(newY), pixelToPage(newX)) }
+                        onResizeRequested: function(newW, newH) { root.updateWidgetSize(index, newW, newH) }
+                        
+                        Loader {
+                            id: wLoader
+                            anchors.fill: parent
+                            source: getWidgetSource(model.widgetType)
                             
-                            NordicIcon { 
-                                source: "qrc:/qt/qml/NordicHeadunit/assets/icons/signal.svg"
-                                color: Theme.danger
-                                size: NordicIcon.Size.MD
-                                Layout.alignment: Qt.AlignHCenter
+                            onStatusChanged: {
+                                if (status === Loader.Error) console.error("Failed to load widget: " + model.widgetType)
                             }
                             
-                            NordicText { 
-                                text: qsTr("Unable to load") 
-                                color: NordicTheme.colors.text.secondary 
-                                type: NordicText.Type.BodySmall 
-                                Layout.alignment: Qt.AlignHCenter
+                            onLoaded: {
+                                var reg = WidgetRegistry.get(model.widgetType)
+                                if(reg && item.icon !== undefined) { item.icon = reg.icon; item.label = reg.label }
+                                if(item.clicked) item.clicked.connect(function() { if(!root.editMode) { var t = getWidgetTab(model.widgetType); if(t>0) root.navigateTo(t) } })
                             }
                             
-                            NordicButton {
-                                variant: NordicButton.Variant.Secondary
-                                size: NordicButton.Size.Sm
-                                text: qsTr("Retry")
-                                Layout.alignment: Qt.AlignHCenter
-                                onClicked: {
-                                    // Force reload by resetting source
-                                    var src = wLoader.source
-                                    wLoader.source = ""
-                                    wLoader.source = src
+                            Rectangle {
+                                anchors.fill: parent
+                                visible: wLoader.status === Loader.Loading
+                                color: NordicTheme.colors.bg.surface
+                                radius: NordicTheme.shapes.radius_md
+                                NordicSpinner { anchors.centerIn: parent }
+                            }
+                            
+                            Rectangle {
+                                anchors.fill: parent
+                                visible: wLoader.status === Loader.Error
+                                color: NordicTheme.colors.bg.surface
+                                radius: NordicTheme.shapes.radius_md
+                                ColumnLayout {
+                                    anchors.centerIn: parent
+                                    NordicText { text: qsTr("Error"); type: NordicText.Type.BodySmall }
+                                    NordicButton { text: "Retry"; size: NordicButton.Size.Sm; onClicked: wLoader.source = wLoader.source }
                                 }
                             }
                         }
                     }
+                 }
+            }
+        }
+        
+
+
+        }
+
+    
+    // Undo Overlay (Prominent & Auto-hiding)
+    Rectangle {
+        id: undoOverlay
+        visible: root.canUndo
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 32
+        anchors.horizontalCenter: parent.horizontalCenter
+        width: 300
+        height: 56
+        radius: 28
+        color: NordicTheme.colors.text.primary
+        z: 200
+        
+        layer.enabled: true
+        layer.effect: MultiEffect { shadowEnabled: true; shadowBlur: 16; shadowVerticalOffset: 4 }
+        
+        // Entrance Animation
+        opacity: visible ? 1.0 : 0.0
+        Behavior on opacity { enabled: !root.reducedMotion; NumberAnimation { duration: 200 } }
+        y: visible ? parent.height - 88 : parent.height
+        Behavior on y { enabled: !root.reducedMotion; NumberAnimation { duration: 300; easing.type: Easing.OutBack } }
+        
+        RowLayout {
+            anchors.fill: parent
+            anchors.margins: 6
+            spacing: 12
+            
+            Item { width: 12 } // Spacer
+            
+            NordicText {
+                text: qsTr("Widget removed")
+                type: NordicText.Type.BodyMedium
+                color: NordicTheme.colors.text.inverse
+                Layout.fillWidth: true
+            }
+            
+            NordicButton {
+                text: qsTr("Undo")
+                variant: NordicButton.Variant.Primary
+                size: NordicButton.Size.Sm
+                onClicked: {
+                    root.undoDelete()
+                    undoTimer.stop()
+                }
+            }
+            
+            Item { width: 4 } // Spacer
+        }
+    }
+
+        // Done Button
+        Rectangle {
+            id: editButton
+            visible: root.editMode
+            anchors.right: parent.right; anchors.top: parent.top; anchors.margins: root.margin
+            width: editBtn.width + 32; height: 44; radius: 22
+            color: doneMouse.pressed ? Qt.darker(Theme.accent, 1.15) : (doneMouse.containsMouse ? Qt.lighter(Theme.accent, 1.1) : Theme.accent)
+            border.width: editButton.activeFocus ? 2 : 0
+            border.color: "white"
+            z: 100
+            
+            activeFocusOnTab: true
+            Keys.onReturnPressed: root.editMode = false
+            Keys.onSpacePressed: root.editMode = false
+            
+            Behavior on color { enabled: !root.reducedMotion; ColorAnimation { duration: 150 } }
+            
+            MouseArea { 
+                id: doneMouse
+                anchors.fill: parent
+                hoverEnabled: true
+                cursorShape: Qt.PointingHandCursor
+                onClicked: { editButton.forceActiveFocus(); root.editMode = false }
+            }
+            NordicText { id: editBtn; anchors.centerIn: parent; text: qsTr("Done"); type: NordicText.Type.BodyMedium; color: "white" }
+        }
+
+        // Edit Mode Hint
+        Rectangle {
+            id: editHint
+            visible: !root.editMode && !root.drivingMode && widgetModel.count > 0
+            anchors.right: parent.right; anchors.top: parent.top; anchors.margins: root.margin
+            width: 44; height: 44; radius: 22
+            color: hintMouse.pressed ? Qt.darker(NordicTheme.colors.bg.elevated, 1.1) : (hintMouse.containsMouse || editHint.activeFocus ? NordicTheme.colors.bg.elevated : NordicTheme.colors.bg.surface)
+            border.color: editHint.activeFocus ? Theme.accent : (hintMouse.containsMouse ? Theme.accent : Theme.border)
+            border.width: editHint.activeFocus ? 2 : 1
+            opacity: hintMouse.containsMouse || editHint.activeFocus ? 1.0 : 0.85
+            z: 100
+            
+            activeFocusOnTab: true
+            Keys.onReturnPressed: root.editMode = true
+            Keys.onSpacePressed: root.editMode = true
+            
+            Behavior on opacity { enabled: !root.reducedMotion; NumberAnimation { duration: 150 } }
+            Behavior on color { enabled: !root.reducedMotion; ColorAnimation { duration: 150 } }
+            
+            NordicIcon {
+                anchors.centerIn: parent
+                source: "qrc:/qt/qml/NordicHeadunit/assets/icons/edit.svg"
+                size: NordicIcon.Size.MD
+                color: hintMouse.containsMouse || editHint.activeFocus ? Theme.accent : NordicTheme.colors.text.secondary
+            }
+            
+            MouseArea { 
+                id: hintMouse
+                anchors.fill: parent
+                hoverEnabled: true
+                cursorShape: Qt.PointingHandCursor
+                onClicked: { editHint.forceActiveFocus(); root.editMode = true }
+            }
+            
+            // Tooltip on hover or focus
+            Rectangle {
+                visible: hintMouse.containsMouse || editHint.activeFocus
+                anchors.right: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.rightMargin: 8
+                width: tooltipText.width + 16
+                height: 32
+                radius: 8
+                color: NordicTheme.colors.bg.elevated
+                border.width: 1
+                border.color: NordicTheme.colors.border.muted
+                
+                NordicText {
+                    id: tooltipText
+                    anchors.centerIn: parent
+                    text: qsTr("Customize")
+                    type: NordicText.Type.BodySmall
+                    color: NordicTheme.colors.text.primary
                 }
             }
         }
-    }
-    
+
     // Add Button (Fix #31 i18n)
     Rectangle {
         visible: root.editMode
@@ -874,6 +863,17 @@ Item {
                 }
                 
                 NordicButton {
+                    text: qsTr("Reset")
+                    variant: NordicButton.Variant.Secondary
+                    size: NordicButton.Size.Sm
+                    onClicked: {
+                        root.loadDefaultLayout()
+                        root.saveLayout()
+                        widgetPicker.close()
+                    }
+                }
+                
+                NordicButton {
                     variant: NordicButton.Variant.Icon
                     text: "✕"
                     onClicked: widgetPicker.close()
@@ -896,7 +896,7 @@ Item {
                     width: gridScrollView.availableWidth
                     
                     Repeater {
-                        model: ["navigation", "weather", "nowPlaying", "systems", "clock", "compass", "tripInfo", "speed", "range", "parking", "calendar", "favorites", "climate", "quickCall", "quickMedia", "quickVehicle", "quickSettings"]
+                        model: WidgetRegistry.getAllTypes()
                         
                         Rectangle {
                             Layout.fillWidth: true
@@ -906,9 +906,9 @@ Item {
                             border.color: pickerMA.containsMouse ? Theme.accent : "transparent"
                             border.width: 1
                             
-                            property var reg: widgetRegistry[modelData] || {}
+                            property var reg: WidgetRegistry.get(modelData) || {}
                             
-                            Behavior on color { ColorAnimation { duration: 150 } }
+                            Behavior on color { enabled: !root.reducedMotion; ColorAnimation { duration: 150 } }
                             
                             MouseArea { 
                                 id: pickerMA
@@ -945,91 +945,11 @@ Item {
                                     Layout.alignment: Qt.AlignVCenter
                                     elide: Text.ElideRight
                                 }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    
-    // Widget Expansion Overlay - tap widget to expand full-screen
-    property string expandedWidget: ""
-    property var expandedWidgetData: null
-    
-    Rectangle {
-        id: expansionOverlay
-        anchors.fill: parent
-        visible: root.expandedWidget !== ""
-        color: Qt.rgba(0, 0, 0, 0.7)
-        z: 10000
-        
-        // Click outside to close
-        MouseArea {
-            anchors.fill: parent
-            onClicked: root.expandedWidget = ""
-        }
-        
-        // Expanded widget container
-        Rectangle {
-            id: expandedContainer
-            anchors.centerIn: parent
-            width: parent.width * 0.9
-            height: parent.height * 0.85
-            radius: NordicTheme.shapes.radius_lg
-            color: NordicTheme.colors.bg.primary
-            
-            // Entrance animation
-            scale: root.expandedWidget !== "" ? 1.0 : 0.8
-            opacity: root.expandedWidget !== "" ? 1.0 : 0
-            
-            Behavior on scale { NumberAnimation { duration: 200; easing.type: Easing.OutBack } }
-            Behavior on opacity { NumberAnimation { duration: 150 } }
-            
-            // Prevent click-through
-            MouseArea { anchors.fill: parent }
-            
-            // Close button
-            Rectangle {
-                id: closeBtn
-                anchors.right: parent.right
-                anchors.top: parent.top
-                anchors.margins: 16
-                width: 40; height: 40; radius: 20
-                color: closeMa.containsMouse ? Theme.danger : NordicTheme.colors.bg.elevated
-                z: 10
-                
-                Behavior on color { ColorAnimation { duration: 150 } }
-                
-                NordicText {
-                    anchors.centerIn: parent
-                    text: "✕"
-                    type: NordicText.Type.TitleMedium
-                    color: NordicTheme.colors.text.primary
-                }
-                
-                MouseArea {
-                    id: closeMa
-                    anchors.fill: parent
-                    hoverEnabled: true
-                    cursorShape: Qt.PointingHandCursor
-                    onClicked: root.expandedWidget = ""
-                }
-            }
-            
-            // Widget content loader
-            Loader {
-                id: expandedLoader
-                anchors.fill: parent
-                anchors.margins: NordicTheme.spacing.space_4
-                source: root.expandedWidget !== "" ? getWidgetSource(root.expandedWidget) : ""
-            }
-        }
-    }
-    
-    // Function to expand a widget
-    function expandWidget(widgetType, widgetData) {
-        root.expandedWidget = widgetType
-        root.expandedWidgetData = widgetData
-    }
-}
+                            }  // RowLayout
+                        }  // Rectangle (picker item)
+                    }  // Repeater
+                }  // GridLayout
+            }  // ScrollView
+        }  // ColumnLayout (contentItem)
+    }  // Popup (widgetPicker)
+}  // Item (root)

@@ -10,6 +10,8 @@ import "../Widgets"
 Page {
     id: root
     
+    // Navigation signal for parent to connect
+    signal navigateTo(int tabIndex)
     // 1. Visual Depth: Radial Gradient Background
     background: Rectangle {
         color: NordicTheme.colors.bg.primary
@@ -84,12 +86,7 @@ Page {
                 // Interaction Layer (Go to Full Map)
                 MouseArea {
                     anchors.fill: parent
-                    onClicked: {
-                         // Traverse up to find MainLayout
-                         var appLayout = root.parent
-                         while (appLayout && !appLayout.currentTab) appLayout = appLayout.parent
-                         if (appLayout) appLayout.currentTab = 1 // Switch to Maps
-                    }
+                    onClicked: root.navigateTo(1) // Use signal instead of parent traversal
                 }
                 
                 // Hero Text Overlay

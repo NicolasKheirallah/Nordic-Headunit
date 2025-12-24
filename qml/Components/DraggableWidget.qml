@@ -2,6 +2,8 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
 import NordicHeadunit
+import "../Services"
+import QtQuick.Effects
 
 // DraggableWidget - Wrapper that adds drag, delete, and edit mode features
 Item {
@@ -14,12 +16,15 @@ Item {
     property bool editMode: false
     property int modelIndex: -1
     
+    // Safety Configuration
+    property bool isComplex: false
+    
     // Grid properties for resize calculation
     property real cellWidth: 100
     property real cellHeight: 100
     property real spacing: 10
     property int maxGridWidth: 3
-    property int maxGridHeight: 2
+    property int maxGridHeight: 3
     
     // Content
     default property alias content: contentContainer.children
@@ -45,14 +50,29 @@ Item {
         NumberAnimation { target: root; property: "scale"; to: 1; duration: 350; easing.type: Easing.OutBack }
     }
     
-    // Edit mode wobble animation
+    // Interaction state for wobble stabilization
+    property bool isInteracting: dragArea.pressed || resizeArea.pressed
+    property bool isHovered: dragArea.containsMouse || (typeof resizeArea !== "undefined" && resizeArea.containsMouse)
+    property bool shouldWobble: root.editMode && !isInteracting && !isHovered && !(NordicTheme.reducedMotion ?? false)
+    
+    // Edit mode wobble animation - gentler, stops on hover for precision
     SequentialAnimation on rotation {
         id: wobbleAnim
-        running: root.editMode && !dragArea.pressed && !resizeArea.pressed
+        running: root.shouldWobble
         loops: Animation.Infinite
-        NumberAnimation { to: 1.5 + root.wobbleOffset; duration: 80 + root.wobbleOffset * 40; easing.type: Easing.InOutSine }
-        NumberAnimation { to: -1.5 - root.wobbleOffset; duration: 80 + root.wobbleOffset * 40; easing.type: Easing.InOutSine }
+        NumberAnimation { to: 1.0 + root.wobbleOffset * 0.3; duration: 120 + root.wobbleOffset * 30; easing.type: Easing.InOutSine }
+        NumberAnimation { to: -1.0 - root.wobbleOffset * 0.3; duration: 120 + root.wobbleOffset * 30; easing.type: Easing.InOutSine }
     }
+    
+    // Smooth stabilization when interaction starts or edit mode exits
+    Behavior on rotation {
+        enabled: !root.shouldWobble
+        NumberAnimation { duration: 100; easing.type: Easing.OutQuad }
+    }
+    
+    // Reset rotation when stabilizing
+    onIsInteractingChanged: if (isInteracting) rotation = 0
+    onIsHoveredChanged: if (isHovered && editMode) rotation = 0
     
     onEditModeChanged: {
         if (!editMode) rotation = 0
@@ -70,6 +90,55 @@ Item {
         
         Behavior on anchors.margins {
             NumberAnimation { duration: 150 }
+        }
+    }
+    
+    // Safety Veil (Driving Lockout)
+    // Overlays content when driving speed > limit AND widget is complex
+    Rectangle {
+        id: safetyVeil
+        anchors.fill: contentContainer
+        color: NordicTheme.colors.bg.glass
+        radius: NordicTheme.shapes.radius_md
+        visible: !root.editMode && root.isComplex && DrivingSafety.isRestricted
+        z: 50 // Above content, below drag handles
+        
+        // Blur effect to obscure complex content
+        layer.enabled: true
+        layer.effect: MultiEffect {
+            blurEnabled: true
+            blurMax: 32
+            blur: 1.0
+        }
+        
+        ColumnLayout {
+            anchors.centerIn: parent
+            spacing: 8
+            
+            NordicIcon {
+                source: "qrc:/qt/qml/NordicHeadunit/assets/icons/car.svg" // Use lock or car icon
+                size: NordicIcon.Size.MD
+                color: NordicTheme.colors.text.secondary
+                Layout.alignment: Qt.AlignHCenter
+            }
+            
+            NordicText {
+                text: qsTr("Unavailable")
+                type: NordicText.Type.Caption
+                color: NordicTheme.colors.text.secondary
+                Layout.alignment: Qt.AlignHCenter
+            }
+        }
+        
+        // Absorb clicks
+        MouseArea {
+            anchors.fill: parent
+            onClicked: DrivingSafety.checkAction("complex", (msg) => {
+                 // Find parent showToast. Traverse up.
+                 var p = root
+                 while (p && !p.showToast) p = p.parent
+                 if (p) p.showToast(msg, 0)
+            })
         }
     }
     
@@ -160,6 +229,7 @@ Item {
         anchors.fill: parent
         visible: root.editMode && !resizeArea.pressed
         cursorShape: Qt.OpenHandCursor
+        hoverEnabled: true  // Required for wobble stabilization on hover
         
         drag.target: root
         drag.axis: Drag.XAndYAxis

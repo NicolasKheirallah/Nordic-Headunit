@@ -55,6 +55,9 @@ Item {
     readonly property bool isConnected: MediaService?.isConnected ?? true
     readonly property bool isRadioMode: MediaService?.isRadioMode ?? false
     
+    // Accessibility: Reduced motion preference
+    readonly property bool reducedMotion: NordicTheme.reducedMotion ?? false
+    
     // -------------------------------------------------------------------------
     // Visualizer Configuration
     // -------------------------------------------------------------------------
@@ -90,19 +93,22 @@ Item {
                 Layout.preferredWidth: root.artSize
                 Layout.preferredHeight: root.artSize
                 
-                // Breathing Animation (Scale)
+                // Breathing Animation (Scale) - respects reducedMotion
                 ScaleAnimator {
                     target: artContainer
                     from: 1.0
-                    to: 1.05
+                    to: root.reducedMotion ? 1.0 : 1.05
                     duration: 4000
-                    running: root.isPlaying
+                    running: root.isPlaying && !root.reducedMotion
                     loops: Animation.Infinite
                     easing.type: Easing.CosineCurve
                 }
                 
-                // Return to normal when paused
-                Behavior on scale { NumberAnimation { duration: 400; easing.type: Easing.OutBack } }
+                // Return to normal when paused (instant if reducedMotion)
+                Behavior on scale { 
+                    enabled: !root.reducedMotion
+                    NumberAnimation { duration: 400; easing.type: Easing.OutBack } 
+                }
                 
                 // 1. Deep Shadow (Glow behind)
                 Rectangle {
@@ -113,7 +119,10 @@ Item {
                     color: Theme.accent
                     opacity: root.isPlaying ? 0.6 : 0 // Glow only when playing
                     
-                    Behavior on opacity { NumberAnimation { duration: 600 } }
+                    Behavior on opacity { 
+                        enabled: !root.reducedMotion
+                        NumberAnimation { duration: 600 } 
+                    }
                     
                     layer.enabled: true
                     layer.effect: MultiEffect {
@@ -144,7 +153,10 @@ Item {
                         color: "white"
                         opacity: root.isPlaying ? 0 : 0.9
                         visible: !root.isLoading && root.isConnected
-                        Behavior on opacity { NumberAnimation { duration: 300 } }
+                        Behavior on opacity { 
+                            enabled: !root.reducedMotion
+                            NumberAnimation { duration: 300 } 
+                        }
                     }
                     
                     // Loading Indicator (I1: Clear loading state)
@@ -180,7 +192,7 @@ Item {
                             RotationAnimator {
                                 target: loadingSpinner
                                 from: 0; to: 360
-                                duration: 1000
+                                duration: root.reducedMotion ? 2000 : 1000
                                 running: root.isLoading
                                 loops: Animation.Infinite
                             }
@@ -209,11 +221,11 @@ Item {
                         }
                     }
                     
-                    // Visualizer (existing)
+                    // Visualizer (respects reducedMotion)
                     Row {
                         anchors.centerIn: parent
                         spacing: NordicTheme.spacing.space_1
-                        visible: root.isPlaying && !root.isRadioMode
+                        visible: root.isPlaying && !root.isRadioMode && !root.reducedMotion
                         Repeater {
                             model: 5
                             Rectangle {
@@ -224,7 +236,7 @@ Item {
                                 anchors.verticalCenter: parent.verticalCenter
                                 SequentialAnimation on height {
                                     loops: Animation.Infinite
-                                    running: parent.visible // Only run if parent row is visible
+                                    running: parent.visible
                                     NumberAnimation { 
                                         to: root.artSize * root.vizAnimMaxHeightRatio + (index + 1) * root.artSize * root.vizAnimStepRatio
                                         duration: root.vizAnimBaseDuration + index * root.vizAnimStepDuration
@@ -236,6 +248,23 @@ Item {
                                         easing.type: Easing.InOutSine
                                     }
                                 }
+                            }
+                        }
+                    }
+                    
+                    // Static visualizer bars (shown when reducedMotion is on)
+                    Row {
+                        anchors.centerIn: parent
+                        spacing: NordicTheme.spacing.space_1
+                        visible: root.isPlaying && !root.isRadioMode && root.reducedMotion
+                        Repeater {
+                            model: 5
+                            Rectangle {
+                                width: Math.max(6, root.artSize * root.vizBarWidthRatio)
+                                height: root.artSize * (root.vizBarHeightRatio + index * 0.02)
+                                radius: width / 2
+                                color: "white"
+                                anchors.verticalCenter: parent.verticalCenter
                             }
                         }
                     }

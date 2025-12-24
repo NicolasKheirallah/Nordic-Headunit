@@ -33,18 +33,21 @@ SettingsSubPage {
     SettingsToggle {
         title: "Location Services"
         subtitle: "Allow apps to access vehicle location"
-        checked: true
+        checked: SystemSettings.locationServices
+        onToggled: (checked) => SystemSettings.locationServices = checked
     }
     
     SettingsToggle {
         title: "Improve Nordic AI"
         subtitle: "Share anonymous usage data"
-        checked: false
+        checked: SystemSettings.improveAI
+        onToggled: (checked) => SystemSettings.improveAI = checked
     }
     
     SettingsToggle {
         title: "Traffic Data Sharing"
         subtitle: "Help others by sharing real-time speed"
-        checked: true
+        checked: SystemSettings.trafficDataSharing
+        onToggled: (checked) => SystemSettings.trafficDataSharing = checked
     }
 }

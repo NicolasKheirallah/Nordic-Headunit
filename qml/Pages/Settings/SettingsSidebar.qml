@@ -41,13 +41,30 @@ Item {
                 id: itemDelegate
                 width: navList.width
                 height: 64
-                color: (index === root.selectedIndex) ? Qt.rgba(Theme.accent.r, Theme.accent.g, Theme.accent.b, 0.15) : "transparent"
+                
+                // Visual State
+                color: {
+                    if (mouseArea.pressed) return Qt.rgba(Theme.accent.r, Theme.accent.g, Theme.accent.b, 0.1)
+                    if (index === root.selectedIndex) return Qt.rgba(Theme.accent.r, Theme.accent.g, Theme.accent.b, 0.15)
+                    return "transparent"
+                }
+
+                // Focus Ring
+                Rectangle {
+                    anchors.fill: parent
+                    anchors.margins: 2
+                    color: "transparent"
+                    border.color: Theme.accent
+                    border.width: itemDelegate.activeFocus ? 2 : 0
+                    radius: 2
+                    visible: itemDelegate.activeFocus
+                }
                 
                 // Hover effect
                 Rectangle {
                     anchors.fill: parent
-                    color: Qt.rgba(Theme.textPrimary.r, Theme.textPrimary.g, Theme.textPrimary.b, 0.1)
-                    visible: mouseArea.containsMouse && index !== root.selectedIndex
+                    color: Qt.rgba(Theme.textPrimary.r, Theme.textPrimary.g, Theme.textPrimary.b, 0.05)
+                    visible: mouseArea.containsMouse && index !== root.selectedIndex && !itemDelegate.activeFocus
                 }
                 
                 // Selection Indicator line
@@ -60,6 +77,17 @@ Item {
                     radius: 2
                 }
                 
+                // Keyboard Support
+                activeFocusOnTab: true
+                Keys.onReturnPressed: {
+                    root.selectedIndex = index
+                    root.categorySelected(index)
+                }
+                Keys.onSpacePressed: {
+                    root.selectedIndex = index
+                    root.categorySelected(index)
+                }
+                
                 RowLayout {
                     anchors.fill: parent
                     anchors.leftMargin: 24
@@ -69,13 +97,13 @@ Item {
                     NordicIcon {
                         source: modelData.icon // Access via modelData for JS array
                         size: NordicIcon.Size.MD
-                        color: (index === root.selectedIndex) ? Theme.accent : Theme.textSecondary
+                        color: (index === root.selectedIndex || itemDelegate.activeFocus) ? Theme.accent : Theme.textSecondary
                     }
                     
                     NordicText {
                         text: modelData.title // Access via modelData for JS array
                         Layout.fillWidth: true
-                        color: (index === root.selectedIndex) ? Theme.textPrimary : Theme.textSecondary
+                        color: (index === root.selectedIndex || itemDelegate.activeFocus) ? Theme.textPrimary : Theme.textSecondary
                         type: NordicText.Type.BodyLarge
                     }
                 }
@@ -85,6 +113,7 @@ Item {
                     anchors.fill: parent
                     hoverEnabled: true
                     onClicked: {
+                        itemDelegate.forceActiveFocus()
                         root.selectedIndex = index
                         root.categorySelected(index)
                     }

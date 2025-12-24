@@ -90,13 +90,12 @@ SettingsSubPage {
                     }
                 }
                 
-                // Divider
                 Rectangle {
                     anchors.bottom: parent.bottom
                     width: parent.width
                     height: 1
                     color: NordicTheme.colors.border.muted
-                    visible: index < ListView.view.count - 1
+                    visible: ListView.view ? index < ListView.view.count - 1 : false
                 }
             }
         }

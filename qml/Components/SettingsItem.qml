@@ -10,6 +10,10 @@ Rectangle {
     property Component rightComponent: null
     property bool locked: false  // Epic 5: Driving lockout
     property string lockedReason: "Not available while driving"
+    property string icon: ""
+    
+    // Accessibility
+    readonly property bool reducedMotion: SystemSettings.reducedMotion ?? false
     
     signal clicked()
     
@@ -18,8 +22,28 @@ Rectangle {
     Layout.leftMargin: Theme.spacingSm
     Layout.rightMargin: Theme.spacingSm
     
-    color: itemMa.containsMouse ? Theme.surfaceAlt : Theme.surface
+    // Visual State
+    color: {
+        if (itemMa.pressed) return Theme.surfaceAlt
+        if (itemMa.containsMouse || activeFocus) return Theme.surfaceAlt
+        return Theme.surface
+    }
+    
     radius: Theme.radiusMd
+    
+    // Focus Ring
+    border.width: activeFocus ? 2 : 0
+    border.color: Theme.accent
+    
+    Behavior on color { 
+        enabled: !reducedMotion
+        ColorAnimation { duration: 100 } 
+    }
+    
+    // Keyboard Navigation
+    activeFocusOnTab: (showChevron || icon !== "") && !locked
+    Keys.onReturnPressed: if ((showChevron || icon !== "") && !locked) parent.clicked()
+    Keys.onSpacePressed: if ((showChevron || icon !== "") && !locked) parent.clicked()
     
     MouseArea {
         id: itemMa
@@ -27,7 +51,10 @@ Rectangle {
         hoverEnabled: true
         enabled: !locked
         cursorShape: (showChevron && !locked) ? Qt.PointingHandCursor : Qt.ArrowCursor
-        onClicked: if (showChevron && !locked) parent.clicked()
+        onClicked: {
+            parent.forceActiveFocus()
+            if (showChevron && !locked) parent.clicked()
+        }
     }
     
     RowLayout {
@@ -35,6 +62,15 @@ Rectangle {
         anchors.leftMargin: Theme.spacingMd
         anchors.rightMargin: Theme.spacingMd
         spacing: Theme.spacingSm
+        
+        // Optional Icon
+        NordicIcon {
+            visible: icon !== ""
+            source: icon
+            size: NordicIcon.Size.MD
+            color: Theme.textSecondary
+            Layout.alignment: Qt.AlignVCenter
+        }
         
         ColumnLayout {
             Layout.fillWidth: true

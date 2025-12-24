@@ -35,6 +35,13 @@ void RadioModel::addStation(const RadioStation &station) {
     endInsertRows();
 }
 
+void RadioModel::removeStation(int index) {
+    if (index < 0 || index >= m_stations.count()) return;
+    beginRemoveRows(QModelIndex(), index, index);
+    m_stations.removeAt(index);
+    endRemoveRows();
+}
+
 void RadioModel::clear() {
     beginResetModel();
     m_stations.clear();

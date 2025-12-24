@@ -2,6 +2,8 @@
 #include <QUrlQuery>
 #include <QDebug>
 #include <QRandomGenerator>
+#include <QtConcurrent>
+#include <QFutureWatcher>
 
 NavigationService::NavigationService(QObject *parent)
     : QObject(parent),
@@ -124,28 +126,44 @@ void NavigationService::onSearchFinished()
     QNetworkReply *reply = qobject_cast<QNetworkReply*>(sender());
     if (!reply) return;
 
-    if (reply->error() == QNetworkReply::NoError) {
-        QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
+    if (reply->error() != QNetworkReply::NoError) {
+        emit errorOccurred("Search failed: " + reply->errorString());
+        reply->deleteLater();
+        return;
+    }
+
+    QByteArray data = reply->readAll();
+    reply->deleteLater();
+
+    auto *watcher = new QFutureWatcher<QVariantList>();
+    connect(watcher, &QFutureWatcher<QVariantList>::finished, this, [this, watcher]() {
+        QVariantList results = watcher->result();
+        qDebug() << "Found" << results.size() << "results";
+        emit searchResultReceived(results);
+        watcher->deleteLater();
+    });
+
+    QFuture<QVariantList> future = QtConcurrent::run([data]() {
+        QJsonDocument doc = QJsonDocument::fromJson(data);
         QJsonArray results = doc.array();
         QVariantList searchResults;
 
         for (const QJsonValue &value : results) {
             QJsonObject obj = value.toObject();
             QVariantMap map;
-            map["name"] = obj["display_name"].toString().split(",").first(); // Simplified name
+            map["name"] = obj["display_name"].toString().split(",").first(); 
             map["address"] = obj["display_name"].toString();
-            map["lat"] = obj["lat"].toString().toDouble();
-            map["lon"] = obj["lon"].toString().toDouble();
+            // Handle both string and double for lat/lon depending on API
+            QJsonValue latV = obj["lat"];
+            QJsonValue lonV = obj["lon"];
+            map["lat"] = latV.isString() ? latV.toString().toDouble() : latV.toDouble();
+            map["lon"] = lonV.isString() ? lonV.toString().toDouble() : lonV.toDouble();
             searchResults.append(map);
         }
-        
-        qDebug() << "Found" << searchResults.size() << "results";
-        emit searchResultReceived(searchResults);
-    } else {
-        qDebug() << "Search Error:" << reply->errorString();
-        emit errorOccurred("Search failed: " + reply->errorString());
-    }
-    reply->deleteLater();
+        return searchResults;
+    });
+
+    watcher->setFuture(future);
 }
 
 void NavigationService::startNavigation(const QString &dest)
@@ -272,13 +290,68 @@ void NavigationService::calculateRoute(const QGeoCoordinate &start, const QGeoCo
     connect(reply, &QNetworkReply::finished, this, &NavigationService::onRouteFinished);
 }
 
+// Helper struct for background processing
+struct RouteResult {
+    QList<QGeoCoordinate> currentRoutePath;
+    QList<NavigationService::RouteStep> routeSteps;
+    QVariantList trafficSegments;
+    int distanceMeters;
+    QVariantMap routeData;
+    bool success = false;
+    QString errorString;
+};
+
 void NavigationService::onRouteFinished()
 {
     QNetworkReply *reply = qobject_cast<QNetworkReply*>(sender());
     if (!reply) return;
 
-    if (reply->error() == QNetworkReply::NoError) {
-        QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
+    if (reply->error() != QNetworkReply::NoError) {
+        emit errorOccurred("Routing failed: " + reply->errorString());
+        reply->deleteLater();
+        return;
+    }
+
+    // Read logic on main thread
+    QByteArray data = reply->readAll();
+    reply->deleteLater();
+
+    // Watcher to handle completion on main thread
+    auto *watcher = new QFutureWatcher<RouteResult>();
+    connect(watcher, &QFutureWatcher<RouteResult>::finished, this, [this, watcher]() {
+        RouteResult result = watcher->result();
+        
+        if (!result.success) {
+             // Handle empty route case
+             emit errorOccurred(result.errorString.isEmpty() ? "No route found" : result.errorString);
+        } else {
+            m_currentRoutePath = result.currentRoutePath;
+            m_routeSteps = result.routeSteps;
+            m_trafficSegments = result.trafficSegments;
+            m_distanceMeters = result.distanceMeters;
+            
+            // Reset navigation state
+            m_currentRoutePathIndex = 0;
+            m_currentStepIndex = 0;
+            m_isNavigating = true;
+            m_maneuverIcon = "navigation-arrow.svg";
+            m_nextManeuver = "Follow route";
+            
+            checkManeuvers(); // Initial check
+            
+            emit routeCalculated(result.routeData);
+            emit navigationStateChanged();
+            
+            if (m_simulationTimer) m_simulationTimer->start(1000);
+        }
+        
+        watcher->deleteLater();
+    });
+
+    // Run parsing in background
+    QFuture<RouteResult> future = QtConcurrent::run([data]() -> RouteResult {
+        RouteResult res;
+        QJsonDocument doc = QJsonDocument::fromJson(data);
         QJsonObject root = doc.object();
         
         if (root.contains("routes") && !root["routes"].toArray().isEmpty()) {
@@ -286,96 +359,86 @@ void NavigationService::onRouteFinished()
             QJsonObject geometry = route["geometry"].toObject();
             QJsonArray coords = geometry["coordinates"].toArray();
             
-            // Extract Path for Simulation
-            m_currentRoutePath.clear();
+            // Extract Path
             QVariantList pathViz;
-            
             for (const QJsonValue &pt : coords) {
                 QJsonArray point = pt.toArray();
                 double lon = point[0].toDouble();
                 double lat = point[1].toDouble();
                 QGeoCoordinate coord(lat, lon);
                 
-                m_currentRoutePath.append(coord);
+                res.currentRoutePath.append(coord);
                 pathViz.append(QVariant::fromValue(coord));
             }
             
-            // Generate Traffic Segments (Simulated)
-            m_trafficSegments.clear();
-            if (m_currentRoutePath.size() > 2) {
-                int chunkSize = 20; // Points per segment
-                for (int i = 0; i < m_currentRoutePath.size(); i += chunkSize) {
+            // Generate Traffic Segments
+            if (res.currentRoutePath.size() > 2) {
+                int chunkSize = 20; 
+                for (int i = 0; i < res.currentRoutePath.size(); i += chunkSize) {
                     QVariantList segmentPath;
-                    // Ensure overlap to prevent gaps
-                    int end = qMin(i + chunkSize + 1, (int)m_currentRoutePath.size());
-                    
+                    int end = qMin(i + chunkSize + 1, (int)res.currentRoutePath.size());
                     for (int j = i; j < end; j++) {
-                        segmentPath.append(QVariant::fromValue(m_currentRoutePath[j]));
+                        segmentPath.append(QVariant::fromValue(res.currentRoutePath[j]));
                     }
                     
-                    // Random Traffic Color
-                    QString color = "#4CAF50"; // Green (Default)
+                    // Random Traffic Color (Thread-safe global access)
+                    QString color = "#4CAF50"; 
                     int rand = QRandomGenerator::global()->bounded(100);
-                    if (rand > 80) color = "#F44336"; // Red (Congestion)
-                    else if (rand > 60) color = "#FF9800"; // Orange (Slow)
+                    if (rand > 80) color = "#F44336"; 
+                    else if (rand > 60) color = "#FF9800"; 
                     
                     QVariantMap segment;
                     segment["path"] = segmentPath;
                     segment["color"] = color;
-                    m_trafficSegments.append(segment);
+                    res.trafficSegments.append(segment);
                 }
             }
             
-            // Extract Steps (REAL LOGIC)
-             m_routeSteps.clear();
-             if (route.contains("legs")) {
+            // Extract Steps
+            if (route.contains("legs")) {
                  QJsonArray legs = route["legs"].toArray();
                  if (!legs.isEmpty()) {
                     QJsonArray steps = legs.first().toObject()["steps"].toArray();
                     for (const QJsonValue &s : steps) {
                         QJsonObject stepObj = s.toObject();
                         QJsonObject maneuver = stepObj["maneuver"].toObject();
-                        QJsonArray loc = maneuver["location"].toArray(); // lon, lat
+                        QJsonArray loc = maneuver["location"].toArray(); 
                         
-                        RouteStep step;
+                        NavigationService::RouteStep step;
                         step.distance = stepObj["distance"].toInt();
                         step.maneuverCoordinate = QGeoCoordinate(loc[1].toDouble(), loc[0].toDouble());
                         
-                        
-                        QString type = maneuver["type"].toString(); // e.g., "turn"
-                        QString modifier = maneuver["modifier"].toString(); // e.g., "left"
+                        QString type = maneuver["type"].toString(); 
+                        QString modifier = maneuver["modifier"].toString(); 
                         QString name = stepObj["name"].toString();
                         
                         step.modifier = modifier;
                         
-                        // Human Readable Construction
                         if (type == "depart") step.instruction = "Head to " + name;
                         else if (type == "arrive") step.instruction = "Arrive at destination";
                         else if (name.isEmpty()) step.instruction = type + " " + modifier;
                         else step.instruction = type + " " + modifier + " on " + name;
                         
-                        // Capitalize
                         step.instruction = step.instruction.left(1).toUpper() + step.instruction.mid(1);
                         
-                        m_routeSteps.append(step);
+                        res.routeSteps.append(step);
                     }
                  }
-             }
+            }
             
-            QVariantMap routeData;
-            routeData["path"] = pathViz;
-            routeData["duration"] = route["duration"].toDouble();
-            routeData["distance"] = route["distance"].toDouble();
-            
-            // Store total distance for display
-            m_distanceMeters = route["distance"].toInt();
-            
-            emit routeCalculated(routeData);
+            res.routeData["path"] = pathViz;
+            res.routeData["duration"] = route["duration"].toDouble();
+            res.routeData["distance"] = route["distance"].toDouble();
+            res.distanceMeters = route["distance"].toInt();
+            res.success = true;
+        } else {
+            res.success = false;
         }
-    } else {
-        emit errorOccurred("Routing failed: " + reply->errorString());
-    }
-    reply->deleteLater();
+        
+        return res;
+    });
+
+    watcher->setFuture(future);
 }
 
 void NavigationService::updateSimulation()

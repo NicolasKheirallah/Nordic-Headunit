@@ -2,6 +2,7 @@
 #include <QUrl>
 #include <QStandardPaths>
 #include <QFileInfo>
+#include <QDateTime>
 #include <QDebug>
 
 MediaService::MediaService(QObject *parent)
@@ -345,4 +346,83 @@ void MediaService::playRadio() {
 
 void MediaService::stopRadio() {
     // Mute tuner
+}
+
+// =============================================================================
+// ADVANCED PLAYBACK FEATURES
+// =============================================================================
+
+void MediaService::setPlaybackSpeed(double speed) {
+    if (qFuzzyCompare(m_playbackSpeed, speed)) return;
+    m_playbackSpeed = qBound(0.5, speed, 2.0);
+    m_player->setPlaybackRate(m_playbackSpeed);
+    emit playbackSpeedChanged();
+}
+
+void MediaService::setCrossfadeDuration(int seconds) {
+    if (m_crossfadeDuration == seconds) return;
+    m_crossfadeDuration = qBound(0, seconds, 12);
+    emit crossfadeDurationChanged();
+}
+
+void MediaService::setGaplessEnabled(bool enabled) {
+    if (m_gaplessEnabled == enabled) return;
+    m_gaplessEnabled = enabled;
+    emit gaplessEnabledChanged();
+}
+
+void MediaService::setSleepTimerMinutes(int minutes) {
+    m_sleepTimerMinutes = qBound(0, minutes, 120);
+    
+    if (!m_sleepTimer) {
+        m_sleepTimer = new QTimer(this);
+        m_sleepTimer->setSingleShot(true);
+        connect(m_sleepTimer, &QTimer::timeout, this, [this]() {
+            pause();
+            m_sleepTimerMinutes = 0;
+            emit sleepTimerChanged();
+        });
+    }
+    
+    if (m_sleepTimerMinutes > 0) {
+        m_sleepTimerEnd = QDateTime::currentDateTime().addSecs(m_sleepTimerMinutes * 60);
+        m_sleepTimer->start(m_sleepTimerMinutes * 60 * 1000);
+    } else {
+        m_sleepTimer->stop();
+    }
+    emit sleepTimerChanged();
+}
+
+int MediaService::sleepTimerRemaining() const {
+    if (!m_sleepTimerMinutes || m_sleepTimerEnd.isNull()) return 0;
+    int remaining = QDateTime::currentDateTime().secsTo(m_sleepTimerEnd) / 60;
+    return qMax(0, remaining);
+}
+
+void MediaService::cancelSleepTimer() {
+    setSleepTimerMinutes(0);
+}
+
+// =============================================================================
+// EQ FEATURES
+// =============================================================================
+
+void MediaService::setBassLevel(int level) {
+    if (m_bassLevel == level) return;
+    m_bassLevel = qBound(-10, level, 10);
+    // Real implementation would apply EQ via audio framework
+    emit eqChanged();
+}
+
+void MediaService::setTrebleLevel(int level) {
+    if (m_trebleLevel == level) return;
+    m_trebleLevel = qBound(-10, level, 10);
+    emit eqChanged();
+}
+
+void MediaService::setBalanceLevel(int level) {
+    if (m_balanceLevel == level) return;
+    m_balanceLevel = qBound(-10, level, 10);
+    // In real implementation: m_audioOutput->setBalance(...)
+    emit eqChanged();
 }

@@ -124,7 +124,9 @@ SettingsSubPage {
      // Empty State (Off)
     ColumnLayout {
         visible: !SystemSettings.bluetoothEnabled
-        anchors.centerIn: parent
+        Layout.fillWidth: true
+        Layout.fillHeight: true
+        Layout.alignment: Qt.AlignCenter
         spacing: NordicTheme.spacing.space_4
         
         NordicIcon {

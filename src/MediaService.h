@@ -4,6 +4,7 @@
 #include <QtMultimedia/QMediaPlayer>
 #include <QtMultimedia/QAudioOutput>
 #include <QTimer>
+#include <QDateTime>
 #include "RadioTuner.h"
 #include "MediaLibrary.h"
 
@@ -26,6 +27,19 @@ class MediaService : public QObject
     Q_PROPERTY(QString currentSource READ currentSource WRITE setCurrentSource NOTIFY currentSourceChanged)
     Q_PROPERTY(bool isRadioMode READ isRadioMode NOTIFY currentSourceChanged)
     Q_PROPERTY(QVariantList sources READ sources NOTIFY sourcesChanged)
+    
+    // Advanced Playback (Competitor Features)
+    Q_PROPERTY(double playbackSpeed READ playbackSpeed WRITE setPlaybackSpeed NOTIFY playbackSpeedChanged)
+    Q_PROPERTY(int crossfadeDuration READ crossfadeDuration WRITE setCrossfadeDuration NOTIFY crossfadeDurationChanged)
+    Q_PROPERTY(bool gaplessEnabled READ gaplessEnabled WRITE setGaplessEnabled NOTIFY gaplessEnabledChanged)
+    Q_PROPERTY(int sleepTimerMinutes READ sleepTimerMinutes WRITE setSleepTimerMinutes NOTIFY sleepTimerChanged)
+    Q_PROPERTY(int sleepTimerRemaining READ sleepTimerRemaining NOTIFY sleepTimerChanged)
+    Q_PROPERTY(bool sleepTimerActive READ sleepTimerActive NOTIFY sleepTimerChanged)
+    
+    // Audio EQ (Basic)
+    Q_PROPERTY(int bassLevel READ bassLevel WRITE setBassLevel NOTIFY eqChanged)
+    Q_PROPERTY(int trebleLevel READ trebleLevel WRITE setTrebleLevel NOTIFY eqChanged)
+    Q_PROPERTY(int balanceLevel READ balanceLevel WRITE setBalanceLevel NOTIFY eqChanged)
     
     // Sub-components (Exposed to QML)
     Q_PROPERTY(RadioTuner* radio READ radio CONSTANT)
@@ -111,6 +125,27 @@ public:
     // Library specific
     Q_INVOKABLE void toggleLike(); // Uses current track
     Q_INVOKABLE bool isLiked() const;
+    
+    // Advanced Playback Getters/Setters
+    double playbackSpeed() const { return m_playbackSpeed; }
+    void setPlaybackSpeed(double speed);
+    int crossfadeDuration() const { return m_crossfadeDuration; }
+    void setCrossfadeDuration(int seconds);
+    bool gaplessEnabled() const { return m_gaplessEnabled; }
+    void setGaplessEnabled(bool enabled);
+    int sleepTimerMinutes() const { return m_sleepTimerMinutes; }
+    void setSleepTimerMinutes(int minutes);
+    int sleepTimerRemaining() const;
+    bool sleepTimerActive() const { return m_sleepTimerMinutes > 0; }
+    Q_INVOKABLE void cancelSleepTimer();
+    
+    // EQ Getters/Setters
+    int bassLevel() const { return m_bassLevel; }
+    void setBassLevel(int level);
+    int trebleLevel() const { return m_trebleLevel; }
+    void setTrebleLevel(int level);
+    int balanceLevel() const { return m_balanceLevel; }
+    void setBalanceLevel(int level);
 
     void setPlaying(bool playing);
 
@@ -126,6 +161,11 @@ signals:
     void recentItemsChanged();
     void loadingChanged();
     void errorChanged();
+    void playbackSpeedChanged();
+    void crossfadeDurationChanged();
+    void gaplessEnabledChanged();
+    void sleepTimerChanged();
+    void eqChanged();
 
 private slots:
     void onMPlayerPositionChanged(qint64 position);
@@ -164,6 +204,19 @@ private:
 
     bool m_isConnected;
     bool m_isLoading;
+    
+    // Advanced Playback State
+    double m_playbackSpeed = 1.0;
+    int m_crossfadeDuration = 0;  // 0 = off, 1-12 seconds
+    bool m_gaplessEnabled = false;
+    int m_sleepTimerMinutes = 0;
+    QTimer *m_sleepTimer = nullptr;
+    QDateTime m_sleepTimerEnd;
+    
+    // EQ State (range -10 to +10)
+    int m_bassLevel = 0;
+    int m_trebleLevel = 0;
+    int m_balanceLevel = 0;  // -10 = full left, +10 = full right
 
     void playRadio();
     void stopRadio();

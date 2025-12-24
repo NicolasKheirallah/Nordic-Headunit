@@ -462,8 +462,8 @@ Rectangle {
                 }
             }
             
-            RightNavItem { rNavIdx: 4; label: "Vehicle"; icon: "qrc:/qt/qml/NordicHeadunit/assets/icons/car.svg" }
-            RightNavItem { rNavIdx: 5; label: "Settings"; icon: "qrc:/qt/qml/NordicHeadunit/assets/icons/settings.svg" }
+            RightNavItem { rNavIdx: 5; label: "Vehicle"; icon: "qrc:/qt/qml/NordicHeadunit/assets/icons/car.svg" }
+            RightNavItem { rNavIdx: 6; label: "Settings"; icon: "qrc:/qt/qml/NordicHeadunit/assets/icons/settings.svg" }
         }
     }
     

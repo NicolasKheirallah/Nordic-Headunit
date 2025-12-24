@@ -45,12 +45,16 @@ qt_add_executable(appNordicHeadunit
     src/Models/RadioModel.cpp
     src/Models/PlaylistModel.h
     src/Models/PlaylistModel.cpp
+    src/AppModel.h
+    src/AppModel.cpp
 )
 
 # Declare singletons BEFORE qt_add_qml_module
 set_source_files_properties(qml/NordicTheme.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
 set_source_files_properties(qml/Theme/Theme.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
 set_source_files_properties(qml/Services/ConnectivityService.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
+set_source_files_properties(qml/Services/WidgetRegistry.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
+set_source_files_properties(qml/Services/DrivingSafety.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
 
 
 qt_add_qml_module(appNordicHeadunit
@@ -74,6 +78,7 @@ qt_add_qml_module(appNordicHeadunit
     qml/Pages/SettingsPage.qml
     qml/Pages/VehiclePage.qml
     qml/Pages/PhonePage.qml
+    qml/Pages/AppsPage.qml
     qml/Pages/Phone/KeypadView.qml
     qml/Pages/Phone/ContactsView.qml
     qml/Pages/Phone/FavoritesView.qml
@@ -92,6 +97,8 @@ qt_add_qml_module(appNordicHeadunit
     qml/Overlays/VoiceOverlay.qml
     qml/Overlays/TelephonyOverlay.qml
     qml/Services/ConnectivityService.qml
+    qml/Services/WidgetRegistry.qml
+    qml/Services/DrivingSafety.qml
 
     qml/Services/AudioPolicy.qml
     qml/Overlays/OverlayManager.qml
@@ -111,6 +118,7 @@ qt_add_qml_module(appNordicHeadunit
     qml/Components/DraggableWidget.qml
     qml/Components/WidgetGrid.qml
     qml/Components/MediaControlButton.qml
+    qml/Components/AppTile.qml
     # Premium Maps Components
     qml/Components/Maps/MapSurface.qml
     qml/Components/Maps/GuidanceBanner.qml
@@ -147,7 +155,6 @@ qt_add_qml_module(appNordicHeadunit
     qml/Pages/Settings/ConnectivitySettings.qml
     qml/Pages/Settings/VehicleSettings.qml
     qml/Pages/Settings/SystemSettingsPage.qml
-    qml/Pages/Settings/SettingsSplitLayout.qml
     qml/Pages/Settings/SettingsSidebar.qml
     qml/Pages/Settings/MapSettings.qml
     qml/Pages/Settings/NavigationSettings.qml
@@ -155,6 +162,7 @@ qt_add_qml_module(appNordicHeadunit
     qml/Pages/Settings/DateTimeSettings.qml
     qml/Pages/Settings/LanguageSettings.qml
     qml/Pages/Settings/ThemePlayground.qml
+    qml/Pages/Settings/BottomBarSettings.qml
     RESOURCES
         assets/icons/car.svg
         assets/icons/home.svg
@@ -214,6 +222,7 @@ qt_add_qml_module(appNordicHeadunit
         assets/icons/gas-station.svg
         assets/icons/charging-station.svg
         assets/icons/chevron_down.svg
+        assets/icons/apps.svg
 )
 
 if(COMMAND qt6_add_translations)

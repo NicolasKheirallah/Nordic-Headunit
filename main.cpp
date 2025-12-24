@@ -12,6 +12,7 @@
 #include "src/MediaService.h"
 #include "src/NavigationService.h"
 #include "src/PhoneService.h"
+#include "src/AppModel.h"
 
 #include "src/LayoutService.h"
 #include "src/TranslationService.h"
@@ -69,6 +70,8 @@ int main(int argc, char *argv[])
     LayoutService *layoutService = new LayoutService(&app);
     // Translation Service
     TranslationService *translationService = new TranslationService(&engine, &app);
+    // App Launcher Model
+    AppModel *appModel = new AppModel(&app);
     
     // 2. Register as Singletons
     qmlRegisterSingletonInstance("NordicHeadunit", 1, 0, "SystemSettings", settings);
@@ -79,6 +82,7 @@ int main(int argc, char *argv[])
 
     qmlRegisterSingletonInstance("NordicHeadunit", 1, 0, "LayoutService", layoutService);
     qmlRegisterSingletonInstance("NordicHeadunit", 1, 0, "TranslationService", translationService);
+    qmlRegisterSingletonInstance("NordicHeadunit", 1, 0, "AppModel", appModel);
 
     using namespace Qt::StringLiterals;
     

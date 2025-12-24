@@ -68,15 +68,21 @@ ApplicationWindow {
                 sourceComponent: Component { PhonePage {} }
                 onActiveChanged: if (active) active = true
             }
-            // Page 4: Vehicle
+            // Page 4: Apps
             Loader {
                 active: pageView.shouldLoad(4)
+                sourceComponent: Component { AppsPage {} }
+                onActiveChanged: if (active) active = true
+            }
+            // Page 5: Vehicle
+            Loader {
+                active: pageView.shouldLoad(5)
                 sourceComponent: Component { VehiclePage {} }
                 onActiveChanged: if (active) active = true
             }
-            // Page 5: Settings
+            // Page 6: Settings
             Loader {
-                active: pageView.shouldLoad(5)
+                active: pageView.shouldLoad(6)
                 sourceComponent: Component { SettingsPage {} }
                 onActiveChanged: if (active) active = true
             }
@@ -109,7 +115,7 @@ ApplicationWindow {
         
         // Connect Signals
         // Connect Signals
-        onOpenSettings: appLayout.currentTab = 5 // Switch to Settings Tab
+        onOpenSettings: appLayout.currentTab = 6 // Switch to Settings Tab
         
         // Bind Voice State to Audio Policy
         onIsVoiceVisibleChanged: audioPolicy.voiceAssistantActive = isVoiceVisible

@@ -57,7 +57,7 @@ void SystemSettings::loadSettings()
     
     // Display/UI
     m_bottomBarEnabled = m_settings.value("display/bottomBarEnabled", true).toBool();
-    
+    m_reducedMotion = m_settings.value("accessibility/reducedMotion", false).toBool();
     // Theme System - load from string storage, convert to QColor
     m_themeKey = m_settings.value("display/themeKey", "nordic").toString();
     QString accentStr = m_settings.value("display/customAccentColor", "#8B5CF6").toString();
@@ -72,6 +72,21 @@ void SystemSettings::loadSettings()
     
     // Map Style
     m_mapStyle = static_cast<MapStyle>(m_settings.value("map/style", 0).toInt());
+    
+    // Homescreen Widgets
+    m_widgetLayout = m_settings.value("homescreen/widgetLayout", "").toString();
+    m_widgetPresets = m_settings.value("homescreen/widgetPresets", "").toString();
+    
+    // Privacy Settings
+    m_locationServices = m_settings.value("privacy/locationServices", true).toBool();
+    m_improveAI = m_settings.value("privacy/improveAI", false).toBool();
+    m_trafficDataSharing = m_settings.value("privacy/trafficDataSharing", true).toBool();
+    
+    // Navigation Routing
+    m_voiceGuidance = m_settings.value("navigation/voiceGuidance", true).toBool();
+    m_realTimeTraffic = m_settings.value("navigation/realTimeTraffic", true).toBool();
+    m_avoidHighways = m_settings.value("navigation/avoidHighways", false).toBool();
+    m_avoidTolls = m_settings.value("navigation/avoidTolls", false).toBool();
 }
 
 void SystemSettings::saveSettings()
@@ -102,6 +117,7 @@ void SystemSettings::saveSettings()
     
     // Display/UI + Theme
     m_settings.setValue("display/bottomBarEnabled", m_bottomBarEnabled);
+    m_settings.setValue("accessibility/reducedMotion", m_reducedMotion);
     m_settings.setValue("display/themeKey", m_themeKey);
     m_settings.setValue("display/customAccentColor", m_customAccentColor.name(QColor::HexRgb));
     m_settings.setValue("display/customSecondaryColor", m_customSecondaryColor.name(QColor::HexRgb));
@@ -113,6 +129,21 @@ void SystemSettings::saveSettings()
     
     // Map Style
     m_settings.setValue("map/style", static_cast<int>(m_mapStyle));
+    
+    // Homescreen Widgets
+    m_settings.setValue("homescreen/widgetLayout", m_widgetLayout);
+    m_settings.setValue("homescreen/widgetPresets", m_widgetPresets);
+    
+    // Privacy Settings
+    m_settings.setValue("privacy/locationServices", m_locationServices);
+    m_settings.setValue("privacy/improveAI", m_improveAI);
+    m_settings.setValue("privacy/trafficDataSharing", m_trafficDataSharing);
+    
+    // Navigation Routing
+    m_settings.setValue("navigation/voiceGuidance", m_voiceGuidance);
+    m_settings.setValue("navigation/realTimeTraffic", m_realTimeTraffic);
+    m_settings.setValue("navigation/avoidHighways", m_avoidHighways);
+    m_settings.setValue("navigation/avoidTolls", m_avoidTolls);
     
     m_settings.sync(); // Ensure write to disk
 }
@@ -311,6 +342,45 @@ void SystemSettings::setBottomBarEnabled(bool bottomBarEnabled)
     emit bottomBarEnabledChanged(m_bottomBarEnabled);
 }
 
+// Bottom Bar Height
+int SystemSettings::bottomBarHeight() const { return m_bottomBarHeight; }
+void SystemSettings::setBottomBarHeight(int height)
+{
+    int clamped = std::clamp(height, 48, 96);
+    if (m_bottomBarHeight == clamped) return;
+    m_bottomBarHeight = clamped;
+    saveSettings();
+    emit bottomBarHeightChanged(m_bottomBarHeight);
+}
+
+// Bottom Bar Items (CSV of item keys)
+QString SystemSettings::bottomBarItems() const { return m_bottomBarItems; }
+void SystemSettings::setBottomBarItems(const QString &items)
+{
+    if (m_bottomBarItems == items) return;
+    m_bottomBarItems = items;
+    saveSettings();
+    emit bottomBarItemsChanged(m_bottomBarItems);
+}
+
+// Available Bottom Bar Items (all possible choices)
+QStringList SystemSettings::availableBottomBarItems() const
+{
+    return {"home", "map", "media", "phone", "apps", "vehicle", "settings", 
+            "climate", "camera", "charging", "heated_seat", "cooled_seat", 
+            "defrost", "bluetooth"};
+}
+
+// Reduced Motion (Accessibility)
+bool SystemSettings::reducedMotion() const { return m_reducedMotion; }
+void SystemSettings::setReducedMotion(bool reducedMotion)
+{
+    if (m_reducedMotion == reducedMotion) return;
+    m_reducedMotion = reducedMotion;
+    saveSettings();
+    emit reducedMotionChanged(m_reducedMotion);
+}
+
 // ═══════════════════════════════════════════════════════════════════
 // THEME SYSTEM
 // ═══════════════════════════════════════════════════════════════════
@@ -370,6 +440,96 @@ void SystemSettings::setMapOrientation(int orientation)
     m_settings.setValue("map/orientation", m_mapOrientation);
     m_settings.sync();
     emit mapOrientationChanged(m_mapOrientation);
+}
+
+// Widget Persistence
+QString SystemSettings::widgetLayout() const { return m_widgetLayout; }
+void SystemSettings::setWidgetLayout(const QString &layout)
+{
+    if (m_widgetLayout == layout) return;
+    m_widgetLayout = layout;
+    saveSettings(); // Immediate save for UX consistency
+    emit widgetLayoutChanged(m_widgetLayout);
+}
+
+QString SystemSettings::widgetPresets() const { return m_widgetPresets; }
+void SystemSettings::setWidgetPresets(const QString &presets)
+{
+    if (m_widgetPresets == presets) return;
+    m_widgetPresets = presets;
+    saveSettings();
+    emit widgetPresetsChanged(m_widgetPresets);
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// PRIVACY SETTINGS
+// ═══════════════════════════════════════════════════════════════════
+
+bool SystemSettings::locationServices() const { return m_locationServices; }
+void SystemSettings::setLocationServices(bool enabled)
+{
+    if (m_locationServices == enabled) return;
+    m_locationServices = enabled;
+    saveSettings();
+    emit locationServicesChanged(m_locationServices);
+}
+
+bool SystemSettings::improveAI() const { return m_improveAI; }
+void SystemSettings::setImproveAI(bool enabled)
+{
+    if (m_improveAI == enabled) return;
+    m_improveAI = enabled;
+    saveSettings();
+    emit improveAIChanged(m_improveAI);
+}
+
+bool SystemSettings::trafficDataSharing() const { return m_trafficDataSharing; }
+void SystemSettings::setTrafficDataSharing(bool enabled)
+{
+    if (m_trafficDataSharing == enabled) return;
+    m_trafficDataSharing = enabled;
+    saveSettings();
+    emit trafficDataSharingChanged(m_trafficDataSharing);
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// NAVIGATION ROUTING SETTINGS
+// ═══════════════════════════════════════════════════════════════════
+
+bool SystemSettings::voiceGuidance() const { return m_voiceGuidance; }
+void SystemSettings::setVoiceGuidance(bool enabled)
+{
+    if (m_voiceGuidance == enabled) return;
+    m_voiceGuidance = enabled;
+    saveSettings();
+    emit voiceGuidanceChanged(m_voiceGuidance);
+}
+
+bool SystemSettings::realTimeTraffic() const { return m_realTimeTraffic; }
+void SystemSettings::setRealTimeTraffic(bool enabled)
+{
+    if (m_realTimeTraffic == enabled) return;
+    m_realTimeTraffic = enabled;
+    saveSettings();
+    emit realTimeTrafficChanged(m_realTimeTraffic);
+}
+
+bool SystemSettings::avoidHighways() const { return m_avoidHighways; }
+void SystemSettings::setAvoidHighways(bool enabled)
+{
+    if (m_avoidHighways == enabled) return;
+    m_avoidHighways = enabled;
+    saveSettings();
+    emit avoidHighwaysChanged(m_avoidHighways);
+}
+
+bool SystemSettings::avoidTolls() const { return m_avoidTolls; }
+void SystemSettings::setAvoidTolls(bool enabled)
+{
+    if (m_avoidTolls == enabled) return;
+    m_avoidTolls = enabled;
+    saveSettings();
+    emit avoidTollsChanged(m_avoidTolls);
 }
 
 // Date & Time

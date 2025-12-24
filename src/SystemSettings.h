@@ -35,6 +35,10 @@ class SystemSettings : public QObject
     
     // Display/UI Settings
     Q_PROPERTY(bool bottomBarEnabled READ bottomBarEnabled WRITE setBottomBarEnabled NOTIFY bottomBarEnabledChanged)
+    Q_PROPERTY(int bottomBarHeight READ bottomBarHeight WRITE setBottomBarHeight NOTIFY bottomBarHeightChanged)
+    Q_PROPERTY(QString bottomBarItems READ bottomBarItems WRITE setBottomBarItems NOTIFY bottomBarItemsChanged)
+    Q_PROPERTY(QStringList availableBottomBarItems READ availableBottomBarItems CONSTANT)
+    Q_PROPERTY(bool reducedMotion READ reducedMotion WRITE setReducedMotion NOTIFY reducedMotionChanged)
     
     // Theme System
     // Theme key: "nordic", "ocean", "sunset", "forest", "custom"
@@ -59,6 +63,21 @@ class SystemSettings : public QObject
     Q_ENUM(MapStyle)
     Q_PROPERTY(MapStyle mapStyle READ mapStyle WRITE setMapStyle NOTIFY mapStyleChanged)
     Q_PROPERTY(int mapOrientation READ mapOrientation WRITE setMapOrientation NOTIFY mapOrientationChanged)
+    
+    // Homescreen Widget Persistence
+    Q_PROPERTY(QString widgetLayout READ widgetLayout WRITE setWidgetLayout NOTIFY widgetLayoutChanged)
+    Q_PROPERTY(QString widgetPresets READ widgetPresets WRITE setWidgetPresets NOTIFY widgetPresetsChanged)
+    
+    // Privacy Settings
+    Q_PROPERTY(bool locationServices READ locationServices WRITE setLocationServices NOTIFY locationServicesChanged)
+    Q_PROPERTY(bool improveAI READ improveAI WRITE setImproveAI NOTIFY improveAIChanged)
+    Q_PROPERTY(bool trafficDataSharing READ trafficDataSharing WRITE setTrafficDataSharing NOTIFY trafficDataSharingChanged)
+    
+    // Navigation Routing Settings
+    Q_PROPERTY(bool voiceGuidance READ voiceGuidance WRITE setVoiceGuidance NOTIFY voiceGuidanceChanged)
+    Q_PROPERTY(bool realTimeTraffic READ realTimeTraffic WRITE setRealTimeTraffic NOTIFY realTimeTrafficChanged)
+    Q_PROPERTY(bool avoidHighways READ avoidHighways WRITE setAvoidHighways NOTIFY avoidHighwaysChanged)
+    Q_PROPERTY(bool avoidTolls READ avoidTolls WRITE setAvoidTolls NOTIFY avoidTollsChanged)
 
     // Manual Time Helpers
     Q_INVOKABLE void setDate(int year, int month, int day);
@@ -125,6 +144,16 @@ public:
     bool bottomBarEnabled() const;
     void setBottomBarEnabled(bool bottomBarEnabled);
     
+    int bottomBarHeight() const;
+    void setBottomBarHeight(int height);
+    
+    QString bottomBarItems() const;
+    void setBottomBarItems(const QString &items);
+    
+    QStringList availableBottomBarItems() const;
+    
+    bool reducedMotion() const;
+    void setReducedMotion(bool reducedMotion);
     // Theme System
     QString themeKey() const;
     void setThemeKey(const QString &themeKey);
@@ -154,6 +183,31 @@ public:
     int mapOrientation() const;
     void setMapOrientation(int orientation);
     
+    // Widget Persistence
+    QString widgetLayout() const;
+    void setWidgetLayout(const QString &layout);
+    
+    QString widgetPresets() const;
+    void setWidgetPresets(const QString &presets);
+    
+    // Privacy Settings
+    bool locationServices() const;
+    void setLocationServices(bool enabled);
+    bool improveAI() const;
+    void setImproveAI(bool enabled);
+    bool trafficDataSharing() const;
+    void setTrafficDataSharing(bool enabled);
+    
+    // Navigation Routing
+    bool voiceGuidance() const;
+    void setVoiceGuidance(bool enabled);
+    bool realTimeTraffic() const;
+    void setRealTimeTraffic(bool enabled);
+    bool avoidHighways() const;
+    void setAvoidHighways(bool enabled);
+    bool avoidTolls() const;
+    void setAvoidTolls(bool enabled);
+    
     Q_INVOKABLE void factoryReset();
 
 signals:
@@ -179,7 +233,9 @@ signals:
     void autoFoldMirrorsChanged(bool autoFoldMirrors);
     void rainSensingWipersChanged(bool rainSensingWipers);
     void bottomBarEnabledChanged(bool bottomBarEnabled);
-    
+    void bottomBarHeightChanged(int bottomBarHeight);
+    void bottomBarItemsChanged(const QString &bottomBarItems);
+    void reducedMotionChanged(bool reducedMotion);
     // Theme Signals
     void themeKeyChanged(const QString &themeKey);
     void customAccentColorChanged(const QColor &customAccentColor);
@@ -192,6 +248,19 @@ signals:
     void currentDateTimeChanged();
     void mapStyleChanged(SystemSettings::MapStyle mapStyle);
     void mapOrientationChanged(int mapOrientation);
+    void widgetLayoutChanged(const QString &widgetLayout);
+    void widgetPresetsChanged(const QString &widgetPresets);
+    
+    // Privacy Signals
+    void locationServicesChanged(bool locationServices);
+    void improveAIChanged(bool improveAI);
+    void trafficDataSharingChanged(bool trafficDataSharing);
+    
+    // Navigation Routing Signals
+    void voiceGuidanceChanged(bool voiceGuidance);
+    void realTimeTrafficChanged(bool realTimeTraffic);
+    void avoidHighwaysChanged(bool avoidHighways);
+    void avoidTollsChanged(bool avoidTolls);
 
 private:
     QSettings m_settings;
@@ -218,7 +287,9 @@ private:
     bool m_autoFoldMirrors;
     bool m_rainSensingWipers;
     bool m_bottomBarEnabled = true;  // Default enabled per HMI spec
-    
+    int m_bottomBarHeight = 64;      // Default height in pixels
+    QString m_bottomBarItems = "home,map,media,phone,apps,vehicle,settings";  // CSV of item keys
+    bool m_reducedMotion = false;    // Accessibility: reduce animations
     // Theme State
     QString m_themeKey = "nordic";  // Default theme
     QColor m_customAccentColor = QColor("#8B5CF6");  // Default purple
@@ -230,7 +301,20 @@ private:
     QString m_timeZone;
     MapStyle m_mapStyle;
     int m_mapOrientation = 1; // Default to Heading-up (1)
+    QString m_widgetLayout;
+    QString m_widgetPresets;
     qint64 m_timeOffsetMs = 0; // Manual offset from system clock
+    
+    // Privacy State
+    bool m_locationServices = true;
+    bool m_improveAI = false;
+    bool m_trafficDataSharing = true;
+    
+    // Navigation Routing State
+    bool m_voiceGuidance = true;
+    bool m_realTimeTraffic = true;
+    bool m_avoidHighways = false;
+    bool m_avoidTolls = false;
     
     IAudioHAL *m_audioHal;
 

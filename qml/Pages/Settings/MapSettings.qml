@@ -116,24 +116,27 @@ SettingsSubPage {
             SettingsToggle {
                 title: "Voice Guidance"
                 subtitle: "Turn-by-turn spoken instructions"
-                checked: true // Mock default
+                checked: SystemSettings.voiceGuidance
+                onToggled: (checked) => SystemSettings.voiceGuidance = checked
             }
             
             SettingsToggle {
                 title: "Real-time Traffic"
                 subtitle: "Show congestion on map"
-                checked: true // Should bind to SystemSettings if available
-                // Note: Logic allows binding later
+                checked: SystemSettings.realTimeTraffic
+                onToggled: (checked) => SystemSettings.realTimeTraffic = checked
             }
             
             SettingsToggle {
                 title: "Avoid Highways"
-                checked: false
+                checked: SystemSettings.avoidHighways
+                onToggled: (checked) => SystemSettings.avoidHighways = checked
             }
             
             SettingsToggle {
                 title: "Avoid Tolls"
-                checked: false
+                checked: SystemSettings.avoidTolls
+                onToggled: (checked) => SystemSettings.avoidTolls = checked
             }
         }
         

@@ -107,16 +107,13 @@ void ContactsModel::loadData()
         QJsonDocument doc = QJsonDocument::fromJson(file.readAll());
         QJsonArray arr = doc.array();
         
-        beginResetModel();
         m_allContacts.clear();
         for (const auto &v : arr) {
             QJsonObject o = v.toObject();
             m_allContacts.append({o["name"].toString(), o["number"].toString(), o["avatar"].toString()});
         }
-        applyFilter(); // Logic handles displayed contacts
-        endResetModel();
+        applyFilter(); // Logic handles displayed contacts, calls begin/endResetModel
     }
-    // Note: applyFilter calls beginResetModel/endResetModel, so we might double call if careful.
     // Fixed logic: loadData populates m_allContacts, then applyFilter resets.
 }
 
